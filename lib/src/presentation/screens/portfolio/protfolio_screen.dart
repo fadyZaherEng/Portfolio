@@ -192,8 +192,7 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
                   ),
                 ),
               ),
-              // Circular Percentage Indicator
-              Visibility(
+               Visibility(
                 visible: _scrollPercentage > 0 && _scrollPercentage < 0.95,
                 child: Padding(
                   padding: const EdgeInsets.all(10),
