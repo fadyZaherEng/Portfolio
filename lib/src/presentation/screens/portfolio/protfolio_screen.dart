@@ -4,8 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/src/config/routes/routes_manager.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/base/widget/base_stateful_widget.dart';
-import 'package:my_portfolio/src/core/resources/image_paths.dart';
-import 'package:my_portfolio/src/core/utils/constants.dart';
+ import 'package:my_portfolio/src/core/utils/constants.dart';
 import 'package:my_portfolio/src/core/utils/openLink.dart';
 import 'package:my_portfolio/src/presentation/blocs/portfolio/portfolio_bloc.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/can_i_do_section_widget.dart';
@@ -155,7 +154,7 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
                 controller: _scrollController,
                 physics: const BouncingScrollPhysics(),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  padding: const EdgeInsets.symmetric(horizontal: 12),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,

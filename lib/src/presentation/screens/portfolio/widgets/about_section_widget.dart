@@ -59,7 +59,7 @@ class _AboutMeSectionWidgetState extends State<AboutMeSectionWidget> {
       mainAxisSize: MainAxisSize.min,
       children: [
         const ProfileImageWidget(),
-        const SizedBox(width: 20),
+        const SizedBox(width: 10),
         SizedBox(
           height: 120,
           child: AnimatedAboutMeButton(
@@ -180,7 +180,8 @@ class ProfileScreen extends StatelessWidget {
           Positioned(
             bottom: 2,
             child: CustomPaint(
-              painter: FullCirclePainter(ColorSchemes.primarySecondary.withOpacity(0.4)),
+              painter: FullCirclePainter(
+                  ColorSchemes.primarySecondary.withOpacity(0.4)),
               size: const Size(150, 150),
             ),
           ),
@@ -194,8 +195,7 @@ class ProfileScreen extends StatelessWidget {
             ),
           ),
           // الدائرة السفلية (تكون خلف الصورة)
-
-         ],
+        ],
       ),
     );
   }
@@ -317,7 +317,8 @@ class _AnimatedAboutMeButtonState extends State<AnimatedAboutMeButton>
                         textAlign: TextAlign.start,
                       ),
                       SizedBox(
-                          width: MediaQuery.sizeOf(context).width > 850 ? 15 : 8),
+                          width:
+                              MediaQuery.sizeOf(context).width > 850 ? 15 : 8),
                       Transform.rotate(
                         angle: _rotationAnimation.value,
                         child: Container(
@@ -427,7 +428,7 @@ class _ExpandableSectionWidgetState extends State<ExpandableSectionWidget>
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
       decoration: BoxDecoration(
         color: ColorSchemes.primary.withOpacity(0.7),
         borderRadius: BorderRadius.circular(10),
@@ -438,7 +439,7 @@ class _ExpandableSectionWidgetState extends State<ExpandableSectionWidget>
           _buildAnimatedItem(
             Text(
               S.of(context).aboutMeDescription,
-              maxLines: 5,
+              maxLines: 10,
               overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     color: ColorSchemes.white,
@@ -472,15 +473,46 @@ class _ExpandableSectionWidgetState extends State<ExpandableSectionWidget>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         _buildAnimatedItem(
-            _buildInfoRow(Icons.email, "fedo.zaher@gmail.com"), 5),
-        _buildAnimatedItem(_buildInfoRow(Icons.phone, "+201273826361"), 6),
-        _buildAnimatedItem(_buildInfoRow(Icons.cake, "November 16, 1998"), 7),
-        _buildAnimatedItem(_buildInfoRow(Icons.location_on, "Cairo, Egypt"), 8),
+          InkWell(
+              onTap: () {
+                //open gmail
+                openLink('mailto:fedo.zaher@gmail.com');
+              },
+              child: _buildInfoRow(Icons.email, "fedo.zaher@gmail.com", true)),
+          5,
+        ),
+        _buildAnimatedItem(
+          InkWell(
+              onTap: () {
+                //open phone
+                openLink('tel:+201273826361');
+              },
+              child: _buildInfoRow(Icons.phone, "+201273826361", true)),
+          6,
+        ),
+        _buildAnimatedItem(
+            _buildInfoRow(Icons.cake, "November 16, 1998", false), 7),
+        _buildAnimatedItem(
+          InkWell(
+            onTap: () {
+              //open location
+              openLink(
+                'https://www.google.com/maps/place/cairo/@30.0444205,31.2357123,11z/data=!3m1!4b1!4m5!3m4!1s0x14583fa60b21be4d:0x4ee52f9e04c2efb4!8m2!3d30.0444205!4d31.2357123',
+              );
+            },
+            child: _buildInfoRow(
+              Icons.location_on,
+              "Cairo, Egypt",
+              true,
+            ),
+          ),
+          8,
+        ),
       ],
     );
   }
 
-  Widget _buildInfoRow(IconData icon, String text) {
+  Widget _buildInfoRow(IconData icon, String text, isLink) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: Row(
@@ -500,6 +532,10 @@ class _ExpandableSectionWidgetState extends State<ExpandableSectionWidget>
                     color: ColorSchemes.white,
                     fontWeight: FontWeight.normal,
                     fontSize: 16,
+                    //make line under the text
+                    decoration:
+                        isLink ? TextDecoration.underline : TextDecoration.none,
+                    decorationColor: ColorSchemes.primarySecondaryWhite.withOpacity(0.8),
                   ),
             ),
           ),

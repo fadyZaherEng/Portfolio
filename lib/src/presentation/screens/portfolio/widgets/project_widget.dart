@@ -37,35 +37,56 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width > 850 ? 20 : 10,
+                  horizontal: MediaQuery
+                      .of(context)
+                      .size
+                      .width > 850 ? 20 : 10,
                 ),
                 child: BouncingAndScalingText(
-                  title: S.of(context).myProjects,
+                  title: S
+                      .of(context)
+                      .myProjects,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontSize: 26,
-                        fontWeight: FontWeight.bold,
-                        color: ColorSchemes.iconDarkWhite,
-                      ),
+                  style: Theme
+                      .of(context)
+                      .textTheme
+                      .titleLarge
+                      ?.copyWith(
+                    fontSize: 26,
+                    fontWeight: FontWeight.bold,
+                    color: ColorSchemes.iconDarkWhite,
+                  ),
                 ),
               ),
               const SizedBox(height: 15),
               Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.of(context).size.width > 850 ? 50 : 10,
+                  horizontal: MediaQuery
+                      .of(context)
+                      .size
+                      .width > 850 ? 50 : 10,
                 ),
                 child: SizedBox(
-                  width: MediaQuery.of(context).size.width > 850 ? 500 : 400,
+                  width: MediaQuery
+                      .of(context)
+                      .size
+                      .width > 850 ? 500 : 400,
                   child: Text(
-                    S.of(context).exploreMyProjects,
+                    S
+                        .of(context)
+                        .exploreMyProjects,
                     textAlign: TextAlign.center,
-                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          fontSize: 13,
-                          fontWeight: FontWeight.bold,
-                          color: ColorSchemes.iconDarkWhite,
-                          height: 1.7,
-                          letterSpacing: -0.25,
-                        ),
+                    style: Theme
+                        .of(context)
+                        .textTheme
+                        .bodyLarge
+                        ?.copyWith(
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold,
+                      color: ColorSchemes.iconDarkWhite,
+                      height: 1.7,
+                      letterSpacing: -0.25,
+                    ),
                   ),
                 ),
               ),
@@ -86,9 +107,9 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
           "title_en": "BMI Calculator Flutter App",
           "title_ar": "تطبيق حساب مؤشر كتلة الجسم (BMI)",
           "description_en":
-              "A simple and accurate BMI calculator built with Flutter, helping users track their health easily.",
+          "A simple and accurate BMI calculator built with Flutter, helping users track their health easily.",
           "description_ar":
-              "تطبيق بسيط ودقيق لحساب مؤشر كتلة الجسم، يساعد المستخدمين على تتبع صحتهم بسهولة.",
+          "تطبيق بسيط ودقيق لحساب مؤشر كتلة الجسم، يساعد المستخدمين على تتبع صحتهم بسهولة.",
           "url": "https://youtu.be/kltVCMGuQyc?si=CMTw2KGD41WclZs9",
           "image": ImagePaths.bmi,
         },
@@ -96,9 +117,9 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
           "title_en": "Note Flutter App",
           "title_ar": "تطبيق الملاحظات",
           "description_en":
-              "A powerful and user-friendly notes app to organize your thoughts and tasks efficiently.",
+          "A powerful and user-friendly notes app to organize your thoughts and tasks efficiently.",
           "description_ar":
-              "تطبيق سهل الاستخدام لإدارة الملاحظات وتنظيم المهام بفعالية.",
+          "تطبيق سهل الاستخدام لإدارة الملاحظات وتنظيم المهام بفعالية.",
           "url": "https://youtu.be/8J06th_YF9Y?si=d26r1-KUGgbVtdEi",
           "image": ImagePaths.note,
         },
@@ -106,9 +127,9 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
           "title_en": "News Flutter App",
           "title_ar": "تطبيق الأخبار",
           "description_en":
-              "A modern news app that delivers the latest updates from various sources with a sleek UI.",
+          "A modern news app that delivers the latest updates from various sources with a sleek UI.",
           "description_ar":
-              "تطبيق عصري يعرض آخر الأخبار من مصادر متعددة بواجهة أنيقة.",
+          "تطبيق عصري يعرض آخر الأخبار من مصادر متعددة بواجهة أنيقة.",
           "url": "https://youtu.be/qOKh0Pr6zBQ?si=tQ5L7dBu-wSL_a6V",
           "image": ImagePaths.news,
         },
@@ -116,9 +137,9 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
           "title_en": "Shop Flutter App",
           "title_ar": "تطبيق المتجر الإلكتروني",
           "description_en":
-              "A fully functional e-commerce app with a seamless shopping experience and a secure checkout.",
+          "A fully functional e-commerce app with a seamless shopping experience and a secure checkout.",
           "description_ar":
-              "تطبيق تجارة إلكترونية متكامل يوفر تجربة تسوق سلسة وآمنة.",
+          "تطبيق تجارة إلكترونية متكامل يوفر تجربة تسوق سلسة وآمنة.",
           "url": "https://youtu.be/YJVuKHvgNyw?si=9F84JZlirzAJ7_Dt",
           "image": ImagePaths.shop,
         },
@@ -126,9 +147,9 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
           "title_en": "Facebook Flutter App",
           "title_ar": "تطبيق فيسبوك",
           "description_en":
-              "A Facebook UI clone built with Flutter, showcasing beautiful layouts and smooth navigation.",
+          "A Facebook UI clone built with Flutter, showcasing beautiful layouts and smooth navigation.",
           "description_ar":
-              "تصميم واجهة مستخدم لتطبيق فيسبوك باستخدام Flutter مع تنقل سلس.",
+          "تصميم واجهة مستخدم لتطبيق فيسبوك باستخدام Flutter مع تنقل سلس.",
           "url": "https://youtu.be/8tA8-kiCV9w?si=-tVxGtiWY2nXQ_3x",
           "image": ImagePaths.faceBook,
         },
@@ -136,9 +157,9 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
           "title_en": "Ava Bishoy Church Flutter App",
           "title_ar": "تطبيق كنيسة آفا بيشوي",
           "description_en":
-              "A dedicated church app for announcements, prayers, and community engagement.",
+          "A dedicated church app for announcements, prayers, and community engagement.",
           "description_ar":
-              "تطبيق مخصص لنشر الأخبار والصلوات والتواصل بين أفراد المجتمع الكنسي.",
+          "تطبيق مخصص لنشر الأخبار والصلوات والتواصل بين أفراد المجتمع الكنسي.",
           "url": "https://youtu.be/ixtkSz1Tu4o?si=9IA_hQnThtAq7ahL",
           "image": ImagePaths.ava,
         },
@@ -146,9 +167,9 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
           "title_en": "Weather Flutter App",
           "title_ar": "تطبيق الطقس",
           "description_en":
-              "A weather forecast app providing real-time updates and accurate climate data.",
+          "A weather forecast app providing real-time updates and accurate climate data.",
           "description_ar":
-              "تطبيق يعرض توقعات الطقس الفورية مع بيانات دقيقة عن المناخ.",
+          "تطبيق يعرض توقعات الطقس الفورية مع بيانات دقيقة عن المناخ.",
           "url": "https://youtu.be/2fWnWXQVFDg?si=mjijVjfMM4imDZyu",
           "image": ImagePaths.weather,
         },
@@ -156,9 +177,9 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
           "title_en": "Quiz With GetX Flutter App",
           "title_ar": "تطبيق الاختبارات مع GetX",
           "description_en":
-              "An interactive quiz app using GetX for state management, offering a fun learning experience.",
+          "An interactive quiz app using GetX for state management, offering a fun learning experience.",
           "description_ar":
-              "تطبيق اختبارات تفاعلي يستخدم GetX لإدارة الحالة ويوفر تجربة تعليمية ممتعة.",
+          "تطبيق اختبارات تفاعلي يستخدم GetX لإدارة الحالة ويوفر تجربة تعليمية ممتعة.",
           "url": "https://youtu.be/hnILZwVeJ04?si=hzStYKbC15X3q0d7",
           "image": ImagePaths.quiz,
         },
@@ -166,9 +187,9 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
           "title_en": "Drawing Flutter App",
           "title_ar": "تطبيق الرسم",
           "description_en":
-              "A creative drawing app that allows users to sketch and save their artwork effortlessly.",
+          "A creative drawing app that allows users to sketch and save their artwork effortlessly.",
           "description_ar":
-              "تطبيق يسمح للمستخدمين بالرسم وحفظ أعمالهم الفنية بسهولة.",
+          "تطبيق يسمح للمستخدمين بالرسم وحفظ أعمالهم الفنية بسهولة.",
           "url": "https://youtu.be/AtbXGY_tp9c?si=18pmzTnY7QMUI8bL",
           "image": ImagePaths.drawing,
         },
@@ -176,9 +197,9 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
           "title_en": "Learning Game Flutter App",
           "title_ar": "تطبيق الألعاب التعليمية",
           "description_en":
-              "An educational game designed to make learning fun and interactive for children.",
+          "An educational game designed to make learning fun and interactive for children.",
           "description_ar":
-              "لعبة تعليمية تفاعلية للأطفال لتسهيل التعلم بطريقة ممتعة.",
+          "لعبة تعليمية تفاعلية للأطفال لتسهيل التعلم بطريقة ممتعة.",
           "url": "https://youtu.be/bSgN08SxA4Q?si=9ZdLqPMdfQ1xgYZD",
           "image": ImagePaths.learn,
         },
@@ -186,9 +207,9 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
           "title_en": "YouTube Flutter App",
           "title_ar": "تطبيق يوتيوب",
           "description_en":
-              "A YouTube UI clone with smooth video playback and modern design elements.",
+          "A YouTube UI clone with smooth video playback and modern design elements.",
           "description_ar":
-              "تصميم واجهة مستخدم مشابهة ليوتيوب مع تشغيل سلس للفيديوهات.",
+          "تصميم واجهة مستخدم مشابهة ليوتيوب مع تشغيل سلس للفيديوهات.",
           "url": "https://youtu.be/ZcOFyBazd6o?si=toR6-Pnl8sXFFXB8",
           "image": ImagePaths.youtuber,
         },
@@ -196,9 +217,9 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
           "title_en": "Orders Flutter App",
           "title_ar": "تطبيق إدارة الطلبات",
           "description_en":
-              "An order management system that helps businesses track and process customer requests.",
+          "An order management system that helps businesses track and process customer requests.",
           "description_ar":
-              "نظام يساعد الشركات على تتبع وإدارة الطلبات من العملاء.",
+          "نظام يساعد الشركات على تتبع وإدارة الطلبات من العملاء.",
           "url": "https://youtu.be/NfGRbS-3xec?si=1HyjgVTm63TVGc8u",
           "image": ImagePaths.orders,
         },
@@ -206,9 +227,9 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
           "title_en": "E-Commerce Android App",
           "title_ar": "تطبيق التجارة الإلكترونية للأندرويد",
           "description_en":
-              "A full-fledged e-commerce app built for Android, featuring a smooth and secure checkout process.",
+          "A full-fledged e-commerce app built for Android, featuring a smooth and secure checkout process.",
           "description_ar":
-              "تطبيق متكامل للتجارة الإلكترونية مع تجربة دفع آمنة.",
+          "تطبيق متكامل للتجارة الإلكترونية مع تجربة دفع آمنة.",
           "url": "https://youtu.be/BPau6A6Ava8?si=XszmcHEOJq_-en7o",
           "image": ImagePaths.ecommerce,
         },
@@ -216,9 +237,9 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
           "title_en": "Smart Note Android App",
           "title_ar": "تطبيق الملاحظات الذكي",
           "description_en":
-              "A smart notes app with cloud sync and advanced organization features.",
+          "A smart notes app with cloud sync and advanced organization features.",
           "description_ar":
-              "تطبيق ملاحظات ذكي يوفر مزامنة سحابية وميزات تنظيم متقدمة.",
+          "تطبيق ملاحظات ذكي يوفر مزامنة سحابية وميزات تنظيم متقدمة.",
           "url": "https://youtu.be/iy_bO99QnHU?si=1MqJUVKrmB9_ZWZM",
           "image": ImagePaths.androidNote,
         },
@@ -226,9 +247,9 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
           "title_en": "WhatsApp Android App",
           "title_ar": "تطبيق واتساب",
           "description_en":
-              "A WhatsApp UI clone featuring real-time messaging and modern chat layouts.",
+          "A WhatsApp UI clone featuring real-time messaging and modern chat layouts.",
           "description_ar":
-              "تصميم واجهة مستخدم لتطبيق واتساب يعرض ميزات الدردشة الفورية الحديثة.",
+          "تصميم واجهة مستخدم لتطبيق واتساب يعرض ميزات الدردشة الفورية الحديثة.",
           "url": "https://youtu.be/ny7hKToTn0g?si=1nv4VWLTCDqldMdv",
           "image": ImagePaths.androidWhatsApp,
         }
@@ -332,11 +353,13 @@ class _ProjectCarouselWidgetState extends State<ProjectCarouselWidget> {
                       bottom: 0,
                       left: 0,
                       right: 0,
-                      top: MediaQuery.sizeOf(context).width > 850 ? 50 : 25,
+                      top: MediaQuery
+                          .sizeOf(context)
+                          .width > 850 ? 50 : 25,
                       child: AnimatedOpacity(
                         opacity:
-                            _showText && _currentIndex == index ? 1.0 : 0.0,
-                        duration: const Duration(seconds: 1),
+                        _showText && _currentIndex == index ? 1.0 : 0.0,
+                        duration: const Duration(milliseconds: 700),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(15),
                           child: BackdropFilter(
@@ -357,27 +380,29 @@ class _ProjectCarouselWidgetState extends State<ProjectCarouselWidget> {
                                 children: [
                                   Text(
                                     project.title,
-                                    style: Theme.of(context)
+                                    style: Theme
+                                        .of(context)
                                         .textTheme
                                         .bodyLarge
                                         ?.copyWith(
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.white,
-                                          fontSize: 20,
-                                        ),
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                    ),
                                   ),
                                   const SizedBox(height: 10),
 
                                   Text(
                                     project.description,
                                     textAlign: TextAlign.center,
-                                    style: Theme.of(context)
+                                    style: Theme
+                                        .of(context)
                                         .textTheme
                                         .bodyMedium
                                         ?.copyWith(
-                                          color: Colors.white.withOpacity(0.9),
-                                          fontSize: 15,
-                                        ),
+                                      color: Colors.white.withOpacity(0.9),
+                                      fontSize: 15,
+                                    ),
                                   ),
                                   const SizedBox(height: 12),
                                   // TODO add animation on mouse cursor
@@ -400,15 +425,18 @@ class _ProjectCarouselWidgetState extends State<ProjectCarouselWidget> {
                                       ),
                                     ),
                                     child: Text(
-                                      S.of(context).openLink,
-                                      style: Theme.of(context)
+                                      S
+                                          .of(context)
+                                          .openLink,
+                                      style: Theme
+                                          .of(context)
                                           .textTheme
                                           .bodyLarge
                                           ?.copyWith(
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 16,
-                                          ),
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16,
+                                      ),
                                     ),
                                     onPressed: () => openLink(project.url),
                                   ),
@@ -485,29 +513,31 @@ class ProjectList {
   factory ProjectList.fromJson(Map<String, dynamic> json) {
     var projectList = json['projects'] as List;
     List<Project> projects =
-        projectList.map((i) => Project.fromJson(i)).toList();
+    projectList.map((i) => Project.fromJson(i)).toList();
     return ProjectList(projects: projects);
   }
 
   List<ProjectModel> getArProjects() {
     return projects
-        .map((project) => ProjectModel(
-              title: project.titleAr,
-              description: project.descriptionAr,
-              url: project.url,
-              image: project.image,
-            ))
+        .map((project) =>
+        ProjectModel(
+          title: project.titleAr,
+          description: project.descriptionAr,
+          url: project.url,
+          image: project.image,
+        ))
         .toList();
   }
 
   List<ProjectModel> getEnProjects() {
     return projects
-        .map((project) => ProjectModel(
-              title: project.titleEn,
-              description: project.descriptionEn,
-              url: project.url,
-              image: project.image,
-            ))
+        .map((project) =>
+        ProjectModel(
+          title: project.titleEn,
+          description: project.descriptionEn,
+          url: project.url,
+          image: project.image,
+        ))
         .toList();
   }
 
