@@ -187,7 +187,7 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
                       const SizedBox(height: 10),
                       ProjectsWidgets(key: _projectsKey),
                       ContactMeWidget(key: _contactKey),
-                      const SizedBox(height: 30),
+                      const SizedBox(height: 15),
                     ],
                   ),
                 ),
