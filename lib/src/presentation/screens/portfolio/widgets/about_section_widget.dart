@@ -59,6 +59,7 @@ class _AboutMeSectionWidgetState extends State<AboutMeSectionWidget> {
       mainAxisSize: MainAxisSize.min,
       children: [
         const ProfileImageWidget(),
+        const SizedBox(width: 20),
         SizedBox(
           height: 120,
           child: AnimatedAboutMeButton(
@@ -135,20 +136,21 @@ class _ProfileImageWidgetState extends State<ProfileImageWidget>
                 height: MediaQuery.sizeOf(context).width > 850 ? 250 : 200,
                 width: MediaQuery.sizeOf(context).width > 850 ? 250 : 200,
                 alignment: AlignmentDirectional.topEnd,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  boxShadow: [
-                    BoxShadow(
-                      color: ColorSchemes.primary.withOpacity(0.3),
-                      blurRadius: _glowAnimation.value,
-                      spreadRadius: 10,
-                    ),
-                  ],
-                  image: const DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage(ImagePaths.fady), // استبدل بمسار صورتك
-                  ),
-                ),
+                // decoration: BoxDecoration(
+                //   shape: BoxShape.circle,
+                //   boxShadow: [
+                //     BoxShadow(
+                //       color: ColorSchemes.primary.withOpacity(0.3),
+                //       blurRadius: _glowAnimation.value,
+                //       spreadRadius: 10,
+                //     ),
+                //   ],
+                //   image: const DecorationImage(
+                //     fit: BoxFit.cover,
+                //     image: AssetImage(ImagePaths.fady), // استبدل بمسار صورتك
+                //   ),
+                // ),
+                child: const ProfileScreen(),
               ),
             ),
           ),
@@ -156,6 +158,67 @@ class _ProfileImageWidgetState extends State<ProfileImageWidget>
       },
     );
   }
+}
+
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Stack(
+        alignment: Alignment.center,
+        children: [
+          // الدائرة العلوية (تكون فوق الصورة)
+          Positioned(
+            top: 15,
+            child: CustomPaint(
+              painter: FullCirclePainter(ColorSchemes.primarySecondary),
+              size: const Size(150, 150),
+            ),
+          ),
+          Positioned(
+            bottom: 2,
+            child: CustomPaint(
+              painter: FullCirclePainter(ColorSchemes.primarySecondary.withOpacity(0.4)),
+              size: const Size(150, 150),
+            ),
+          ),
+
+          ClipOval(
+            child: Image.asset(
+              ImagePaths.fady, // استبدلها بصورتك
+              width: 200,
+              height: 200,
+              fit: BoxFit.cover,
+            ),
+          ),
+          // الدائرة السفلية (تكون خلف الصورة)
+
+         ],
+      ),
+    );
+  }
+}
+
+// رسم الدائرة الكاملة
+class FullCirclePainter extends CustomPainter {
+  final Color color;
+
+  FullCirclePainter(this.color);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = color
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 14; // زيادة سمك الدائرة
+
+    canvas.drawCircle(Offset(size.width / 2, size.height / 2), 95, paint);
+  }
+
+  @override
+  bool shouldRepaint(CustomPainter oldDelegate) => false;
 }
 
 class AnimatedAboutMeButton extends StatefulWidget {

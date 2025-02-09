@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/src/config/routes/routes_manager.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/base/widget/base_stateful_widget.dart';
+import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/core/utils/constants.dart';
 import 'package:my_portfolio/src/core/utils/openLink.dart';
 import 'package:my_portfolio/src/presentation/blocs/portfolio/portfolio_bloc.dart';
@@ -69,7 +70,7 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
           isDarkMode = state.isDark;
         } else if (state is PortfolioGetLanguageState) {
           currentLocale = state.locale.languageCode;
-          _isCanIDoVisible=true;
+          _isCanIDoVisible = true;
         } else if (state is PortfolioChangeThemeState) {
           isDarkMode = state.theme == Constants.dark;
           RestartWidget.restartApp(context);
