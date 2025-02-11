@@ -227,7 +227,7 @@ class _PulsingCircleWidgetState extends State<PulsingCircleWidget>
       duration: const Duration(seconds: 2),
     )..repeat(reverse: true); // ✅ جعل الأنيميشن ينبض ذهابًا وإيابًا
 
-    _scaleAnimation = Tween<double>(begin: 0.9, end: 1).animate(
+    _scaleAnimation = Tween<double>(begin: 0.8, end: 1).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
     );
   }
