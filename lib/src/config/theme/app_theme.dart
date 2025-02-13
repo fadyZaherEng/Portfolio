@@ -12,10 +12,10 @@ class AppTheme {
     return ThemeData(
       useMaterial3: false,
       fontFamily: getFontFamily(),
-      iconTheme: const IconThemeData(color: Color(0xFF365352)),
+      iconTheme: IconThemeData(color: ColorSchemes.iconBackGround),
       tooltipTheme: TooltipThemeData(
         decoration: BoxDecoration(
-          color: const Color(0xFF365352),
+          color: ColorSchemes.iconBackGround,
           borderRadius: BorderRadius.circular(8),
         ),
         textStyle: getTextStyle(
@@ -30,11 +30,11 @@ class AppTheme {
         color: ColorSchemes.white,
         elevation: 0,
         shadowColor: Colors.transparent,
-        actionsIconTheme: const IconThemeData(
-          color: Color(0xFF365352),
+        actionsIconTheme: IconThemeData(
+          color: ColorSchemes.iconBackGround,
         ),
-        iconTheme: const IconThemeData(
-          color: Color(0xFF365352),
+        iconTheme: IconThemeData(
+          color: ColorSchemes.iconBackGround,
         ),
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,

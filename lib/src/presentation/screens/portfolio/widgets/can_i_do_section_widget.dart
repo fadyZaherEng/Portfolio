@@ -243,7 +243,7 @@ class SkillCardWidget extends StatelessWidget {
           height: 110,
           width: 100,
           decoration: BoxDecoration(
-            color: ColorSchemes.iconBackGround,
+            color: ColorSchemes.primaryOffer,
             borderRadius: BorderRadius.circular(20),
           ),
           child: Padding(

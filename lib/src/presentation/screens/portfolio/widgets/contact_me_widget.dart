@@ -102,8 +102,7 @@ class ContactMeWidget extends StatelessWidget {
                               context: context,
                               message: "Failed To Launch WhatsApp",
                               color: ColorSchemes.snackBarWarning,
-                              icon: ImagePaths.warning,
-                            );
+                             );
                           },
                         ),
                       ),
@@ -203,8 +202,7 @@ class _ContactMeHoverButtonState extends State<ContactMeHoverButton> {
                 context: context,
                 message: "Failed To Launch WhatsApp",
                 color: ColorSchemes.snackBarWarning,
-                icon: ImagePaths.warning,
-              );
+               );
             },
           );
         },

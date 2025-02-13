@@ -77,9 +77,6 @@ class _MyAppState extends State<MyApp> {
                           : window.locale,
                     )
                   : MaterialApp(
-                      // useInheritedMediaQuery: true,
-                      // builder: DevicePreview.appBuilder,
-                      // darkTheme:AppTheme(state.languageCode).light,
                       themeMode: ThemeMode.light,
 
                       supportedLocales: S.delegate.supportedLocales,
