@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
-import 'package:my_portfolio/src/core/utils/openLink.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/animated_text_Widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/bounce_and_scale_text_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/time_line_career_widget.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 class MyChaptersWidget extends StatefulWidget {
@@ -19,7 +19,6 @@ class _MyChaptersWidgetState extends State<MyChaptersWidget>
   late AnimationController _controller;
   late Animation<double> _fadeAnimation;
   late Animation<Offset> _slideAnimation;
-  late Animation<double> _scaleAnimation;
   late Animation<double> _rotateAnimation;
 
   @override
@@ -39,22 +38,12 @@ class _MyChaptersWidgetState extends State<MyChaptersWidget>
       end: const Offset(0, 0),
     ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeOut));
 
-    _scaleAnimation = Tween<double>(begin: 0.95, end: 1.05).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
-    );
-
     _rotateAnimation = Tween<double>(begin: -0.02, end: 0.02).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
     );
   }
 
   bool _isAnimated = false;
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
 
   void _startAnimation() {
     if (!_isAnimated) {
@@ -95,11 +84,7 @@ class _MyChaptersWidgetState extends State<MyChaptersWidget>
                       ),
                     ),
                     const SizedBox(height: 15),
-                    // RotationTransition(
-                    //   turns: _rotateAnimation,
-                    //   child:
-                          _buildBodyText(context, S.of(context).chaptersStory),
-                    // ),
+                    _buildBodyText(context, S.of(context).chaptersStory),
                     const SizedBox(height: 30),
                     SizedBox(
                       width: double.infinity,
@@ -119,7 +104,7 @@ class _MyChaptersWidgetState extends State<MyChaptersWidget>
                     const SizedBox(height: 10),
                     SizedBox(
                       width: double.infinity,
-                      child: TimelineEventsWidget(
+                      child: TimelineCareerWidget(
                         isEducation: true,
                         totalEvents: 1,
                         index: 0,
@@ -242,11 +227,11 @@ class _MyChaptersWidgetState extends State<MyChaptersWidget>
 
   Widget _buildHeaderText(BuildContext context, String text, bool isAnimation) {
     return isAnimation
-        ? BouncingAndScalingText(
+        ? BouncingAndScalingTextWidget(
             title: text,
             textAlign: TextAlign.start,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontSize: 26,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
                   color: ColorSchemes.iconDarkWhite,
                 ),
@@ -255,7 +240,7 @@ class _MyChaptersWidgetState extends State<MyChaptersWidget>
             text,
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontSize: 26,
+                  fontSize: 25,
                   fontWeight: FontWeight.bold,
                   color: ColorSchemes.iconDarkWhite,
                 ),
@@ -294,7 +279,7 @@ class _MyChaptersWidgetState extends State<MyChaptersWidget>
         begin: Alignment.topLeft,
         end: Alignment.bottomRight,
       ).createShader(bounds),
-      child: BouncingAndScalingText(
+      child: BouncingAndScalingTextWidget(
         title: S.of(context).flutterDeveloper,
       ),
     );
@@ -317,7 +302,7 @@ class _MyChaptersWidgetState extends State<MyChaptersWidget>
               child: child,
             );
           },
-          child: TimelineEventsWidget(
+          child: TimelineCareerWidget(
             isEducation: false,
             event: event,
             index: index,
@@ -327,243 +312,11 @@ class _MyChaptersWidgetState extends State<MyChaptersWidget>
       },
     );
   }
-}
-
-class BouncingAndScalingText extends StatefulWidget {
-  final String title;
-  final TextAlign? textAlign;
-  final TextStyle? style;
-
-  const BouncingAndScalingText({
-    super.key,
-    required this.title,
-    this.style,
-    this.textAlign,
-  });
-
-  @override
-  _BouncingAndScalingTextState createState() => _BouncingAndScalingTextState();
-}
-
-class _BouncingAndScalingTextState extends State<BouncingAndScalingText>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _scaleAnimation;
-  late Animation<Offset> _slideAnimation;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      duration: const Duration(seconds: 1), // مدة الحركة
-      vsync: this,
-    )..repeat(reverse: true); // تكرار ذهابًا وإيابًا
-
-    _scaleAnimation = Tween<double>(
-      begin: 1.0, // الحجم الطبيعي
-      end: 1.2, // تكبير النص بنسبة 20%
-    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
-
-    _slideAnimation = Tween<Offset>(
-      begin: const Offset(0, 0), // الموضع الأصلي
-      end: const Offset(0, 0.1), // يتحرك قليلاً لأسفل
-    ).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: Curves.easeInOut,
-      ),
-    );
-  }
 
   @override
   void dispose() {
     _controller.dispose();
     super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return SlideTransition(
-      position: _slideAnimation,
-      child: ScaleTransition(
-        scale: _scaleAnimation,
-        child: Text(
-          widget.title,
-          textAlign: widget.textAlign ?? TextAlign.center,
-          style: widget.style ??
-              Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                    height: 1.7,
-                    letterSpacing: -0.1,
-                  ),
-        ),
-      ),
-    );
-  }
-}
-
-class TimelineEventsWidget extends StatefulWidget {
-  final TimelineEvent event;
-  final int index;
-  final int totalEvents;
-  final bool isEducation;
-
-  const TimelineEventsWidget({
-    super.key,
-    required this.event,
-    required this.index,
-    required this.totalEvents,
-    required this.isEducation,
-  });
-
-  @override
-  _TimelineEventsWidgetState createState() => _TimelineEventsWidgetState();
-}
-
-class _TimelineEventsWidgetState extends State<TimelineEventsWidget>
-    with TickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _opacityAnimation;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller = AnimationController(
-      duration: const Duration(milliseconds: 100),
-      vsync: this,
-    );
-    _opacityAnimation = Tween<double>(begin: 0.8, end: 1.0).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.easeIn),
-    );
-    // Trigger the animation after a delay to make it feel like the event is appearing
-    Future.delayed(const Duration(milliseconds: 100), () {
-      if (mounted) {
-        _controller.forward();
-      }
-    });
-  }
-
-  @override
-  void dispose() {
-    if (mounted) {
-      _controller.dispose();
-    }
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Column(
-          children: [
-            // Timeline dot
-            widget.isEducation
-                ? Padding(
-                    padding: const EdgeInsets.only(top: 12),
-                    child: Icon(
-                      Icons.school,
-                      color: ColorSchemes.primarySecondary,
-                      size: 28,
-                    ),
-                  )
-                : Container(
-                    margin: const EdgeInsets.symmetric(vertical: 16),
-                    height: 14,
-                    width: 14,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: widget.event.color, width: 3),
-                      color: Colors.white,
-                    ),
-                  ),
-            // Connecting line (except last item)
-            if (widget.index != widget.totalEvents - 1 && !widget.isEducation)
-              Container(
-                height: 50,
-                width: 2,
-                color: Colors.grey.shade400,
-              ),
-          ],
-        ),
-        const SizedBox(width: 16),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                AnimatedBuilder(
-                  animation: _controller,
-                  builder: (context, child) {
-                    return Opacity(
-                      opacity: _opacityAnimation.value,
-                      child: child,
-                    );
-                  },
-                  child: AnimatedTextWidget(
-                    text: widget.event.title,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      color: ColorSchemes.primaryWhite,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 4),
-                AnimatedBuilder(
-                  animation: _controller,
-                  builder: (context, child) {
-                    return Opacity(
-                      opacity: _opacityAnimation.value,
-                      child: child,
-                    );
-                  },
-                  child: AnimatedTextWidget(
-                    text: widget.event.date,
-                    style: TextStyle(
-                      color: Colors.grey[600],
-                      fontSize: 15,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 4),
-                InkWell(
-                  onTap: () {
-                    openLink(widget.event.url);
-                  },
-                  child: AnimatedBuilder(
-                    animation: _controller,
-                    builder: (context, child) {
-                      return Opacity(
-                        opacity: _opacityAnimation.value,
-                        child: child,
-                      );
-                    },
-                    child: AnimatedTextWidget(
-                      text: widget.event.place,
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.deepPurpleAccent,
-                            decoration: TextDecoration.underline,
-                            decorationStyle: TextDecorationStyle.solid,
-                            decorationThickness: 2.5,
-                          ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
-    );
   }
 }
 

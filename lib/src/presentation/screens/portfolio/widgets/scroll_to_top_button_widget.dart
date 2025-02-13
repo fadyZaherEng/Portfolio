@@ -55,7 +55,7 @@ class _ScrollToTopButtonWidgetState extends State<ScrollToTopButtonWidget>
               ColorSchemes.iconBackGround,
               ColorSchemes.primary,
             ],
-            begin: Alignment.topLeft,
+            begin: Alignment.topCenter,
             end: Alignment.bottomRight,
           ),
           shape: BoxShape.circle,

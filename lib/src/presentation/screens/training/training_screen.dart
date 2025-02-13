@@ -5,22 +5,22 @@ import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/routes/routes_manager.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/utils/constants.dart';
-import 'package:my_portfolio/src/core/utils/openLink.dart';
 import 'package:my_portfolio/src/presentation/blocs/portfolio/portfolio_bloc.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/bounce_and_scale_text_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_app_bar_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/my_chapters_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/web_circle_painter_button_scroll.dart';
+import 'package:my_portfolio/src/presentation/screens/training/widgets/training_item_widget.dart';
 import 'package:my_portfolio/src/presentation/widgets/restart_widget.dart';
 import "package:universal_html/html.dart" as html;
 
-class TrainingSectionScreen extends StatefulWidget {
-  const TrainingSectionScreen({super.key});
+class TrainingScreen extends StatefulWidget {
+  const TrainingScreen({super.key});
 
   @override
-  State<TrainingSectionScreen> createState() => _TrainingSectionScreenState();
+  State<TrainingScreen> createState() => _TrainingScreenState();
 }
 
-class _TrainingSectionScreenState extends State<TrainingSectionScreen> {
+class _TrainingScreenState extends State<TrainingScreen> {
   List<Training> trainings = [];
 
   bool isDarkMode = false;
@@ -103,7 +103,7 @@ class _TrainingSectionScreenState extends State<TrainingSectionScreen> {
                       children: [
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16),
-                          child: BouncingAndScalingText(
+                          child: BouncingAndScalingTextWidget(
                             title: S.of(context).training,
                             style: Theme.of(context)
                                 .textTheme
@@ -119,7 +119,7 @@ class _TrainingSectionScreenState extends State<TrainingSectionScreen> {
                         Column(
                           children: List.generate(
                             trainings.length,
-                            (index) => _TrainingItem(
+                            (index) => TrainingItemWidget(
                               training: trainings[index],
                               index: index,
                             ),
@@ -312,95 +312,6 @@ class _TrainingSectionScreenState extends State<TrainingSectionScreen> {
           url:
               "https://drive.google.com/file/d/1t-gLVnSTQyXeGp8M5CQCbxFdbmfOGRlg/view?usp=drivesdk"),
     ];
-  }
-}
-
-class _TrainingItem extends StatefulWidget {
-  final Training training;
-  final int index;
-
-  const _TrainingItem({Key? key, required this.training, required this.index})
-      : super(key: key);
-
-  @override
-  State<_TrainingItem> createState() => _TrainingItemState();
-}
-
-class _TrainingItemState extends State<_TrainingItem> {
-  bool isVisible = false;
-
-  @override
-  void initState() {
-    super.initState();
-    Future.delayed(Duration(milliseconds: widget.index * 200), () {
-      if (mounted) {
-        setState(() {
-          isVisible = true;
-        });
-      }
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return AnimatedOpacity(
-      duration: const Duration(milliseconds: 500),
-      opacity: isVisible ? 1.0 : 0.0,
-      child: AnimatedSlide(
-        duration: const Duration(milliseconds: 500),
-        offset: isVisible ? Offset.zero : const Offset(0, 0.2),
-        child: InkWell(
-          onTap: () => openLink(widget.training.url),
-          child: InkWell(
-            onTap: () => openLink(widget.training.url),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Icon(
-                    Icons.school,
-                    color: ColorSchemes.primarySecondary,
-                    size: 28,
-                  ),
-                  const SizedBox(width: 12),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.training.title,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: ColorSchemes.primaryWhite,
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          "${widget.training.provider} - ${widget.training.year}${widget.training.duration.isNotEmpty ? " (${widget.training.duration})" : ""}",
-                          style: TextStyle(
-                            color: Colors.grey[600],
-                            fontSize: 15,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(width: 4),
-                  Icon(
-                    Icons.arrow_forward_ios,
-                    color: ColorSchemes.primarySecondary,
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
   }
 }
 

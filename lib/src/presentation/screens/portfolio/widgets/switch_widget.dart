@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
@@ -63,7 +62,7 @@ class _IOSSwitchWithThumbImageState extends State<IOSSwitchWithThumbImage>
               height: 30,
               decoration: BoxDecoration(
                 color: widget.isDarkMode
-                    ? ColorSchemes .primarySecondaryWhite
+                    ? ColorSchemes.primarySecondaryWhite
                     : ColorSchemes.primary,
                 borderRadius: BorderRadius.circular(15),
               ),

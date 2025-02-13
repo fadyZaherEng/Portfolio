@@ -34,15 +34,14 @@ class _BuildLogoWidgetState extends State<BuildLogoWidget>
 
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 4), // زودنا المدة علشان الوقوف
+      duration: const Duration(seconds: 4),
     )..repeat(reverse: true);
 
     _rotationAnimation = Tween<double>(begin: 0, end: 2 * pi).animate(
       CurvedAnimation(
         parent: _controller,
         curve: const Interval(0.0, 0.75, curve: Curves.easeInOutCubic),
-        // 75% من الوقت للدوران، والباقي للوقوف
-      ),
+       ),
     );
 
     _scaleAnimation = Tween<double>(begin: 0.92, end: 1.05).animate(

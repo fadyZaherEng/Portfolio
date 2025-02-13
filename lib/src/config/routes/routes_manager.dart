@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/main.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/protfolio_screen.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/skills_section_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/training_section_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/skills/skills_screen.dart';
+import 'package:my_portfolio/src/presentation/screens/training/training_screen.dart';
 
 final GlobalKey<NavigatorState> webNavigatorKey = GlobalKey<NavigatorState>();
 
@@ -22,9 +22,9 @@ class RoutesManager {
       case Routes.portfolio:
         return _materialRoute(const PortfolioScreen());
       case Routes.trainingWeb:
-        return _materialRoute(const TrainingSectionScreen());
+        return _materialRoute(const TrainingScreen());
       case Routes.skillsWeb:
-        return _materialRoute(const SkillsSectionScreen());
+        return _materialRoute(const SkillsScreen());
 
       default:
         return _materialRoute(const PortfolioScreen());
@@ -62,12 +62,12 @@ final GoRouter webRouter = GoRouter(
     GoRoute(
       path: Routes.trainingWeb,
       name: Routes.trainingWeb,
-      builder: (context, state) => const TrainingSectionScreen(),
+      builder: (context, state) => const TrainingScreen(),
     ),
     GoRoute(
       path: Routes.skillsWeb,
       name: Routes.skillsWeb,
-      builder: (context, state) => const SkillsSectionScreen(),
+      builder: (context, state) => const SkillsScreen(),
     ),
   ],
 );

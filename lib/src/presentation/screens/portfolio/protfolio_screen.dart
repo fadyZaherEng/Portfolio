@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/src/config/routes/routes_manager.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/base/widget/base_stateful_widget.dart';
- import 'package:my_portfolio/src/core/utils/constants.dart';
+import 'package:my_portfolio/src/core/utils/constants.dart';
 import 'package:my_portfolio/src/core/utils/openLink.dart';
 import 'package:my_portfolio/src/presentation/blocs/portfolio/portfolio_bloc.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/can_i_do_section_widget.dart';
@@ -12,13 +12,13 @@ import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/contact_
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_app_bar_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/end_drawer_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/header_portfolio_section_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/my_chapters_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/my_chapters_career_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/offer_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/project_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/scroll_to_top_button_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/skills_section_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/training_section_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/web_circle_painter_button_scroll.dart';
+import 'package:my_portfolio/src/presentation/screens/skills/skills_screen.dart';
+import 'package:my_portfolio/src/presentation/screens/training/training_screen.dart';
 import 'package:my_portfolio/src/presentation/widgets/restart_widget.dart';
 import "package:universal_html/html.dart" as html;
 import 'package:visibility_detector/visibility_detector.dart';
@@ -114,7 +114,7 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const SkillsSectionScreen(),
+                  builder: (context) => const SkillsScreen(),
                 ),
               );
             },
@@ -129,7 +129,7 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const TrainingSectionScreen(),
+                  builder: (context) => const TrainingScreen(),
                 ),
               );
             },
@@ -191,7 +191,7 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
                   ),
                 ),
               ),
-               Visibility(
+              Visibility(
                 visible: _scrollPercentage > 0 && _scrollPercentage < 0.95,
                 child: Padding(
                   padding: const EdgeInsets.all(10),

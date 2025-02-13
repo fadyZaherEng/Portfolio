@@ -5,7 +5,7 @@ import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/about_section_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/my_chapters_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_resume_widget.dart';
 
 class HeaderProfileSectionWidget extends StatefulWidget {
   final VoidCallback onViewResumeTap;
@@ -113,100 +113,10 @@ class _HeaderProfileSectionWidgetState extends State<HeaderProfileSectionWidget>
             color: ColorSchemes.iconDarkWhite,
             fontWeight: FontWeight.bold,
           ),
-          speed: const Duration(milliseconds: 50),
+          speed: const Duration(milliseconds: 100),
         ),
       ],
     );
   }
 }
 
-class CustomResumeWidget extends StatefulWidget {
-  final VoidCallback onViewResumeTap;
-  final bool isDarkMode;
-  final Color textColor;
-  final Color borderColor;
-
-  const CustomResumeWidget({
-    Key? key,
-    required this.onViewResumeTap,
-    required this.isDarkMode,
-    required this.textColor,
-    required this.borderColor,
-  }) : super(key: key);
-
-  @override
-  _CustomResumeWidgetState createState() => _CustomResumeWidgetState();
-}
-
-class _CustomResumeWidgetState extends State<CustomResumeWidget>
-    with SingleTickerProviderStateMixin {
-  late AnimationController _controller;
-  late Animation<double> _fadeAnimation;
-  late Animation<double> _scaleAnimation;
-
-  @override
-  void initState() {
-    super.initState();
-
-    _controller = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 600),
-    );
-
-    _fadeAnimation = CurvedAnimation(parent: _controller, curve: Curves.easeIn);
-    _scaleAnimation = Tween<double>(begin: 0.9, end: 1.0).animate(
-      CurvedAnimation(parent: _controller, curve: Curves.elasticOut),
-    );
-
-    // تشغيل الأنيميشن عند فتح الصفحة
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _controller.forward();
-    });
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return FadeTransition(
-      opacity: _fadeAnimation,
-      child: ScaleTransition(
-        scale: _scaleAnimation,
-        child: ElevatedButton(
-          onPressed: () {
-            _controller.reverse().then((_) {
-              _controller.forward();
-              widget.onViewResumeTap();
-            });
-          },
-          style: ElevatedButton.styleFrom(
-            backgroundColor:
-                widget.isDarkMode ? Colors.transparent : Colors.white,
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-              side: BorderSide(
-                color: widget.borderColor,
-                width: 1.5,
-              ),
-            ),
-            shadowColor: Colors.black54,
-            elevation: 4,
-          ),
-          child: Text(
-             S.of(context).viewResume,
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: widget.textColor,
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                ),
-          ),
-        ),
-      ),
-    );
-  }
-}

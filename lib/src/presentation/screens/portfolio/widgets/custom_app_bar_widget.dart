@@ -31,7 +31,7 @@ class _State extends State<CustomAppBarWidget> {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: ColorSchemes.appBarColor,
-      elevation: 0,
+      elevation: 5,
       centerTitle: false,
       title: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -42,8 +42,8 @@ class _State extends State<CustomAppBarWidget> {
             height: 50,
             imagePath: ImagePaths.newLogo2,
             color: GetThemeUseCase(injector())() == Constants.dark
-                ? const Color(0xFF9f695a)
-                : const Color(0xFF365352),
+                ? ColorSchemes.secondary
+                : ColorSchemes.iconBackGround,
           ),
         ),
       ),
@@ -58,8 +58,8 @@ class _State extends State<CustomAppBarWidget> {
                     width: 22,
                     height: 22,
                     color: GetThemeUseCase(injector())() == Constants.dark
-                        ? const Color(0xFF9f695a)
-                        : const Color(0xFF365352),
+                        ? ColorSchemes.secondary
+                        : ColorSchemes.iconBackGround,
                   ),
                 ),
                 onPressed: widget.onBackTap,

@@ -7,20 +7,21 @@ import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/core/utils/constants.dart';
 import 'package:my_portfolio/src/presentation/blocs/portfolio/portfolio_bloc.dart';
- import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_app_bar_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/my_chapters_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/bounce_and_scale_text_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_app_bar_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/web_circle_painter_button_scroll.dart';
+import 'package:my_portfolio/src/presentation/screens/skills/widgets/build_skill_row_widget.dart';
 import 'package:my_portfolio/src/presentation/widgets/restart_widget.dart';
 import 'package:universal_html/html.dart' as html;
 
-class SkillsSectionScreen extends StatefulWidget {
-  const SkillsSectionScreen({super.key});
+class SkillsScreen extends StatefulWidget {
+  const SkillsScreen({super.key});
 
   @override
-  State<SkillsSectionScreen> createState() => _SkillsSectionScreenState();
+  State<SkillsScreen> createState() => _SkillsScreenState();
 }
 
-class _SkillsSectionScreenState extends State<SkillsSectionScreen> {
+class _SkillsScreenState extends State<SkillsScreen> {
   bool isDarkMode = false;
 
   String currentLocale = 'en';
@@ -125,7 +126,7 @@ class _SkillsSectionScreenState extends State<SkillsSectionScreen> {
                                   height: 22,
                                 ),
                                 const SizedBox(width: 10),
-                                BouncingAndScalingText(
+                                BouncingAndScalingTextWidget(
                                   title: S.of(context).skills,
                                   style: Theme.of(context)
                                       .textTheme
@@ -140,93 +141,7 @@ class _SkillsSectionScreenState extends State<SkillsSectionScreen> {
                             ),
                           ),
                           const SizedBox(height: 10),
-                          Column(
-                            children: skills.entries.map(
-                              (entry) {
-                                return TweenAnimationBuilder<double>(
-                                    duration: const Duration(milliseconds: 800),
-                                    tween: Tween(begin: 0, end: 1),
-                                    builder: (context, value, child) {
-                                      return Opacity(
-                                        opacity: value,
-                                        child: Transform.translate(
-                                          offset: Offset((1 - value) * 50, 0),
-                                          // يتحرك من اليمين لليسار
-                                          child: child,
-                                        ),
-                                      );
-                                    },
-                                    child: Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 8),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Expanded(
-                                            child: Text(
-                                              entry.key,
-                                              style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 14,
-                                                color:
-                                                    ColorSchemes.primaryWhite,
-                                              ),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                              vertical: 8,
-                                            ),
-                                            child:
-                                                TweenAnimationBuilder<double>(
-                                              duration:
-                                                  const Duration(seconds: 2),
-                                              tween: Tween(
-                                                  begin: 0.0, end: entry.value),
-                                              builder: (context, value, child) {
-                                                return Stack(
-                                                  children: [
-                                                    Container(
-                                                      width: MediaQuery.sizeOf(
-                                                                  context)
-                                                              .width *
-                                                          0.3,
-                                                      height: 8,
-                                                      decoration: BoxDecoration(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(5),
-                                                        color: Colors
-                                                            .grey.shade300,
-                                                      ),
-                                                    ),
-                                                    Container(
-                                                      width: MediaQuery.sizeOf(
-                                                                  context)
-                                                              .width *
-                                                          0.3 *
-                                                          value,
-                                                      height: 8,
-                                                      decoration: BoxDecoration(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(5),
-                                                        color: ColorSchemes
-                                                            .primarySecondary,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                );
-                                              },
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ));
-                              },
-                            ).toList(),
-                          ),
+                          BuildSkillsWidget(skills: skills),
                         ],
                       ),
                     ),

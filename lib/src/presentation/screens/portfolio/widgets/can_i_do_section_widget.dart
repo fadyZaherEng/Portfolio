@@ -3,13 +3,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
-import 'package:visibility_detector/visibility_detector.dart';
-import 'package:flutter/material.dart';
 
 class WhatCanIDoSectionWidget extends StatefulWidget {
   final bool isVisible;
 
-  const WhatCanIDoSectionWidget({super.key, required this.isVisible});
+  const WhatCanIDoSectionWidget({
+    super.key,
+    required this.isVisible,
+  });
 
   @override
   _WhatCanIDoSectionWidgetState createState() =>
@@ -22,7 +23,6 @@ class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
   late List<Animation<double>> _fadeAnimations;
   late List<Animation<Offset>> _slideAnimations;
 
-  // Animation Controllers for Numbers
   late AnimationController _androidController;
   late AnimationController _iosController;
   late AnimationController _webController;
@@ -30,8 +30,6 @@ class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
   late Animation<int> _androidAnimation;
   late Animation<int> _iosAnimation;
   late Animation<int> _webAnimation;
-
-  bool _hasAnimatedNumbers = false;
 
   @override
   void dispose() {
@@ -105,9 +103,7 @@ class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
 
   void _startAnimations() async {
     setState(() {});
-    // await Future.delayed(const Duration(seconds: 1));
     if (!mounted) {
-      //dispose
       _controller.dispose();
       _androidController.dispose();
       _iosController.dispose();
@@ -121,18 +117,12 @@ class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
       _androidController.forward();
       _iosController.forward();
       _webController.forward();
-      setState(() {
-        _hasAnimatedNumbers = true;
-      });
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    // init();
-    // if (!_hasAnimatedNumbers) {
     _startAnimations();
-    // }
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -141,7 +131,7 @@ class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
         FadeTransition(
           opacity: _fadeAnimations[0],
           child: Text(
-            S.of(context).WhatCanIDo, // Replace with localization if needed
+            S.of(context).WhatCanIDo,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   color: ColorSchemes.iconDarkWhite,
                   fontWeight: FontWeight.bold,
@@ -149,54 +139,29 @@ class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
           ),
         ),
         const SizedBox(height: 20),
-        MediaQuery.of(context).size.width > 200
-            ? Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  _buildAnimatedSkillCard(
-                    0,
-                    _androidAnimation,
-                    ImagePaths.android,
-                    S.of(context).androidApp,
-                  ),
-                  _buildAnimatedSkillCard(
-                    1,
-                    _iosAnimation,
-                    ImagePaths.apple,
-                    S.of(context).iosApp,
-                  ),
-                  _buildAnimatedSkillCard(
-                    2,
-                    _webAnimation,
-                    ImagePaths.web,
-                    S.of(context).webApp,
-                  ),
-                ],
-              )
-            : Column(
-                children: [
-                  _buildAnimatedSkillCard(
-                    0,
-                    _androidAnimation,
-                    ImagePaths.android,
-                    S.of(context).androidApp,
-                  ),
-                  const SizedBox(height: 10),
-                  _buildAnimatedSkillCard(
-                    1,
-                    _iosAnimation,
-                    ImagePaths.apple,
-                    S.of(context).iosApp,
-                  ),
-                  const SizedBox(height: 10),
-                  _buildAnimatedSkillCard(
-                    2,
-                    _webAnimation,
-                    ImagePaths.web,
-                    S.of(context).webApp,
-                  ),
-                ],
-              ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            _buildAnimatedSkillCard(
+              0,
+              _androidAnimation,
+              ImagePaths.android,
+              S.of(context).androidApp,
+            ),
+            _buildAnimatedSkillCard(
+              1,
+              _iosAnimation,
+              ImagePaths.apple,
+              S.of(context).iosApp,
+            ),
+            _buildAnimatedSkillCard(
+              2,
+              _webAnimation,
+              ImagePaths.web,
+              S.of(context).webApp,
+            ),
+          ],
+        )
       ],
     );
   }
@@ -211,7 +176,7 @@ class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
       position: _slideAnimations[index],
       child: FadeTransition(
         opacity: _fadeAnimations[index],
-        child: SkillCardWidget(
+        child: _buildSkilledCardWidget(
           iconPath: iconPath,
           label: label,
           number: numberAnimation.value,
@@ -219,24 +184,13 @@ class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
       ),
     );
   }
-}
 
-class SkillCardWidget extends StatelessWidget {
-  final String iconPath;
-  final String label;
-  final bool isApple;
-  final int number;
-
-  const SkillCardWidget({
-    super.key,
-    required this.iconPath,
-    required this.label,
-    required this.number,
-    this.isApple = false,
-  });
-
-  @override
-  Widget build(BuildContext context) {
+  Widget _buildSkilledCardWidget({
+    required String iconPath,
+    required String label,
+    required int number,
+    bool isApple = false,
+  }) {
     return Column(
       children: [
         Container(

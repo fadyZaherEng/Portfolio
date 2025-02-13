@@ -39,16 +39,9 @@ class _AnimatedTextWidgetState extends State<AnimatedTextWidget>
 
   void _onVisibilityChanged(VisibilityInfo info) {
     if (info.visibleFraction > 0.2 && !isVisible) {
-      // يظهر إذا كان 30% منه مرئيًا
       setState(() => isVisible = true);
       _controller.forward();
     }
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
   }
 
   @override
@@ -60,7 +53,7 @@ class _AnimatedTextWidgetState extends State<AnimatedTextWidget>
         opacity: _fadeAnimation,
         child: Text(
           widget.text,
-          textAlign:widget.textAlign?? TextAlign.start,
+          textAlign: widget.textAlign ?? TextAlign.start,
           style: widget.style ??
               Theme.of(context).textTheme.bodyLarge?.copyWith(
                     fontSize: 14,
@@ -72,5 +65,11 @@ class _AnimatedTextWidgetState extends State<AnimatedTextWidget>
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
   }
 }
