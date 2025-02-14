@@ -265,6 +265,6 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تطوير الويب"),
         "welcomeMessage": MessageLookupByLibrary.simpleMessage(
             "مرحبًا، أهلا بك في ملفي الشخصي!"),
-        "youTube": MessageLookupByLibrary.simpleMessage("يوتيوب")
+        "youtube": MessageLookupByLibrary.simpleMessage("يوتيوب")
       };
 }

@@ -1613,10 +1613,10 @@ class S {
   }
 
   /// `YouTube`
-  String get youTube {
+  String get youtube {
     return Intl.message(
       'YouTube',
-      name: 'youTube',
+      name: 'youtube',
       desc: '',
       args: [],
     );
