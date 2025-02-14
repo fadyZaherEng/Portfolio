@@ -31,7 +31,7 @@ class _ContactMeHoverButtonWidgetState
             onOpenWhatsappFailed: () {
               showSnackBar(
                 context: context,
-                message: "Failed To Launch WhatsApp",
+                message: S.of(context).failedToLaunchWhatsApp,
                 color: ColorSchemes.snackBarWarning,
               );
             },
