@@ -99,6 +99,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "experience": MessageLookupByLibrary.simpleMessage("الخبرة"),
         "exploreMyProjects": MessageLookupByLibrary.simpleMessage(
             "استكشف مشاريعي التي تُبرز مهاراتي وخبرتي في تطوير Flutter، حيث قمت بتقديم تطبيقات مبتكرة وسهلة الاستخدام تلبي أعلى معايير الأداء وتجربة المستخدم."),
+        "facebook": MessageLookupByLibrary.simpleMessage("فيسبوك"),
         "failedToLaunchWhatsApp":
             MessageLookupByLibrary.simpleMessage("فشل في تشغيل WhatsApp"),
         "feelFreeToContactMe": MessageLookupByLibrary.simpleMessage(
@@ -153,6 +154,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "kotlin": MessageLookupByLibrary.simpleMessage("كوتلن"),
         "letsCreateSomethingAmazing":
             MessageLookupByLibrary.simpleMessage("ابدا بانشاء شيء جميل"),
+        "linkedin": MessageLookupByLibrary.simpleMessage("لينكدان"),
         "localDataStorageAndOfflineSupportDescription":
             MessageLookupByLibrary.simpleMessage(
                 "تنفيذ تخزين البيانات محليًا وتوفير دعم للعمل دون اتصال في التطبيق."),
@@ -262,6 +264,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "webDevelopmentTitle":
             MessageLookupByLibrary.simpleMessage("تطوير الويب"),
         "welcomeMessage": MessageLookupByLibrary.simpleMessage(
-            "مرحبًا، أهلا بك في ملفي الشخصي!")
+            "مرحبًا، أهلا بك في ملفي الشخصي!"),
+        "youTube": MessageLookupByLibrary.simpleMessage("يوتيوب")
       };
 }

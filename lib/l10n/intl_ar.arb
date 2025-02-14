@@ -148,11 +148,13 @@
   "universityDegree": "مشروع تخرجي ممتاز || جيد جدا (3.3 GPA) || نتيجة جمعية",
   "ainShamsUniversity": "جامعة عين شمس",
   "letsCreateSomethingAmazing": "ابدا بانشاء شيء جميل",
-   "feelFreeToContactMe": "يمكنك معرفة المزيد عني والتواصل معي عبر الرابط التالي",
+  "feelFreeToContactMe": "يمكنك معرفة المزيد عني والتواصل معي عبر الرابط التالي",
   "contactMe": "اتصل بي",
   "training": "تدريب",
-  "createdBy" :
-  " جميع الحقوق محفوظة | صنع بواسطة فادى زاهر © 2025 \uD83D\uDC9C",
+  "createdBy": " جميع الحقوق محفوظة | صنع بواسطة فادى زاهر © 2025 \uD83D\uDC9C",
   "viewResume": "عرض السيرة الذاتية",
-  "failedToLaunchWhatsApp": "فشل في تشغيل WhatsApp"
+  "failedToLaunchWhatsApp": "فشل في تشغيل WhatsApp",
+  "facebook": "فيسبوك",
+  "linkedin": "لينكدان",
+  "youTube": "يوتيوب"
 }

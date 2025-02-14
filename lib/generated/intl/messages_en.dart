@@ -97,6 +97,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "experience": MessageLookupByLibrary.simpleMessage("Experience"),
         "exploreMyProjects": MessageLookupByLibrary.simpleMessage(
             "Explore My Projects that showcase my skills and expertise in Flutter development.where I have successfully delivered innovative and user-friendly apps that meet the highest standards of performance and user experience."),
+        "facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
         "failedToLaunchWhatsApp":
             MessageLookupByLibrary.simpleMessage("Failed to launch WhatsApp"),
         "feelFreeToContactMe": MessageLookupByLibrary.simpleMessage(
@@ -151,6 +152,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "kotlin": MessageLookupByLibrary.simpleMessage("Kotlin"),
         "letsCreateSomethingAmazing": MessageLookupByLibrary.simpleMessage(
             "Let\'s Create Something Amazing Together!"),
+        "linkedin": MessageLookupByLibrary.simpleMessage("Linkedin"),
         "localDataStorageAndOfflineSupportDescription":
             MessageLookupByLibrary.simpleMessage(
                 "Implement local data storage and provide offline support for your app."),
@@ -263,6 +265,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "webDevelopmentTitle":
             MessageLookupByLibrary.simpleMessage("Web Development"),
         "welcomeMessage": MessageLookupByLibrary.simpleMessage(
-            "Hello, Welcome to My Portfolio")
+            "Hello, Welcome to My Portfolio"),
+        "youTube": MessageLookupByLibrary.simpleMessage("YouTube")
       };
 }

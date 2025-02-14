@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dedcb7a5-d8be-49f1-b5b6-f89701701070" name="Changes" comment="" />
+    <list default="true" id="dedcb7a5-d8be-49f1-b5b6-f89701701070" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/lib/l10n/intl_ar.arb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/l10n/intl_ar.arb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/l10n/intl_en.arb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/l10n/intl_en.arb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/about_me_content_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/about_me_content_widget.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

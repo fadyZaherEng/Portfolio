@@ -1591,6 +1591,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Facebook`
+  String get facebook {
+    return Intl.message(
+      'Facebook',
+      name: 'facebook',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Linkedin`
+  String get linkedin {
+    return Intl.message(
+      'Linkedin',
+      name: 'linkedin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `YouTube`
+  String get youTube {
+    return Intl.message(
+      'YouTube',
+      name: 'youTube',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

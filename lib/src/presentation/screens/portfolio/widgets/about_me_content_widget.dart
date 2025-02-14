@@ -199,18 +199,18 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
       direction: Axis.horizontal,
       children: [
         _buildAnimatedItem(
-          const CustomSocialButtonWidget(
+            CustomSocialButtonWidget(
             icon: ImagePaths.facebook,
             url: "https://facebook.com",
-            title: "Facebook",
+            title: S.of(context).facebook,
           ),
           9,
         ),
         _buildAnimatedItem(
-          const CustomSocialButtonWidget(
+            CustomSocialButtonWidget(
             icon: ImagePaths.linkedin,
             url: "https://www.linkedin.com/in/fadyzaher",
-            title: "LinkedIn",
+            title: S.of(context).linkedin,
           ),
           10,
         ),
@@ -224,10 +224,10 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
           11,
         ),
         _buildAnimatedItem(
-          const CustomSocialButtonWidget(
+            CustomSocialButtonWidget(
             icon: ImagePaths.youtube,
             url: "https://youtube.com/@fadyzaher2980",
-            title: "YouTube",
+            title: S.of(context).youtube,
           ),
           12,
         ),
