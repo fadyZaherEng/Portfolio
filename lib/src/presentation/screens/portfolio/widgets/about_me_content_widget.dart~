@@ -177,9 +177,7 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
                     fontSize: 16,
                     decoration:
                         isLink ? TextDecoration.underline : TextDecoration.none,
-                    decorationColor:GetThemeUseCase(injector())() == Constants.dark
-                        ? const Color(0xFF9f695a)
-                        :  ColorSchemes.black,
+                    decorationColor: ColorSchemes.black,
                     decorationThickness: 2,
                   ),
             ),

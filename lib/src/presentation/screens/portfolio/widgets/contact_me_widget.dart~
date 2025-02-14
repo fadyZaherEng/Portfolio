@@ -99,7 +99,7 @@ class ContactMeWidget extends StatelessWidget {
                           onOpenWhatsappFailed: () {
                             showSnackBar(
                               context: context,
-                              message: S.of(context).failedToLaunchWhatsApp,
+                              message: "Failed To Launch WhatsApp",
                               color: ColorSchemes.snackBarWarning,
                             );
                           },

@@ -8,7 +8,7 @@ import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/about_se
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_resume_widget.dart';
 
 class HeaderProfileSectionWidget extends StatefulWidget {
-  final VoidCallback onViewResumeTap;
+  final void Function() onViewResumeTap;
   final bool isDarkMode;
 
   const HeaderProfileSectionWidget({

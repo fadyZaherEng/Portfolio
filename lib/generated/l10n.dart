@@ -1581,6 +1581,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Failed to launch WhatsApp`
+  String get failedToLaunchWhatsApp {
+    return Intl.message(
+      'Failed to launch WhatsApp',
+      name: 'failedToLaunchWhatsApp',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

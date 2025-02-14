@@ -34,7 +34,7 @@ class _TimelineCareerWidgetState extends State<TimelineCareerWidget>
       duration: const Duration(milliseconds: 100),
       vsync: this,
     );
-    _opacityAnimation = Tween<double>(begin: 0.8, end: 1.0).animate(
+    _opacityAnimation = Tween<double>(begin: 0.8, end: 1).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeIn),
     );
     // Trigger the animation after a delay to make it feel like the event is appearing
@@ -84,7 +84,7 @@ class _TimelineCareerWidgetState extends State<TimelineCareerWidget>
         const SizedBox(width: 16),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,

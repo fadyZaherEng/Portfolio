@@ -4,6 +4,7 @@ import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/bounce_and_scale_text_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/my_chapters_career_widget.dart';
 
 class AnimatedAboutMeWidget extends StatefulWidget {
   final void Function() onTap;
@@ -35,10 +36,7 @@ class _AnimatedAboutMeWidgetState extends State<AnimatedAboutMeWidget>
     );
 
     _scaleAnimation = Tween<double>(begin: 1.0, end: 1.1).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: Curves.easeOut,
-      ),
+      CurvedAnimation(parent: _controller, curve: Curves.easeOut),
     );
 
     _slideAnimation = Tween<Offset>(

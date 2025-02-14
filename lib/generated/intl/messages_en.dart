@@ -97,6 +97,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "experience": MessageLookupByLibrary.simpleMessage("Experience"),
         "exploreMyProjects": MessageLookupByLibrary.simpleMessage(
             "Explore My Projects that showcase my skills and expertise in Flutter development.where I have successfully delivered innovative and user-friendly apps that meet the highest standards of performance and user experience."),
+        "failedToLaunchWhatsApp":
+            MessageLookupByLibrary.simpleMessage("Failed to launch WhatsApp"),
         "feelFreeToContactMe": MessageLookupByLibrary.simpleMessage(
             "Feel free to reach out if you\'d like to discuss a project, a job opportunity, or simply want to connect."),
         "firebase": MessageLookupByLibrary.simpleMessage("Firebase"),

@@ -33,6 +33,7 @@ class _SkillsScreenState extends State<SkillsScreen> {
   final ScrollController _scrollController = ScrollController();
 
   PortfolioBloc get _bloc => BlocProvider.of<PortfolioBloc>(context);
+  Map<String, double> skills = {};
 
   @override
   void initState() {
@@ -45,6 +46,7 @@ class _SkillsScreenState extends State<SkillsScreen> {
             _scrollController.position.maxScrollExtent;
       });
     });
+    _dummySkills();
   }
 
   @override
@@ -139,7 +141,7 @@ class _SkillsScreenState extends State<SkillsScreen> {
                             ),
                           ),
                           const SizedBox(height: 10),
-                          BuildSkillsWidget(),
+                          BuildSkillsWidget(skills: skills),
                         ],
                       ),
                     ),
@@ -162,5 +164,42 @@ class _SkillsScreenState extends State<SkillsScreen> {
         );
       },
     );
+  }
+
+  void _dummySkills() {
+    skills = {
+      "Flutter": 0.9,
+      "Database & Data Structures": 0.9,
+      "OOP & Problem Solving": 0.9,
+      "Design Patterns & SOLID Principles": 0.85,
+      "Algorithms": 0.85,
+      "C Plus Plus": 0.9,
+      "Dart": 0.9,
+      "C Sharp": 0.85,
+      "Java": 0.85,
+      "Python": 0.75,
+      "Kotlin": 0.75,
+      "SQL / MySQL": 0.75,
+      "Operating Systems": 0.8,
+      "Computer Architecture": 0.8,
+      "Data Mining & Big Data": 0.7,
+      "Machine Learning (Basic)": 0.6,
+      "Deep Learning (Basic)": 0.6,
+      "Software Engineering": 0.8,
+      "Security  ": 0.75,
+      "Agile Development": 0.8,
+      "Postman & Mock Lab": 0.75,
+      "SEO Knowledge": 0.65,
+      "Version Control  ": 0.85,
+      "Jira  ": 0.75,
+      "Firebase": 0.85,
+      "API Integration": 0.85,
+      "State Management  ": 0.85,
+      "Push Notifications  ": 0.8,
+      "Asynchronous Programming  ": 0.85,
+      "UI / UX Design": 0.8,
+      "Custom UI  ": 0.8,
+      "Dynamic & Reusable Widgets": 0.85,
+    };
   }
 }

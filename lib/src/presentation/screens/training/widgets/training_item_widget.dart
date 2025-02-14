@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
+import 'package:my_portfolio/src/core/utils/constants.dart';
 import 'package:my_portfolio/src/core/utils/openLink.dart';
-import 'package:my_portfolio/src/presentation/screens/training/training_screen.dart';
 
 class TrainingItemWidget extends StatefulWidget {
   final Training training;
   final int index;
 
-  const TrainingItemWidget(
-      {Key? key, required this.training, required this.index})
-      : super(key: key);
+  const TrainingItemWidget({
+    Key? key,
+    required this.training,
+    required this.index,
+  }) : super(key: key);
 
   @override
   State<TrainingItemWidget> createState() => TrainingItemWidgetState();

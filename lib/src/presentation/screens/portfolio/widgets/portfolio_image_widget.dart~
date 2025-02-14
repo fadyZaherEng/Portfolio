@@ -23,7 +23,7 @@ class _PortfolioImageWidgetState extends State<PortfolioImageWidget>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 3),
-    )..forward();
+    )..forward(); // يبدأ بمجرد تحميل الصفحة
 
     _scaleAnimation = Tween<double>(begin: 0.5, end: 1.0).animate(
       CurvedAnimation(parent: _controller, curve: Curves.elasticOut),
@@ -60,7 +60,21 @@ class _PortfolioImageWidgetState extends State<PortfolioImageWidget>
                 height: MediaQuery.sizeOf(context).width > 850 ? 250 : 200,
                 width: MediaQuery.sizeOf(context).width > 850 ? 250 : 200,
                 alignment: AlignmentDirectional.topEnd,
-                child: _buildImageWidget(context),
+                // decoration: BoxDecoration(
+                //   shape: BoxShape.circle,
+                //   boxShadow: [
+                //     BoxShadow(
+                //       color: ColorSchemes.primary.withOpacity(0.3),
+                //       blurRadius: _glowAnimation.value,
+                //       spreadRadius: 10,
+                //     ),
+                //   ],
+                //   image: const DecorationImage(
+                //     fit: BoxFit.cover,
+                //     image: AssetImage(ImagePaths.fady), // استبدل بمسار صورتك
+                //   ),
+                // ),
+                child:_buildImageWidget(context),
               ),
             ),
           ),
@@ -69,11 +83,12 @@ class _PortfolioImageWidgetState extends State<PortfolioImageWidget>
     );
   }
 
-  Widget _buildImageWidget(BuildContext context) {
+Widget  _buildImageWidget(BuildContext context) {
     return Center(
       child: Stack(
         alignment: Alignment.center,
         children: [
+          // الدائرة العلوية (تكون فوق الصورة)
           Positioned(
             top: 15,
             child: CustomPaint(
@@ -107,6 +122,7 @@ class _PortfolioImageWidgetState extends State<PortfolioImageWidget>
     );
   }
 }
+
 
 class PulsingCircleWidget extends StatefulWidget {
   const PulsingCircleWidget({Key? key}) : super(key: key);
@@ -146,7 +162,7 @@ class _PulsingCircleWidgetState extends State<PulsingCircleWidget>
       animation: _scaleAnimation,
       builder: (context, child) {
         return Transform.scale(
-          scale: _scaleAnimation.value,
+          scale: _scaleAnimation.value, // ✅ التأثير هنا
           child: CustomPaint(
             painter: FullCirclePainter(
               ColorSchemes.primarySecondary.withOpacity(0.4),

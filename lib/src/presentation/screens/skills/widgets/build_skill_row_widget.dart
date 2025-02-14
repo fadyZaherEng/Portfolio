@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
+import 'package:my_portfolio/src/core/utils/constants.dart';
 
 class BuildSkillsWidget extends StatefulWidget {
-  final Map<String, double> skills;
-
-  const BuildSkillsWidget({
-    super.key,
-    required this.skills,
-  });
+  const BuildSkillsWidget({super.key});
 
   @override
   State<BuildSkillsWidget> createState() => _BuildSkillsWidgetState();
@@ -17,7 +13,7 @@ class _BuildSkillsWidgetState extends State<BuildSkillsWidget> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: widget.skills.entries.map(
+      children: Constants.skills.entries.map(
         (entry) {
           return TweenAnimationBuilder<double>(
               duration: const Duration(milliseconds: 800),

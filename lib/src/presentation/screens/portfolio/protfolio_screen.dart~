@@ -166,7 +166,6 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
                         isDarkMode: isDarkMode,
                         key: _headerKey,
                       ),
-                      const SizedBox(height: 10),
                       VisibilityDetector(
                         key: const Key("whatCanIDoKeys"),
                         onVisibilityChanged: (visibilityInfo) {

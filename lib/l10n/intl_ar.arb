@@ -153,5 +153,6 @@
   "training": "تدريب",
   "createdBy" :
   " جميع الحقوق محفوظة | صنع بواسطة فادى زاهر © 2025 \uD83D\uDC9C",
-  "viewResume": "عرض السيرة الذاتية"
+  "viewResume": "عرض السيرة الذاتية",
+  "failedToLaunchWhatsApp": "فشل في تشغيل WhatsApp"
 }
