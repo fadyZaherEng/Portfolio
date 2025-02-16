@@ -160,7 +160,7 @@ class ContactMeWidget extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsetsDirectional.only(
-            end: MediaQuery.sizeOf(context).width > 850 ? 22 : 45,
+            end: MediaQuery.sizeOf(context).width > 850 ? 22 : 30,
           ),
           child: Text(
             S.of(context).createdBy,

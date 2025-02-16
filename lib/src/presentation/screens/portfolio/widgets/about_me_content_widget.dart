@@ -163,7 +163,7 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
           Icon(
             icon,
             color: GetThemeUseCase(injector())() == Constants.dark
-                ? const Color(0xFF9f695a)
+                ? ColorSchemes.secondary
                 : ColorSchemes.white,
             size: 20,
           ),
@@ -178,7 +178,7 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
                     decoration:
                         isLink ? TextDecoration.underline : TextDecoration.none,
                     decorationColor:GetThemeUseCase(injector())() == Constants.dark
-                        ? const Color(0xFF9f695a)
+                        ? ColorSchemes.white
                         :  ColorSchemes.black,
                     decorationThickness: 2,
                   ),

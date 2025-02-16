@@ -4,7 +4,7 @@ import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/core/utils/constants.dart';
- import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/switch_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/switch_widget.dart';
 import 'package:skeletons/skeletons.dart';
 
 class EndDrawerWidget extends StatelessWidget {
@@ -18,6 +18,7 @@ class EndDrawerWidget extends StatelessWidget {
   final void Function() onDrawerPortfolioTap;
   final void Function() onDrawerContactTap;
   final void Function() onDrawerTrainingTap;
+  final void Function() onDrawerEducationTap;
   final void Function() onDrawerLogoTap;
 
   const EndDrawerWidget({
@@ -33,6 +34,7 @@ class EndDrawerWidget extends StatelessWidget {
     required this.onDrawerContactTap,
     required this.onDrawerLogoTap,
     required this.onDrawerTrainingTap,
+    required this.onDrawerEducationTap,
   });
 
   @override
@@ -90,6 +92,13 @@ class EndDrawerWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 15),
                 _buildMenuItem(
+                  icon: Icons.cast_for_education,
+                  label: S.of(context).education,
+                  onTap: onDrawerEducationTap,
+                  context: context,
+                ),
+                const SizedBox(height: 15),
+                _buildMenuItem(
                   icon: Icons.pages,
                   label: S.of(context).portfolio,
                   onTap: onDrawerPortfolioTap,
@@ -97,14 +106,14 @@ class EndDrawerWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 15),
                 _buildMenuItem(
-                  icon: Icons.contact_phone,
+                  icon: Icons.contact_support,
                   label: S.of(context).contact,
                   onTap: onDrawerContactTap,
                   context: context,
                 ),
                 const SizedBox(height: 15),
                 _buildMenuItem(
-                  icon: Icons.book,
+                  icon: Icons.model_training,
                   label: S.of(context).training,
                   onTap: onDrawerTrainingTap,
                   context: context,

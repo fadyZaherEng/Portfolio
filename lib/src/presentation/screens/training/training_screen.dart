@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/generated/l10n.dart';
@@ -126,12 +127,15 @@ class _TrainingScreenState extends State<TrainingScreen> {
                           ),
                         ),
                         const SizedBox(height: 10),
-                        Column(
-                          children: List.generate(
-                            trainings.length,
-                            (index) => TrainingItemWidget(
-                              training: trainings[index],
-                              index: index,
+                        Directionality(
+                          textDirection: TextDirection.ltr,
+                          child: Column(
+                            children: List.generate(
+                              trainings.length,
+                              (index) => TrainingItemWidget(
+                                training: trainings[index],
+                                index: index,
+                              ),
                             ),
                           ),
                         ),
@@ -140,12 +144,14 @@ class _TrainingScreenState extends State<TrainingScreen> {
                   ),
                   // Circular Percentage Indicator
                   Visibility(
-                    visible: _scrollPercentage > 0 && _scrollPercentage < 0.95,
+                    visible:
+                        _scrollPercentage > 0 && _scrollPercentage < 0.95,
                     child: Padding(
                       padding: const EdgeInsets.all(15),
                       child: CustomPaint(
                         size: const Size(30, 30),
-                        painter: CircularPainter(percentage: _scrollPercentage),
+                        painter:
+                            CircularPainter(percentage: _scrollPercentage),
                       ),
                     ),
                   ),

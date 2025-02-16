@@ -113,12 +113,12 @@ class _AnimatedAboutMeWidgetState extends State<AnimatedAboutMeWidget>
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
-                                ColorSchemes.secondary.withOpacity(0.7),
+                                ColorSchemes.secondary,
                                 ColorSchemes.iconBackGround,
-                                ColorSchemes.primary.withOpacity(0.7),
+                                ColorSchemes.primary,
                               ],
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
                             ),
                             shape: BoxShape.circle,
                             color: ColorSchemes.primarySecondary,

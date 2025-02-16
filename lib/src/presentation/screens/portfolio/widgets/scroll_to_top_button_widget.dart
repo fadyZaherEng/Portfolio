@@ -51,12 +51,12 @@ class _ScrollToTopButtonWidgetState extends State<ScrollToTopButtonWidget>
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              ColorSchemes.secondary,
+              ColorSchemes.secondary.withOpacity(0.8),
               ColorSchemes.iconBackGround,
-              ColorSchemes.primary,
+              ColorSchemes.primary.withOpacity(0.8),
             ],
             begin: Alignment.topCenter,
-            end: Alignment.bottomRight,
+            end: Alignment.bottomCenter,
           ),
           shape: BoxShape.circle,
           color: ColorSchemes.primarySecondary,

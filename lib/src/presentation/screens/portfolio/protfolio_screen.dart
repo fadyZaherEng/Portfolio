@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -41,6 +40,7 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
   final GlobalKey _headerKey = GlobalKey();
   final GlobalKey _whatCanIDoKey = GlobalKey();
   final GlobalKey _myChaptersKey = GlobalKey();
+  final GlobalKey _myEducationsKey = GlobalKey();
   final GlobalKey _projectsKey = GlobalKey();
   final GlobalKey _offerKey = GlobalKey();
   final GlobalKey _contactKey = GlobalKey();
@@ -92,21 +92,25 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
               RestartWidget.restartApp(context);
               html.window.location.reload();
             },
-            onDrawerAboutTap: () {
-              scrollToKey(_headerKey);
+            onDrawerEducationTap: () {
               Navigator.pop(context);
+              scrollToKey(_myEducationsKey);
+            },
+            onDrawerAboutTap: () {
+              Navigator.pop(context);
+              scrollToKey(_headerKey);
             },
             onDrawerHomeTap: () {
-              scrollToKey(_headerKey);
               Navigator.pop(context);
+              scrollToKey(_headerKey);
             },
             onDrawerContactTap: () {
-              scrollToKey(_contactKey);
               Navigator.pop(context);
+              scrollToKey(_contactKey);
             },
             onDrawerExperienceTap: () {
-              scrollToKey(_myChaptersKey);
               Navigator.pop(context);
+              scrollToKey(_myChaptersKey);
             },
             onDrawerSkillsTap: () {
               context.go(
@@ -184,7 +188,10 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
                       ),
                       const SizedBox(height: 10),
                       OfferWidget(key: _offerKey),
-                      MyChaptersWidget(key: _myChaptersKey),
+                      MyChaptersWidget(
+                        key: _myChaptersKey,
+                        myEducationsKey: _myEducationsKey,
+                      ),
                       const SizedBox(height: 10),
                       ProjectsWidgets(key: _projectsKey),
                       ContactMeWidget(key: _contactKey),

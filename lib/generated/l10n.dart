@@ -1342,10 +1342,10 @@ class S {
     );
   }
 
-  /// `+ 2 Years Experience As A`
+  /// `‎‎+ 2 Years Experience As A`
   String get moreThanYearsExperienceAsA {
     return Intl.message(
-      '+ 2 Years Experience As A',
+      '‎‎+ 2 Years Experience As A',
       name: 'moreThanYearsExperienceAsA',
       desc: '',
       args: [],
@@ -1462,10 +1462,10 @@ class S {
     );
   }
 
-  /// `I’m Mid Level Software Engineer, passionate about mobile development with + 2 Years of Experience, looking for work as Flutter Software Engineer to gain real experience and assist the organization to achieve their goals`
+  /// `I’m Mid Level Software Engineer, passionate about mobile development with ‎+ 2 Years of Experience, looking for work as Flutter Software Engineer to gain real experience and assist the organization to achieve their goals`
   String get aboutMeDescription {
     return Intl.message(
-      'I’m Mid Level Software Engineer, passionate about mobile development with + 2 Years of Experience, looking for work as Flutter Software Engineer to gain real experience and assist the organization to achieve their goals',
+      'I’m Mid Level Software Engineer, passionate about mobile development with ‎+ 2 Years of Experience, looking for work as Flutter Software Engineer to gain real experience and assist the organization to achieve their goals',
       name: 'aboutMeDescription',
       desc: '',
       args: [],

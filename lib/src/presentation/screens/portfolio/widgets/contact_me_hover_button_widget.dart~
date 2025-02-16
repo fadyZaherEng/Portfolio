@@ -44,8 +44,8 @@ class _ContactMeHoverButtonWidgetState
             gradient: LinearGradient(
               colors: [
                 ColorSchemes.secondary.withOpacity(0.7),
-                ColorSchemes.iconBackGround,
                 ColorSchemes.primary.withOpacity(0.7),
+                ColorSchemes.iconBackGround,
               ],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,

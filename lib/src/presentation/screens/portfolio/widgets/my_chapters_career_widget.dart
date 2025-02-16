@@ -8,7 +8,12 @@ import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/time_lin
 import 'package:visibility_detector/visibility_detector.dart';
 
 class MyChaptersWidget extends StatefulWidget {
-  const MyChaptersWidget({super.key});
+  final GlobalKey myEducationsKey;
+
+  const MyChaptersWidget({
+    super.key,
+    required this.myEducationsKey,
+  });
 
   @override
   State<MyChaptersWidget> createState() => _MyChaptersWidgetState();
@@ -58,7 +63,6 @@ class _MyChaptersWidgetState extends State<MyChaptersWidget>
     );
   }
 
-
   void _startAnimation() {
     if (!_isAnimated) {
       _controller.forward();
@@ -102,6 +106,7 @@ class _MyChaptersWidgetState extends State<MyChaptersWidget>
                     const SizedBox(height: 30),
                     SizedBox(
                       width: double.infinity,
+                      key: widget.myEducationsKey,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 30),
                         child: AnimatedTextWidget(
@@ -134,6 +139,7 @@ class _MyChaptersWidgetState extends State<MyChaptersWidget>
                     ),
                     const SizedBox(height: 20),
                     Row(
+                      key: widget.key,
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
@@ -156,6 +162,7 @@ class _MyChaptersWidgetState extends State<MyChaptersWidget>
                     const SizedBox(height: 15),
                     SizedBox(
                       width: MediaQuery.sizeOf(context).width,
+                      height: 40,
                       child: _buildTitleShaderMask(context),
                     ),
                   ],

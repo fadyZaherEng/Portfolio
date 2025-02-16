@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/generated/l10n.dart';
@@ -139,7 +140,10 @@ class _SkillsScreenState extends State<SkillsScreen> {
                             ),
                           ),
                           const SizedBox(height: 10),
-                          BuildSkillsWidget(),
+                          const Directionality(
+                            textDirection: TextDirection.ltr,
+                            child: BuildSkillsWidget(),
+                          ),
                         ],
                       ),
                     ),

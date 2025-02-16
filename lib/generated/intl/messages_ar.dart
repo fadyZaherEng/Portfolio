@@ -28,7 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("ماذا يمكنني ان افعل؟"),
         "aboutMe": MessageLookupByLibrary.simpleMessage("حولي"),
         "aboutMeDescription": MessageLookupByLibrary.simpleMessage(
-            " أنا مهندس برمجيات متوسط المستوى، شغوف بتطوير تطبيقات الهاتف المحمول مع + 2 سنوات من الخبرة، أبحث عن عمل كمهندس برمجيات Flutter لاكتساب خبرة حقيقية والمساهمة في تحقيق أهداف المؤسسة."),
+            " أنا مهندس برمجيات متوسط المستوى، شغوف بتطوير تطبيقات الهاتف المحمول مع  2 + سنوات من الخبرة، أبحث عن عمل كمهندس برمجيات Flutter لاكتساب خبرة حقيقية والمساهمة في تحقيق أهداف المؤسسة."),
         "adaptive": MessageLookupByLibrary.simpleMessage("تكيفي"),
         "adaptiveUI":
             MessageLookupByLibrary.simpleMessage("واجهة مستخدم تكيفية"),
@@ -110,8 +110,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "flutter": MessageLookupByLibrary.simpleMessage("فلاتر"),
         "flutterDescription": MessageLookupByLibrary.simpleMessage(
             "شغوف ببناء تطبيقات متجاوبة وقابلة للتوسع عبر الأنظمة الأساسية."),
-        "flutterDeveloper": MessageLookupByLibrary.simpleMessage(
-            " تطوير تطبيقات الهواتف المحمولة"),
+        "flutterDeveloper":
+            MessageLookupByLibrary.simpleMessage("مطور Flutter"),
         "flutterLocalNotificationsPlugin": MessageLookupByLibrary.simpleMessage(
             "إضافة الإشعارات المحلية لفلاتر"),
         "flutterNotification":
@@ -180,7 +180,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "مهندس برمجيات هاتف محمول مستقل"),
         "mockito": MessageLookupByLibrary.simpleMessage("موكيتو"),
         "moreThanYearsExperienceAsA":
-            MessageLookupByLibrary.simpleMessage("مع خبرة + 2 سنة في"),
+            MessageLookupByLibrary.simpleMessage("مع خبرة 2 + سنة في"),
         "myChapter":
             MessageLookupByLibrary.simpleMessage("فصول من مسيرتي المهنية"),
         "myProjects": MessageLookupByLibrary.simpleMessage("مشاريعي"),
@@ -200,7 +200,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تحسين الأداء"),
         "performanceTesting":
             MessageLookupByLibrary.simpleMessage("اختبار الأداء"),
-        "portfolio": MessageLookupByLibrary.simpleMessage("ملف العمل"),
+        "portfolio": MessageLookupByLibrary.simpleMessage("مشاريعي"),
         "problemSolving": MessageLookupByLibrary.simpleMessage("حل المشكلات"),
         "provider": MessageLookupByLibrary.simpleMessage("بروفايدر"),
         "pushNotificationsDescription": MessageLookupByLibrary.simpleMessage(
