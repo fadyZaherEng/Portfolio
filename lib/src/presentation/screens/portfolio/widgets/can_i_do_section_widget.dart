@@ -40,7 +40,7 @@ class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
     super.dispose();
   }
 
-  final int _numberSecondForHundredPercentage = 50;
+  final int _numberSecondForHundredPercentage = 25;
 
   int getPercentage(int number) {
     return ((number / 100) * _numberSecondForHundredPercentage + 1).toInt();
