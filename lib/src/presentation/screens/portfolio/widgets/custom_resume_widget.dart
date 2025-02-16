@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/generated/l10n.dart';
-import 'package:my_portfolio/src/config/theme/color_schemes.dart';
-import 'package:my_portfolio/src/core/utils/constants.dart';
 
 class CustomResumeWidget extends StatefulWidget {
   final void Function() onViewResumeTap;
   final bool isDarkMode;
-  final Color textColor;
   final Color borderColor;
+  final Color textColor;
 
   const CustomResumeWidget({
     Key? key,
     required this.onViewResumeTap,
     required this.isDarkMode,
-    required this.textColor,
     required this.borderColor,
+    required this.textColor,
   }) : super(key: key);
 
   @override
@@ -24,32 +22,21 @@ class CustomResumeWidget extends StatefulWidget {
 class _CustomResumeWidgetState extends State<CustomResumeWidget>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  late Animation<double> _fadeAnimation;
   late Animation<double> _scaleAnimation;
+  late Animation<double> _fadeAnimation;
+  bool _isHovered = false;
 
   @override
   void initState() {
     super.initState();
-
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 250),
+      lowerBound: 1.0,
+      upperBound: 1.5,
     );
-
-    _fadeAnimation = CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeIn,
-    );
-    _scaleAnimation = Tween<double>(begin: 0.9, end: 1.0).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: Curves.elasticOut,
-      ),
-    );
-
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      _controller.forward();
-    });
+    _scaleAnimation = _controller.drive(Tween(begin: 1.0, end: 1.5));
+    _fadeAnimation = _controller.drive(Tween(begin: 0.7, end: 0.9));
   }
 
   @override
@@ -60,42 +47,52 @@ class _CustomResumeWidgetState extends State<CustomResumeWidget>
 
   @override
   Widget build(BuildContext context) {
-    return FadeTransition(
-      opacity: _fadeAnimation,
-      child: ScaleTransition(
-        scale: _scaleAnimation,
-        child: ElevatedButton(
-          onPressed: () {
-            _controller.reverse().then((_) {
+    return MouseRegion(
+      onEnter: (_) {
+        setState(() {
+          _isHovered = true;
+          _controller.forward();
+        });
+      },
+      onExit: (_) {
+        setState(() {
+          _isHovered = false;
+          _controller.reverse();
+        });
+      },
+      child: FadeTransition(
+        opacity: _fadeAnimation,
+        child: ScaleTransition(
+          scale: _scaleAnimation,
+          child: ElevatedButton(
+            onPressed: () {
+              _controller.reverse().then((_) {
                 _controller.forward();
                 widget.onViewResumeTap();
-              },
-            );
-          },
-          style: ElevatedButton.styleFrom(
-            backgroundColor:
-                widget.isDarkMode ? Colors.transparent : ColorSchemes.white,
-            padding: const EdgeInsets.symmetric(
-              horizontal: 16,
-              vertical: 16,
-            ),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(24),
-              side: BorderSide(
-                color: widget.borderColor,
-                width: 2,
-              ),
-            ),
-            shadowColor: ColorSchemes.black,
-            elevation: 5,
-          ),
-          child: Text(
-            S.of(context).viewResume,
-            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: widget.textColor,
-                  fontSize: 15,
-                  fontWeight: Constants.fontWeightBold,
+              });
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor:
+                  widget.isDarkMode ? Colors.transparent : Colors.white,
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(24),
+                side: BorderSide(
+                  color: widget.borderColor,
+                  width: 2,
                 ),
+              ),
+              shadowColor: Colors.black,
+              elevation: _isHovered ? 10 : 5,
+            ),
+            child: Text(
+              S.of(context).viewResume,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                    color: widget.textColor,
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
           ),
         ),
       ),

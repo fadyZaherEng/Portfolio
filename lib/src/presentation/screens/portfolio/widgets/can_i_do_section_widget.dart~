@@ -40,6 +40,12 @@ class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
     super.dispose();
   }
 
+  final int _numberSecondForHundredPercentage = 50;
+
+  int getPercentage(int number) {
+    return ((number / 100) * _numberSecondForHundredPercentage + 1).toInt();
+  }
+
   @override
   void didUpdateWidget(covariant WhatCanIDoSectionWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
@@ -51,7 +57,7 @@ class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(seconds: 5),
+      duration: const Duration(seconds: 1),
     );
 
     _fadeAnimations = List.generate(3, (index) {
@@ -74,19 +80,19 @@ class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
     });
     // Initialize Number Animations
     _androidController = AnimationController(
-      duration: const Duration(seconds: 3),
+      duration: Duration(seconds: getPercentage(15)),
       vsync: this,
     )..addListener(() {
         setState(() {});
       });
     _iosController = AnimationController(
-      duration: const Duration(seconds: 2),
+      duration: Duration(seconds: getPercentage(12)),
       vsync: this,
     )..addListener(() {
         setState(() {});
       });
     _webController = AnimationController(
-      duration: const Duration(seconds: 1),
+      duration: Duration(seconds: getPercentage(8)),
       vsync: this,
     )..addListener(() {
         setState(() {});

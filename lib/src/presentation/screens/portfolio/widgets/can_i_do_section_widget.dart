@@ -57,7 +57,7 @@ class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: getPercentage(15)),
+      duration: const Duration(milliseconds: 700),
     );
 
     _fadeAnimations = List.generate(3, (index) {

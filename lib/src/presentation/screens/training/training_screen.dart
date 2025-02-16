@@ -103,16 +103,26 @@ class _TrainingScreenState extends State<TrainingScreen> {
                       children: [
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 16),
-                          child: BouncingAndScalingTextWidget(
-                            title: S.of(context).training,
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge
-                                ?.copyWith(
-                                  fontSize: 26,
-                                  fontWeight: FontWeight.bold,
-                                  color: ColorSchemes.iconDarkWhite,
-                                ),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.model_training_outlined,
+                                color: ColorSchemes.iconDarkWhite,
+                                size: 28,
+                              ),
+                              const SizedBox(width: 15),
+                              BouncingAndScalingTextWidget(
+                                title: S.of(context).training,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge
+                                    ?.copyWith(
+                                      fontSize: 26,
+                                      fontWeight: FontWeight.bold,
+                                      color: ColorSchemes.iconDarkWhite,
+                                    ),
+                              ),
+                            ],
                           ),
                         ),
                         const SizedBox(height: 10),

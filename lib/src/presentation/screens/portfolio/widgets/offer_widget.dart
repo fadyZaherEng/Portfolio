@@ -42,39 +42,34 @@ class _OfferWidgetState extends State<OfferWidget> {
             ),
           ),
           const SizedBox(height: 20),
-          Stack(
-            alignment: AlignmentDirectional.bottomCenter,
-            children: [
-              Container(
-                clipBehavior: Clip.none,
-                height: widget.height,
-                width: double.infinity,
-                child: CarouselSlider(
-                  items: offers.isEmpty
-                      ? [_buildPlaceHolderImage()]
-                      : offers.asMap().entries.map((entry) {
-                          return Wrap(
-                            children: [
-                              _buildServiceCards(context)[entry.key],
-                            ],
-                          );
-                        }).toList(),
-                  carouselController: _controller,
-                  options: CarouselOptions(
-                    viewportFraction:
-                        MediaQuery.of(context).size.width > 600 ? 0.26 : 0.46,
-                    autoPlay: true,
-                    enlargeCenterPage: true,
-                    scrollPhysics: const BouncingScrollPhysics(),
-                    enableInfiniteScroll: false,
-                    autoPlayInterval: const Duration(seconds: 5),
-                    disableCenter: true,
-                    aspectRatio: 2.0,
-                    onPageChanged: (index, reason) {},
-                  ),
-                ),
+          Container(
+            clipBehavior: Clip.none,
+            height: widget.height,
+            width: double.infinity,
+            child: CarouselSlider(
+              items: offers.isEmpty
+                  ? [_buildPlaceHolderImage()]
+                  : offers.asMap().entries.map((entry) {
+                      return Wrap(
+                        children: [
+                          _buildServiceCards(context)[entry.key],
+                        ],
+                      );
+                    }).toList(),
+              carouselController: _controller,
+              options: CarouselOptions(
+                viewportFraction:
+                    MediaQuery.of(context).size.width > 600 ? 0.26 : 0.46,
+                autoPlay: true,
+                // enlargeCenterPage: true,
+                scrollPhysics: const BouncingScrollPhysics(),
+                enableInfiniteScroll: false,
+                autoPlayInterval: const Duration(seconds: 4),
+                // disableCenter: true,
+                aspectRatio: 2.2,
+                onPageChanged: (index, reason) {},
               ),
-            ],
+            ),
           ),
         ],
       ),

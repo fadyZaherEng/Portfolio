@@ -27,7 +27,7 @@ class _MyChaptersWidgetState extends State<MyChaptersWidget>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 200),
+      duration: const Duration(milliseconds: 100),
     )..forward();
 
     _fadeAnimation = Tween<double>(begin: 0.8, end: 1).animate(
