@@ -85617,7 +85617,9 @@ A.asp.prototype={
 $0(){A.yq(new A.aso(this.a),"+201273826361")},
 $S:0}
 A.aso.prototype={
-$0(){A.aOl(B.nN,this.a,"Failed To Launch WhatsApp")},
+$0(){var s=this.a
+A.V(s,B.f,t._).toString
+A.aOl(B.nN,s,A.a0("Failed to launch WhatsApp",null,"failedToLaunchWhatsApp",A.a([],t.f),null))},
 $S:0}
 A.M1.prototype={
 G(a){var s,r,q,p,o,n,m,l,k,j,i,h=null,g="dark",f=t.l,e=A.aX(a,h,f).w.a.a>850?850:A.aX(a,h,f).w.a.a*0.9,d=t._
