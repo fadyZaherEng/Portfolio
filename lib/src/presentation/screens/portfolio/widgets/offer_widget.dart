@@ -64,7 +64,7 @@ class _OfferWidgetState extends State<OfferWidget> {
                 // enlargeCenterPage: true,
                 scrollPhysics: const BouncingScrollPhysics(),
                 enableInfiniteScroll: false,
-                autoPlayInterval: const Duration(seconds: 4),
+                autoPlayInterval: const Duration(seconds: 5),
                 // disableCenter: true,
                 aspectRatio: 2.2,
                 onPageChanged: (index, reason) {},

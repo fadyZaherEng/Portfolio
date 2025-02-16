@@ -66,7 +66,7 @@ class _OfferWidgetState extends State<OfferWidget> {
                 enableInfiniteScroll: false,
                 autoPlayInterval: const Duration(seconds: 4),
                 // disableCenter: true,
-                aspectRatio: 1.5,
+                aspectRatio: 2.2,
                 onPageChanged: (index, reason) {},
               ),
             ),
