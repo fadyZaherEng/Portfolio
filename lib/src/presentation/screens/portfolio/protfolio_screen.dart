@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -238,9 +239,7 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
   }
 
   void _openResume() async {
-    await Future.delayed(
-      const Duration(microseconds: 300),
-    );
+    await Future.delayed(const Duration(microseconds: 300));
     openLink(
       "https://drive.google.com/file/d/16UiIW2QpK9vzbG_gHXvgGTuWtzP5eWGD/view?usp=drivesdk",
     );

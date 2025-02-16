@@ -49,13 +49,15 @@ class _OfferWidgetState extends State<OfferWidget> {
             child: CarouselSlider(
               items: offers.isEmpty
                   ? [_buildPlaceHolderImage()]
-                  : offers.asMap().entries.map((entry) {
-                      return Wrap(
-                        children: [
-                          _buildServiceCards(context)[entry.key],
-                        ],
-                      );
-                    }).toList(),
+                  : offers.asMap().entries.map(
+                      (entry) {
+                        return Wrap(
+                          children: [
+                            _buildServiceCards(context)[entry.key],
+                          ],
+                        );
+                      },
+                    ).toList(),
               carouselController: _controller,
               options: CarouselOptions(
                 viewportFraction:
@@ -63,7 +65,7 @@ class _OfferWidgetState extends State<OfferWidget> {
                 autoPlay: true,
                 // enlargeCenterPage: true,
                 scrollPhysics: const BouncingScrollPhysics(),
-                enableInfiniteScroll: false,
+                enableInfiniteScroll: true,
                 autoPlayInterval: const Duration(seconds: 5),
                 // disableCenter: true,
                 aspectRatio: 2.2,
@@ -342,7 +344,8 @@ class _OfferWidgetState extends State<OfferWidget> {
         ),
         child: Padding(
           padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.sizeOf(context).width > 850 ? 10 : 4),
+            horizontal: MediaQuery.sizeOf(context).width > 850 ? 10 : 4,
+          ),
           child: Wrap(
             direction: Axis.horizontal,
             children: [

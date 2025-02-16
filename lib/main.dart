@@ -78,7 +78,6 @@ class _MyAppState extends State<MyApp> {
                     )
                   : MaterialApp(
                       themeMode: ThemeMode.light,
-
                       supportedLocales: S.delegate.supportedLocales,
                       localizationsDelegates: const [
                         S.delegate,
@@ -87,7 +86,7 @@ class _MyAppState extends State<MyApp> {
                         GlobalCupertinoLocalizations.delegate,
                       ],
                       debugShowCheckedModeBanner: false,
-                      title: "Fady Zaher Portfolio",
+                      title: "Fady Zaher",
                       theme: state is InitialMainState &&
                               state.theme == Constants.dark
                           ? AppTheme(state.locale.languageCode).dark

@@ -35,11 +35,11 @@ class _AnimatedColumnWidgetState extends State<AnimatedColumnWidget>
   void initState() {
     super.initState();
     _controller = AnimationController(
-      duration: const Duration(milliseconds: 800),
+      duration: const Duration(milliseconds: 500),
       vsync: this,
     );
 
-    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+    _fadeAnimation = Tween<double>(begin: 0.4, end: 1.0).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeIn),
     );
 
@@ -52,7 +52,7 @@ class _AnimatedColumnWidgetState extends State<AnimatedColumnWidget>
   }
 
   void _onVisibilityChanged(VisibilityInfo info) {
-    if (info.visibleFraction > 0.3 && !isVisible) {
+    if (info.visibleFraction > 0.4 && !isVisible) {
       // يظهر إذا كان 30% منه مرئيًا
       setState(() => isVisible = true);
       _controller.forward();
@@ -76,6 +76,7 @@ class _AnimatedColumnWidgetState extends State<AnimatedColumnWidget>
           opacity: _fadeAnimation,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _buildLogo(widget.logo, isSvg: widget.isSvg),
               const SizedBox(height: 5),
@@ -91,7 +92,10 @@ class _AnimatedColumnWidgetState extends State<AnimatedColumnWidget>
     );
   }
 
-  Widget _buildLogo(String logoAssetPath, {bool isSvg = true}) {
+  Widget _buildLogo(
+    String logoAssetPath, {
+    bool isSvg = true,
+  }) {
     return CircleAvatar(
       radius: 35,
       backgroundColor: Colors.transparent,
@@ -139,7 +143,10 @@ class _AnimatedColumnWidgetState extends State<AnimatedColumnWidget>
     );
   }
 
-  Widget _buildDescription(BuildContext context, String description) {
+  Widget _buildDescription(
+    BuildContext context,
+    String description,
+  ) {
     return Padding(
       padding: EdgeInsets.symmetric(
         horizontal: MediaQuery.of(context).size.width > 850 ? 50 : 20,
@@ -158,7 +165,10 @@ class _AnimatedColumnWidgetState extends State<AnimatedColumnWidget>
     );
   }
 
-  Widget _buildSkillsList(BuildContext context, List<String> skills) {
+  Widget _buildSkillsList(
+    BuildContext context,
+    List<String> skills,
+  ) {
     return Padding(
       padding: EdgeInsets.symmetric(
         vertical: skills.length > 5
@@ -208,9 +218,10 @@ class _AnimatedColumnWidgetState extends State<AnimatedColumnWidget>
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    fontSize: 14,
+                    fontSize: 13,
                     fontWeight: FontWeight.bold,
                     color: ColorSchemes.white,
+                    letterSpacing: -0.24,
                   ),
             ),
           ),

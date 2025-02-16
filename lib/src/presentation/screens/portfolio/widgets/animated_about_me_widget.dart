@@ -3,7 +3,6 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/bounce_and_scale_text_widget.dart';
 
 class AnimatedAboutMeWidget extends StatefulWidget {
   final void Function() onTap;
@@ -93,8 +92,8 @@ class _AnimatedAboutMeWidgetState extends State<AnimatedAboutMeWidget>
                   child: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      BouncingAndScalingTextWidget(
-                        title: S.of(context).aboutMe,
+                      Text(
+                        S.of(context).aboutMe,
                         style: textTheme.titleLarge?.copyWith(
                           color: ColorSchemes.iconWhiteMode,
                           fontWeight: FontWeight.bold,
