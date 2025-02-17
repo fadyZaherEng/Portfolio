@@ -75,6 +75,7 @@ class _ProjectCarouselWidgetState extends State<ProjectCarouselWidget> {
                 borderRadius: BorderRadius.circular(20),
                 child: Stack(
                   fit: StackFit.expand,
+                  alignment: Alignment.center,
                   children: [
                     // Background Image
                     Image.asset(
@@ -127,6 +128,7 @@ class _ProjectCarouselWidgetState extends State<ProjectCarouselWidget> {
                                   children: [
                                     Text(
                                       project.title,
+                                      textAlign: TextAlign.center,
                                       style: Theme.of(context)
                                           .textTheme
                                           .bodyLarge
