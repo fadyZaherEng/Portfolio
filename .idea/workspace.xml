@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dedcb7a5-d8be-49f1-b5b6-f89701701070" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/my_chapter_education_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generated/intl/messages_ar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/intl/messages_ar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generated/intl/messages_en.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/intl/messages_en.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/generated/l10n.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/l10n.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/l10n/intl_ar.arb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/l10n/intl_ar.arb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/l10n/intl_en.arb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/l10n/intl_en.arb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/protfolio_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/protfolio_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/custom_resume_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/custom_resume_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/end_drawer_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/end_drawer_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/my_chapters_career_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/my_chapters_career_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/offer_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/skills_details_offer_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/switch_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/switch_widget.dart" afterDir="false" />
-    </list>
+    <list default="true" id="dedcb7a5-d8be-49f1-b5b6-f89701701070" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

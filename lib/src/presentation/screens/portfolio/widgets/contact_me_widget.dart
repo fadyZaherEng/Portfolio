@@ -156,15 +156,18 @@ class ContactMeWidget extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsetsDirectional.only(
-            end: MediaQuery.sizeOf(context).width > 850 ? 22 : 30,
+            end: MediaQuery.sizeOf(context).width > 850 ? 22 : 25,
           ),
-          child: Text(
-            S.of(context).createdBy,
-            style: TextStyle(
-              fontSize: MediaQuery.sizeOf(context).width > 850 ? 14 : 12,
-              color: ColorSchemes.primarySecondary,
+          child: Container(
+            margin: const EdgeInsetsDirectional.fromSTEB(0,0, 30,0),
+            child: Text(
+              S.of(context).createdBy,
+              style: TextStyle(
+                fontSize: MediaQuery.sizeOf(context).width > 850 ? 14 : 12,
+                color: ColorSchemes.primarySecondary,
+              ),
+              textAlign: TextAlign.center,
             ),
-            textAlign: TextAlign.center,
           ),
         ),
         SizedBox(height: MediaQuery.sizeOf(context).width > 850 ? 20 : 15),
