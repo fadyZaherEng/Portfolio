@@ -162,11 +162,11 @@ class ContactMeWidget extends StatelessWidget {
           child: SizedBox(
             width: MediaQuery.sizeOf(context).width > 850
                 ? null
-                : MediaQuery.sizeOf(context).width * 0.7,
+                : MediaQuery.sizeOf(context).width * 0.75,
             child: Text(
               S.of(context).createdBy,
               style: TextStyle(
-                fontSize: MediaQuery.sizeOf(context).width > 850 ? 14 : 13,
+                fontSize: 14,
                 color: ColorSchemes.primarySecondary,
                 height: 2,
                 letterSpacing: -0.24,

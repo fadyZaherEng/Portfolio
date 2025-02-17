@@ -71,7 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "continuousIntegrationTitle":
             MessageLookupByLibrary.simpleMessage("Continuous Integration"),
         "createdBy": MessageLookupByLibrary.simpleMessage(
-            "All rights reserved | Created by Fady Zaher © 2025  💜"),
+            "All rights reserved | Created by Fady Zaher \n © 2025  💜"),
         "css": MessageLookupByLibrary.simpleMessage("CSS"),
         "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
         "dart": MessageLookupByLibrary.simpleMessage("Dart"),

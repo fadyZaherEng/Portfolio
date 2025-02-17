@@ -1562,10 +1562,10 @@ class S {
     );
   }
 
-  /// `All rights reserved | Created by Fady Zaher © 2025  💜`
+  /// `All rights reserved | Created by Fady Zaher \n © 2025  💜`
   String get createdBy {
     return Intl.message(
-      'All rights reserved | Created by Fady Zaher © 2025  💜',
+      'All rights reserved | Created by Fady Zaher \n © 2025  💜',
       name: 'createdBy',
       desc: '',
       args: [],
