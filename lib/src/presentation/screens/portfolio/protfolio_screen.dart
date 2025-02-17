@@ -162,8 +162,7 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
             children: [
               SingleChildScrollView(
                 controller: _scrollController,
-                physics: const BouncingScrollPhysics(),
-                child: Padding(
+                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

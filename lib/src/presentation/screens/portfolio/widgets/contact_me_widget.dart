@@ -159,9 +159,10 @@ class ContactMeWidget extends StatelessWidget {
           padding: EdgeInsetsDirectional.only(
             end: MediaQuery.sizeOf(context).width > 850 ? 22 : 25,
           ),
-          child: Container(
-            margin: EdgeInsetsDirectional.fromSTEB(
-                0, 0, GetLanguageUseCase(injector())() == "ar" ? 20 : 50, 0),
+          child: SizedBox(
+            width: MediaQuery.sizeOf(context).width > 850
+                ? null
+                : MediaQuery.sizeOf(context).width * 0.7,
             child: Text(
               S.of(context).createdBy,
               style: TextStyle(
