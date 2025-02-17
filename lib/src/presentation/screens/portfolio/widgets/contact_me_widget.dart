@@ -7,6 +7,7 @@ import 'package:my_portfolio/src/core/utils/launch_social_media.dart';
 import 'package:my_portfolio/src/core/utils/openLink.dart';
 import 'package:my_portfolio/src/core/utils/show_snack_bar.dart';
 import 'package:my_portfolio/src/di/data_layer_injector.dart';
+import 'package:my_portfolio/src/domain/usecase/get_language_use_case.dart';
 import 'package:my_portfolio/src/domain/usecase/get_theme_use_case.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/contact_me_hover_button_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_footer_social_icon_widget.dart';
@@ -159,7 +160,8 @@ class ContactMeWidget extends StatelessWidget {
             end: MediaQuery.sizeOf(context).width > 850 ? 22 : 25,
           ),
           child: Container(
-            margin: const EdgeInsetsDirectional.fromSTEB(0,0, 30,0),
+            margin: EdgeInsetsDirectional.fromSTEB(
+                0, 0, GetLanguageUseCase(injector())() == "ar" ? 20 : 50, 0),
             child: Text(
               S.of(context).createdBy,
               style: TextStyle(
