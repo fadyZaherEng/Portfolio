@@ -85,7 +85,6 @@ class EndDrawerWidget extends StatelessWidget {
                   onTap: onDrawerSkillsTap,
                   context: context,
                 ),
-
                 const SizedBox(height: 15),
                 _buildMenuItem(
                   icon: Icons.local_offer,
