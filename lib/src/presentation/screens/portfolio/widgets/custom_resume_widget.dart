@@ -32,10 +32,10 @@ class _CustomResumeWidgetState extends State<CustomResumeWidget>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 250),
-      lowerBound: 1.0,
-      upperBound: 1.5,
+      lowerBound: 0.9,
+      upperBound: 1.2,
     );
-    _scaleAnimation = _controller.drive(Tween(begin: 1.0, end: 1.5));
+    _scaleAnimation = _controller.drive(Tween(begin: 0.9, end: 1.2));
     _fadeAnimation = _controller.drive(Tween(begin: 0.7, end: 0.9));
   }
 

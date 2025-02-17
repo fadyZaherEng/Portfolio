@@ -35,7 +35,7 @@ class ContactMeWidget extends StatelessWidget {
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
                         color: ColorSchemes.iconDarkWhite,
                         fontWeight: FontWeight.bold,
-                        fontSize: 26,
+                        fontSize: 22,
                       ),
                 ),
                 const SizedBox(height: 10),
@@ -45,15 +45,12 @@ class ContactMeWidget extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: ColorSchemes.iconDarkWhite,
                         fontWeight: FontWeight.bold,
-                        fontSize: 13,
+                        fontSize: 14,
                       ),
                 ),
-
                 const SizedBox(height: 20),
-                // "Contact Me" Button
                 const ContactMeHoverButtonWidget(),
                 const SizedBox(height: 30),
-                // Social Media Icons
                 Wrap(
                   spacing: MediaQuery.sizeOf(context).width > 850 ? 20 : 5,
                   children: [
@@ -152,7 +149,6 @@ class ContactMeWidget extends StatelessWidget {
                     ),
                   ],
                 ),
-
                 const SizedBox(height: 70),
               ],
             ),

@@ -36,7 +36,7 @@ class _IOSSwitchWithThumbImageState extends State<IOSSwitchWithThumbImage>
   @override
   void didUpdateWidget(covariant IOSSwitchWithThumbImage oldWidget) {
     super.didUpdateWidget(oldWidget);
-    _animationController.animateTo(widget.isDarkMode ? 1.0 : 0.0);
+    _animationController.animateTo(widget.isDarkMode ? 1 : 0);
   }
 
   @override

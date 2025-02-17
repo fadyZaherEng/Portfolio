@@ -150,7 +150,7 @@
   "ainShamsUniversity": "Ain Shams University",
   "letsCreateSomethingAmazing": "Let's Create Something Amazing Together!",
    "feelFreeToContactMe": "Feel free to reach out if you'd like to discuss a project, a job opportunity, or simply want to connect.",
-  "contactMe": "Contact Me",
+  "contactMe": "CONTACT ME",
   "training": "Training",
   "createdBy":
   "All rights reserved | Created by Fady Zaher © 2025  \uD83D\uDC9C",
@@ -158,6 +158,7 @@
   "failedToLaunchWhatsApp": "Failed to launch WhatsApp",
   "facebook": "Facebook",
   "linkedin": "Linkedin",
-  "youtube": "YouTube"
+  "youtube": "YouTube",
+  "skillsOffer": "Skills Offer"
 
 }

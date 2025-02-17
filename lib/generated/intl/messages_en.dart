@@ -63,7 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "cleanArchitectureTitle":
             MessageLookupByLibrary.simpleMessage("Clean Architecture"),
         "contact": MessageLookupByLibrary.simpleMessage("Contact"),
-        "contactMe": MessageLookupByLibrary.simpleMessage("Contact Me"),
+        "contactMe": MessageLookupByLibrary.simpleMessage("CONTACT ME"),
         "continuousIntegration":
             MessageLookupByLibrary.simpleMessage("Continuous Integration"),
         "continuousIntegrationDescription": MessageLookupByLibrary.simpleMessage(
@@ -226,6 +226,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sharedPreferences":
             MessageLookupByLibrary.simpleMessage("Shared Preferences"),
         "skills": MessageLookupByLibrary.simpleMessage("Skills"),
+        "skillsOffer": MessageLookupByLibrary.simpleMessage("Skills Offer"),
         "socket": MessageLookupByLibrary.simpleMessage("Socket"),
         "softwareDevelopmentConceptsDescription":
             MessageLookupByLibrary.simpleMessage(

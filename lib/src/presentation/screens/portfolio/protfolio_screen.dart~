@@ -86,7 +86,7 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
         return Scaffold(
           resizeToAvoidBottomInset: false,
           backgroundColor:
-              isDarkMode ? ColorSchemes.iconBackGround : ColorSchemes.white,
+              isDarkMode ? ColorSchemes.iconBackGround : Colors.white,
           endDrawer: EndDrawerWidget(
             isDarkMode: isDarkMode,
             onDrawerLogoTap: () {

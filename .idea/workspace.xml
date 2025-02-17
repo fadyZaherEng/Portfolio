@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dedcb7a5-d8be-49f1-b5b6-f89701701070" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/my_chapter_education_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/generated/intl/messages_ar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/intl/messages_ar.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/generated/intl/messages_en.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/generated/intl/messages_en.dart" afterDir="false" />
@@ -15,14 +15,11 @@
       <change beforePath="$PROJECT_DIR$/lib/l10n/intl_ar.arb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/l10n/intl_ar.arb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/l10n/intl_en.arb" beforeDir="false" afterPath="$PROJECT_DIR$/lib/l10n/intl_en.arb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/protfolio_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/protfolio_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/about_me_content_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/about_me_content_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/animated_about_me_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/animated_about_me_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/contact_me_hover_button_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/contact_me_hover_button_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/contact_me_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/contact_me_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/custom_resume_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/custom_resume_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/end_drawer_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/end_drawer_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/my_chapters_career_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/my_chapters_career_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/skills/skills_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/skills/skills_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/training/training_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/training/training_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/offer_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/skills_details_offer_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/switch_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/switch_widget.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,18 +39,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "fadyZaherEng"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;fadyZaherEng&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/fadyZaherEng/Portfolio.git",
-    "accountId": "df9b0f1b-bcbb-438c-9a8b-c076fc9f615b"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/fadyZaherEng/Portfolio.git&quot;,
+    &quot;accountId&quot;: &quot;df9b0f1b-bcbb-438c-9a8b-c076fc9f615b&quot;
   }
-}]]></component>
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -117,16 +114,5 @@
       <updated>1739178460130</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/presentation/screens/portfolio/widgets/switch_widget.dart</url>
-          <line>30</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

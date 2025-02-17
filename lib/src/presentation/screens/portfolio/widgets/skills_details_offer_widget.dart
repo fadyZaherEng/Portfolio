@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/generated/l10n.dart';
@@ -6,19 +8,20 @@ import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/animated_coloum_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/animated_text_Widget.dart';
 
-class OfferWidget extends StatefulWidget {
+class SkillsDetailsOfferWidget extends StatefulWidget {
   final double height;
 
-  const OfferWidget({
+  const SkillsDetailsOfferWidget({
     Key? key,
     this.height = 350,
   }) : super(key: key);
 
   @override
-  State<OfferWidget> createState() => _OfferWidgetState();
+  State<SkillsDetailsOfferWidget> createState() =>
+      _SkillsDetailsOfferWidgetState();
 }
 
-class _OfferWidgetState extends State<OfferWidget> {
+class _SkillsDetailsOfferWidgetState extends State<SkillsDetailsOfferWidget> {
   final CarouselController _controller = CarouselController();
 
   List<int> offers = List.generate(16, (index) => index);
@@ -61,14 +64,14 @@ class _OfferWidgetState extends State<OfferWidget> {
               carouselController: _controller,
               options: CarouselOptions(
                 viewportFraction:
-                    MediaQuery.of(context).size.width > 600 ? 0.26 : 0.46,
+                    MediaQuery.of(context).size.width > 600 ? 0.33 : 0.55,
                 autoPlay: true,
-                // enlargeCenterPage: true,
+                enlargeCenterPage: true,
                 scrollPhysics: const BouncingScrollPhysics(),
                 enableInfiniteScroll: true,
                 autoPlayInterval: const Duration(seconds: 5),
-                // disableCenter: true,
-                aspectRatio: 2.2,
+                disableCenter: true,
+                aspectRatio: 2,
                 onPageChanged: (index, reason) {},
               ),
             ),
@@ -322,41 +325,50 @@ class _OfferWidgetState extends State<OfferWidget> {
     required String logo,
     bool isSvg = true,
   }) {
-    return Card(
-      color: ColorSchemes.primaryOffer,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
-      shadowColor: Colors.transparent,
-      elevation: 5,
-      child: Container(
-        decoration: BoxDecoration(
+    return AnimatedSwitcher(
+      duration: const Duration(milliseconds: 500),
+      transitionBuilder: (Widget child, Animation<double> animation) {
+        return ScaleTransition(
+          scale: animation,
+          child: child,
+        );
+      },
+      child: Card(
+        color: ColorSchemes.primaryOffer,
+        shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
-          gradient: LinearGradient(
-            colors: [
-              ColorSchemes.primary,
-              ColorSchemes.iconBackGround,
-              ColorSchemes.white.withOpacity(0.5),
-            ],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
         ),
-        child: Padding(
-          padding: EdgeInsets.symmetric(
-            horizontal: MediaQuery.sizeOf(context).width > 850 ? 10 : 4,
+        shadowColor: Colors.transparent,
+        elevation: 5,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            gradient: LinearGradient(
+              colors: [
+                ColorSchemes.primary,
+                ColorSchemes.iconBackGround,
+                ColorSchemes.white.withOpacity(0.5),
+              ],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
           ),
-          child: Wrap(
-            direction: Axis.horizontal,
-            children: [
-              AnimatedColumnWidget(
-                logo: logo,
-                isSvg: isSvg,
-                title: title,
-                description: description,
-                skills: skills,
-              ),
-            ],
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.sizeOf(context).width > 850 ? 10 : 4,
+            ),
+            child: Wrap(
+              direction: Axis.horizontal,
+              children: [
+                AnimatedColumnWidget(
+                  logo: logo,
+                  isSvg: isSvg,
+                  title: title,
+                  description: description,
+                  skills: skills,
+                ),
+              ],
+            ),
           ),
         ),
       ),

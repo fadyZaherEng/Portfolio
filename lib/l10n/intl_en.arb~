@@ -129,7 +129,7 @@
   "cSharp": "C Sharp",
   "chaptersStory": "I'm Fady Zaher, a passionate Flutter Developer and Designer with a proven track record of creating beautiful, responsive, and interactive apps that focus on performance and user experience, bringing your ideas to life. With a strong background in design and a deep understanding of user experience, I am committed to delivering exceptional results that exceed expectations while staying up-to-date with the latest Flutter trends and technologies. I’m a Mid-Level Software Engineer, passionate about mobile development , looking for work as a Flutter Software Engineer to gain real experience and assist the organization in achieving its goals. If you're looking for a skilled Flutter Developer to take your app to the next level, let's collaborate and turn your vision into reality!",
   "myChapter": "Chapters Of My Career",
-  "moreThanYearsExperienceAsA": "+ 2 Years Experience As A",
+  "moreThanYearsExperienceAsA": "\u200E\u200E+ 2 Years Experience As A",
   "flutterDeveloper": "Flutter Developer",
   "midLevelSoftwareEngineer": "Mid Level Software Engineer",
   "softwareEngineer": "Software Engineer",
@@ -141,7 +141,7 @@
   "exploreMyProjects": "Explore My Projects that showcase my skills and expertise in Flutter development.where I have successfully delivered innovative and user-friendly apps that meet the highest standards of performance and user experience.",
   "openLink": "Open Link",
   "aboutMe": "About Me",
-  "aboutMeDescription": "I’m Mid Level Software Engineer, passionate about mobile development with + 2 Years of Experience, looking for work as Flutter Software Engineer to gain real experience and assist the organization to achieve their goals",
+  "aboutMeDescription": "I’m Mid Level Software Engineer, passionate about mobile development with \u200E+ 2 Years of Experience, looking for work as Flutter Software Engineer to gain real experience and assist the organization to achieve their goals",
   "education": "Education",
   "university": "Bachelor of computer and information science | Ain Shams University",
   "universityDescription": "Graduation Project  Body Language and emotion recognition website (Django-python)",
@@ -158,6 +158,7 @@
   "failedToLaunchWhatsApp": "Failed to launch WhatsApp",
   "facebook": "Facebook",
   "linkedin": "Linkedin",
-  "youtube": "YouTube"
+  "youtube": "YouTube",
+  "skillsOffer": "Skills Offer"
 
 }

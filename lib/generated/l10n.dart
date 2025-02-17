@@ -1542,10 +1542,10 @@ class S {
     );
   }
 
-  /// `Contact Me`
+  /// `CONTACT ME`
   String get contactMe {
     return Intl.message(
-      'Contact Me',
+      'CONTACT ME',
       name: 'contactMe',
       desc: '',
       args: [],
@@ -1617,6 +1617,16 @@ class S {
     return Intl.message(
       'YouTube',
       name: 'youtube',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Skills Offer`
+  String get skillsOffer {
+    return Intl.message(
+      'Skills Offer',
+      name: 'skillsOffer',
       desc: '',
       args: [],
     );

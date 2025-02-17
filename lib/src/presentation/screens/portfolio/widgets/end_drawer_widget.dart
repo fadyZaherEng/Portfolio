@@ -20,6 +20,7 @@ class EndDrawerWidget extends StatelessWidget {
   final void Function() onDrawerTrainingTap;
   final void Function() onDrawerEducationTap;
   final void Function() onDrawerLogoTap;
+  final void Function() onDrawerSkillsOfferTap;
 
   const EndDrawerWidget({
     super.key,
@@ -35,6 +36,7 @@ class EndDrawerWidget extends StatelessWidget {
     required this.onDrawerLogoTap,
     required this.onDrawerTrainingTap,
     required this.onDrawerEducationTap,
+    required this.onDrawerSkillsOfferTap,
   });
 
   @override
@@ -81,6 +83,14 @@ class EndDrawerWidget extends StatelessWidget {
                   icon: Icons.lightbulb,
                   label: S.of(context).skills,
                   onTap: onDrawerSkillsTap,
+                  context: context,
+                ),
+
+                const SizedBox(height: 15),
+                _buildMenuItem(
+                  icon: Icons.local_offer,
+                  label: S.of(context).skillsOffer,
+                  onTap: onDrawerSkillsOfferTap,
                   context: context,
                 ),
                 const SizedBox(height: 15),

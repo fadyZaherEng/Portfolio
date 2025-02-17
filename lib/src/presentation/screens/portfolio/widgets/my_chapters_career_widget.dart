@@ -7,25 +7,22 @@ import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/bounce_a
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/time_line_career_widget.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-class MyChaptersWidget extends StatefulWidget {
-  final GlobalKey myEducationsKey;
+class MyChaptersCareerWidget extends StatefulWidget {
 
-  const MyChaptersWidget({
+  const MyChaptersCareerWidget({
     super.key,
-    required this.myEducationsKey,
-  });
+   });
 
   @override
-  State<MyChaptersWidget> createState() => _MyChaptersWidgetState();
+  State<MyChaptersCareerWidget> createState() => _MyChaptersCareerWidgetState();
 }
 
-class _MyChaptersWidgetState extends State<MyChaptersWidget>
+class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _fadeAnimation;
   late Animation<Offset> _slideAnimation;
-  late Animation<double> _rotateAnimation;
-  bool _isAnimated = false;
+   bool _isAnimated = false;
 
   @override
   void initState() {
@@ -52,15 +49,6 @@ class _MyChaptersWidgetState extends State<MyChaptersWidget>
       ),
     );
 
-    _rotateAnimation = Tween<double>(
-      begin: -0.02,
-      end: 0.02,
-    ).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: Curves.easeInOut,
-      ),
-    );
   }
 
   void _startAnimation() {
@@ -92,55 +80,8 @@ class _MyChaptersWidgetState extends State<MyChaptersWidget>
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Column(
                   children: [
-                    const SizedBox(height: 20),
-                    RotationTransition(
-                      turns: _rotateAnimation,
-                      child: _buildHeaderText(
-                        context,
-                        S.of(context).myChapter,
-                        false,
-                      ),
-                    ),
-                    const SizedBox(height: 15),
-                    _buildBodyText(context, S.of(context).chaptersStory),
-                    const SizedBox(height: 30),
-                    SizedBox(
-                      width: double.infinity,
-                      key: widget.myEducationsKey,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 30),
-                        child: AnimatedTextWidget(
-                          text: S.of(context).education,
-                          style:
-                              Theme.of(context).textTheme.titleMedium?.copyWith(
-                                    color: ColorSchemes.iconDarkWhite,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 26,
-                                  ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    SizedBox(
-                      width: double.infinity,
-                      child: TimelineCareerWidget(
-                        isEducation: true,
-                        totalEvents: 1,
-                        index: 0,
-                        event: TimelineEvent(
-                          title:
-                              "${S.of(context).university}\n${S.of(context).universityDescription}\n${S.of(context).universityDegree}",
-                          place: S.of(context).ainShamsUniversity,
-                          date: "[May 2017:Aug 2021]",
-                          color: ColorSchemes.primarySecondary,
-                          url: "https://www.asu.edu.eg/",
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 20),
                     Row(
-                      key: widget.key,
-                      mainAxisAlignment: MainAxisAlignment.start,
+                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
                       children: [

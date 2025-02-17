@@ -225,6 +225,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "sharedPreferences":
             MessageLookupByLibrary.simpleMessage("التفضيلات المشتركة"),
         "skills": MessageLookupByLibrary.simpleMessage("المهارات"),
+        "skillsOffer": MessageLookupByLibrary.simpleMessage("مهاراتي المتوفرة"),
         "socket": MessageLookupByLibrary.simpleMessage("سوكت"),
         "softwareDevelopmentConceptsDescription":
             MessageLookupByLibrary.simpleMessage(
