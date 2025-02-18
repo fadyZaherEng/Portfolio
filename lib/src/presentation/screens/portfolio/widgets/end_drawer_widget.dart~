@@ -71,7 +71,7 @@ class EndDrawerWidget extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             _buildDivider(),
-            const SizedBox(height: 12),
+            const SizedBox(height: 15),
             Column(
               children: [
                 _buildMenuItem(
@@ -80,56 +80,56 @@ class EndDrawerWidget extends StatelessWidget {
                   onTap: onDrawerHomeTap,
                   context: context,
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 15),
                 _buildMenuItem(
                   icon: Icons.lightbulb,
                   label: S.of(context).skills,
                   onTap: onDrawerSkillsTap,
                   context: context,
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 15),
                 _buildMenuItem(
                   icon: Icons.local_offer,
                   label: S.of(context).skillsOffer,
                   onTap: onDrawerSkillsOfferTap,
                   context: context,
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 15),
                 _buildMenuItem(
                   icon: Icons.workspaces_outline,
                   label: S.of(context).myProjects,
                   onTap: onDrawerProjectsTap,
                   context: context,
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 15),
                 _buildMenuItem(
                   icon: Icons.work,
                   label: S.of(context).experience,
                   onTap: onDrawerExperienceTap,
                   context: context,
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 15),
                 _buildMenuItem(
                   icon: Icons.cast_for_education,
                   label: S.of(context).education,
                   onTap: onDrawerEducationTap,
                   context: context,
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 15),
                 _buildMenuItem(
                   icon: Icons.pages,
                   label: S.of(context).portfolio,
                   onTap: onDrawerPortfolioTap,
                   context: context,
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 15),
                 _buildMenuItem(
                   icon: Icons.contact_support,
                   label: S.of(context).contact,
                   onTap: onDrawerContactTap,
                   context: context,
                 ),
-                const SizedBox(height: 12),
+                const SizedBox(height: 15),
                 _buildMenuItem(
                   icon: Icons.model_training,
                   label: S.of(context).training,
@@ -138,7 +138,7 @@ class EndDrawerWidget extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 15),
             _buildDivider(),
             const SizedBox(height: 5),
             IOSSwitchWithThumbImage(
@@ -174,7 +174,7 @@ class EndDrawerWidget extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,

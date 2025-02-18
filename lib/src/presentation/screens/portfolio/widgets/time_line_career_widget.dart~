@@ -81,10 +81,10 @@ class _TimelineCareerWidgetState extends State<TimelineCareerWidget>
               ),
           ],
         ),
-        const SizedBox(width: 10),
+        const SizedBox(width: 16),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.all(5),
+            padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,

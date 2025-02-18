@@ -77,10 +77,8 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Row(
                        mainAxisAlignment: MainAxisAlignment.start,
@@ -94,7 +92,7 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
                           width: 22,
                           height: 22,
                         ),
-                        const SizedBox(width: 5),
+                        const SizedBox(width: 10),
                         _buildHeaderText(
                           context,
                           S.of(context).moreThanYearsExperienceAsA,

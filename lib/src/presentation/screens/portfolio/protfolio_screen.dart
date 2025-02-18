@@ -117,6 +117,11 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
               Navigator.pop(context);
               scrollToKey(_myChaptersKey);
             },
+
+            onDrawerProjectsTap: () {
+              Navigator.pop(context);
+              scrollToKey(_projectsKey);
+            },
             onDrawerSkillsTap: () {
               context.go(
                 Routes.skillsWeb,
