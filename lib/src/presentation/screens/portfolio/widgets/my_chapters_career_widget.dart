@@ -8,10 +8,9 @@ import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/time_lin
 import 'package:visibility_detector/visibility_detector.dart';
 
 class MyChaptersCareerWidget extends StatefulWidget {
-
   const MyChaptersCareerWidget({
     super.key,
-   });
+  });
 
   @override
   State<MyChaptersCareerWidget> createState() => _MyChaptersCareerWidgetState();
@@ -22,7 +21,7 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
   late AnimationController _controller;
   late Animation<double> _fadeAnimation;
   late Animation<Offset> _slideAnimation;
-   bool _isAnimated = false;
+  bool _isAnimated = false;
 
   @override
   void initState() {
@@ -48,7 +47,6 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
         curve: Curves.easeOut,
       ),
     );
-
   }
 
   void _startAnimation() {
@@ -75,15 +73,18 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
           position: _slideAnimation,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
                   children: [
                     Row(
-                       mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -112,75 +113,13 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
                 ),
               ),
               const SizedBox(height: 20),
-              Center(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: SizedBox(
-                    width: MediaQuery.of(context).size.width > 850
-                        ? MediaQuery.of(context).size.width * 0.4
-                        : MediaQuery.of(context).size.width * 0.7,
-                    child: Column(
-                      children: [
-                        _buildTimelineEvents(
-                          events: [
-                            TimelineEvent(
-                              title: S.of(context).midLevelSoftwareEngineer,
-                              place: "Bridge COM",
-                              date: "[Oct 2024: PRESENT]",
-                              color: Colors.green,
-                              url:
-                                  "https://www.linkedin.com/company/bridgecom-ae/",
-                            ),
-                            TimelineEvent(
-                              title: S.of(context).softwareEngineer,
-                              place: "Bridge COM",
-                              date: "[Aug 2023: Oct 2024]",
-                              color: Colors.blue,
-                              url:
-                                  "https://www.linkedin.com/company/bridgecom-ae/",
-                            ),
-                            TimelineEvent(
-                              title:
-                                  S.of(context).midLevelFlutterSoftwareEngineer,
-                              place: "Sprint Eye",
-                              date: "[Oct 2024: PRESENT]",
-                              color: Colors.orange,
-                              url:
-                                  "https://www.linkedin.com/showcase/city-eye-app/",
-                            ),
-                            TimelineEvent(
-                              title: S.of(context).mobileSoftwareEngineer,
-                              place: "Galaxy Smart Solutions",
-                              date: "[Aug 2023: Oct 2024]",
-                              color: Colors.red,
-                              url:
-                                  "https://www.linkedin.com/company/galaxysoft-eg/",
-                            ),
-                            TimelineEvent(
-                              title: S.of(context).mobileAppDevelopmentIntern,
-                              place: "SPARKS FOUNDATIONS",
-                              date: "[Mar 2022 : May 2022]",
-                              color: ColorSchemes.secondary,
-                              url:
-                                  "https://www.linkedin.com/company/the-sparks-foundation/",
-                            ),
-                            TimelineEvent(
-                              title: S
-                                  .of(context)
-                                  .mobileSoftwareEngineerFreelancer,
-                              place: "FREELANCER",
-                              date: "[May 2022 : Aug 2023]",
-                              color: Colors.purple,
-                              url: "",
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 20),
-                      ],
+              MediaQuery.of(context).size.width > 850
+                  ? Center(child: _buildCareer(context))
+                  : Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
+                      child: _buildCareer(context),
                     ),
-                  ),
-                ),
-              ),
               const SizedBox(height: 10),
             ],
           ),
@@ -206,34 +145,15 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
           )
         : Text(
             text,
-            textAlign: TextAlign.center,
+            textAlign: MediaQuery.of(context).size.width > 850
+                ? TextAlign.center
+                : TextAlign.start,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                   color: ColorSchemes.iconDarkWhite,
                 ),
           );
-  }
-
-  Widget _buildBodyText(BuildContext context, String text) {
-    return Center(
-      child: SizedBox(
-        width: MediaQuery.of(context).size.width > 850
-            ? 850
-            : MediaQuery.of(context).size.width * 0.8,
-        child: Text(
-          text,
-          textAlign: TextAlign.center,
-          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                fontSize: 13,
-                fontWeight: FontWeight.bold,
-                color: ColorSchemes.iconDarkWhite,
-                height: 1.7,
-                letterSpacing: -0.25,
-              ),
-        ),
-      ),
-    );
   }
 
   Widget _buildTitleShaderMask(BuildContext context) {
@@ -285,6 +205,69 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
   void dispose() {
     _controller.dispose();
     super.dispose();
+  }
+
+  Widget _buildCareer(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: SizedBox(
+        width: MediaQuery.of(context).size.width > 850
+            ? MediaQuery.of(context).size.width * 0.4
+            : MediaQuery.of(context).size.width * 0.7,
+        child: Column(
+          children: [
+            _buildTimelineEvents(
+              events: [
+                TimelineEvent(
+                  title: S.of(context).midLevelSoftwareEngineer,
+                  place: "Bridge COM",
+                  date: "[Oct 2024: PRESENT]",
+                  color: Colors.green,
+                  url: "https://www.linkedin.com/company/bridgecom-ae/",
+                ),
+                TimelineEvent(
+                  title: S.of(context).softwareEngineer,
+                  place: "Bridge COM",
+                  date: "[Aug 2023: Oct 2024]",
+                  color: Colors.blue,
+                  url: "https://www.linkedin.com/company/bridgecom-ae/",
+                ),
+                TimelineEvent(
+                  title: S.of(context).midLevelFlutterSoftwareEngineer,
+                  place: "Sprint Eye",
+                  date: "[Oct 2024: PRESENT]",
+                  color: Colors.orange,
+                  url: "https://www.linkedin.com/showcase/city-eye-app/",
+                ),
+                TimelineEvent(
+                  title: S.of(context).mobileSoftwareEngineer,
+                  place: "Galaxy Smart Solutions",
+                  date: "[Aug 2023: Oct 2024]",
+                  color: Colors.red,
+                  url: "https://www.linkedin.com/company/galaxysoft-eg/",
+                ),
+                TimelineEvent(
+                  title: S.of(context).mobileAppDevelopmentIntern,
+                  place: "SPARKS FOUNDATIONS",
+                  date: "[Mar 2022 : May 2022]",
+                  color: ColorSchemes.secondary,
+                  url:
+                      "https://www.linkedin.com/company/the-sparks-foundation/",
+                ),
+                TimelineEvent(
+                  title: S.of(context).mobileSoftwareEngineerFreelancer,
+                  place: "FREELANCER",
+                  date: "[May 2022 : Aug 2023]",
+                  color: Colors.purple,
+                  url: "",
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+          ],
+        ),
+      ),
+    );
   }
 }
 

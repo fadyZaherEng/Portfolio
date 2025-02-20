@@ -53,11 +53,12 @@ class _State extends State<CustomAppBarWidget> {
           const Spacer(),
           Text(
             S.of(context).fadyTag,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                   color: GetThemeUseCase(injector())() == Constants.dark
-                      ? ColorSchemes.secondary
-                      : ColorSchemes.iconBackGround,
-                  fontSize: 16,
+                      ? ColorSchemes.white
+                      : ColorSchemes.primary,
+                  fontSize:
+                      GetThemeUseCase(injector())() == Constants.dark ? 16 : 18,
                 ),
           ),
           const Spacer(),
