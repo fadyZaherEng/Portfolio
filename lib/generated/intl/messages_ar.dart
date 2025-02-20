@@ -73,8 +73,6 @@ class MessageLookup extends MessageLookupByLibrary {
                 "تنفيذ خطوط تكامل ونشر مستمر لأتمتة عمليات البناء والتوزيع."),
         "continuousIntegrationTitle":
             MessageLookupByLibrary.simpleMessage("التكامل المستمر"),
-        "createdBy": MessageLookupByLibrary.simpleMessage(
-            " جميع الحقوق محفوظة | صنع بواسطة فادى زاهر © 2025 💜"),
         "css": MessageLookupByLibrary.simpleMessage("سي إس إس"),
         "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الليلي"),
         "dart": MessageLookupByLibrary.simpleMessage("دارت"),
@@ -87,6 +85,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تقنيات قواعد البيانات"),
         "debugging": MessageLookupByLibrary.simpleMessage("إصلاح الأخطاء"),
         "designPatterns": MessageLookupByLibrary.simpleMessage("أنماط التصميم"),
+        "developedBy": MessageLookupByLibrary.simpleMessage("تطوير بواسطة"),
         "developmentToolsAndVersionControlDescription":
             MessageLookupByLibrary.simpleMessage(
                 "اختيار أدوات التطوير ونظام التحكم في الإصدارات المناسب للمشروع."),
@@ -95,11 +94,15 @@ class MessageLookup extends MessageLookupByLibrary {
                 "أدوات التطوير وإدارة الإصدارات"),
         "dio": MessageLookupByLibrary.simpleMessage("ديو"),
         "done": MessageLookupByLibrary.simpleMessage("تم"),
+        "downloadCv":
+            MessageLookupByLibrary.simpleMessage("تحميل السيرة الذاتية"),
         "education": MessageLookupByLibrary.simpleMessage("التعليم"),
         "experience": MessageLookupByLibrary.simpleMessage("الخبرة"),
         "exploreMyProjects": MessageLookupByLibrary.simpleMessage(
             "استكشف مشاريعي التي تُبرز مهاراتي وخبرتي في تطوير Flutter، حيث قمت بتقديم تطبيقات مبتكرة وسهلة الاستخدام تلبي أعلى معايير الأداء وتجربة المستخدم."),
         "facebook": MessageLookupByLibrary.simpleMessage("فيسبوك"),
+        "fadyTag": MessageLookupByLibrary.simpleMessage("<م.فادي زاهر/>"),
+        "fadyZaher": MessageLookupByLibrary.simpleMessage("فادي زاهر"),
         "failedToLaunchWhatsApp":
             MessageLookupByLibrary.simpleMessage("فشل في تشغيل WhatsApp"),
         "feelFreeToContactMe": MessageLookupByLibrary.simpleMessage(
@@ -215,11 +218,14 @@ class MessageLookup extends MessageLookupByLibrary {
             "تصميم واجهات متجاوبة وسهلة الاستخدام لضمان تجربة مستخدم متسقة عبر مختلف الأجهزة وأحجام الشاشات."),
         "responsiveUITitle":
             MessageLookupByLibrary.simpleMessage("واجهة مستخدم متجاوبة"),
+        "resume": MessageLookupByLibrary.simpleMessage("السيرة الذاتية"),
         "retrofit": MessageLookupByLibrary.simpleMessage("ريتروفِت"),
         "riverpod": MessageLookupByLibrary.simpleMessage("ريفر بود"),
         "search": MessageLookupByLibrary.simpleMessage("بحث"),
         "securityTesting":
             MessageLookupByLibrary.simpleMessage("اختبار الأمان"),
+        "seeMoreProjects":
+            MessageLookupByLibrary.simpleMessage("اظهار المزيد من المشاريع"),
         "selectDate": MessageLookupByLibrary.simpleMessage("اختار التاريخ"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("أخنار اللغه"),
         "sharedPreferences":
@@ -241,6 +247,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "إدارة حالة التطبيق بكفاءة باستخدام حلول Flutter لإدارة الحالة."),
         "stateManagementTitle":
             MessageLookupByLibrary.simpleMessage("إدارة الحالة"),
+        "tag": MessageLookupByLibrary.simpleMessage("© 2025  💜"),
         "testing": MessageLookupByLibrary.simpleMessage("الاختبار"),
         "testingAndDebuggingDescription": MessageLookupByLibrary.simpleMessage(
             "إجراء اختبارات الوحدة والتكامل لضمان جودة واستقرار الكود."),

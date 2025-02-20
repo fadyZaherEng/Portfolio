@@ -2,10 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/utils/constants.dart';
- import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/project_card_widget.dart';
+import 'package:my_portfolio/src/core/utils/openLink.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_resume_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/project_card_widget.dart';
 
 class ProjectsWidgets extends StatefulWidget {
-  const ProjectsWidgets({super.key});
+  final bool isDarkMode;
+
+  const ProjectsWidgets({
+    super.key,
+    required this.isDarkMode,
+  });
 
   @override
   State<ProjectsWidgets> createState() => _ProjectsWidgetsState();
@@ -23,6 +30,11 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
 
   @override
   Widget build(BuildContext context) {
+    final Color textColor =
+        widget.isDarkMode ? ColorSchemes.white : ColorSchemes.iconBackGround;
+    final Color borderColor = widget.isDarkMode
+        ? ColorSchemes.primarySecondaryWhite
+        : ColorSchemes.iconBackGround;
     return Column(
       children: [
         Padding(
@@ -68,6 +80,16 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
         ),
         const SizedBox(height: 30),
         ProjectCarouselWidget(_myProjects),
+        const SizedBox(height: 30),
+        CustomResumeWidget(
+          onViewResumeTap: () => openLink('https://github.com/fadyZaherEng'),
+          isDarkMode: widget.isDarkMode,
+          borderColor: borderColor,
+          textColor: textColor,
+          title: S.of(context).seeMoreProjects,
+          width: 170,
+        ),
+        const SizedBox(height: 30),
       ],
     );
   }

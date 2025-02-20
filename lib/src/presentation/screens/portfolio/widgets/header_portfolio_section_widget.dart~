@@ -70,7 +70,6 @@ class _HeaderProfileSectionWidgetState extends State<HeaderProfileSectionWidget>
           textColor: textColor,
           borderColor: borderColor,
           title: S.of(context).downloadCv,
-          width: 150,
         ),
       ],
     );

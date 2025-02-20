@@ -184,7 +184,7 @@ class ContactMeWidget extends StatelessWidget {
                     S.of(context).fadyZaher,
                     style: TextStyle(
                       fontSize: 16,
-                      color: ColorSchemes.iconDarkWhite,
+                      color: ColorSchemes.primaryOffer,
                       height: 2,
                       letterSpacing: -0.24,
                     ),

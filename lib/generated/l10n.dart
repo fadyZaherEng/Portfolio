@@ -1562,11 +1562,31 @@ class S {
     );
   }
 
-  /// `All rights reserved | Created by Fady Zaher \n © 2025  💜`
-  String get createdBy {
+  /// `Developed by`
+  String get developedBy {
     return Intl.message(
-      'All rights reserved | Created by Fady Zaher \n © 2025  💜',
-      name: 'createdBy',
+      'Developed by',
+      name: 'developedBy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fady Zaher`
+  String get fadyZaher {
+    return Intl.message(
+      'Fady Zaher',
+      name: 'fadyZaher',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `© 2025  💜`
+  String get tag {
+    return Intl.message(
+      '© 2025  💜',
+      name: 'tag',
       desc: '',
       args: [],
     );
@@ -1627,6 +1647,46 @@ class S {
     return Intl.message(
       'Skills Offer',
       name: 'skillsOffer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `<Eng.Fady Zaher/>`
+  String get fadyTag {
+    return Intl.message(
+      '<Eng.Fady Zaher/>',
+      name: 'fadyTag',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `RESUME`
+  String get resume {
+    return Intl.message(
+      'RESUME',
+      name: 'resume',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `DOWNLOAD CV`
+  String get downloadCv {
+    return Intl.message(
+      'DOWNLOAD CV',
+      name: 'downloadCv',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SEE MORE PROJECTS`
+  String get seeMoreProjects {
+    return Intl.message(
+      'SEE MORE PROJECTS',
+      name: 'seeMoreProjects',
       desc: '',
       args: [],
     );

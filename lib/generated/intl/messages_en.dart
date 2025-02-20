@@ -70,8 +70,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "Implement continuous integration and deployment pipelines for automated builds and deployments."),
         "continuousIntegrationTitle":
             MessageLookupByLibrary.simpleMessage("Continuous Integration"),
-        "createdBy": MessageLookupByLibrary.simpleMessage(
-            "All rights reserved | Created by Fady Zaher \n © 2025  💜"),
         "css": MessageLookupByLibrary.simpleMessage("CSS"),
         "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
         "dart": MessageLookupByLibrary.simpleMessage("Dart"),
@@ -85,6 +83,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "debugging": MessageLookupByLibrary.simpleMessage("Debugging"),
         "designPatterns":
             MessageLookupByLibrary.simpleMessage("Design Patterns"),
+        "developedBy": MessageLookupByLibrary.simpleMessage("Developed by"),
         "developmentToolsAndVersionControlDescription":
             MessageLookupByLibrary.simpleMessage(
                 "Choose the right development tools and version control system for your project."),
@@ -93,11 +92,14 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Development Tools and Version Control"),
         "dio": MessageLookupByLibrary.simpleMessage("Dio"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
+        "downloadCv": MessageLookupByLibrary.simpleMessage("DOWNLOAD CV"),
         "education": MessageLookupByLibrary.simpleMessage("Education"),
         "experience": MessageLookupByLibrary.simpleMessage("Experience"),
         "exploreMyProjects": MessageLookupByLibrary.simpleMessage(
             "Explore My Projects that showcase my skills and expertise in Flutter development.where I have successfully delivered innovative and user-friendly apps that meet the highest standards of performance and user experience."),
         "facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
+        "fadyTag": MessageLookupByLibrary.simpleMessage("<Eng.Fady Zaher/>"),
+        "fadyZaher": MessageLookupByLibrary.simpleMessage("Fady Zaher"),
         "failedToLaunchWhatsApp":
             MessageLookupByLibrary.simpleMessage("Failed to launch WhatsApp"),
         "feelFreeToContactMe": MessageLookupByLibrary.simpleMessage(
@@ -215,11 +217,14 @@ class MessageLookup extends MessageLookupByLibrary {
             "Design responsive and user-friendly interfaces for a consistent user experience across different screen sizes and devices."),
         "responsiveUITitle":
             MessageLookupByLibrary.simpleMessage("Responsive UI"),
+        "resume": MessageLookupByLibrary.simpleMessage("RESUME"),
         "retrofit": MessageLookupByLibrary.simpleMessage("Retrofit"),
         "riverpod": MessageLookupByLibrary.simpleMessage("Riverpod"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "securityTesting":
             MessageLookupByLibrary.simpleMessage("Security Testing"),
+        "seeMoreProjects":
+            MessageLookupByLibrary.simpleMessage("SEE MORE PROJECTS"),
         "selectDate": MessageLookupByLibrary.simpleMessage("Select Date"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),
@@ -243,6 +248,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Efficiently manage app state using Flutter\'s state management solutions."),
         "stateManagementTitle":
             MessageLookupByLibrary.simpleMessage("State Management"),
+        "tag": MessageLookupByLibrary.simpleMessage("© 2025  💜"),
         "testing": MessageLookupByLibrary.simpleMessage("Testing"),
         "testingAndDebuggingDescription": MessageLookupByLibrary.simpleMessage(
             "Perform unit and integration testing to ensure code quality and stability."),

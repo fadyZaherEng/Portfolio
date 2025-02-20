@@ -151,11 +151,17 @@
   "feelFreeToContactMe": "يمكنك معرفة المزيد عني والتواصل معي عبر الرابط التالي",
   "contactMe": "اتصل بي",
   "training": "تدريب",
-  "createdBy": " جميع الحقوق محفوظة | صنع بواسطة فادى زاهر © 2025 \uD83D\uDC9C",
+  "developedBy": "تطوير بواسطة",
+  "fadyZaher": "فادي زاهر",
+  "tag": "© 2025  \uD83D\uDC9C",
   "viewResume": "عرض السيرة الذاتية",
   "failedToLaunchWhatsApp": "فشل في تشغيل WhatsApp",
   "facebook": "فيسبوك",
   "linkedin": "لينكدان",
   "youtube": "يوتيوب",
-  "skillsOffer": "مهاراتي المتوفرة"
+  "skillsOffer": "مهاراتي المتوفرة",
+  "fadyTag": "<م.فادي زاهر/>",
+  "resume": "السيرة الذاتية",
+  "downloadCv": "تحميل السيرة الذاتية",
+  "seeMoreProjects": "اظهار المزيد من المشاريع"
 }

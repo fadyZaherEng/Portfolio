@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/core/utils/constants.dart';
@@ -33,19 +34,32 @@ class _State extends State<CustomAppBarWidget> {
       backgroundColor: ColorSchemes.appBarColor,
       elevation: 0,
       centerTitle: false,
-      title: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: InkWell(
-          onTap: widget.onLogoTap,
-          child: BuildLogoWidget(
-            width: 50,
-            height: 50,
-            imagePath: ImagePaths.newLogo2,
-            color: GetThemeUseCase(injector())() == Constants.dark
-                ? ColorSchemes.secondary
-                : ColorSchemes.iconBackGround,
+      title: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+            child: InkWell(
+              onTap: widget.onLogoTap,
+              child: BuildLogoWidget(
+                width: 50,
+                height: 50,
+                imagePath: ImagePaths.newLogo2,
+                color: GetThemeUseCase(injector())() == Constants.dark
+                    ? ColorSchemes.secondary
+                    : ColorSchemes.iconBackGround,
+              ),
+            ),
           ),
-        ),
+          Text(
+            S.of(context).fadyTag,
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: GetThemeUseCase(injector())() == Constants.dark
+                      ? ColorSchemes.secondary
+                      : ColorSchemes.iconBackGround,
+                  fontSize: 16,
+                ),
+          ),
+        ],
       ),
       actions: widget.isBack
           ? [

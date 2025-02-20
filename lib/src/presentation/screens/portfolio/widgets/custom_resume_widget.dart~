@@ -53,12 +53,12 @@ class _CustomResumeWidgetState extends State<CustomResumeWidget>
     return MouseRegion(
       onEnter: (_) {
         setState(() {
-          _controller.forward();
+           _controller.forward();
         });
       },
       onExit: (_) {
         setState(() {
-          _controller.reverse();
+           _controller.reverse();
         });
       },
       child: FadeTransition(
@@ -123,13 +123,10 @@ class _AnimatedElevatedButtonState extends State<AnimatedElevatedButton> {
             AnimatedContainer(
               width: widget.width,
               height: 32,
-              duration: const Duration(milliseconds: 200),
+              duration: const Duration(milliseconds: 300),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(
-                  color: widget.borderColor,
-                  width: 2,
-                ),
+                border: Border.all(color: widget.borderColor, width: 2),
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black.withOpacity(0.1),

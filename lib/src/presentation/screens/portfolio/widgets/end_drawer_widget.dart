@@ -4,6 +4,8 @@ import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/core/utils/constants.dart';
+import 'package:my_portfolio/src/core/utils/openLink.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_resume_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/switch_widget.dart';
 import 'package:skeletons/skeletons.dart';
 
@@ -43,6 +45,11 @@ class EndDrawerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Color textColor =
+        isDarkMode ? ColorSchemes.white : ColorSchemes.iconBackGround;
+    final Color borderColor = isDarkMode
+        ? ColorSchemes.primarySecondaryWhite
+        : ColorSchemes.iconBackGround;
     return Drawer(
       semanticLabel: S.of(context).dashboard,
       backgroundColor: ColorSchemes.iconBackGround.withOpacity(0.7),
@@ -51,10 +58,19 @@ class EndDrawerWidget extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             _buildDrawerHeader(context),
-            // BuildLogoWidget(
-            //   imagePath: ImagePaths.newLogo3,
-            //   color: ColorSchemes.primarySecondaryWhite,
-            // ),
+            const SizedBox(height: 12),
+            _buildDivider(),
+            const SizedBox(height: 12),
+            Text(
+              S.of(context).fadyTag,
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: ColorSchemes.white,
+                    fontSize: 16,
+                  ),
+            ),
+            const SizedBox(height: 12),
+            _buildDivider(),
+            const SizedBox(height: 12),
             Image(
               width: 70,
               height: 70,
@@ -137,6 +153,17 @@ class EndDrawerWidget extends StatelessWidget {
                   context: context,
                 ),
               ],
+            ),
+            const SizedBox(height: 12),
+            _buildDivider(),
+            const SizedBox(height: 12),
+            CustomResumeWidget(
+              onViewResumeTap: _openResume,
+              isDarkMode: isDarkMode,
+              borderColor: borderColor,
+              textColor: textColor,
+              title: S.of(context).resume,
+              width: 100,
             ),
             const SizedBox(height: 12),
             _buildDivider(),
@@ -297,6 +324,12 @@ class EndDrawerWidget extends StatelessWidget {
       color: ColorSchemes.white,
       width: double.infinity,
       margin: const EdgeInsets.symmetric(horizontal: 10),
+    );
+  }
+  void _openResume() async {
+    await Future.delayed(const Duration(microseconds: 300));
+    openLink(
+      "https://drive.google.com/file/d/16UiIW2QpK9vzbG_gHXvgGTuWtzP5eWGD/view?usp=drivesdk",
     );
   }
 }
