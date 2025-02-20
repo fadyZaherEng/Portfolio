@@ -3,9 +3,9 @@ import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/domain/model/time_line.dart';
- import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/bounce_and_scale_text_widget.dart';
- import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/time_line_career_widget.dart';
- import 'package:visibility_detector/visibility_detector.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/bounce_and_scale_text_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/time_line_career_widget.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 class MyChaptersCareerWidget extends StatefulWidget {
   const MyChaptersCareerWidget({
@@ -77,7 +77,9 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
             mainAxisSize: MainAxisSize.min,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.symmetric(
+                    horizontal:
+                        MediaQuery.of(context).size.width > 850 ? 10 : 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -86,16 +88,16 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
                     Row(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
+                      mainAxisSize: MainAxisSize.max,
                       children: [
                         Image.asset(
                           ImagePaths.skills,
-                          color: ColorSchemes.iconBackGround,
+                          color: ColorSchemes.primarySecondary,
                           matchTextDirection: true,
                           width: 22,
                           height: 22,
                         ),
-                        const SizedBox(width: 5),
+                        const SizedBox(width: 4),
                         _buildHeaderText(
                           context,
                           S.of(context).moreThanYearsExperienceAsA,
@@ -270,4 +272,3 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
     );
   }
 }
-

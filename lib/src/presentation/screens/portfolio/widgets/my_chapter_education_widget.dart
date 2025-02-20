@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
@@ -87,7 +88,7 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding:   EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width > 850 ? 16 : 0),
                 child: Column(
                   children: [
                     const SizedBox(height: 20),
@@ -105,7 +106,7 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
                     SizedBox(
                       width: double.infinity,
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 30),
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
                         child: AnimatedTextWidget(
                           text: S.of(context).education,
                           style:
