@@ -130,7 +130,7 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
                 //open phone
                 openLink('tel:+201273826361');
               },
-              child: _buildInfoRow(Icons.phone, "\u200E+201273826361", true)),
+              child: _buildInfoRow(Icons.phone, "+201273826361", true)),
           6,
         ),
         _buildAnimatedItem(

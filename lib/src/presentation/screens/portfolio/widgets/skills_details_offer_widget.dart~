@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/generated/l10n.dart';
@@ -33,7 +31,8 @@ class _SkillsDetailsOfferWidgetState extends State<SkillsDetailsOfferWidget> {
         children: [
           const SizedBox(height: 20),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
+            padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width > 850 ? 30 : 0),
             child: SizedBox(
               width: MediaQuery.sizeOf(context).width > 850
                   ? MediaQuery.sizeOf(context).width * 0.4
@@ -64,7 +63,7 @@ class _SkillsDetailsOfferWidgetState extends State<SkillsDetailsOfferWidget> {
               carouselController: _controller,
               options: CarouselOptions(
                 viewportFraction:
-                    MediaQuery.of(context).size.width > 600 ? 0.33 : 0.55,
+                    MediaQuery.of(context).size.width > 600 ? 0.33 : 0.7,
                 autoPlay: true,
                 enlargeCenterPage: true,
                 scrollPhysics: const BouncingScrollPhysics(),
@@ -333,44 +332,49 @@ class _SkillsDetailsOfferWidgetState extends State<SkillsDetailsOfferWidget> {
           child: child,
         );
       },
-      child: Card(
-        color: ColorSchemes.primaryOffer,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
-        shadowColor: Colors.transparent,
-        elevation: 5,
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
-            gradient: LinearGradient(
-              colors: [
-                ColorSchemes.primary,
-                ColorSchemes.iconBackGround,
-                ColorSchemes.white.withOpacity(0.5),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
+      child: Stack(
+        children: [
+          Card(
+            color: ColorSchemes.primaryOffer,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
             ),
-          ),
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: MediaQuery.sizeOf(context).width > 850 ? 10 : 4,
-            ),
-            child: Wrap(
-              direction: Axis.horizontal,
-              children: [
-                AnimatedColumnWidget(
-                  logo: logo,
-                  isSvg: isSvg,
-                  title: title,
-                  description: description,
-                  skills: skills,
+            shadowColor: Colors.transparent,
+            elevation: 5,
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                gradient: LinearGradient(
+                  colors: [
+                    ColorSchemes.primary,
+                    ColorSchemes.iconBackGround,
+                    ColorSchemes.white.withOpacity(0.5),
+                  ],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
                 ),
-              ],
+              ),
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 12,
+                ),
+                child: Wrap(
+                  direction: Axis.horizontal,
+                  children: [
+                    AnimatedColumnWidget(
+                      logo: logo,
+                      isSvg: isSvg,
+                      title: title,
+                      description: description,
+                      skills: skills,
+                    ),
+                  ],
+                ),
+              ),
             ),
           ),
-        ),
+        ],
       ),
     );
   }

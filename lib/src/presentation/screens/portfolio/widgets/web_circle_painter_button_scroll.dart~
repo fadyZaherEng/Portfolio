@@ -11,7 +11,7 @@ class CircularPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     // Background Circle
     Paint paintBackground = Paint()
-      ..color = ColorSchemes.primaryWhite
+      ..color = ColorSchemes.primaryOffer
       ..style = PaintingStyle.fill;
 
     canvas.drawCircle(
