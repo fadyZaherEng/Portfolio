@@ -209,14 +209,14 @@ class _ProjectCarouselWidgetState extends State<ProjectCarouselWidget> {
                             gradient: _isHovered
                                 ? LinearGradient(
                                     colors: [
-                                      ColorSchemes.primary.withOpacity(0.8),
+                                      ColorSchemes.primary.withOpacity(0.6),
                                       ColorSchemes.iconBackGround,
                                     ],
                                     begin: Alignment.centerLeft,
                                     end: Alignment.centerRight,
                                   )
                                 : null,
-                            color: ColorSchemes.primary.withOpacity(0.8),
+                            color: ColorSchemes.primary.withOpacity(0.5),
                           ),
                         )
                     ],
