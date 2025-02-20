@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/utils/openLink.dart';
+import 'package:my_portfolio/src/domain/model/time_line.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/animated_text_Widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/my_chapters_career_widget.dart';
 
 class TimelineCareerWidget extends StatefulWidget {
   final TimelineEvent event;
