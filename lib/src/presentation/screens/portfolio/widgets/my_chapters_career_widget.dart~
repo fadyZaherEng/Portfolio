@@ -115,7 +115,11 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
               const SizedBox(height: 20),
               MediaQuery.of(context).size.width > 850
                   ? Center(child: _buildCareer(context))
-                  : _buildCareer(context),
+                  : Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(16, 0, 0, 0),
+                      child: _buildCareer(context),
+                    ),
               const SizedBox(height: 10),
             ],
           ),
