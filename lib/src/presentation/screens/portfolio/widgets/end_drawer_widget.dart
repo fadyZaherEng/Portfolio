@@ -217,7 +217,7 @@ class EndDrawerWidget extends StatelessWidget {
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: ColorSchemes.white,
                     fontWeight: Constants.fontWeightBold,
-                    fontSize: 13,
+                    fontSize: 14,
                   ),
             ),
           ],

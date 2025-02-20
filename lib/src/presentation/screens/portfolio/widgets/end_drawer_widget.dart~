@@ -163,7 +163,7 @@ class EndDrawerWidget extends StatelessWidget {
               borderColor: borderColor,
               textColor: textColor,
               title: S.of(context).resume,
-              width: 120,
+              width: 100,
             ),
             const SizedBox(height: 12),
             _buildDivider(),
