@@ -177,7 +177,7 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
       child: SizedBox(
         width: MediaQuery.of(context).size.width > 850
             ? 850
-            : MediaQuery.of(context).size.width ,
+            : MediaQuery.of(context).size.width * 0.95,
         child: Text(
           text,
           textAlign: TextAlign.center,
