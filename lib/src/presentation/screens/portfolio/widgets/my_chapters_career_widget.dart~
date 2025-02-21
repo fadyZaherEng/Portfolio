@@ -79,7 +79,7 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
               Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal:
-                        MediaQuery.of(context).size.width > 850 ? 10 : 12),
+                        MediaQuery.of(context).size.width > 850 ? 16 : 4),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -215,7 +215,7 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
       child: SizedBox(
         width: MediaQuery.of(context).size.width > 850
             ? MediaQuery.of(context).size.width * 0.5
-            : MediaQuery.of(context).size.width ,
+            : MediaQuery.of(context).size.width,
         child: Column(
           children: [
             _buildTimelineEvents(
