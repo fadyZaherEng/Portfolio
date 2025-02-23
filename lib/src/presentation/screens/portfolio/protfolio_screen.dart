@@ -87,77 +87,7 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
           resizeToAvoidBottomInset: false,
           backgroundColor:
               isDarkMode ? ColorSchemes.iconBackGround : ColorSchemes.white,
-          endDrawer: EndDrawerWidget(
-            isDarkMode: isDarkMode,
-            onDrawerLogoTap: () {
-              RestartWidget.restartApp(context);
-              html.window.location.reload();
-            },
-            onDrawerEducationTap: () {
-              Navigator.pop(context);
-              scrollToKey(_myEducationsKey);
-            },
-            onDrawerSkillsOfferTap: () {
-              Navigator.pop(context);
-              scrollToKey(_offerKey);
-            },
-            onDrawerAboutTap: () {
-              Navigator.pop(context);
-              scrollToKey(_headerKey);
-            },
-            onDrawerHomeTap: () {
-              Navigator.pop(context);
-              scrollToKey(_headerKey);
-            },
-            onDrawerContactTap: () {
-              Navigator.pop(context);
-              scrollToKey(_contactKey);
-            },
-            onDrawerExperienceTap: () {
-              Navigator.pop(context);
-              scrollToKey(_myChaptersKey);
-            },
-            onDrawerProjectsTap: () {
-              Navigator.pop(context);
-              scrollToKey(_projectsKey);
-            },
-            onDrawerSkillsTap: () {
-              context.go(
-                Routes.skillsWeb,
-              );
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const SkillsScreen(),
-                ),
-              );
-            },
-            onDrawerPortfolioTap: () {
-              scrollToKey(_projectsKey);
-              Navigator.pop(context);
-            },
-            onDrawerGetInTouchTap: () {
-              //TODO NAVIGATE TO GET IN TOUCH SCREEN
-            },
-            onDrawerTrainingTap: () {
-              context.go(
-                Routes.trainingWeb,
-              );
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const TrainingScreen(),
-                ),
-              );
-            },
-            toggleTheme: (bool isDark) {
-              String theme = isDark ? Constants.dark : Constants.light;
-              _bloc.add(PortfolioChangeThemeEvent(theme: theme));
-            },
-            changeLocale: (String locale) {
-              _bloc.add(PortfolioChangeLanguageEvent(locale: locale));
-            },
-          ),
+          endDrawer: _buildEndDrawer(context),
           appBar: CustomAppBarWidget(
             onLogoTap: () {
               RestartWidget.restartApp(context);
@@ -261,6 +191,80 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
     await Future.delayed(const Duration(microseconds: 300));
     openLink(
       "https://drive.google.com/file/d/16UiIW2QpK9vzbG_gHXvgGTuWtzP5eWGD/view?usp=drivesdk",
+    );
+  }
+
+  _buildEndDrawer(BuildContext context) {
+    return EndDrawerWidget(
+      isDarkMode: isDarkMode,
+      onDrawerGetInTouchTap: () {
+        //TODO NAVIGATE TO GET IN TOUCH SCREEN
+      },
+      onDrawerLogoTap: () {
+        RestartWidget.restartApp(context);
+        html.window.location.reload();
+      },
+      onDrawerEducationTap: () {
+        Navigator.pop(context);
+        scrollToKey(_myEducationsKey);
+      },
+      onDrawerSkillsOfferTap: () {
+        Navigator.pop(context);
+        scrollToKey(_offerKey);
+      },
+      onDrawerAboutTap: () {
+        Navigator.pop(context);
+        scrollToKey(_headerKey);
+      },
+      onDrawerHomeTap: () {
+        Navigator.pop(context);
+        scrollToKey(_headerKey);
+      },
+      onDrawerContactTap: () {
+        Navigator.pop(context);
+        scrollToKey(_contactKey);
+      },
+      onDrawerExperienceTap: () {
+        Navigator.pop(context);
+        scrollToKey(_myChaptersKey);
+      },
+      onDrawerProjectsTap: () {
+        Navigator.pop(context);
+        scrollToKey(_projectsKey);
+      },
+      onDrawerSkillsTap: () {
+        context.go(
+          Routes.skillsWeb,
+        );
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const SkillsScreen(),
+          ),
+        );
+      },
+      onDrawerPortfolioTap: () {
+        scrollToKey(_projectsKey);
+        Navigator.pop(context);
+      },
+      onDrawerTrainingTap: () {
+        context.go(
+          Routes.trainingWeb,
+        );
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const TrainingScreen(),
+          ),
+        );
+      },
+      toggleTheme: (bool isDark) {
+        String theme = isDark ? Constants.dark : Constants.light;
+        _bloc.add(PortfolioChangeThemeEvent(theme: theme));
+      },
+      changeLocale: (String locale) {
+        _bloc.add(PortfolioChangeLanguageEvent(locale: locale));
+      },
     );
   }
 }

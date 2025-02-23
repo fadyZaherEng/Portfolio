@@ -31,7 +31,8 @@ class _SkillsDetailsOfferWidgetState extends State<SkillsDetailsOfferWidget> {
         children: [
           const SizedBox(height: 20),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
+            padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width > 850 ? 30 : 0),
             child: SizedBox(
               width: MediaQuery.sizeOf(context).width > 850
                   ? MediaQuery.sizeOf(context).width * 0.4
@@ -62,7 +63,7 @@ class _SkillsDetailsOfferWidgetState extends State<SkillsDetailsOfferWidget> {
               carouselController: _controller,
               options: CarouselOptions(
                 viewportFraction:
-                    MediaQuery.of(context).size.width > 600 ? 0.33 : 0.55,
+                    MediaQuery.of(context).size.width > 600 ? 0.33 : 0.7,
                 autoPlay: true,
                 enlargeCenterPage: true,
                 scrollPhysics: const BouncingScrollPhysics(),
@@ -354,8 +355,9 @@ class _SkillsDetailsOfferWidgetState extends State<SkillsDetailsOfferWidget> {
                 ),
               ),
               child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: MediaQuery.sizeOf(context).width > 850 ? 10 : 4,
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 12,
                 ),
                 child: Wrap(
                   direction: Axis.horizontal,

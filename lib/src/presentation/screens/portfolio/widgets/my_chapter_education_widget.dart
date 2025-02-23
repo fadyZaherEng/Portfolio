@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/domain/model/time_line.dart';
@@ -87,7 +87,7 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
+                padding:   EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width > 850 ? 16 : 0),
                 child: Column(
                   children: [
                     const SizedBox(height: 20),
@@ -105,7 +105,7 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
                     SizedBox(
                       width: double.infinity,
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 30),
+                        padding:   EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width > 850 ?  24:10),
                         child: AnimatedTextWidget(
                           text: S.of(context).education,
                           style:
@@ -176,7 +176,7 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
       child: SizedBox(
         width: MediaQuery.of(context).size.width > 850
             ? 850
-            : MediaQuery.of(context).size.width * 0.8,
+            : MediaQuery.of(context).size.width * 0.95,
         child: Text(
           text,
           textAlign: TextAlign.center,

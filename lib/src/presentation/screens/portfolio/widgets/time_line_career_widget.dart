@@ -47,88 +47,53 @@ class _TimelineCareerWidgetState extends State<TimelineCareerWidget>
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Column(
-          children: [
-            // Timeline dot
-            widget.isEducation
-                ? Padding(
-                    padding: const EdgeInsets.only(top: 12),
-                    child: Icon(
-                      Icons.school,
-                      color: ColorSchemes.primarySecondary,
-                      size: 28,
-                    ),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              // Timeline dot
+              widget.isEducation
+                  ? Icon(
+                    Icons.school,
+                    color: ColorSchemes.primarySecondary,
+                    size: 28,
                   )
-                : Container(
-                    margin: const EdgeInsets.symmetric(vertical: 16),
-                    height: 14,
-                    width: 14,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      border: Border.all(color: widget.event.color, width: 3),
-                      color: Colors.white,
+                  : Container(
+                      // margin: const EdgeInsets.only(bottom: 8),
+                      height: 14,
+                      width: 14,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        border: Border.all(color: widget.event.color, width: 3),
+                        color: Colors.white,
+                      ),
                     ),
-                  ),
-            if (widget.index != widget.totalEvents - 1 && !widget.isEducation)
-              Container(
-                height: 50,
-                width: 2,
-                color: Colors.grey.shade400,
-              ),
-          ],
-        ),
-        const SizedBox(width: 10),
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.all(5),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                AnimatedBuilder(
-                  animation: _controller,
-                  builder: (context, child) {
-                    return Opacity(
-                      opacity: _opacityAnimation.value,
-                      child: child,
-                    );
-                  },
-                  child: AnimatedTextWidget(
-                    text: widget.event.title,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 16,
-                      color: ColorSchemes.primaryWhite,
-                    ),
+              if (widget.index != widget.totalEvents - 1 && !widget.isEducation)
+                Container(
+                  margin: const EdgeInsets.only(left: 5,right: 5),
+                child: Container(
+                    height: 50,
+                    width: 2,
+                    color: Colors.grey.shade400,
                   ),
                 ),
-                const SizedBox(height: 4),
-                AnimatedBuilder(
-                  animation: _controller,
-                  builder: (context, child) {
-                    return Opacity(
-                      opacity: _opacityAnimation.value,
-                      child: child,
-                    );
-                  },
-                  child: AnimatedTextWidget(
-                    text: widget.event.date,
-                    style: TextStyle(
-                      color: Colors.grey[600],
-                      fontSize: 15,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 4),
-                InkWell(
-                  onTap: () {
-                    openLink(widget.event.url);
-                  },
-                  child: AnimatedBuilder(
+            ],
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 5),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  AnimatedBuilder(
                     animation: _controller,
                     builder: (context, child) {
                       return Opacity(
@@ -137,23 +102,63 @@ class _TimelineCareerWidgetState extends State<TimelineCareerWidget>
                       );
                     },
                     child: AnimatedTextWidget(
-                      text: widget.event.place,
-                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.deepPurpleAccent,
-                            decoration: TextDecoration.underline,
-                            decorationStyle: TextDecorationStyle.solid,
-                            decorationThickness: 2.5,
-                          ),
+                      text: widget.event.title,
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        color: ColorSchemes.primaryWhite,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                  const SizedBox(height: 4),
+                  AnimatedBuilder(
+                    animation: _controller,
+                    builder: (context, child) {
+                      return Opacity(
+                        opacity: _opacityAnimation.value,
+                        child: child,
+                      );
+                    },
+                    child: AnimatedTextWidget(
+                      text: widget.event.date,
+                      style: TextStyle(
+                        color: Colors.grey[600],
+                        fontSize: 15,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 4),
+                  InkWell(
+                    onTap: () {
+                      openLink(widget.event.url);
+                    },
+                    child: AnimatedBuilder(
+                      animation: _controller,
+                      builder: (context, child) {
+                        return Opacity(
+                          opacity: _opacityAnimation.value,
+                          child: child,
+                        );
+                      },
+                      child: AnimatedTextWidget(
+                        text: widget.event.place,
+                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.deepPurpleAccent,
+                              decoration: TextDecoration.underline,
+                              decorationStyle: TextDecorationStyle.solid,
+                              decorationThickness: 2.5,
+                            ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
