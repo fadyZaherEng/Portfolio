@@ -136,6 +136,9 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
               scrollToKey(_projectsKey);
               Navigator.pop(context);
             },
+            onDrawerGetInTouchTap: () {
+              //TODO NAVIGATE TO GET IN TOUCH SCREEN
+            },
             onDrawerTrainingTap: () {
               context.go(
                 Routes.trainingWeb,

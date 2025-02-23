@@ -24,6 +24,7 @@ class EndDrawerWidget extends StatelessWidget {
   final void Function() onDrawerLogoTap;
   final void Function() onDrawerSkillsOfferTap;
   final void Function() onDrawerProjectsTap;
+  final void Function() onDrawerGetInTouchTap;
 
   const EndDrawerWidget({
     super.key,
@@ -41,6 +42,7 @@ class EndDrawerWidget extends StatelessWidget {
     required this.onDrawerEducationTap,
     required this.onDrawerSkillsOfferTap,
     required this.onDrawerProjectsTap,
+    required this.onDrawerGetInTouchTap,
   });
 
   @override
@@ -90,6 +92,13 @@ class EndDrawerWidget extends StatelessWidget {
             const SizedBox(height: 12),
             Column(
               children: [
+                _buildMenuItem(
+                  icon: Icons.contact_support,
+                  label: S.of(context).getInTouch,
+                  onTap: onDrawerGetInTouchTap,
+                  context: context,
+                ),
+                const SizedBox(height: 12),
                 _buildMenuItem(
                   icon: Icons.home,
                   label: S.of(context).home,
@@ -326,6 +335,7 @@ class EndDrawerWidget extends StatelessWidget {
       margin: const EdgeInsets.symmetric(horizontal: 10),
     );
   }
+
   void _openResume() async {
     await Future.delayed(const Duration(microseconds: 300));
     openLink(

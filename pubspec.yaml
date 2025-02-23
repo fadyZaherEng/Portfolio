@@ -65,6 +65,7 @@ dependencies:
   flutter_animate:
   font_awesome_flutter: ^10.8.0
   universal_html:
+  clipboard:
 
 
 dev_dependencies:

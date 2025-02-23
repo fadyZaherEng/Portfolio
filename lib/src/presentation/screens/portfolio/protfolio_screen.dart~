@@ -117,7 +117,6 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
               Navigator.pop(context);
               scrollToKey(_myChaptersKey);
             },
-
             onDrawerProjectsTap: () {
               Navigator.pop(context);
               scrollToKey(_projectsKey);
@@ -167,7 +166,7 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
             children: [
               SingleChildScrollView(
                 controller: _scrollController,
-                 child: Padding(
+                child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -200,7 +199,10 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
                       MyChapterEducationWidget(key: _myEducationsKey),
                       MyChaptersCareerWidget(key: _myChaptersKey),
                       const SizedBox(height: 10),
-                      ProjectsWidgets(key: _projectsKey),
+                      ProjectsWidgets(
+                        key: _projectsKey,
+                        isDarkMode: isDarkMode,
+                      ),
                       ContactMeWidget(key: _contactKey),
                       const SizedBox(height: 15),
                     ],

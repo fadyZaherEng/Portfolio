@@ -45,6 +45,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "apiIntegrationTitle":
             MessageLookupByLibrary.simpleMessage("API Integration"),
         "appTitle": MessageLookupByLibrary.simpleMessage("My Portfolio"),
+        "atBridgeCOM": MessageLookupByLibrary.simpleMessage("At BridgeCOM"),
         "bitbucket": MessageLookupByLibrary.simpleMessage("Bitbucket"),
         "bitbucketPipeline":
             MessageLookupByLibrary.simpleMessage("Bitbucket Pipeline"),
@@ -70,6 +71,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Implement continuous integration and deployment pipelines for automated builds and deployments."),
         "continuousIntegrationTitle":
             MessageLookupByLibrary.simpleMessage("Continuous Integration"),
+        "copyEmail": MessageLookupByLibrary.simpleMessage("Copy Email"),
         "css": MessageLookupByLibrary.simpleMessage("CSS"),
         "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
         "dart": MessageLookupByLibrary.simpleMessage("Dart"),
@@ -126,6 +128,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "geolocationAndMapsIntegrationTitle":
             MessageLookupByLibrary.simpleMessage(
                 "Geolocation and Maps Integration"),
+        "getInTouch": MessageLookupByLibrary.simpleMessage("Get In Touch"),
         "getX": MessageLookupByLibrary.simpleMessage("GetX"),
         "git": MessageLookupByLibrary.simpleMessage("Git"),
         "gitVersionControl": MessageLookupByLibrary.simpleMessage("Git"),
@@ -138,6 +141,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Google Maps API"),
         "googleMapsPlugin":
             MessageLookupByLibrary.simpleMessage("Google Maps Plugin"),
+        "hireMe": MessageLookupByLibrary.simpleMessage("Hire Me"),
         "hive": MessageLookupByLibrary.simpleMessage("Hive"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "html": MessageLookupByLibrary.simpleMessage("HTML"),

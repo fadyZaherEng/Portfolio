@@ -47,6 +47,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "apiIntegrationTitle":
             MessageLookupByLibrary.simpleMessage("تكامل API"),
         "appTitle": MessageLookupByLibrary.simpleMessage("ملفي الشخصي"),
+        "atBridgeCOM": MessageLookupByLibrary.simpleMessage("في BridgeCOM"),
         "bitbucket": MessageLookupByLibrary.simpleMessage("بت باكت"),
         "bitbucketPipeline":
             MessageLookupByLibrary.simpleMessage("بت باكت بايبلاين"),
@@ -73,6 +74,8 @@ class MessageLookup extends MessageLookupByLibrary {
                 "تنفيذ خطوط تكامل ونشر مستمر لأتمتة عمليات البناء والتوزيع."),
         "continuousIntegrationTitle":
             MessageLookupByLibrary.simpleMessage("التكامل المستمر"),
+        "copyEmail":
+            MessageLookupByLibrary.simpleMessage("نسخ البريد الالكتروني"),
         "css": MessageLookupByLibrary.simpleMessage("سي إس إس"),
         "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الليلي"),
         "dart": MessageLookupByLibrary.simpleMessage("دارت"),
@@ -128,6 +131,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "تنفيذ تكامل تحديد المواقع والخرائط في التطبيق."),
         "geolocationAndMapsIntegrationTitle":
             MessageLookupByLibrary.simpleMessage("تكامل تحديد الموقع والخرائط"),
+        "getInTouch": MessageLookupByLibrary.simpleMessage("أرسل لي رسالة"),
         "getX": MessageLookupByLibrary.simpleMessage("جيت إكس"),
         "git": MessageLookupByLibrary.simpleMessage("جيت"),
         "gitVersionControl": MessageLookupByLibrary.simpleMessage("جيت"),
@@ -141,6 +145,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("واجهة برمجة خرائط جوجل"),
         "googleMapsPlugin":
             MessageLookupByLibrary.simpleMessage("إضافة خرائط جوجل"),
+        "hireMe": MessageLookupByLibrary.simpleMessage("وظفني"),
         "hive": MessageLookupByLibrary.simpleMessage("هايف"),
         "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "html": MessageLookupByLibrary.simpleMessage("إتش تي إم إل"),

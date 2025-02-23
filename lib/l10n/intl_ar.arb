@@ -11,7 +11,7 @@
   "home": "الرئيسية",
   "skills": "المهارات",
   "experience": "الخبرة",
-  "portfolio":  "مشاريعي",
+  "portfolio": "مشاريعي",
   "contact": "اتصل",
   "darkMode": "الوضع الليلي",
   "WhatCanIDo": "ماذا يمكنني ان افعل؟",
@@ -163,5 +163,9 @@
   "fadyTag": "<م.فادي زاهر/>",
   "resume": "السيرة الذاتية",
   "downloadCv": "تحميل السيرة الذاتية",
-  "seeMoreProjects": "اظهار المزيد من المشاريع"
+  "seeMoreProjects": "اظهار المزيد من المشاريع",
+  "atBridgeCOM": "في BridgeCOM",
+  "copyEmail": "نسخ البريد الالكتروني",
+  "hireMe": "وظفني",
+  "getInTouch": "أرسل لي رسالة"
 }

@@ -1691,6 +1691,46 @@ class S {
       args: [],
     );
   }
+
+  /// `At BridgeCOM`
+  String get atBridgeCOM {
+    return Intl.message(
+      'At BridgeCOM',
+      name: 'atBridgeCOM',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Copy Email`
+  String get copyEmail {
+    return Intl.message(
+      'Copy Email',
+      name: 'copyEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hire Me`
+  String get hireMe {
+    return Intl.message(
+      'Hire Me',
+      name: 'hireMe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get In Touch`
+  String get getInTouch {
+    return Intl.message(
+      'Get In Touch',
+      name: 'getInTouch',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
