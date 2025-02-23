@@ -194,7 +194,7 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
     );
   }
 
-  _buildEndDrawer(BuildContext context) {
+  Widget _buildEndDrawer(BuildContext context) {
     return EndDrawerWidget(
       isDarkMode: isDarkMode,
       onDrawerGetInTouchTap: () {
