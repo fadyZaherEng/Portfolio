@@ -11,6 +11,7 @@ import 'package:my_portfolio/src/di/data_layer_injector.dart';
 import 'package:my_portfolio/src/domain/usecase/get_theme_use_case.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_app_bar_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_resume_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/touch_me/widgets/custom_text_field_with_suffix_icon_widget.dart';
 import 'package:my_portfolio/src/presentation/widgets/restart_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -99,66 +100,111 @@ class _TouchMeScreenState extends State<TouchMeScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        _buildTextField(
-                          _nameController,
-                          S.of(context).yourName,
-                          Icons.person,
-                          _nameError,
-                          (value) {
+                        CustomTextFieldWithSuffixIconWidget(
+                          controller: _nameController,
+                          labelTitle: S.of(context).yourName,
+                          isDarkMode: isDarkMode,
+                          maxLine: 2,
+                          errorMessage: _nameError,
+                          onChange: (value) {
                             if (value == null ||
                                 value.isEmpty ||
                                 value.trim().length < 3) {
-                              _nameError = S.of(context).nameIsRequired;
-                              setState(() {});
-                              return S.of(context).nameIsRequired;
+                              setState(() {
+                                _nameError = S.of(context).nameIsRequired;
+                              });
                             }
                             setState(() {
                               _nameError = null;
                             });
-                            return null;
                           },
-                          maxLines: 2,
+                          suffixIcon:
+                              const Icon(Icons.person, color: Colors.white),
+                          onSubmitted: (value) {
+                            if (value == null ||
+                                value.isEmpty ||
+                                value.trim().length < 3) {
+                              setState(() {
+                                _nameError = S.of(context).nameIsRequired;
+                              });
+                            }
+                            setState(() {
+                              _nameError = null;
+                            });
+                          },
+                          onTap: () {},
                         ),
                         const SizedBox(height: 16),
-                        _buildTextField(
-                          _emailController,
-                          S.of(context).yourEmail,
-                          Icons.email,
-                          _emailError,
-                          (value) {
+                        CustomTextFieldWithSuffixIconWidget(
+                          controller: _emailController,
+                          labelTitle: S.of(context).yourEmail,
+                          isDarkMode: isDarkMode,
+                          maxLine: 2,
+                          errorMessage: _emailError,
+                          onChange: (value) {
                             if (value == null ||
                                 value.isEmpty ||
                                 !RegExp(r"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")
                                     .hasMatch(value)) {
-                              _emailError = S.of(context).emailIsRequired;
-                              setState(() {});
-                              return S.of(context).emailIsRequired;
+                              setState(() {
+                                _emailError = S.of(context).emailIsRequired;
+                              });
                             }
-                            _emailError = null;
-                            setState(() {});
-                            return null;
+                            setState(() {
+                              _emailError = null;
+                            });
                           },
-                          maxLines: 2,
+                          suffixIcon:
+                              const Icon(Icons.email, color: Colors.white),
+                          onSubmitted: (value) {
+                            if (value == null ||
+                                value.isEmpty ||
+                                !RegExp(r"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")
+                                    .hasMatch(value)) {
+                              setState(() {
+                                _emailError = S.of(context).emailIsRequired;
+                              });
+                            }
+                            setState(() {
+                              _emailError = null;
+                            });
+                          },
+                          onTap: () {},
                         ),
                         const SizedBox(height: 16),
-                        _buildTextField(
-                          _messageController,
-                          S.of(context).yourMessage,
-                          Icons.message,
-                          _messageError,
-                          (value) {
+                        CustomTextFieldWithSuffixIconWidget(
+                          controller: _messageController,
+                          labelTitle: S.of(context).yourMessage,
+                          isDarkMode: isDarkMode,
+                          maxLine: 10,
+                          errorMessage: _emailError,
+                          onChange: (value) {
                             if (value == null ||
                                 value.isEmpty ||
                                 value.trim().length < 5) {
-                              _messageError = S.of(context).messageIsRequired;
-                              setState(() {});
-                              return S.of(context).messageIsRequired;
+                              setState(() {
+                                _messageError = S.of(context).messageIsRequired;
+                              });
                             }
-                            _messageError = null;
-                            setState(() {});
-                            return null;
+                            setState(() {
+                              _messageError = null;
+                            });
                           },
-                          maxLines: 10,
+                          suffixIcon:
+                              const Icon(Icons.message, color: Colors.white),
+                          onSubmitted: (value) {
+                            if (value == null ||
+                                value.isEmpty ||
+                                value.trim().length < 5) {
+                              setState(() {
+                                _messageError = S.of(context).messageIsRequired;
+                              });
+                            }
+                            setState(() {
+                              _messageError = null;
+                            });
+                          },
+                          onTap: () {},
                         ),
                         const SizedBox(height: 32),
                         CustomResumeWidget(
