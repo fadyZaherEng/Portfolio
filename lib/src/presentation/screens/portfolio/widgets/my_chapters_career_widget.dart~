@@ -98,29 +98,31 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
                           height: 22,
                         ),
                         const SizedBox(width: 4),
-                        _buildHeaderText(
-                          context,
-                          S.of(context).moreThanYearsExperienceAsA,
-                          false,
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width > 850
+                              ? 850
+                              : MediaQuery.of(context).size.width * 0.9,
+                          child: _buildHeaderText(
+                            context,
+                            S.of(context).moreThanYearsExperienceAsA,
+                            false,
+                          ),
                         ),
                       ],
                     ),
                     const SizedBox(height: 15),
                     SizedBox(
                       width: MediaQuery.sizeOf(context).width,
-                      height: 30,
+                      height: 40,
                       child: _buildTitleShaderMask(context),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               MediaQuery.of(context).size.width > 850
                   ? Center(child: _buildCareer(context))
-                  : Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 0, 0),
-                      child: _buildCareer(context),
-                    ),
+                  : _buildCareer(context),
               const SizedBox(height: 10),
             ],
           ),
