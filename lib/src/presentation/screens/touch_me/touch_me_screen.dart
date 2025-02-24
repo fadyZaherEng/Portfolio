@@ -165,11 +165,11 @@ class _TouchMeScreenState extends State<TouchMeScreen> {
                           },
                           maxLines: 10,
                         ),
-                        const SizedBox(height: 32),
+                        const SizedBox(height: 42),
                         CustomResumeWidget(
                           onViewResumeTap: sendEmail,
                           isDarkMode: isDarkMode,
-                          borderColor: ColorSchemes.secondary,
+                          borderColor: ColorSchemes.white,
                           textColor: isDarkMode
                               ? ColorSchemes.white
                               : ColorSchemes.iconBackGround,
@@ -219,9 +219,7 @@ class _TouchMeScreenState extends State<TouchMeScreen> {
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide.none,
           ),
-          fillColor: isDarkMode
-              ? ColorSchemes.secondary.withOpacity(0.5)
-              : ColorSchemes.primary,
+          fillColor: ColorSchemes.primary,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide.none,
