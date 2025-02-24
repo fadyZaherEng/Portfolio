@@ -198,9 +198,9 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
   Widget _buildEndDrawer(BuildContext context) {
     return EndDrawerWidget(
       isDarkMode: isDarkMode,
+      isEnglish: currentLocale == "en",
       onDrawerGetInTouchTap: () {
-        //TODO NAVIGATE TO GET IN TOUCH SCREEN
-        context.go(Routes.touchMe);
+         context.go(Routes.touchMe);
         Navigator.push(
           context,
           MaterialPageRoute(

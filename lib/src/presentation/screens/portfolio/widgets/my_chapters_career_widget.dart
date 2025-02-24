@@ -79,7 +79,7 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
               Padding(
                 padding: EdgeInsets.symmetric(
                     horizontal:
-                        MediaQuery.of(context).size.width > 850 ? 16 : 4),
+                        MediaQuery.of(context).size.width > 850 ? 16 : 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -114,13 +114,10 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
                   ],
                 ),
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               MediaQuery.of(context).size.width > 850
                   ? Center(child: _buildCareer(context))
-                  : Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(6, 0, 0, 0),
-                      child: _buildCareer(context),
-                    ),
+                  : _buildCareer(context),
               const SizedBox(height: 10),
             ],
           ),

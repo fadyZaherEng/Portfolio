@@ -105,7 +105,7 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
                     SizedBox(
                       width: double.infinity,
                       child: Padding(
-                        padding:   EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width > 850 ?  24:10),
+                        padding:   EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width > 850 ?  24:0),
                         child: AnimatedTextWidget(
                           text: S.of(context).education,
                           style:
