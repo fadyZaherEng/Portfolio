@@ -1731,6 +1731,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Could not open email app!`
+  String get couldNotOpenEmail {
+    return Intl.message(
+      'Could not open email app!',
+      name: 'couldNotOpenEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send Message`
+  String get sendMessage {
+    return Intl.message(
+      'Send Message',
+      name: 'sendMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Name`
+  String get yourName {
+    return Intl.message(
+      'Your Name',
+      name: 'yourName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Email`
+  String get yourEmail {
+    return Intl.message(
+      'Your Email',
+      name: 'yourEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your Message`
+  String get yourMessage {
+    return Intl.message(
+      'Your Message',
+      name: 'yourMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please Enter`
+  String get pleaseEnter {
+    return Intl.message(
+      'Please Enter',
+      name: 'pleaseEnter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name is required`
+  String get nameIsRequired {
+    return Intl.message(
+      'Name is required',
+      name: 'nameIsRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email is required`
+  String get emailIsRequired {
+    return Intl.message(
+      'Email is required',
+      name: 'emailIsRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Message is required`
+  String get messageIsRequired {
+    return Intl.message(
+      'Message is required',
+      name: 'messageIsRequired',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

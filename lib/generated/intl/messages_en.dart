@@ -72,6 +72,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "continuousIntegrationTitle":
             MessageLookupByLibrary.simpleMessage("Continuous Integration"),
         "copyEmail": MessageLookupByLibrary.simpleMessage("Copy Email"),
+        "couldNotOpenEmail":
+            MessageLookupByLibrary.simpleMessage("Could not open email app!"),
         "css": MessageLookupByLibrary.simpleMessage("CSS"),
         "darkMode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
         "dart": MessageLookupByLibrary.simpleMessage("Dart"),
@@ -96,6 +98,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "done": MessageLookupByLibrary.simpleMessage("Done"),
         "downloadCv": MessageLookupByLibrary.simpleMessage("DOWNLOAD CV"),
         "education": MessageLookupByLibrary.simpleMessage("Education"),
+        "emailIsRequired":
+            MessageLookupByLibrary.simpleMessage("Email is required"),
         "experience": MessageLookupByLibrary.simpleMessage("Experience"),
         "exploreMyProjects": MessageLookupByLibrary.simpleMessage(
             "Explore My Projects that showcase my skills and expertise in Flutter development.where I have successfully delivered innovative and user-friendly apps that meet the highest standards of performance and user experience."),
@@ -173,6 +177,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "memoryManagement":
             MessageLookupByLibrary.simpleMessage("Memory Management"),
         "menuHeader": MessageLookupByLibrary.simpleMessage("Menu"),
+        "messageIsRequired":
+            MessageLookupByLibrary.simpleMessage("Message is required"),
         "midLevelFlutterSoftwareEngineer": MessageLookupByLibrary.simpleMessage(
             "Mid Level Flutter Software Engineer"),
         "midLevelSoftwareEngineer":
@@ -191,6 +197,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Chapters Of My Career"),
         "myProjects": MessageLookupByLibrary.simpleMessage("My Projects"),
         "mySQL": MessageLookupByLibrary.simpleMessage("MySQL"),
+        "nameIsRequired":
+            MessageLookupByLibrary.simpleMessage("Name is required"),
         "netMvc": MessageLookupByLibrary.simpleMessage(".NetMvc"),
         "objectOrientedProgramming":
             MessageLookupByLibrary.simpleMessage("Object-Oriented Programming"),
@@ -205,6 +213,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Performance Optimization"),
         "performanceTesting":
             MessageLookupByLibrary.simpleMessage("Performance Testing"),
+        "pleaseEnter": MessageLookupByLibrary.simpleMessage("Please Enter"),
         "portfolio": MessageLookupByLibrary.simpleMessage("Portfolio"),
         "problemSolving":
             MessageLookupByLibrary.simpleMessage("Problem Solving"),
@@ -232,6 +241,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectDate": MessageLookupByLibrary.simpleMessage("Select Date"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),
+        "sendMessage": MessageLookupByLibrary.simpleMessage("Send Message"),
         "sharedPreferences":
             MessageLookupByLibrary.simpleMessage("Shared Preferences"),
         "skills": MessageLookupByLibrary.simpleMessage("Skills"),
@@ -277,6 +287,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Web Development"),
         "welcomeMessage": MessageLookupByLibrary.simpleMessage(
             "Hello, Welcome to My Portfolio"),
+        "yourEmail": MessageLookupByLibrary.simpleMessage("Your Email"),
+        "yourMessage": MessageLookupByLibrary.simpleMessage("Your Message"),
+        "yourName": MessageLookupByLibrary.simpleMessage("Your Name"),
         "youtube": MessageLookupByLibrary.simpleMessage("YouTube")
       };
 }

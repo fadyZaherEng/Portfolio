@@ -76,6 +76,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("التكامل المستمر"),
         "copyEmail":
             MessageLookupByLibrary.simpleMessage("نسخ البريد الالكتروني"),
+        "couldNotOpenEmail": MessageLookupByLibrary.simpleMessage(
+            "لا يمكن فتح البريد الالكتروني"),
         "css": MessageLookupByLibrary.simpleMessage("سي إس إس"),
         "darkMode": MessageLookupByLibrary.simpleMessage("الوضع الليلي"),
         "dart": MessageLookupByLibrary.simpleMessage("دارت"),
@@ -100,6 +102,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "downloadCv":
             MessageLookupByLibrary.simpleMessage("تحميل السيرة الذاتية"),
         "education": MessageLookupByLibrary.simpleMessage("التعليم"),
+        "emailIsRequired":
+            MessageLookupByLibrary.simpleMessage("البريد الالكتروني مطلوب"),
         "experience": MessageLookupByLibrary.simpleMessage("الخبرة"),
         "exploreMyProjects": MessageLookupByLibrary.simpleMessage(
             "استكشف مشاريعي التي تُبرز مهاراتي وخبرتي في تطوير Flutter، حيث قمت بتقديم تطبيقات مبتكرة وسهلة الاستخدام تلبي أعلى معايير الأداء وتجربة المستخدم."),
@@ -175,6 +179,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "memoryManagement":
             MessageLookupByLibrary.simpleMessage("إدارة الذاكرة"),
         "menuHeader": MessageLookupByLibrary.simpleMessage("القائمة"),
+        "messageIsRequired":
+            MessageLookupByLibrary.simpleMessage("الرسالة مطلوبة"),
         "midLevelFlutterSoftwareEngineer": MessageLookupByLibrary.simpleMessage(
             "مهندس برمجيات Flutter متوسط المستوى"),
         "midLevelSoftwareEngineer":
@@ -193,6 +199,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("فصول من مسيرتي المهنية"),
         "myProjects": MessageLookupByLibrary.simpleMessage("مشاريعي"),
         "mySQL": MessageLookupByLibrary.simpleMessage("ماي إس كيو إل"),
+        "nameIsRequired": MessageLookupByLibrary.simpleMessage("الاسم مطلوب"),
         "netMvc": MessageLookupByLibrary.simpleMessage(".نت MVC"),
         "objectOrientedProgramming":
             MessageLookupByLibrary.simpleMessage("البرمجة الكائنية"),
@@ -208,6 +215,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تحسين الأداء"),
         "performanceTesting":
             MessageLookupByLibrary.simpleMessage("اختبار الأداء"),
+        "pleaseEnter": MessageLookupByLibrary.simpleMessage("يرجى ادخال"),
         "portfolio": MessageLookupByLibrary.simpleMessage("مشاريعي"),
         "problemSolving": MessageLookupByLibrary.simpleMessage("حل المشكلات"),
         "provider": MessageLookupByLibrary.simpleMessage("بروفايدر"),
@@ -233,6 +241,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("اظهار المزيد من المشاريع"),
         "selectDate": MessageLookupByLibrary.simpleMessage("اختار التاريخ"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("أخنار اللغه"),
+        "sendMessage": MessageLookupByLibrary.simpleMessage("ارسل رسالة"),
         "sharedPreferences":
             MessageLookupByLibrary.simpleMessage("التفضيلات المشتركة"),
         "skills": MessageLookupByLibrary.simpleMessage("المهارات"),
@@ -278,6 +287,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تطوير الويب"),
         "welcomeMessage": MessageLookupByLibrary.simpleMessage(
             "مرحبًا، أهلا بك في ملفي الشخصي!"),
+        "yourEmail": MessageLookupByLibrary.simpleMessage("بريدك الالكتروني"),
+        "yourMessage": MessageLookupByLibrary.simpleMessage("رسالتك"),
+        "yourName": MessageLookupByLibrary.simpleMessage("اسمك"),
         "youtube": MessageLookupByLibrary.simpleMessage("يوتيوب")
       };
 }

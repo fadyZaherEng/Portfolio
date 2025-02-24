@@ -200,7 +200,9 @@ class _PortfolioScreenState extends BaseState<PortfolioScreen> {
       isDarkMode: isDarkMode,
       onDrawerGetInTouchTap: () {
         //TODO NAVIGATE TO GET IN TOUCH SCREEN
-        context.go(Routes.touchMe);
+        context.go(
+          Routes.touchMe,
+        );
         Navigator.push(
           context,
           MaterialPageRoute(

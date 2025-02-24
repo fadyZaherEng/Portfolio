@@ -27,8 +27,7 @@ class RoutesManager {
         return _materialRoute(const TrainingScreen());
       case Routes.skillsWeb:
         return _materialRoute(const SkillsScreen());
-      case Routes.touchMe:
-        return _materialRoute(const TouchMeScreen());
+
       default:
         return _materialRoute(const PortfolioScreen());
     }

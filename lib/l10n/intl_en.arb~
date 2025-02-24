@@ -176,8 +176,5 @@
   "yourName": "Your Name",
   "yourEmail": "Your Email",
   "yourMessage": "Your Message",
-  "pleaseEnter":"Please Enter",
-  "nameIsRequired":"Name is required",
-  "emailIsRequired":"Email is required",
-  "messageIsRequired":"Message is required"
+  "pleaseEnter":"Please Enter"
 }

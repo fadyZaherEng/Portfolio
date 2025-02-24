@@ -167,5 +167,14 @@
   "atBridgeCOM": "في BridgeCOM",
   "copyEmail": "نسخ البريد الالكتروني",
   "hireMe": "وظفني",
-  "getInTouch": "أرسل لي رسالة"
+  "getInTouch": "أرسل لي رسالة",
+  "couldNotOpenEmail": "لا يمكن فتح البريد الالكتروني",
+  "sendMessage": "ارسل رسالة",
+  "yourName": "اسمك",
+  "yourEmail": "بريدك الالكتروني",
+  "yourMessage": "رسالتك",
+  "pleaseEnter": "يرجى ادخال",
+  "nameIsRequired": "الاسم مطلوب",
+  "emailIsRequired": "البريد الالكتروني مطلوب",
+  "messageIsRequired": "الرسالة مطلوبة"
 }
