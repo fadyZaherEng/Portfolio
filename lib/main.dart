@@ -65,7 +65,7 @@ class _MyAppState extends State<MyApp> {
                         GlobalCupertinoLocalizations.delegate,
                       ],
                       debugShowCheckedModeBanner: false,
-                      title: "Fady Zaher Portfolio",
+                      title: "Fady Zaher",
                       theme: state is InitialMainState &&
                               state.theme == Constants.dark
                           ? AppTheme(state.locale.languageCode).dark
