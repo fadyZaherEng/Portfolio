@@ -69,19 +69,11 @@ class _TimelineCareerWidgetState extends State<TimelineCareerWidget>
             children: [
               // Timeline dot
               widget.isEducation
-                  ? MediaQuery.of(context).size.width > 850
-                      ? Center(
-                          child: Icon(
-                            Icons.school,
-                            color: ColorSchemes.primarySecondary,
-                            size: 28,
-                          ),
-                        )
-                      : Icon(
-                          Icons.school,
-                          color: ColorSchemes.primarySecondary,
-                          size: 28,
-                        )
+                  ? Icon(
+                      Icons.school,
+                      color: ColorSchemes.primarySecondary,
+                      size: 28,
+                    )
                   : Container(
                       height: 14,
                       width: 14,
@@ -91,7 +83,7 @@ class _TimelineCareerWidgetState extends State<TimelineCareerWidget>
                         color: Colors.white,
                       ),
                     ),
-              if (widget.index != widget.totalEvents - 1 && !widget.isEducation)
+              if (widget.index != widget.totalEvents - 1 )
                 Container(
                   margin: const EdgeInsets.only(left: 5, right: 5),
                   child: Container(

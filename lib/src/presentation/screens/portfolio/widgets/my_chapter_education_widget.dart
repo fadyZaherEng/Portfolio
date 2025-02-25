@@ -88,8 +88,8 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
             children: [
               Padding(
                 padding: EdgeInsets.symmetric(
-                    horizontal:
-                        MediaQuery.of(context).size.width > 850 ? 16 : 0),
+                  horizontal: MediaQuery.of(context).size.width > 850 ? 16 : 0,
+                ),
                 child: Column(
                   children: [
                     const SizedBox(height: 20),
@@ -108,9 +108,9 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
                       width: double.infinity,
                       child: Padding(
                         padding: EdgeInsets.symmetric(
-                            horizontal: MediaQuery.of(context).size.width > 850
-                                ? 24
-                                : 0),
+                          horizontal:
+                              MediaQuery.of(context).size.width > 850 ? 24 : 0,
+                        ),
                         child: AnimatedTextWidget(
                           text: S.of(context).education,
                           textAlign: MediaQuery.of(context).size.width > 850
@@ -126,7 +126,9 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
                       ),
                     ),
                     const SizedBox(height: 10),
-                    _buildEducationTimeLine(context),
+                    MediaQuery.of(context).size.width > 850
+                        ? Center(child: _buildEducationTimeLine(context))
+                        : _buildEducationTimeLine(context),
                     const SizedBox(height: 20),
                   ],
                 ),
