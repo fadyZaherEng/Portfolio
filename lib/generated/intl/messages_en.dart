@@ -98,6 +98,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "done": MessageLookupByLibrary.simpleMessage("Done"),
         "downloadCv": MessageLookupByLibrary.simpleMessage("DOWNLOAD CV"),
         "education": MessageLookupByLibrary.simpleMessage("Education"),
+        "email": MessageLookupByLibrary.simpleMessage("Email"),
         "emailIsRequired":
             MessageLookupByLibrary.simpleMessage("Email is required"),
         "experience": MessageLookupByLibrary.simpleMessage("Experience"),
@@ -155,6 +156,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "integrationTesting":
             MessageLookupByLibrary.simpleMessage("Integration Testing"),
         "intellij": MessageLookupByLibrary.simpleMessage("IntelliJ IDEA"),
+        "invalidEmail":
+            MessageLookupByLibrary.simpleMessage("Invalid email address"),
         "iosApp": MessageLookupByLibrary.simpleMessage("IOS APP"),
         "java": MessageLookupByLibrary.simpleMessage("Java"),
         "javascript": MessageLookupByLibrary.simpleMessage("JavaScript"),
@@ -177,6 +180,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "memoryManagement":
             MessageLookupByLibrary.simpleMessage("Memory Management"),
         "menuHeader": MessageLookupByLibrary.simpleMessage("Menu"),
+        "message": MessageLookupByLibrary.simpleMessage("Message"),
         "messageIsRequired":
             MessageLookupByLibrary.simpleMessage("Message is required"),
         "midLevelFlutterSoftwareEngineer": MessageLookupByLibrary.simpleMessage(
@@ -197,9 +201,12 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Chapters Of My Career"),
         "myProjects": MessageLookupByLibrary.simpleMessage("My Projects"),
         "mySQL": MessageLookupByLibrary.simpleMessage("MySQL"),
+        "name": MessageLookupByLibrary.simpleMessage("Name"),
         "nameIsRequired":
             MessageLookupByLibrary.simpleMessage("Name is required"),
         "netMvc": MessageLookupByLibrary.simpleMessage(".NetMvc"),
+        "newContactFormSubmission":
+            MessageLookupByLibrary.simpleMessage("New Contact Form Submission"),
         "objectOrientedProgramming":
             MessageLookupByLibrary.simpleMessage("Object-Oriented Programming"),
         "offer": MessageLookupByLibrary.simpleMessage(

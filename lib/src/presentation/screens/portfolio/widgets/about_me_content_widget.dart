@@ -201,7 +201,7 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
         _buildAnimatedItem(
             CustomSocialButtonWidget(
             icon: ImagePaths.facebook,
-            url: "https://facebook.com",
+            url: "https://www.facebook.com/share/18gTWiitR2/",
             title: S.of(context).facebook,
           ),
           9,

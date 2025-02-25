@@ -56,17 +56,16 @@ class _AboutMeSectionWidgetState extends State<AboutMeSectionWidget> {
 
   Widget _buildHeader(TextTheme textTheme) {
     return Center(
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          const PortfolioImageWidget(),
-          const SizedBox(width: 10),
-          AnimatedAboutMeWidget(
-            onTap: _toggleAboutMe,
-            isOpen: aboutMeOpen,
-          )
-        ],
-      ),
-    );
+        child: Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        const PortfolioImageWidget(),
+        const SizedBox(width: 10),
+        AnimatedAboutMeWidget(
+          onTap: _toggleAboutMe,
+          isOpen: aboutMeOpen,
+        )
+      ],
+    ));
   }
 }

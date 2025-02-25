@@ -1821,6 +1821,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Invalid email address`
+  String get invalidEmail {
+    return Intl.message(
+      'Invalid email address',
+      name: 'invalidEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Contact Form Submission`
+  String get newContactFormSubmission {
+    return Intl.message(
+      'New Contact Form Submission',
+      name: 'newContactFormSubmission',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message(
+      'Name',
+      name: 'name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Message`
+  String get message {
+    return Intl.message(
+      'Message',
+      name: 'message',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

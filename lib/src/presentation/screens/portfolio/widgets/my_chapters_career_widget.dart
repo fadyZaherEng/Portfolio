@@ -86,8 +86,13 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MediaQuery.of(context).size.width > 850
+                          ? MainAxisAlignment.center
+                          : MainAxisAlignment.start,
+                      crossAxisAlignment:
+                          MediaQuery.of(context).size.width > 850
+                              ? CrossAxisAlignment.center
+                              : CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Image.asset(
@@ -134,7 +139,9 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
     return isAnimation
         ? BouncingAndScalingTextWidget(
             title: text,
-            textAlign: TextAlign.start,
+            textAlign: MediaQuery.of(context).size.width > 850
+                ? TextAlign.center
+                : TextAlign.start,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,

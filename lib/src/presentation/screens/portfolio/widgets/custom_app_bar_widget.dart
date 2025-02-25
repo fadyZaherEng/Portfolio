@@ -68,12 +68,12 @@ class _State extends State<CustomAppBarWidget> {
           ? [
               IconButton(
                 icon: Container(
-                  margin: const EdgeInsetsDirectional.only(end: 10),
+                  margin: const EdgeInsetsDirectional.only(end: 5),
                   child: SvgPicture.asset(
                     ImagePaths.backArrow,
                     matchTextDirection: true,
-                    width: 22,
-                    height: 22,
+                    width: 24,
+                    height: 24,
                     color: GetThemeUseCase(injector())() == Constants.dark
                         ? ColorSchemes.secondary
                         : ColorSchemes.iconBackGround,

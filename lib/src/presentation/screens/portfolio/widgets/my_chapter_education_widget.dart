@@ -1,10 +1,10 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/domain/model/time_line.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/animated_text_Widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/bounce_and_scale_text_widget.dart';
- import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/time_line_career_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/time_line_career_widget.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 class MyChapterEducationWidget extends StatefulWidget {
@@ -87,7 +87,9 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding:   EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width > 850 ? 16 : 0),
+                padding: EdgeInsets.symmetric(
+                    horizontal:
+                        MediaQuery.of(context).size.width > 850 ? 16 : 0),
                 child: Column(
                   children: [
                     const SizedBox(height: 20),
@@ -105,9 +107,15 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
                     SizedBox(
                       width: double.infinity,
                       child: Padding(
-                        padding:   EdgeInsets.symmetric(horizontal:MediaQuery.of(context).size.width > 850 ?  24:0),
+                        padding: EdgeInsets.symmetric(
+                            horizontal: MediaQuery.of(context).size.width > 850
+                                ? 24
+                                : 0),
                         child: AnimatedTextWidget(
                           text: S.of(context).education,
+                          textAlign: MediaQuery.of(context).size.width > 850
+                              ? TextAlign.center
+                              : TextAlign.start,
                           style:
                               Theme.of(context).textTheme.titleMedium?.copyWith(
                                     color: ColorSchemes.iconDarkWhite,
@@ -118,22 +126,7 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
                       ),
                     ),
                     const SizedBox(height: 10),
-                    SizedBox(
-                      width: double.infinity,
-                      child: TimelineCareerWidget(
-                        isEducation: true,
-                        totalEvents: 1,
-                        index: 0,
-                        event: TimelineEvent(
-                          title:
-                              "${S.of(context).university}\n${S.of(context).universityDescription}\n${S.of(context).universityDegree}",
-                          place: S.of(context).ainShamsUniversity,
-                          date: "[May 2017:Aug 2021]",
-                          color: ColorSchemes.primarySecondary,
-                          url: "https://www.asu.edu.eg/",
-                        ),
-                      ),
-                    ),
+                    _buildEducationTimeLine(context),
                     const SizedBox(height: 20),
                   ],
                 ),
@@ -196,5 +189,24 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
   void dispose() {
     _controller.dispose();
     super.dispose();
+  }
+
+  Widget _buildEducationTimeLine(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      child: TimelineCareerWidget(
+        isEducation: true,
+        totalEvents: 1,
+        index: 0,
+        event: TimelineEvent(
+          title:
+              "${S.of(context).university}\n${S.of(context).universityDescription}\n${S.of(context).universityDegree}",
+          place: S.of(context).ainShamsUniversity,
+          date: "[May 2017:Aug 2021]",
+          color: ColorSchemes.primarySecondary,
+          url: "https://www.asu.edu.eg/",
+        ),
+      ),
+    );
   }
 }

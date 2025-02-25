@@ -176,5 +176,10 @@
   "pleaseEnter": "يرجى ادخال",
   "nameIsRequired": "الاسم مطلوب",
   "emailIsRequired": "البريد الالكتروني مطلوب",
-  "messageIsRequired": "الرسالة مطلوبة"
+  "messageIsRequired": "الرسالة مطلوبة",
+  "invalidEmail": "البريد الالكتروني غير صحيح",
+  "newContactFormSubmission": "تم ارسال نموذج جديد للاتصال",
+  "name": "الاسم",
+  "email": "البريد الالكتروني",
+  "message": "الرسالة"
 }

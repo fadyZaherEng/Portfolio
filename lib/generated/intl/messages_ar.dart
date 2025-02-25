@@ -102,6 +102,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "downloadCv":
             MessageLookupByLibrary.simpleMessage("تحميل السيرة الذاتية"),
         "education": MessageLookupByLibrary.simpleMessage("التعليم"),
+        "email": MessageLookupByLibrary.simpleMessage("البريد الالكتروني"),
         "emailIsRequired":
             MessageLookupByLibrary.simpleMessage("البريد الالكتروني مطلوب"),
         "experience": MessageLookupByLibrary.simpleMessage("الخبرة"),
@@ -159,6 +160,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "integrationTesting":
             MessageLookupByLibrary.simpleMessage("اختبار التكامل"),
         "intellij": MessageLookupByLibrary.simpleMessage("إنتيليجاي"),
+        "invalidEmail":
+            MessageLookupByLibrary.simpleMessage("البريد الالكتروني غير صحيح"),
         "iosApp": MessageLookupByLibrary.simpleMessage("أيفون ابليكشن"),
         "java": MessageLookupByLibrary.simpleMessage("جافا"),
         "javascript": MessageLookupByLibrary.simpleMessage("جافا سكريبت"),
@@ -179,6 +182,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "memoryManagement":
             MessageLookupByLibrary.simpleMessage("إدارة الذاكرة"),
         "menuHeader": MessageLookupByLibrary.simpleMessage("القائمة"),
+        "message": MessageLookupByLibrary.simpleMessage("الرسالة"),
         "messageIsRequired":
             MessageLookupByLibrary.simpleMessage("الرسالة مطلوبة"),
         "midLevelFlutterSoftwareEngineer": MessageLookupByLibrary.simpleMessage(
@@ -199,8 +203,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("فصول من مسيرتي المهنية"),
         "myProjects": MessageLookupByLibrary.simpleMessage("مشاريعي"),
         "mySQL": MessageLookupByLibrary.simpleMessage("ماي إس كيو إل"),
+        "name": MessageLookupByLibrary.simpleMessage("الاسم"),
         "nameIsRequired": MessageLookupByLibrary.simpleMessage("الاسم مطلوب"),
         "netMvc": MessageLookupByLibrary.simpleMessage(".نت MVC"),
+        "newContactFormSubmission":
+            MessageLookupByLibrary.simpleMessage("تم ارسال نموذج جديد للاتصال"),
         "objectOrientedProgramming":
             MessageLookupByLibrary.simpleMessage("البرمجة الكائنية"),
         "offer": MessageLookupByLibrary.simpleMessage(

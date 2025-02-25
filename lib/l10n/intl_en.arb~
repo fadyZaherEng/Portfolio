@@ -176,5 +176,10 @@
   "yourName": "Your Name",
   "yourEmail": "Your Email",
   "yourMessage": "Your Message",
-  "pleaseEnter":"Please Enter"
+  "pleaseEnter":"Please Enter",
+  "nameIsRequired":"Name is required",
+  "emailIsRequired":"Email is required",
+  "messageIsRequired":"Message is required",
+  "invalidEmail":"Invalid email address",
+  "newContactFormSubmission":"New Contact Form Submission"
 }

@@ -26,6 +26,7 @@ class _TouchMeScreenState extends State<TouchMeScreen> {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _messageController = TextEditingController();
+
   String? _nameError;
   String? _emailError;
   String? _messageError;
@@ -35,19 +36,72 @@ class _TouchMeScreenState extends State<TouchMeScreen> {
   @override
   void initState() {
     super.initState();
+
+    // Enable real-time validation
+    _nameController.addListener(() => _validateName(_nameController.text));
+    _emailController.addListener(() => _validateEmail(_emailController.text));
+    _messageController
+        .addListener(() => _validateMessage(_messageController.text));
+
     isDarkMode = GetThemeUseCase(injector())() == Constants.dark;
   }
 
+  /// Validates the name field
+  void _validateName(String value) {
+    if (value.trim().length < 3) {
+      setState(() => _nameError = S.of(context).nameIsRequired);
+    } else {
+      setState(() => _nameError = null);
+    }
+  }
+
+  /// Validates the email field
+  void _validateEmail(String value) {
+    _emailError = _emailController.text.trim().isEmpty
+        ? S.of(context).emailIsRequired
+        : !RegExp(r"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")
+                .hasMatch(_emailController.text)
+            ? S.of(context).invalidEmail
+            : null;
+
+    setState(() {});
+  }
+
+  /// Validates the message field
+  void _validateMessage(String value) {
+    if (value.trim().length < 10) {
+      setState(() => _messageError = S.of(context).messageIsRequired);
+    } else {
+      setState(() => _messageError = null);
+    }
+  }
+
   Future<void> sendEmail() async {
-    if (_formKey.currentState!.validate()) {
-      final String name = _nameController.text;
-      final String email = _emailController.text;
-      final String message = _messageController.text;
+    setState(() {
+      _nameError = _nameController.text.trim().length < 3
+          ? S.of(context).nameIsRequired
+          : null;
+      _emailError = _emailController.text.trim().isEmpty
+          ? S.of(context).emailIsRequired
+          : !RegExp(r"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")
+                  .hasMatch(_emailController.text)
+              ? S.of(context).invalidEmail
+              : null;
+      _messageError = _messageController.text.trim().length < 10
+          ? S.of(context).messageIsRequired
+          : null;
+    });
+
+    if (_nameError == null && _emailError == null && _messageError == null) {
+      final String name = _nameController.text.trim();
+      final String email = _emailController.text.trim();
+      final String message = _messageController.text.trim();
 
       final mailtoLink = Mailto(
         to: ['fedo.zaher@gmail.com'],
-        subject: 'New Contact Form Submission',
-        body: 'Name: $name\nEmail: $email\nMessage: $message',
+        subject: S.of(context).newContactFormSubmission,
+        body:
+            '${S.of(context).name}: $name\n${S.of(context).email}: $email\n${S.of(context).message}: $message',
       );
 
       final Uri emailUri = Uri.parse(mailtoLink.toString());
@@ -104,21 +158,7 @@ class _TouchMeScreenState extends State<TouchMeScreen> {
                           S.of(context).yourName,
                           Icons.person,
                           _nameError,
-                          (value) {
-                            if (value == null ||
-                                value.isEmpty ||
-                                value.trim().length < 3) {
-                              setState(() {
-                                _nameError = S.of(context).nameIsRequired;
-                              });
-                              return S.of(context).nameIsRequired;
-                            }
-                            setState(() {
-                              _nameError = null;
-                            });
-                            return null;
-                          },
-                          maxLines: 2,
+                          maxLines: 1,
                         ),
                         const SizedBox(height: 16),
                         _buildTextField(
@@ -126,22 +166,8 @@ class _TouchMeScreenState extends State<TouchMeScreen> {
                           S.of(context).yourEmail,
                           Icons.email,
                           _emailError,
-                          (value) {
-                            if (value == null ||
-                                value.isEmpty ||
-                                !RegExp(r"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")
-                                    .hasMatch(value)) {
-                              setState(() {
-                                _emailError = S.of(context).emailIsRequired;
-                              });
-                              return S.of(context).emailIsRequired;
-                            }
-                            setState(() {
-                              _emailError = null;
-                            });
-                            return null;
-                          },
-                          maxLines: 2,
+                          maxLines: 1,
+                          isEmail: true,
                         ),
                         const SizedBox(height: 16),
                         _buildTextField(
@@ -149,21 +175,7 @@ class _TouchMeScreenState extends State<TouchMeScreen> {
                           S.of(context).yourMessage,
                           Icons.message,
                           _messageError,
-                          (value) {
-                            if (value == null ||
-                                value.isEmpty ||
-                                value.trim().length < 5) {
-                              setState(() {
-                                _messageError = S.of(context).messageIsRequired;
-                              });
-                              return S.of(context).messageIsRequired;
-                            }
-                            setState(() {
-                              _messageError = null;
-                            });
-                            return null;
-                          },
-                          maxLines: 10,
+                          maxLines: 5,
                         ),
                         const SizedBox(height: 42),
                         CustomResumeWidget(
@@ -192,49 +204,41 @@ class _TouchMeScreenState extends State<TouchMeScreen> {
     TextEditingController controller,
     String hintText,
     IconData icon,
-    String? errorText,
-    String? Function(String?) validator, {
+    String? errorText, {
     int maxLines = 1,
+    bool isEmail = false,
   }) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.8,
       child: TextFormField(
         controller: controller,
+        textAlign: TextAlign.start,
+        keyboardType: isEmail ? TextInputType.emailAddress : TextInputType.text,
         maxLines: maxLines,
-        minLines: null,
-        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: Colors.white,
-            ),
+        style: Theme.of(context)
+            .textTheme
+            .bodyMedium
+            ?.copyWith(color: Colors.white),
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: Colors.white54,
-              ),
-          prefix: Icon(icon, color: Colors.white),
-          filled: true,
-          errorText: errorText,
-          hintMaxLines: 1,
-          enabled: true,
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide.none,
+          hintStyle: Theme.of(context)
+              .textTheme
+              .bodyMedium
+              ?.copyWith(color: Colors.white54),
+          contentPadding:
+              const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+          prefixIcon: Icon(
+            icon,
+            color: Colors.white,
           ),
+          filled: true,
           fillColor: ColorSchemes.primary,
+          errorText: errorText,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
             borderSide: BorderSide.none,
           ),
         ),
-        onChanged: (value) => setState(() {
-          controller.text = value;
-          validator(value);
-        }),
-        validator: (value) {
-          setState(() {});
-          if (value == null) return null;
-          controller.text = value;
-          return validator(value);
-        },
       ),
     );
   }

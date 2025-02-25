@@ -59,7 +59,7 @@ class _BouncingAndScalingTextWidgetState
           textAlign: widget.textAlign ?? TextAlign.center,
           style: widget.style ??
               Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    fontSize: MediaQuery.sizeOf(context).width>850? 18:16,
+                    fontSize: MediaQuery.sizeOf(context).width > 850 ? 18 : 16,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     height: 1.7,
