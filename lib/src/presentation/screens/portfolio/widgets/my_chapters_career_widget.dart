@@ -217,9 +217,12 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: SizedBox(
         width: MediaQuery.of(context).size.width > 850
-            ? MediaQuery.of(context).size.width * 0.5
+            ? 330
             : MediaQuery.of(context).size.width,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
           children: [
             _buildTimelineEvents(
               events: [

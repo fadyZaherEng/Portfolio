@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/about_me_content_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/animated_about_me_widget.dart';

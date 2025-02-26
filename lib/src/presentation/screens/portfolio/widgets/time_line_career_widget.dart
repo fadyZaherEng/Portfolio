@@ -50,22 +50,14 @@ class _TimelineCareerWidgetState extends State<TimelineCareerWidget>
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
-        crossAxisAlignment: MediaQuery.of(context).size.width > 850
-            ? CrossAxisAlignment.center
-            : CrossAxisAlignment.start,
-        mainAxisAlignment: MediaQuery.of(context).size.width > 850
-            ? MainAxisAlignment.center
-            : MainAxisAlignment.start,
-        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
           Column(
-            crossAxisAlignment: MediaQuery.of(context).size.width > 850
-                ? CrossAxisAlignment.center
-                : CrossAxisAlignment.start,
-            mainAxisAlignment: MediaQuery.of(context).size.width > 850
-                ? MainAxisAlignment.center
-                : MainAxisAlignment.start,
-            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
               // Timeline dot
               widget.isEducation
@@ -99,12 +91,8 @@ class _TimelineCareerWidgetState extends State<TimelineCareerWidget>
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 5),
               child: Column(
-                crossAxisAlignment: MediaQuery.of(context).size.width > 850
-                    ? CrossAxisAlignment.center
-                    : CrossAxisAlignment.start,
-                mainAxisAlignment: MediaQuery.of(context).size.width > 850
-                    ? MainAxisAlignment.center
-                    : MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   AnimatedBuilder(
                     animation: _controller,

@@ -50,22 +50,14 @@ class _TimelineCareerWidgetState extends State<TimelineCareerWidget>
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Row(
-        crossAxisAlignment: MediaQuery.of(context).size.width > 850
-            ? CrossAxisAlignment.center
-            : CrossAxisAlignment.start,
-        mainAxisAlignment: MediaQuery.of(context).size.width > 850
-            ? MainAxisAlignment.center
-            : MainAxisAlignment.start,
-        mainAxisSize: MainAxisSize.max,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
           Column(
-            crossAxisAlignment: MediaQuery.of(context).size.width > 850
-                ? CrossAxisAlignment.center
-                : CrossAxisAlignment.start,
-            mainAxisAlignment: MediaQuery.of(context).size.width > 850
-                ? MainAxisAlignment.center
-                : MainAxisAlignment.start,
-            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
               // Timeline dot
               widget.isEducation
@@ -83,7 +75,7 @@ class _TimelineCareerWidgetState extends State<TimelineCareerWidget>
                         color: Colors.white,
                       ),
                     ),
-              if (widget.index != widget.totalEvents - 1 )
+              if (widget.index != widget.totalEvents - 1 && !widget.isEducation)
                 Container(
                   margin: const EdgeInsets.only(left: 5, right: 5),
                   child: Container(

@@ -186,7 +186,9 @@ class _TouchMeScreenState extends State<TouchMeScreen> {
                               ? ColorSchemes.white
                               : ColorSchemes.iconBackGround,
                           title: S.of(context).sendMessage,
-                          width: MediaQuery.of(context).size.width * 0.6,
+                          width: MediaQuery.of(context).size.width > 850
+                              ? 600
+                              : MediaQuery.of(context).size.width * 0.6,
                         ),
                       ],
                     ),
@@ -209,7 +211,9 @@ class _TouchMeScreenState extends State<TouchMeScreen> {
     bool isEmail = false,
   }) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width * 0.8,
+      width: MediaQuery.of(context).size.width > 850
+          ? 850
+          : MediaQuery.of(context).size.width * 0.8,
       child: TextFormField(
         controller: controller,
         textAlign: TextAlign.start,
@@ -227,7 +231,7 @@ class _TouchMeScreenState extends State<TouchMeScreen> {
               ?.copyWith(color: Colors.white54),
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-          prefixIcon: Icon(
+          prefix: Icon(
             icon,
             color: Colors.white,
           ),

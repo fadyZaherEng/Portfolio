@@ -24,9 +24,7 @@ class ContactMeWidget extends StatelessWidget {
       children: [
         Center(
           child: SizedBox(
-            width: MediaQuery.of(context).size.width > 850
-                ? 850
-                : MediaQuery.of(context).size.width * 0.9,
+            width: MediaQuery.of(context).size.width > 850 ? 850 : null,
             child: Column(
               children: [
                 const SizedBox(height: 30),
@@ -46,7 +44,7 @@ class ContactMeWidget extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodySmall?.copyWith(
                         color: ColorSchemes.iconDarkWhite,
                         fontWeight: FontWeight.bold,
-                        fontSize: 14,
+                        fontSize: 15,
                       ),
                 ),
                 const SizedBox(height: 20),
@@ -129,8 +127,8 @@ class ContactMeWidget extends StatelessWidget {
                           size:
                               MediaQuery.sizeOf(context).width > 850 ? 30 : 22,
                         ),
-                        onPressed: () =>
-                            openLink('https://facebook.com/yourprofile'),
+                        onPressed: () => openLink(
+                            'https://www.facebook.com/share/18gTWiitR2/'),
                       ),
                     ),
                     CustomFooterSocialIconWidget(

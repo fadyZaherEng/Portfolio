@@ -92,7 +92,7 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
                 ),
                 child: Column(
                   children: [
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 32),
                     RotationTransition(
                       turns: _rotateAnimation,
                       child: _buildHeaderText(
@@ -101,7 +101,7 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
                         false,
                       ),
                     ),
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 32),
                     _buildBodyText(context, S.of(context).chaptersStory),
                     const SizedBox(height: 30),
                     SizedBox(
@@ -195,7 +195,7 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
 
   Widget _buildEducationTimeLine(BuildContext context) {
     return SizedBox(
-      width: double.infinity,
+      width: 850,
       child: TimelineCareerWidget(
         isEducation: true,
         totalEvents: 1,

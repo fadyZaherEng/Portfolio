@@ -61,7 +61,7 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
                   horizontal: MediaQuery.of(context).size.width > 850 ? 50 : 0,
                 ),
                 child: SizedBox(
-                  width: MediaQuery.of(context).size.width > 850 ? 500 : null,
+                  width: MediaQuery.of(context).size.width > 850 ? 500 : 400,
                   child: Text(
                     S.of(context).exploreMyProjects,
                     textAlign: TextAlign.center,
