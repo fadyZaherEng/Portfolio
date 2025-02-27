@@ -8,6 +8,7 @@ class CustomResumeWidget extends StatefulWidget {
   final Color textColor;
   final String title;
   final double width;
+  final IconData? icon;
 
   const CustomResumeWidget({
     Key? key,
@@ -17,6 +18,7 @@ class CustomResumeWidget extends StatefulWidget {
     required this.textColor,
     required this.title,
     required this.width,
+    this.icon,
   }) : super(key: key);
 
   @override
@@ -64,15 +66,17 @@ class _CustomResumeWidgetState extends State<CustomResumeWidget>
       child: FadeTransition(
         opacity: _fadeAnimation,
         child: ScaleTransition(
-            scale: _scaleAnimation,
-            child: AnimatedElevatedButton(
-              title: widget.title,
-              isDarkMode: widget.isDarkMode,
-              borderColor: widget.borderColor,
-              textColor: widget.textColor,
-              onViewResumeTap: widget.onViewResumeTap,
-              width: widget.width,
-            )),
+          scale: _scaleAnimation,
+          child: AnimatedElevatedButton(
+            title: widget.title,
+            isDarkMode: widget.isDarkMode,
+            borderColor: widget.borderColor,
+            textColor: widget.textColor,
+            onViewResumeTap: widget.onViewResumeTap,
+            width: widget.width,
+            icon: widget.icon,
+          ),
+        ),
       ),
     );
   }
@@ -85,6 +89,7 @@ class AnimatedElevatedButton extends StatefulWidget {
   final Color textColor;
   final VoidCallback onViewResumeTap;
   final double width;
+  final IconData? icon;
 
   const AnimatedElevatedButton({
     Key? key,
@@ -94,6 +99,7 @@ class AnimatedElevatedButton extends StatefulWidget {
     required this.textColor,
     required this.onViewResumeTap,
     required this.width,
+    this.icon,
   }) : super(key: key);
 
   @override
@@ -150,15 +156,39 @@ class _AnimatedElevatedButtonState extends State<AnimatedElevatedButton> {
                 color: widget.isDarkMode ? Colors.transparent : Colors.white,
               ),
               child: Center(
-                child: Text(
-                  widget.title,
-                  style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                        color:
-                            _isHovered ? ColorSchemes.white : widget.textColor,
-                        fontSize: 13,
-                        fontWeight: FontWeight.bold,
+                child: widget.icon == null
+                    ? Text(
+                        widget.title,
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                              color: _isHovered
+                                  ? ColorSchemes.white
+                                  : widget.textColor,
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                            ),
+                      )
+                    : Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            widget.icon,
+                            color: ColorSchemes.primarySecondary,
+                            size: 16,
+                          ),
+                          const SizedBox(width: 8),
+                          Text(
+                            widget.title,
+                            style:
+                                Theme.of(context).textTheme.bodySmall?.copyWith(
+                                      color: _isHovered
+                                          ? ColorSchemes.white
+                                          : widget.textColor,
+                                      fontSize: 13,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                          ),
+                        ],
                       ),
-                ),
               ),
             ),
             AnimatedContainer(
