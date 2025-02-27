@@ -189,6 +189,7 @@ class _TouchMeScreenState extends State<TouchMeScreen> {
                           width: MediaQuery.of(context).size.width > 850
                               ? 600
                               : MediaQuery.of(context).size.width * 0.6,
+                          icon: Icons.send,
                         ),
                       ],
                     ),
