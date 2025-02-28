@@ -48,12 +48,12 @@ class ContactMeWidget extends StatelessWidget {
                       ),
                 ),
                 const SizedBox(height: 20),
-                const ContactMeHoverButtonWebWidget(),
+                const ContactMeHoverButtonWidget(),
                 const SizedBox(height: 30),
                 Wrap(
                   spacing: MediaQuery.sizeOf(context).width > 850 ? 20 : 5,
                   children: [
-                    CustomFooterSocialIconWebWidget(
+                    CustomFooterSocialIconWidget(
                       social: IconButton(
                         icon: FaIcon(FontAwesomeIcons.github,
                             color:
@@ -67,7 +67,7 @@ class ContactMeWidget extends StatelessWidget {
                             openLink('https://github.com/fadyZaherEng'),
                       ),
                     ),
-                    CustomFooterSocialIconWebWidget(
+                    CustomFooterSocialIconWidget(
                       social: IconButton(
                         icon: FaIcon(FontAwesomeIcons.envelope,
                             color:
@@ -80,7 +80,7 @@ class ContactMeWidget extends StatelessWidget {
                         onPressed: () => openLink('fedo.zaher@gmail.com'),
                       ),
                     ),
-                    CustomFooterSocialIconWebWidget(
+                    CustomFooterSocialIconWidget(
                       social: IconButton(
                         icon: FaIcon(
                           FontAwesomeIcons.whatsapp,
@@ -102,7 +102,7 @@ class ContactMeWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    CustomFooterSocialIconWebWidget(
+                    CustomFooterSocialIconWidget(
                       social: IconButton(
                         icon: FaIcon(
                           FontAwesomeIcons.linkedin,
@@ -117,7 +117,7 @@ class ContactMeWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    CustomFooterSocialIconWebWidget(
+                    CustomFooterSocialIconWidget(
                       social: IconButton(
                         icon: FaIcon(
                           FontAwesomeIcons.facebook,
@@ -131,7 +131,7 @@ class ContactMeWidget extends StatelessWidget {
                             'https://www.facebook.com/share/18gTWiitR2/'),
                       ),
                     ),
-                    CustomFooterSocialIconWebWidget(
+                    CustomFooterSocialIconWidget(
                       social: IconButton(
                         icon: FaIcon(
                           FontAwesomeIcons.youtube,

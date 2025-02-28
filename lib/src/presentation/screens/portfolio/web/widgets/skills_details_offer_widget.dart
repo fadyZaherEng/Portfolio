@@ -6,20 +6,20 @@ import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/animated_coloum_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/animated_text_Widget.dart';
 
-class SkillsDetailsOfferWidget extends StatefulWidget {
+class SkillsDetailsOfferWebWidget extends StatefulWidget {
   final double height;
 
-  const SkillsDetailsOfferWidget({
+  const SkillsDetailsOfferWebWidget({
     Key? key,
     this.height = 350,
   }) : super(key: key);
 
   @override
-  State<SkillsDetailsOfferWidget> createState() =>
-      _SkillsDetailsOfferWidgetState();
+  State<SkillsDetailsOfferWebWidget> createState() =>
+      _SkillsDetailsOfferWebWidgetState();
 }
 
-class _SkillsDetailsOfferWidgetState extends State<SkillsDetailsOfferWidget> {
+class _SkillsDetailsOfferWebWidgetState extends State<SkillsDetailsOfferWebWidget> {
   final CarouselController _controller = CarouselController();
 
   List<int> offers = List.generate(16, (index) => index);
@@ -35,9 +35,9 @@ class _SkillsDetailsOfferWidgetState extends State<SkillsDetailsOfferWidget> {
                 horizontal: MediaQuery.of(context).size.width > 850 ? 30 : 0),
             child: SizedBox(
               width: MediaQuery.sizeOf(context).width > 850
-                  ? MediaQuery.sizeOf(context).width * 0.4
+                  ? MediaQuery.sizeOf(context).width * 0.6
                   : 850,
-              child: AnimatedTextWidget(
+              child: AnimatedTextWebWidget(
                 text: S.of(context).offer,
                 textAlign: TextAlign.center,
               ),
@@ -362,7 +362,7 @@ class _SkillsDetailsOfferWidgetState extends State<SkillsDetailsOfferWidget> {
                 child: Wrap(
                   direction: Axis.horizontal,
                   children: [
-                    AnimatedColumnWidget(
+                    AnimatedColumnWebWidget(
                       logo: logo,
                       isSvg: isSvg,
                       title: title,

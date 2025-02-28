@@ -26,6 +26,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("عرض السيرة الذاتية"),
         "WhatCanIDo":
             MessageLookupByLibrary.simpleMessage("ماذا يمكنني ان افعل؟"),
+        "aSoftwareEngineerAFlutterDeveloperAMobileSoftwareEngineerAAndroidDeveloperAIOSDeveloper":
+            MessageLookupByLibrary.simpleMessage(
+                "مهندس برمجيات على Flutter، مهندس برمجيات موبايل، مهندس برمجيات Android، مهندس برمجيات iOS"),
         "aboutMe": MessageLookupByLibrary.simpleMessage("حولي"),
         "aboutMeDescription": MessageLookupByLibrary.simpleMessage(
             " أنا مهندس برمجيات متوسط المستوى، شغوف بتطوير تطبيقات الهاتف المحمول مع  2 + سنوات من الخبرة، أبحث عن عمل كمهندس برمجيات Flutter لاكتساب خبرة حقيقية والمساهمة في تحقيق أهداف المؤسسة."),

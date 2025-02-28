@@ -156,7 +156,6 @@
   "Developed by",
   "fadyZaher": "Fady Zaher",
   "tag": "© 2025  \uD83D\uDC9C",
-
   "viewResume": "VIEW RESUME",
   "failedToLaunchWhatsApp": "Failed to launch WhatsApp",
   "facebook": "Facebook",
@@ -181,5 +180,8 @@
   "emailIsRequired":"Email is required",
   "messageIsRequired":"Message is required",
   "invalidEmail":"Invalid email address",
-  "newContactFormSubmission":"New Contact Form Submission"
+  "newContactFormSubmission":"New Contact Form Submission",
+  "name":"Name",
+  "email":"Email",
+  "message":"Message"
 }

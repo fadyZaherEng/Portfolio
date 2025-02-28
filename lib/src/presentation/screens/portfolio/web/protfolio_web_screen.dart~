@@ -10,7 +10,7 @@ import 'package:my_portfolio/src/core/utils/openLink.dart';
 import 'package:my_portfolio/src/di/data_layer_injector.dart';
 import 'package:my_portfolio/src/domain/usecase/get_theme_use_case.dart';
 import 'package:my_portfolio/src/presentation/blocs/portfolio/portfolio_bloc.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/can_i_do_section_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/can_i_do_section_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/contact_me_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/custom_app_bar_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/end_drawer_widget.dart';
@@ -46,11 +46,11 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
 
   final Map<int, GlobalKey> _scrollKeys = {
     0: GlobalKey(),
+    1: GlobalKey(),
+    2: GlobalKey(),
     3: GlobalKey(),
+    4: GlobalKey(),
     5: GlobalKey(),
-    6: GlobalKey(),
-    7: GlobalKey(),
-    8: GlobalKey(),
   };
 
   final GlobalKey _whatCanIDoKey = GlobalKey();
@@ -77,48 +77,24 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
     setState(() => _currentIndex = index);
     if (_scrollKeys.containsKey(index)) {
       scrollToKey(_scrollKeys[index]!);
-    } else if (route != null) {
-      context.go(route);
-      if (screen != null) {
-        Navigator.push(
-            context, MaterialPageRoute(builder: (context) => screen));
-      }
     }
   }
 
   @override
   Widget baseBuild(BuildContext context) {
     Color textColor = isDarkMode ? ColorSchemes.white : ColorSchemes.primary;
-    final double fontSize = isDarkMode ? 16 : 18;
+    final double fontSize = isDarkMode ? 20 : 22;
     final Color indicatorColor = isDarkMode
         ? ColorSchemes.primarySecondary
         : ColorSchemes.iconBackGround;
 
     final List<Map<String, dynamic>> menuItems = [
       {"title": S.of(context).home, "index": 0},
-      {
-        "title": S.of(context).skills,
-        "index": 1,
-        "route": Routes.skillsWeb,
-        "screen": const SkillsScreen()
-      },
-      {
-        "title": S.of(context).training,
-        "index": 2,
-        "route": Routes.trainingWeb,
-        "screen": const TrainingScreen()
-      },
-      {"title": S.of(context).skillsOffer, "index": 3},
-      {
-        "title": S.of(context).getInTouch,
-        "index": 4,
-        "route": Routes.touchMe,
-        "screen": const TouchMeScreen()
-      },
-      {"title": S.of(context).myProjects, "index": 5},
-      {"title": S.of(context).education, "index": 6},
-      {"title": S.of(context).experience, "index": 7},
-      {"title": S.of(context).contact, "index": 8},
+      {"title": S.of(context).skillsOffer, "index": 1},
+      {"title": S.of(context).myProjects, "index": 2},
+      {"title": S.of(context).education, "index": 3},
+      {"title": S.of(context).experience, "index": 4},
+      {"title": S.of(context).contact, "index": 5},
     ];
 
     return BlocConsumer<PortfolioBloc, PortfolioState>(
@@ -170,12 +146,11 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          HeaderProfileSectionWidget(
+          HeaderProfileSectionWebWidget(
             onViewResumeTap: _openResume,
             isDarkMode: isDarkMode,
             key: _scrollKeys[0],
           ),
-          const SizedBox(height: 10),
           const SizedBox(height: 10),
           VisibilityDetector(
             key: const Key("whatCanIDoKeys"),
@@ -185,14 +160,14 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
                 setState(() {});
               }
             },
-            child: WhatCanIDoSectionWidget(
+            child: WhatCanIDoSectionWebbWidget(
               key: _whatCanIDoKey,
               isVisible: _isCanIDoVisible,
             ),
           ),
           const SizedBox(height: 10),
-          SkillsDetailsOfferWidget(key: _scrollKeys[3]),
-          MyChapterEducationWidget(key: _scrollKeys[6]),
+          SkillsDetailsOfferWebWidget(key: _scrollKeys[3]),
+          MyChapterEducationWebWidget(key: _scrollKeys[6]),
           MyChaptersCareerWidget(key: _scrollKeys[7]),
           ProjectsWidgets(key: _scrollKeys[5], isDarkMode: isDarkMode),
           ContactMeWidget(key: _scrollKeys[8]),
@@ -290,9 +265,40 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
     return EndDrawerWidget(
       isDarkMode: isDarkMode,
       isEnglish: currentLocale == "en",
+      onDrawerGetInTouchTap: () {
+        context.go(Routes.touchMe);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const TouchMeScreen(),
+          ),
+        );
+      },
       onDrawerLogoTap: () {
         RestartWidget.restartApp(context);
         html.window.location.reload();
+      },
+      onDrawerSkillsTap: () {
+        context.go(
+          Routes.skillsWeb,
+        );
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const SkillsScreen(),
+          ),
+        );
+      },
+      onDrawerTrainingTap: () {
+        context.go(
+          Routes.trainingWeb,
+        );
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const TrainingScreen(),
+          ),
+        );
       },
       toggleTheme: (bool isDark) {
         String theme = isDark ? Constants.dark : Constants.light;

@@ -24,6 +24,9 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "ViewResume": MessageLookupByLibrary.simpleMessage("VIEW RESUME"),
         "WhatCanIDo": MessageLookupByLibrary.simpleMessage("What Can I Do?"),
+        "aSoftwareEngineerAFlutterDeveloperAMobileSoftwareEngineerAAndroidDeveloperAIOSDeveloper":
+            MessageLookupByLibrary.simpleMessage(
+                "A Software Engineer, A Flutter Developer, A Mobile Software Engineer, A Android Developer, A IOS Developer"),
         "aboutMe": MessageLookupByLibrary.simpleMessage("About Me"),
         "aboutMeDescription": MessageLookupByLibrary.simpleMessage(
             "I’m Mid Level Software Engineer, passionate about mobile development with ‎+ 2 Years of Experience, looking for work as Flutter Software Engineer to gain real experience and assist the organization to achieve their goals"),

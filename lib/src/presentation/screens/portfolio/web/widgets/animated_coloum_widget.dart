@@ -4,14 +4,14 @@ import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
-class AnimatedColumnWidget extends StatefulWidget {
+class AnimatedColumnWebWidget extends StatefulWidget {
   final String logo;
   final bool isSvg;
   final String title;
   final String description;
   final List<String> skills;
 
-  const AnimatedColumnWidget({
+  const AnimatedColumnWebWidget({
     Key? key,
     required this.logo,
     required this.isSvg,
@@ -21,10 +21,10 @@ class AnimatedColumnWidget extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _AnimatedColumnWidgetState createState() => _AnimatedColumnWidgetState();
+  _AnimatedColumnWebWidgetState createState() => _AnimatedColumnWebWidgetState();
 }
 
-class _AnimatedColumnWidgetState extends State<AnimatedColumnWidget>
+class _AnimatedColumnWebWidgetState extends State<AnimatedColumnWebWidget>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _fadeAnimation;
@@ -135,7 +135,7 @@ class _AnimatedColumnWidgetState extends State<AnimatedColumnWidget>
         title,
         textAlign: TextAlign.center,
         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              fontSize: 14,
+              fontSize: 16,
               fontWeight: FontWeight.bold,
               color: ColorSchemes.white,
             ),
@@ -157,7 +157,7 @@ class _AnimatedColumnWidgetState extends State<AnimatedColumnWidget>
         maxLines: 3,
         overflow: TextOverflow.ellipsis,
         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              fontSize: 12,
+              fontSize: 14,
               fontWeight: FontWeight.bold,
               color: ColorSchemes.white,
             ),
@@ -206,7 +206,7 @@ class _AnimatedColumnWidgetState extends State<AnimatedColumnWidget>
           Text(
             "🛠",
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  fontSize: MediaQuery.sizeOf(context).width > 850 ? 16 : 15,
+                  fontSize: 17,
                   fontWeight: FontWeight.bold,
                   color: ColorSchemes.secondary,
                 ),
@@ -218,7 +218,7 @@ class _AnimatedColumnWidgetState extends State<AnimatedColumnWidget>
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    fontSize: 13,
+                    fontSize: 15,
                     fontWeight: FontWeight.bold,
                     color: ColorSchemes.white,
                     letterSpacing: -0.24,

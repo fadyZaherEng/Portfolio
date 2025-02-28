@@ -60,7 +60,8 @@ class _State extends State<CustomAppBarWidget> {
                   color: GetThemeUseCase(injector())() == Constants.dark
                       ? ColorSchemes.white
                       : ColorSchemes.primary,
-                  fontSize:25,
+                  fontSize:
+                      GetThemeUseCase(injector())() == Constants.dark ? 16 : 18,
                 ),
           ),
           const Spacer(),

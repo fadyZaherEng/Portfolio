@@ -25,7 +25,6 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
   @override
   void initState() {
     super.initState();
-
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 600),
@@ -70,8 +69,8 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 20),
-      padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 30),
+      margin: const EdgeInsets.only(top: 15),
+      padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
       decoration: BoxDecoration(
         color: ColorSchemes.primary.withOpacity(0.7),
         borderRadius: BorderRadius.circular(10),
@@ -86,8 +85,8 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
               overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     color: ColorSchemes.white,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
                   ),
             ),
             0,
@@ -165,7 +164,7 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
             color: GetThemeUseCase(injector())() == Constants.dark
                 ? ColorSchemes.secondary
                 : ColorSchemes.white,
-            size: 20,
+            size: 25,
           ),
           const SizedBox(width: 5),
           Expanded(
@@ -174,12 +173,13 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     color: ColorSchemes.white,
                     fontWeight: FontWeight.normal,
-                    fontSize: 16,
+                    fontSize: 19,
                     decoration:
                         isLink ? TextDecoration.underline : TextDecoration.none,
-                    decorationColor:GetThemeUseCase(injector())() == Constants.dark
-                        ? ColorSchemes.white
-                        :  ColorSchemes.black,
+                    decorationColor:
+                        GetThemeUseCase(injector())() == Constants.dark
+                            ? ColorSchemes.white
+                            : ColorSchemes.black,
                     decorationThickness: 2,
                   ),
             ),
@@ -199,7 +199,7 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
       direction: Axis.horizontal,
       children: [
         _buildAnimatedItem(
-            CustomSocialButtonWidget(
+          CustomSocialButtonWidget(
             icon: ImagePaths.facebook,
             url: "https://www.facebook.com/share/18gTWiitR2/",
             title: S.of(context).facebook,
@@ -207,7 +207,7 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
           9,
         ),
         _buildAnimatedItem(
-            CustomSocialButtonWidget(
+          CustomSocialButtonWidget(
             icon: ImagePaths.linkedin,
             url: "https://www.linkedin.com/in/fadyzaher",
             title: S.of(context).linkedin,
@@ -224,7 +224,7 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
           11,
         ),
         _buildAnimatedItem(
-            CustomSocialButtonWidget(
+          CustomSocialButtonWidget(
             icon: ImagePaths.youtube,
             url: "https://youtube.com/@fadyzaher2980",
             title: S.of(context).youtube,
@@ -282,7 +282,7 @@ class _CustomSocialButtonWidgetState extends State<CustomSocialButtonWidget> {
                   icon: FaIcon(
                     FontAwesomeIcons.github,
                     color: ColorSchemes.primarySecondaryWhite,
-                    size: 22,
+                    size: 25,
                   ),
                   onPressed: () => openLink('https://github.com/fadyZaherEng'),
                 )
@@ -291,8 +291,8 @@ class _CustomSocialButtonWidgetState extends State<CustomSocialButtonWidget> {
                   child: SvgPicture.asset(
                     widget.icon,
                     color: ColorSchemes.primarySecondaryWhite,
-                    width: widget.isFacebook ? 18 : 28,
-                    height: widget.isFacebook ? 18 : 28,
+                    width: widget.isFacebook ? 25 : 35,
+                    height: widget.isFacebook ? 25 : 35,
                     fit: BoxFit.scaleDown,
                     semanticsLabel: widget.title,
                   ),

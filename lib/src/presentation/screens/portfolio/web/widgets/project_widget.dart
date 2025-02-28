@@ -81,7 +81,7 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
         const SizedBox(height: 30),
         ProjectCarouselWidget(_myProjects),
         const SizedBox(height: 30),
-        CustomResumeWidget(
+        CustomResumeWebWidget(
           onViewResumeTap: () => openLink('https://github.com/fadyZaherEng'),
           isDarkMode: widget.isDarkMode,
           borderColor: borderColor,

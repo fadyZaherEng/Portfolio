@@ -4,22 +4,21 @@ import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 
-class AnimatedAboutMeWidget extends StatefulWidget {
+class AnimatedAboutMeWebWidget extends StatefulWidget {
 
-  const AnimatedAboutMeWidget({
+  const AnimatedAboutMeWebWidget({
     Key? key,
   }) : super(key: key);
 
   @override
-  _AnimatedAboutMeWidgetState createState() => _AnimatedAboutMeWidgetState();
+  _AnimatedAboutMeWebWidgetState createState() => _AnimatedAboutMeWebWidgetState();
 }
 
-class _AnimatedAboutMeWidgetState extends State<AnimatedAboutMeWidget>
+class _AnimatedAboutMeWebWidgetState extends State<AnimatedAboutMeWebWidget>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
   late Animation<Offset> _slideAnimation;
-  late Animation<double> _rotationAnimation;
 
   @override
   void initState() {
@@ -46,12 +45,6 @@ class _AnimatedAboutMeWidgetState extends State<AnimatedAboutMeWidget>
       ),
     );
 
-    _rotationAnimation = Tween<double>(begin: 0.0, end: 3.14).animate(
-      CurvedAnimation(
-        parent: _controller,
-        curve: Curves.easeInOut,
-      ),
-    );
   }
 
   @override
@@ -83,7 +76,7 @@ class _AnimatedAboutMeWidgetState extends State<AnimatedAboutMeWidget>
                           color: ColorSchemes.iconWhiteMode,
                           fontWeight: FontWeight.bold,
                           fontSize:
-                              MediaQuery.sizeOf(context).width > 850 ? 22 : 18,
+                              MediaQuery.sizeOf(context).width > 850 ? 25 : 18,
                         ),
                         textAlign: TextAlign.start,
                       ),

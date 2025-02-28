@@ -4,20 +4,20 @@ import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 
-class WhatCanIDoSectionWebbWidget extends StatefulWidget {
+class WhatCanIDoSectionWidget extends StatefulWidget {
   final bool isVisible;
 
-  const WhatCanIDoSectionWebbWidget({
+  const WhatCanIDoSectionWidget({
     super.key,
     required this.isVisible,
   });
 
   @override
-  _WhatCanIDoSectionWebbWidgetState createState() =>
-      _WhatCanIDoSectionWebbWidgetState();
+  _WhatCanIDoSectionWidgetState createState() =>
+      _WhatCanIDoSectionWidgetState();
 }
 
-class _WhatCanIDoSectionWebbWidgetState extends State<WhatCanIDoSectionWebbWidget>
+class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
     with TickerProviderStateMixin {
   late AnimationController _controller;
   late List<Animation<double>> _fadeAnimations;
@@ -47,7 +47,7 @@ class _WhatCanIDoSectionWebbWidgetState extends State<WhatCanIDoSectionWebbWidge
   }
 
   @override
-  void didUpdateWidget(covariant WhatCanIDoSectionWebbWidget oldWidget) {
+  void didUpdateWidget(covariant WhatCanIDoSectionWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
     _startAnimations();
   }
@@ -83,20 +83,20 @@ class _WhatCanIDoSectionWebbWidgetState extends State<WhatCanIDoSectionWebbWidge
       duration: Duration(seconds: getPercentage(15)),
       vsync: this,
     )..addListener(() {
-      setState(() {});
-    });
+        setState(() {});
+      });
     _iosController = AnimationController(
       duration: Duration(seconds: getPercentage(12)),
       vsync: this,
     )..addListener(() {
-      setState(() {});
-    });
+        setState(() {});
+      });
     _webController = AnimationController(
       duration: Duration(seconds: getPercentage(8)),
       vsync: this,
     )..addListener(() {
-      setState(() {});
-    });
+        setState(() {});
+      });
 
     init();
   }
@@ -129,61 +129,56 @@ class _WhatCanIDoSectionWebbWidgetState extends State<WhatCanIDoSectionWebbWidge
   @override
   Widget build(BuildContext context) {
     _startAnimations();
-    return Center(
-      child: SizedBox(
-        width: MediaQuery.of(context).size.width * 0.8,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const SizedBox(height: 20),
-            FadeTransition(
-              opacity: _fadeAnimations[0],
-              child: Text(
-                S.of(context).WhatCanIDo,
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const SizedBox(height: 20),
+        FadeTransition(
+          opacity: _fadeAnimations[0],
+          child: Text(
+            S.of(context).WhatCanIDo,
+            style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   color: ColorSchemes.iconDarkWhite,
                   fontWeight: FontWeight.bold,
                   fontSize: 22,
                 ),
-              ),
-            ),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                _buildAnimatedSkillCard(
-                  0,
-                  _androidAnimation,
-                  ImagePaths.android,
-                  S.of(context).androidApp,
-                ),
-                _buildAnimatedSkillCard(
-                  1,
-                  _iosAnimation,
-                  ImagePaths.apple,
-                  S.of(context).iosApp,
-                ),
-                _buildAnimatedSkillCard(
-                  2,
-                  _webAnimation,
-                  ImagePaths.web,
-                  S.of(context).webApp,
-                ),
-              ],
-            )
-          ],
+          ),
         ),
-      ),
+        const SizedBox(height: 20),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            _buildAnimatedSkillCard(
+              0,
+              _androidAnimation,
+              ImagePaths.android,
+              S.of(context).androidApp,
+            ),
+            _buildAnimatedSkillCard(
+              1,
+              _iosAnimation,
+              ImagePaths.apple,
+              S.of(context).iosApp,
+            ),
+            _buildAnimatedSkillCard(
+              2,
+              _webAnimation,
+              ImagePaths.web,
+              S.of(context).webApp,
+            ),
+          ],
+        )
+      ],
     );
   }
 
   Widget _buildAnimatedSkillCard(
-      int index,
-      Animation<int> numberAnimation,
-      String iconPath,
-      String label,
-      ) {
+    int index,
+    Animation<int> numberAnimation,
+    String iconPath,
+    String label,
+  ) {
     return SlideTransition(
       position: _slideAnimations[index],
       child: FadeTransition(
@@ -222,15 +217,15 @@ class _WhatCanIDoSectionWebbWidgetState extends State<WhatCanIDoSectionWebbWidge
                   height: 75,
                   matchTextDirection: true,
                   color:
-                  isApple ? ColorSchemes.secondary.withOpacity(0.6) : null,
+                      isApple ? ColorSchemes.secondary.withOpacity(0.6) : null,
                 ),
                 const SizedBox(height: 5),
                 Text(
                   number <= 0 ? "0" : "\u200E+$number",
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: ColorSchemes.primarySecondaryWhite,
-                    fontSize: 17,
-                  ),
+                        color: ColorSchemes.primarySecondaryWhite,
+                        fontSize: 17,
+                      ),
                 ),
               ],
             ),
@@ -241,9 +236,9 @@ class _WhatCanIDoSectionWebbWidgetState extends State<WhatCanIDoSectionWebbWidge
           label,
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-            color: ColorSchemes.iconDarkWhite,
-            fontSize: 20,
-          ),
+                color: ColorSchemes.iconDarkWhite,
+                fontSize: 20,
+              ),
         ),
       ],
     );

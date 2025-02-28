@@ -102,7 +102,7 @@ class _TimelineCareerWidgetState extends State<TimelineCareerWidget>
                         child: child,
                       );
                     },
-                    child: AnimatedTextWidget(
+                    child: AnimatedTextWebWidget(
                       text: widget.event.title,
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
@@ -120,7 +120,7 @@ class _TimelineCareerWidgetState extends State<TimelineCareerWidget>
                         child: child,
                       );
                     },
-                    child: AnimatedTextWidget(
+                    child: AnimatedTextWebWidget(
                       text: widget.event.date,
                       style: TextStyle(
                         color: Colors.grey[600],
@@ -141,7 +141,7 @@ class _TimelineCareerWidgetState extends State<TimelineCareerWidget>
                           child: child,
                         );
                       },
-                      child: AnimatedTextWidget(
+                      child: AnimatedTextWebWidget(
                         text: widget.event.place,
                         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                               fontSize: 14,

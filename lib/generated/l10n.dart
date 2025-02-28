@@ -1871,6 +1871,18 @@ class S {
       args: [],
     );
   }
+
+  /// `A Software Engineer, A Flutter Developer, A Mobile Software Engineer, A Android Developer, A IOS Developer`
+  String
+      get aSoftwareEngineerAFlutterDeveloperAMobileSoftwareEngineerAAndroidDeveloperAIOSDeveloper {
+    return Intl.message(
+      'A Software Engineer, A Flutter Developer, A Mobile Software Engineer, A Android Developer, A IOS Developer',
+      name:
+          'aSoftwareEngineerAFlutterDeveloperAMobileSoftwareEngineerAAndroidDeveloperAIOSDeveloper',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -1,16 +1,23 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:my_portfolio/generated/l10n.dart';
+import 'package:my_portfolio/src/config/theme/color_schemes.dart';
+import 'package:my_portfolio/src/core/resources/image_paths.dart';
+import 'package:my_portfolio/src/core/utils/launch_social_media.dart';
+import 'package:my_portfolio/src/core/utils/show_snack_bar.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/about_me_content_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/animated_about_me_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/custom_resume_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/portfolio_image_widget.dart';
 
 class AboutMeSectionWidget extends StatefulWidget {
-  final void Function(bool) onOpenAboutMe;
+  final void Function() onViewResumeTap;
+  final bool isDarkMode;
 
   const AboutMeSectionWidget({
     super.key,
-    required this.onOpenAboutMe,
+    required this.onViewResumeTap,
+    required this.isDarkMode,
   });
 
   @override
@@ -20,50 +27,112 @@ class AboutMeSectionWidget extends StatefulWidget {
 class _AboutMeSectionWidgetState extends State<AboutMeSectionWidget> {
   bool aboutMeOpen = false;
 
-  void _toggleAboutMe() {
-    setState(() {
-      aboutMeOpen = !aboutMeOpen;
-      widget.onOpenAboutMe(aboutMeOpen);
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-
+    final Color textColor =
+        widget.isDarkMode ? ColorSchemes.white : ColorSchemes.iconBackGround;
+    final Color borderColor = widget.isDarkMode
+        ? ColorSchemes.primarySecondaryWhite
+        : ColorSchemes.iconBackGround;
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(width: MediaQuery.sizeOf(context).width * 0.2),
-        _buildHeader(textTheme),
+        SizedBox(width: MediaQuery.sizeOf(context).width * 0.13),
+        const PortfolioImageWebWidget(),
         const SizedBox(width: 10),
         const Expanded(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              AnimatedAboutMeWidget(),
-               AnimatedSwitcher(
+              AnimatedAboutMeWebWidget(),
+              AnimatedSwitcher(
                 duration: Duration(milliseconds: 500),
                 child: AboutMeContentWidget(),
               ),
             ],
           ),
         ),
-        SizedBox(width: MediaQuery.sizeOf(context).width * 0.2),
+        const SizedBox(width: 40),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 50),
+            CustomResumeWebWidget(
+              onViewResumeTap: widget.onViewResumeTap,
+              isDarkMode: widget.isDarkMode,
+              textColor: textColor,
+              borderColor: borderColor,
+              title: S.of(context).downloadCv,
+              width: 220,
+              icon: Icons.download_rounded,
+            ),
+            const SizedBox(height: 20),
+            InkWell(
+              onTap: () => launchWhatsApp(
+                phoneNumber: "+201273826361",
+                onOpenWhatsappFailed: () {
+                  showSnackBar(
+                    context: context,
+                    message: S.of(context).failedToLaunchWhatsApp,
+                    color: ColorSchemes.snackBarWarning,
+                  );
+                },
+              ),
+              child: Container(
+                height: 40,
+                width: 175,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(
+                    color: borderColor,
+                    width: 2,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.1),
+                      blurRadius: 5,
+                      spreadRadius: 2,
+                    ),
+                  ],
+                  color: widget.isDarkMode ? Colors.transparent : Colors.white,
+                ),
+                child: Center(
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        child: SvgPicture.asset(
+                          ImagePaths.whatsapp,
+                          width: 20,
+                          height: 20,
+                          matchTextDirection: true,
+                          color: ColorSchemes.primarySecondary,
+                        ),
+                      ),
+                      Text(
+                        S.of(context).hireMe,
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                              color: textColor,
+                              fontSize: 13,
+                              fontWeight: FontWeight.bold,
+                            ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(width: 10),
+        SizedBox(width: MediaQuery.sizeOf(context).width * 0.13),
       ],
-    );
-  }
-
-  Widget _buildHeader(TextTheme textTheme) {
-    return const Center(
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          PortfolioImageWidget(),
-         ],
-      ),
     );
   }
 }

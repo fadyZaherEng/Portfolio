@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class CustomFooterSocialIconWebWidget extends StatefulWidget {
+class CustomFooterSocialIconWidget extends StatefulWidget {
   final Widget social;
 
-  const CustomFooterSocialIconWebWidget({
+  const CustomFooterSocialIconWidget({
     Key? key,
     required this.social,
   }) : super(key: key);
 
   @override
-  _CustomFooterSocialIconWebWidgetState createState() =>
-      _CustomFooterSocialIconWebWidgetState();
+  _CustomFooterSocialIconWidgetState createState() =>
+      _CustomFooterSocialIconWidgetState();
 }
 
-class _CustomFooterSocialIconWebWidgetState
-    extends State<CustomFooterSocialIconWebWidget> {
+class _CustomFooterSocialIconWidgetState
+    extends State<CustomFooterSocialIconWidget> {
   bool _isHovered = false;
 
   @override

@@ -7,16 +7,16 @@ import 'package:my_portfolio/src/core/utils/show_snack_bar.dart';
 import 'package:my_portfolio/src/di/data_layer_injector.dart';
 import 'package:my_portfolio/src/domain/usecase/get_theme_use_case.dart';
 
-class ContactMeHoverButtonWidget extends StatefulWidget {
-  const ContactMeHoverButtonWidget({super.key});
+class ContactMeHoverButtonWebWidget extends StatefulWidget {
+  const ContactMeHoverButtonWebWidget({super.key});
 
   @override
-  _ContactMeHoverButtonWidgetState createState() =>
-      _ContactMeHoverButtonWidgetState();
+  _ContactMeHoverButtonWebWidgetState createState() =>
+      _ContactMeHoverButtonWebWidgetState();
 }
 
-class _ContactMeHoverButtonWidgetState
-    extends State<ContactMeHoverButtonWidget> {
+class _ContactMeHoverButtonWebWidgetState
+    extends State<ContactMeHoverButtonWebWidget> {
   bool _isHovered = false;
 
   @override

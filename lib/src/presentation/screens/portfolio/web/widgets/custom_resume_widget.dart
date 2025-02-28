@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 
-class CustomResumeWidget extends StatefulWidget {
+class CustomResumeWebWidget extends StatefulWidget {
   final void Function() onViewResumeTap;
   final bool isDarkMode;
   final Color borderColor;
@@ -10,7 +10,7 @@ class CustomResumeWidget extends StatefulWidget {
   final double width;
   final IconData? icon;
 
-  const CustomResumeWidget({
+  const CustomResumeWebWidget({
     Key? key,
     required this.onViewResumeTap,
     required this.isDarkMode,
@@ -22,10 +22,10 @@ class CustomResumeWidget extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _CustomResumeWidgetState createState() => _CustomResumeWidgetState();
+  _CustomResumeWebWidgetState createState() => _CustomResumeWebWidgetState();
 }
 
-class _CustomResumeWidgetState extends State<CustomResumeWidget>
+class _CustomResumeWebWidgetState extends State<CustomResumeWebWidget>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _scaleAnimation;
@@ -163,7 +163,7 @@ class _AnimatedElevatedButtonState extends State<AnimatedElevatedButton> {
                               color: _isHovered
                                   ? ColorSchemes.white
                                   : widget.textColor,
-                              fontSize: 13,
+                              fontSize: 17,
                               fontWeight: FontWeight.bold,
                             ),
                       )
@@ -184,7 +184,7 @@ class _AnimatedElevatedButtonState extends State<AnimatedElevatedButton> {
                                         color: _isHovered
                                             ? ColorSchemes.white
                                             : widget.textColor,
-                                        fontSize: 13,
+                                        fontSize: 17,
                                         fontWeight: FontWeight.bold,
                                       ),
                             ),

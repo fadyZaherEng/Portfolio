@@ -78,7 +78,7 @@ class _PortfolioImageWebWidgetState extends State<PortfolioImageWebWidget>
             top: 15,
             child: CustomPaint(
               painter: FullCirclePainter(ColorSchemes.primarySecondary),
-              size: const Size(300, 300),
+              size: const Size(500, 500),
             ),
           ),
 

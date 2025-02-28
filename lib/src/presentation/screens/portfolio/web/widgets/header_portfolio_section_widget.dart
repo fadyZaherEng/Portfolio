@@ -46,97 +46,19 @@ class _HeaderProfileSectionWebWidgetState
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final textTheme = theme.textTheme;
-    final Color textColor =
-        widget.isDarkMode ? ColorSchemes.white : ColorSchemes.iconBackGround;
-    final Color borderColor = widget.isDarkMode
-        ? ColorSchemes.primarySecondaryWhite
-        : ColorSchemes.iconBackGround;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
         AboutMeSectionWidget(
-          onOpenAboutMe: (isOpen) {
-            setState(() {
-              openAboutMe = isOpen;
-            });
-          },
+          isDarkMode: widget.isDarkMode,
+          onViewResumeTap: widget.onViewResumeTap,
         ),
-        const SizedBox(height: 30),
+        const SizedBox(height: 24),
         _buildWelcomeMessage(textTheme),
         const SizedBox(height: 10),
         _buildAnimatedIntro(textTheme),
-        const SizedBox(height: 20),
-        CustomResumeWidget(
-          onViewResumeTap: widget.onViewResumeTap,
-          isDarkMode: widget.isDarkMode,
-          textColor: textColor,
-          borderColor: borderColor,
-          title: S.of(context).downloadCv,
-          width: 170,
-          icon: Icons.download_rounded,
-        ),
-        const SizedBox(height: 24),
-        InkWell(
-          onTap: () => launchWhatsApp(
-            phoneNumber: "+201273826361",
-            onOpenWhatsappFailed: () {
-              showSnackBar(
-                context: context,
-                message: S.of(context).failedToLaunchWhatsApp,
-                color: ColorSchemes.snackBarWarning,
-              );
-            },
-          ),
-          child: Container(
-            height: 40,
-            width: 175,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              border: Border.all(
-                color: borderColor,
-                width: 2,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  blurRadius: 5,
-                  spreadRadius: 2,
-                ),
-              ],
-              color: widget.isDarkMode ? Colors.transparent : Colors.white,
-            ),
-            child: Center(
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    child: SvgPicture.asset(
-                      ImagePaths.whatsapp,
-                      width: 20,
-                      height: 20,
-                      matchTextDirection: true,
-                      color: ColorSchemes.primarySecondary,
-                    ),
-                  ),
-                  Text(
-                    S.of(context).hireMe,
-                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: textColor,
-                          fontSize: 13,
-                          fontWeight: FontWeight.bold,
-                        ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-        const SizedBox(height: 16),
-      ],
+       ],
     );
   }
 
@@ -149,6 +71,7 @@ class _HeaderProfileSectionWebWidgetState
           style: textTheme.titleMedium?.copyWith(
             color: ColorSchemes.iconDarkWhite,
             fontWeight: FontWeight.bold,
+            fontSize: 22,
           ),
         ),
         const SizedBox(width: 5),
@@ -156,8 +79,8 @@ class _HeaderProfileSectionWebWidgetState
           autostart: Autostart.loop,
           controller: _controller,
           fit: BoxFit.cover,
-          height: 32,
-          width: 32,
+          height: 48,
+          width: 48,
           matchTextDirection: true,
           placeholder: (context) => const SizedBox.shrink(),
           image: const AssetImage(ImagePaths.hi),
@@ -188,6 +111,7 @@ class _HeaderProfileSectionWebWidgetState
               textStyle: textTheme.titleLarge?.copyWith(
                 color: ColorSchemes.iconDarkWhite,
                 fontWeight: FontWeight.bold,
+                fontSize: 22,
               ),
               speed: const Duration(milliseconds: 100),
             ),
@@ -211,7 +135,7 @@ class _HeaderProfileSectionWebWidgetState
                 textStyle: textTheme.titleLarge?.copyWith(
                   color: ColorSchemes.iconDarkWhite,
                   fontWeight: FontWeight.bold,
-                  fontSize: 14,
+                  fontSize: 19,
                 ),
                 speed: const Duration(milliseconds: 100),
               ),
@@ -225,12 +149,14 @@ class _HeaderProfileSectionWebWidgetState
             displayFullTextOnTap: true,
             animatedTexts: [
               TypewriterAnimatedText(
-                S.of(context).flutterDeveloper,
+                S
+                    .of(context)
+                    .aSoftwareEngineerAFlutterDeveloperAMobileSoftwareEngineerAAndroidDeveloperAIOSDeveloper,
                 textAlign: TextAlign.center,
                 textStyle: textTheme.titleLarge?.copyWith(
                   color: ColorSchemes.iconDarkWhite,
                   fontWeight: FontWeight.bold,
-                  fontSize: 14,
+                  fontSize: 19,
                 ),
                 speed: const Duration(milliseconds: 100),
               ),
