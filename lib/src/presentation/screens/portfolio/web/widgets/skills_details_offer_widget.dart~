@@ -29,7 +29,7 @@ class _SkillsDetailsOfferWebWidgetState
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final isLargeScreen = width > 850;
-    double dividerHeight = _dynamicLength == offers.length ? 3.25 : 3.4;
+    double dividerHeight = _dynamicLength == offers.length ? 3.25 : 3.9;
 
     return Center(
       child: Column(
