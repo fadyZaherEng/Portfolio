@@ -167,7 +167,7 @@ class _AnimatedElevatedButtonState extends State<AnimatedElevatedButton> {
                               fontWeight: FontWeight.bold,
                             ),
                       )
-                    : SizedBox(
+                    : Expanded(
                       child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [

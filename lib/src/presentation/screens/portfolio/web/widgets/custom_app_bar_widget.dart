@@ -13,11 +13,14 @@ class CustomAppBarWidget extends StatefulWidget implements PreferredSizeWidget {
   final void Function()? onBackTap;
   final void Function() onLogoTap;
 
+  final TabController? tabController;
+
   const CustomAppBarWidget({
     super.key,
     this.isBack = false,
     this.onBackTap,
     required this.onLogoTap,
+     this.tabController,
   });
 
   @override

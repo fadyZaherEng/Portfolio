@@ -14,36 +14,14 @@ class EndDrawerWidget extends StatelessWidget {
   final bool isEnglish;
   final void Function(bool isDark) toggleTheme;
   final void Function(String) changeLocale;
-  final void Function() onDrawerHomeTap;
-  final void Function() onDrawerAboutTap;
-  final void Function() onDrawerSkillsTap;
-  final void Function() onDrawerExperienceTap;
-  final void Function() onDrawerPortfolioTap;
-  final void Function() onDrawerContactTap;
-  final void Function() onDrawerTrainingTap;
-  final void Function() onDrawerEducationTap;
   final void Function() onDrawerLogoTap;
-  final void Function() onDrawerSkillsOfferTap;
-  final void Function() onDrawerProjectsTap;
-  final void Function() onDrawerGetInTouchTap;
 
   const EndDrawerWidget({
     super.key,
     required this.isDarkMode,
     required this.toggleTheme,
     required this.changeLocale,
-    required this.onDrawerHomeTap,
-    required this.onDrawerAboutTap,
-    required this.onDrawerSkillsTap,
-    required this.onDrawerExperienceTap,
-    required this.onDrawerPortfolioTap,
-    required this.onDrawerContactTap,
     required this.onDrawerLogoTap,
-    required this.onDrawerTrainingTap,
-    required this.onDrawerEducationTap,
-    required this.onDrawerSkillsOfferTap,
-    required this.onDrawerProjectsTap,
-    required this.onDrawerGetInTouchTap,
     required this.isEnglish,
   });
 
@@ -72,7 +50,7 @@ class EndDrawerWidget extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             _buildDivider(),
-            const SizedBox(height: 8),
+            const SizedBox(height: 16),
             Image(
               width: 70,
               height: 70,
@@ -87,85 +65,9 @@ class EndDrawerWidget extends StatelessWidget {
               ),
               image: const AssetImage(ImagePaths.newLogo3),
             ),
-            const SizedBox(height: 8),
+            const SizedBox(height: 16),
             _buildDivider(),
-            const SizedBox(height: 12),
-            Column(
-              children: [
-                _buildMenuItem(
-                  icon: Icons.home,
-                  label: S.of(context).home,
-                  onTap: onDrawerHomeTap,
-                  context: context,
-                ),
-                const SizedBox(height: 16),
-                _buildMenuItem(
-                  icon: Icons.lightbulb,
-                  label: S.of(context).skills,
-                  onTap: onDrawerSkillsTap,
-                  context: context,
-                ),
-                const SizedBox(height: 16),
-                _buildMenuItem(
-                  icon: Icons.local_offer,
-                  label: S.of(context).skillsOffer,
-                  onTap: onDrawerSkillsOfferTap,
-                  context: context,
-                ),
-                const SizedBox(height: 16),
-                _buildMenuItem(
-                  icon: Icons.workspaces_outline,
-                  label: S.of(context).myProjects,
-                  onTap: onDrawerProjectsTap,
-                  context: context,
-                ),
-                const SizedBox(height: 16),
-                _buildMenuItem(
-                  icon: Icons.work,
-                  label: S.of(context).experience,
-                  onTap: onDrawerExperienceTap,
-                  context: context,
-                ),
-                const SizedBox(height: 16),
-                _buildMenuItem(
-                  icon: Icons.cast_for_education,
-                  label: S.of(context).education,
-                  onTap: onDrawerEducationTap,
-                  context: context,
-                ),
-                const SizedBox(height: 16),
-                _buildMenuItem(
-                  icon: Icons.pages,
-                  label: S.of(context).portfolio,
-                  onTap: onDrawerPortfolioTap,
-                  context: context,
-                ),
-                const SizedBox(height: 16),
-                _buildMenuItem(
-                  icon: Icons.contact_mail,
-                  label: S.of(context).getInTouch,
-                  onTap: onDrawerGetInTouchTap,
-                  context: context,
-                ),
-                const SizedBox(height: 16),
-                _buildMenuItem(
-                  icon: Icons.contact_phone,
-                  label: S.of(context).contact,
-                  onTap: onDrawerContactTap,
-                  context: context,
-                ),
-                const SizedBox(height: 16),
-                _buildMenuItem(
-                  icon: Icons.model_training,
-                  label: S.of(context).training,
-                  onTap: onDrawerTrainingTap,
-                  context: context,
-                ),
-              ],
-            ),
-            const SizedBox(height: 12),
-            _buildDivider(),
-            const SizedBox(height: 12),
+            const SizedBox(height: 16),
             CustomResumeWidget(
               onViewResumeTap: _openResume,
               isDarkMode: isDarkMode,
@@ -174,16 +76,16 @@ class EndDrawerWidget extends StatelessWidget {
               title: S.of(context).resume,
               width: 100,
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 16),
             _buildDivider(),
-            const SizedBox(height: 4),
+            const SizedBox(height: 16),
             IOSSwitchWithThumbImage(
               isDarkMode: isDarkMode,
               toggleTheme: (value) => toggleTheme(value),
             ),
-            const SizedBox(height: 4),
+            const SizedBox(height: 16),
             _buildDivider(),
-            const SizedBox(height: 10),
+            const SizedBox(height: 16),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
@@ -201,39 +103,6 @@ class EndDrawerWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildMenuItem({
-    required IconData icon,
-    required String label,
-    required VoidCallback onTap,
-    required BuildContext context,
-  }) {
-    return InkWell(
-      onTap: onTap,
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Icon(
-              icon,
-              color: ColorSchemes.primarySecondaryWhite,
-              size: 20,
-            ),
-            const SizedBox(width: 10),
-            Text(
-              label,
-              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: ColorSchemes.white,
-                    fontWeight: Constants.fontWeightBold,
-                    fontSize: 14,
-                  ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
 
   Widget _buildLanguageButton(
     String label,
