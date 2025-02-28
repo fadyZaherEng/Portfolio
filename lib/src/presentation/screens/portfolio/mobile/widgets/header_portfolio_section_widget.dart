@@ -8,8 +8,8 @@ import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/core/utils/launch_social_media.dart';
 import 'package:my_portfolio/src/core/utils/show_snack_bar.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/about_section_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_resume_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/about_section_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/custom_resume_widget.dart';
 
 class HeaderProfileSectionWidget extends StatefulWidget {
   final void Function() onViewResumeTap;
@@ -90,7 +90,7 @@ class _HeaderProfileSectionWidgetState extends State<HeaderProfileSectionWidget>
             },
           ),
           child: Container(
-            height: 35,
+            height: 40,
             width: 175,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
@@ -142,7 +142,7 @@ class _HeaderProfileSectionWidgetState extends State<HeaderProfileSectionWidget>
             const ClipboardData(text: "fedo.zaher@gmail.com"),
           ),
           child: Container(
-            height: 35,
+            height: 40,
             width: 175,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),

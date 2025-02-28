@@ -6,7 +6,7 @@ import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/core/utils/constants.dart';
 import 'package:my_portfolio/src/di/data_layer_injector.dart';
 import 'package:my_portfolio/src/domain/usecase/get_theme_use_case.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/build_logo_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/build_logo_widget.dart';
 
 class CustomAppBarWidget extends StatefulWidget implements PreferredSizeWidget {
   final bool isBack;
@@ -68,7 +68,7 @@ class _State extends State<CustomAppBarWidget> {
           ? [
               IconButton(
                 icon: Container(
-                  margin: const EdgeInsetsDirectional.only(end: 10),
+                  margin: const EdgeInsetsDirectional.only(end: 5),
                   child: SvgPicture.asset(
                     ImagePaths.backArrow,
                     matchTextDirection: true,

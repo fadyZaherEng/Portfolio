@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/domain/model/time_line.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/animated_text_Widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/bounce_and_scale_text_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/time_line_career_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/animated_text_Widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/bounce_and_scale_text_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/time_line_career_widget.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 class MyChapterEducationWidget extends StatefulWidget {
@@ -92,7 +92,7 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
                 ),
                 child: Column(
                   children: [
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 32),
                     RotationTransition(
                       turns: _rotateAnimation,
                       child: _buildHeaderText(

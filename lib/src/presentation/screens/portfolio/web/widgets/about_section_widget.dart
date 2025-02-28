@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/about_me_content_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/animated_about_me_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/portfolio_image_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/about_me_content_widget.dart';
+ import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/animated_about_me_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/portfolio_image_widget.dart';
 
 class AboutMeSectionWidget extends StatefulWidget {
   final void Function(bool) onOpenAboutMe;

@@ -9,8 +9,8 @@ import 'package:my_portfolio/src/core/utils/show_snack_bar.dart';
 import 'package:my_portfolio/src/di/data_layer_injector.dart';
 import 'package:my_portfolio/src/domain/usecase/get_language_use_case.dart';
 import 'package:my_portfolio/src/domain/usecase/get_theme_use_case.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/contact_me_hover_button_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_footer_social_icon_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/contact_me_hover_button_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/custom_footer_social_icon_widget.dart';
 
 class ContactMeWidget extends StatelessWidget {
   const ContactMeWidget({super.key});
@@ -24,9 +24,7 @@ class ContactMeWidget extends StatelessWidget {
       children: [
         Center(
           child: SizedBox(
-            width: MediaQuery.of(context).size.width > 850
-                ? 850
-                :null,
+            width: MediaQuery.of(context).size.width > 850 ? 850 : null,
             child: Column(
               children: [
                 const SizedBox(height: 30),
@@ -129,8 +127,8 @@ class ContactMeWidget extends StatelessWidget {
                           size:
                               MediaQuery.sizeOf(context).width > 850 ? 30 : 22,
                         ),
-                        onPressed: () =>
-                            openLink('https://facebook.com/yourprofile'),
+                        onPressed: () => openLink(
+                            'https://www.facebook.com/share/18gTWiitR2/'),
                       ),
                     ),
                     CustomFooterSocialIconWidget(

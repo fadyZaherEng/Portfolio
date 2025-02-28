@@ -9,8 +9,8 @@ import 'package:my_portfolio/src/core/utils/constants.dart';
 import 'package:my_portfolio/src/core/utils/show_snack_bar.dart';
 import 'package:my_portfolio/src/di/data_layer_injector.dart';
 import 'package:my_portfolio/src/domain/usecase/get_theme_use_case.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_app_bar_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_resume_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/Mobile/widgets/custom_app_bar_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/Mobile/widgets/custom_resume_widget.dart';
 import 'package:my_portfolio/src/presentation/widgets/restart_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 

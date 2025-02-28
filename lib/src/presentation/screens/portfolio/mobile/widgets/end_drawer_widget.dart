@@ -5,8 +5,8 @@ import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/core/utils/constants.dart';
 import 'package:my_portfolio/src/core/utils/openLink.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_resume_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/switch_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/custom_resume_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/switch_widget.dart';
 import 'package:skeletons/skeletons.dart';
 
 class EndDrawerWidget extends StatelessWidget {
@@ -185,7 +185,7 @@ class EndDrawerWidget extends StatelessWidget {
             _buildDivider(),
             const SizedBox(height: 10),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

@@ -3,8 +3,8 @@ import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/utils/constants.dart';
 import 'package:my_portfolio/src/core/utils/openLink.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_resume_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/project_card_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/custom_resume_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/project_card_widget.dart';
 
 class ProjectsWidgets extends StatefulWidget {
   final bool isDarkMode;
@@ -61,7 +61,7 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
                   horizontal: MediaQuery.of(context).size.width > 850 ? 50 : 0,
                 ),
                 child: SizedBox(
-                  width: MediaQuery.of(context).size.width > 850 ? 500 : 400,
+                  width: MediaQuery.of(context).size.width > 850 ? 500 : null,
                   child: Text(
                     S.of(context).exploreMyProjects,
                     textAlign: TextAlign.center,

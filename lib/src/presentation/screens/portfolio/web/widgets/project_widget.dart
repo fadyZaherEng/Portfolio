@@ -3,8 +3,8 @@ import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/utils/constants.dart';
 import 'package:my_portfolio/src/core/utils/openLink.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_resume_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/project_card_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/custom_resume_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/project_card_widget.dart';
 
 class ProjectsWidgets extends StatefulWidget {
   final bool isDarkMode;

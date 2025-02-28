@@ -3,8 +3,8 @@ import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/domain/model/time_line.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/bounce_and_scale_text_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/time_line_career_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/bounce_and_scale_text_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/time_line_career_widget.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 class MyChaptersCareerWidget extends StatefulWidget {
@@ -217,7 +217,7 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: SizedBox(
         width: MediaQuery.of(context).size.width > 850
-            ? 350
+            ? 330
             : MediaQuery.of(context).size.width,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -8,8 +8,8 @@ import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/core/utils/launch_social_media.dart';
 import 'package:my_portfolio/src/core/utils/show_snack_bar.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/about_section_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/custom_resume_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/about_section_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/custom_resume_widget.dart';
 
 class HeaderProfileSectionWidget extends StatefulWidget {
   final void Function() onViewResumeTap;
