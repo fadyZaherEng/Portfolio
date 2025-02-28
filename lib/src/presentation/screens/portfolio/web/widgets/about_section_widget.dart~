@@ -35,7 +35,7 @@ class _AboutMeSectionWidgetState extends State<AboutMeSectionWidget> {
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(width: MediaQuery.sizeOf(context).width * 0.17),
+        SizedBox(width: MediaQuery.sizeOf(context).width * 0.2),
         _buildHeader(textTheme),
         const SizedBox(width: 10),
         const Expanded(
@@ -51,7 +51,7 @@ class _AboutMeSectionWidgetState extends State<AboutMeSectionWidget> {
             ],
           ),
         ),
-        SizedBox(width: MediaQuery.sizeOf(context).width * 0.17),
+        SizedBox(width: MediaQuery.sizeOf(context).width * 0.2),
       ],
     );
   }

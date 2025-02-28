@@ -170,7 +170,7 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          HeaderProfileSectionWidget(
+          HeaderProfileSectionWebWidget(
             onViewResumeTap: _openResume,
             isDarkMode: isDarkMode,
             key: _scrollKeys[0],

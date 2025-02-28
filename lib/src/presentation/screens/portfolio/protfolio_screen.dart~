@@ -13,7 +13,7 @@ class PortfolioScreen extends BaseStatefulWidget {
 class _PortfolioScreenState extends BaseState<PortfolioScreen> {
   @override
   Widget baseBuild(BuildContext context) {
-    return MediaQuery.of(context).size.width > 1300
+    return MediaQuery.of(context).size.width > 1000
         ? const PortfolioWebScreen()
         : const PortfolioMobileScreen();
   }

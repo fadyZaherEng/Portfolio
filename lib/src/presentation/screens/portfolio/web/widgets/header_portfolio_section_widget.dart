@@ -1,6 +1,5 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gif/gif.dart';
 import 'package:my_portfolio/generated/l10n.dart';
@@ -11,23 +10,23 @@ import 'package:my_portfolio/src/core/utils/show_snack_bar.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/about_section_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/custom_resume_widget.dart';
 
-class HeaderProfileSectionWidget extends StatefulWidget {
+class HeaderProfileSectionWebWidget extends StatefulWidget {
   final void Function() onViewResumeTap;
   final bool isDarkMode;
 
-  const HeaderProfileSectionWidget({
+  const HeaderProfileSectionWebWidget({
     super.key,
     required this.onViewResumeTap,
     required this.isDarkMode,
   });
 
   @override
-  State<HeaderProfileSectionWidget> createState() =>
-      _HeaderProfileSectionWidgetState();
+  State<HeaderProfileSectionWebWidget> createState() =>
+      _HeaderProfileSectionWebWidgetState();
 }
 
-class _HeaderProfileSectionWidgetState extends State<HeaderProfileSectionWidget>
-    with TickerProviderStateMixin {
+class _HeaderProfileSectionWebWidgetState
+    extends State<HeaderProfileSectionWebWidget> with TickerProviderStateMixin {
   late final GifController _controller;
   bool openAboutMe = false;
 
@@ -63,7 +62,7 @@ class _HeaderProfileSectionWidgetState extends State<HeaderProfileSectionWidget>
             });
           },
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 30),
         _buildWelcomeMessage(textTheme),
         const SizedBox(height: 10),
         _buildAnimatedIntro(textTheme),
@@ -136,7 +135,7 @@ class _HeaderProfileSectionWidgetState extends State<HeaderProfileSectionWidget>
             ),
           ),
         ),
-          const SizedBox(height: 16),
+        const SizedBox(height: 16),
       ],
     );
   }
@@ -168,13 +167,14 @@ class _HeaderProfileSectionWidgetState extends State<HeaderProfileSectionWidget>
   }
 
   final positionVisible = ValueNotifier<bool>(false);
+  final workVisible = ValueNotifier<bool>(false);
 
   Widget _buildAnimatedIntro(TextTheme textTheme) {
     return Column(
       children: [
         AnimatedTextKit(
           repeatForever: false,
-          totalRepeatCount: 2,
+          totalRepeatCount: 1,
           stopPauseOnTap: false,
           onFinished: () {
             setState(() {
@@ -197,12 +197,35 @@ class _HeaderProfileSectionWidgetState extends State<HeaderProfileSectionWidget>
         if (positionVisible.value)
           AnimatedTextKit(
             repeatForever: false,
-            totalRepeatCount: 2,
+            totalRepeatCount: 1,
+            stopPauseOnTap: false,
+            displayFullTextOnTap: true,
+            onFinished: () {
+              workVisible.value = true;
+              setState(() {});
+            },
+            animatedTexts: [
+              TypewriterAnimatedText(
+                S.of(context).atBridgeCOM,
+                textAlign: TextAlign.center,
+                textStyle: textTheme.titleLarge?.copyWith(
+                  color: ColorSchemes.iconDarkWhite,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 14,
+                ),
+                speed: const Duration(milliseconds: 100),
+              ),
+            ],
+          ),
+        if (workVisible.value) const SizedBox(height: 10),
+        if (workVisible.value)
+          AnimatedTextKit(
+            repeatForever: true,
             stopPauseOnTap: false,
             displayFullTextOnTap: true,
             animatedTexts: [
               TypewriterAnimatedText(
-                S.of(context).atBridgeCOM,
+                S.of(context).flutterDeveloper,
                 textAlign: TextAlign.center,
                 textStyle: textTheme.titleLarge?.copyWith(
                   color: ColorSchemes.iconDarkWhite,
