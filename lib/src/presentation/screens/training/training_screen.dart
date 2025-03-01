@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
- import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/routes/routes_manager.dart';
@@ -117,8 +117,16 @@ class _TrainingScreenState extends State<TrainingScreen> {
                                     .textTheme
                                     .titleLarge
                                     ?.copyWith(
-                                      fontSize: 26,
-                                      fontWeight: FontWeight.bold,
+                                      fontSize:
+                                          MediaQuery.of(context).size.width >
+                                                  1300
+                                              ? 30
+                                              : 26,
+                                      fontWeight:
+                                          MediaQuery.of(context).size.width >
+                                                  1300
+                                              ? FontWeight.normal
+                                              : FontWeight.bold,
                                       color: ColorSchemes.iconDarkWhite,
                                     ),
                               ),
@@ -143,14 +151,12 @@ class _TrainingScreenState extends State<TrainingScreen> {
                   ),
                   // Circular Percentage Indicator
                   Visibility(
-                    visible:
-                        _scrollPercentage > 0 && _scrollPercentage < 0.95,
+                    visible: _scrollPercentage > 0 && _scrollPercentage < 0.95,
                     child: Padding(
                       padding: const EdgeInsets.all(15),
                       child: CustomPaint(
                         size: const Size(30, 30),
-                        painter:
-                            CircularPainter(percentage: _scrollPercentage),
+                        painter: CircularPainter(percentage: _scrollPercentage),
                       ),
                     ),
                   ),

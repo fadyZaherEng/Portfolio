@@ -163,8 +163,13 @@ class _AnimatedElevatedButtonState extends State<AnimatedElevatedButton> {
                               color: _isHovered
                                   ? ColorSchemes.white
                                   : widget.textColor,
-                              fontSize: 13,
-                              fontWeight: FontWeight.bold,
+                              fontSize: MediaQuery.of(context).size.width > 1200
+                                  ? 17
+                                  : 13,
+                              fontWeight:
+                                  MediaQuery.of(context).size.width > 1200
+                                      ? FontWeight.normal
+                                      : FontWeight.bold,
                             ),
                       )
                     : Row(
@@ -173,19 +178,29 @@ class _AnimatedElevatedButtonState extends State<AnimatedElevatedButton> {
                           Icon(
                             widget.icon,
                             color: ColorSchemes.primarySecondary,
-                            size: 16,
+                            size: MediaQuery.of(context).size.width > 1200
+                                ? 17
+                                : 13,
                           ),
                           const SizedBox(width: 8),
                           Text(
                             widget.title,
-                            style:
-                                Theme.of(context).textTheme.bodySmall?.copyWith(
-                                      color: _isHovered
-                                          ? ColorSchemes.white
-                                          : widget.textColor,
-                                      fontSize: 13,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodySmall
+                                ?.copyWith(
+                                  color: _isHovered
+                                      ? ColorSchemes.white
+                                      : widget.textColor,
+                                  fontSize:
+                                      MediaQuery.of(context).size.width > 1200
+                                          ? 17
+                                          : 13,
+                                  fontWeight:
+                                      MediaQuery.of(context).size.width > 1200
+                                          ? FontWeight.normal
+                                          : FontWeight.bold,
+                                ),
                           ),
                         ],
                       ),

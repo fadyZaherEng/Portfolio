@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
@@ -71,8 +71,7 @@ class _State extends State<CustomAppBarWidget> {
           ? [
               IconButton(
                 icon: Container(
-                  margin: EdgeInsetsDirectional.only(
-                      end: MediaQuery.sizeOf(context).width > 1300 ? 0 : 5),
+                  margin:   EdgeInsetsDirectional.only(end:MediaQuery.sizeOf(context).width > 1300 ? 10 : 5),
                   child: SvgPicture.asset(
                     ImagePaths.backArrow,
                     matchTextDirection: true,

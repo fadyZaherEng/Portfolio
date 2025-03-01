@@ -4,24 +4,25 @@ import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/routes/routes_manager.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
-import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/core/utils/constants.dart';
 import 'package:my_portfolio/src/presentation/blocs/portfolio/portfolio_bloc.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/Mobile/widgets/bounce_and_scale_text_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/Mobile/widgets/custom_app_bar_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/Mobile/widgets/web_circle_painter_button_scroll.dart';
-import 'package:my_portfolio/src/presentation/screens/skills/widgets/build_skill_row_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/training/widgets/training_item_widget.dart';
 import 'package:my_portfolio/src/presentation/widgets/restart_widget.dart';
-import 'package:universal_html/html.dart' as html;
+import "package:universal_html/html.dart" as html;
 
-class SkillsScreen extends StatefulWidget {
-  const SkillsScreen({super.key});
+class TrainingScreen extends StatefulWidget {
+  const TrainingScreen({super.key});
 
   @override
-  State<SkillsScreen> createState() => _SkillsScreenState();
+  State<TrainingScreen> createState() => _TrainingScreenState();
 }
 
-class _SkillsScreenState extends State<SkillsScreen> {
+class _TrainingScreenState extends State<TrainingScreen> {
+  List<Training> trainings = [];
+
   bool isDarkMode = false;
 
   String currentLocale = 'en';
@@ -45,6 +46,7 @@ class _SkillsScreenState extends State<SkillsScreen> {
             _scrollController.position.maxScrollExtent;
       });
     });
+    trainings = Constants.trainings;
   }
 
   @override
@@ -69,7 +71,7 @@ class _SkillsScreenState extends State<SkillsScreen> {
         return WillPopScope(
           onWillPop: () async {
             context.go(Routes.portfolio);
-            RestartWidget.restartApp(context);
+            Navigator.pop(context);
             return false;
           },
           child: Scaffold(
@@ -80,7 +82,7 @@ class _SkillsScreenState extends State<SkillsScreen> {
               isBack: true,
               onBackTap: () {
                 context.go(Routes.portfolio);
-                RestartWidget.restartApp(context);
+                Navigator.pop(context);
               },
               onLogoTap: () {
                 RestartWidget.restartApp(context);
@@ -94,68 +96,53 @@ class _SkillsScreenState extends State<SkillsScreen> {
                 children: [
                   SingleChildScrollView(
                     controller: _scrollController,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 12,
-                        vertical: 16,
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          TweenAnimationBuilder<double>(
-                            duration: const Duration(seconds: 1),
-                            tween: Tween(begin: 0, end: 1),
-                            builder: (context, value, child) {
-                              return Opacity(
-                                opacity: value,
-                                child: Transform.translate(
-                                  offset: Offset(0, (1 - value) * 20),
-                                  child: child,
-                                ),
-                              );
-                            },
-                            child: Row(
-                              children: [
-                                Image.asset(
-                                  ImagePaths.skills,
-                                  color: ColorSchemes.iconDarkWhite,
-                                  matchTextDirection: true,
-                                  width:
-                                      MediaQuery.of(context).size.width > 1300
-                                          ? 28
-                                          : 22,
-                                  height:
-                                      MediaQuery.of(context).size.width > 1300
-                                          ? 28
-                                          : 22,
-                                ),
-                                const SizedBox(width: 10),
-                                BouncingAndScalingTextWidget(
-                                  title: S.of(context).skills,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleLarge
-                                      ?.copyWith(
-                                        fontSize:
-                                            MediaQuery.of(context).size.width >
-                                                    1300
-                                                ? 30
-                                                : 27,
-                                    fontWeight:MediaQuery.of(context).size.width > 1300 ? FontWeight.normal : FontWeight.bold,
-
-                                    color: ColorSchemes.iconDarkWhite,
-                                      ),
-                                ),
-                              ],
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16),
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.model_training_outlined,
+                                color: ColorSchemes.iconDarkWhite,
+                                size: 28,
+                              ),
+                              const SizedBox(width: 15),
+                              BouncingAndScalingTextWidget(
+                                title: S.of(context).training,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleLarge
+                                    ?.copyWith(
+                                      fontSize:
+                                          MediaQuery.of(context).size.width >
+                                                  1300
+                                              ? 30
+                                              : 26,
+                                      fontWeight:MediaQuery.of(context).size.width > 1300?null: FontWeight.bold,
+                                      color: ColorSchemes.iconDarkWhite,
+                                    ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        Directionality(
+                          textDirection: TextDirection.ltr,
+                          child: Column(
+                            children: List.generate(
+                              trainings.length,
+                              (index) => TrainingItemWidget(
+                                training: trainings[index],
+                                index: index,
+                              ),
                             ),
                           ),
-                          const SizedBox(height: 10),
-                          const Directionality(
-                            textDirection: TextDirection.ltr,
-                            child: BuildSkillsWidget(),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                   // Circular Percentage Indicator

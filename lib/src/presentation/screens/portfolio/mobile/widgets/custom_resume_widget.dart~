@@ -172,9 +172,7 @@ class _AnimatedElevatedButtonState extends State<AnimatedElevatedButton> {
                         children: [
                           Icon(
                             widget.icon,
-                            color: _isHovered
-                                ? ColorSchemes.white
-                                : widget.textColor,
+                            color: ColorSchemes.primarySecondary,
                             size: 16,
                           ),
                           const SizedBox(width: 8),

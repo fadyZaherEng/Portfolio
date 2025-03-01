@@ -64,7 +64,7 @@ class TrainingItemWidgetState extends State<TrainingItemWidget> {
                         Text(
                           widget.training.title,
                           style: TextStyle(
-                            fontWeight:MediaQuery.of(context).size.width > 1300 ? FontWeight.normal : FontWeight.bold,
+                            fontWeight: FontWeight.bold,
                             fontSize: MediaQuery.of(context).size.width > 1300
                                 ? 22
                                 : 16,

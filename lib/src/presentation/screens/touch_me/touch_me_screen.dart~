@@ -222,14 +222,14 @@ class _TouchMeScreenState extends State<TouchMeScreen> {
         maxLines: maxLines,
         style: Theme.of(context).textTheme.bodyMedium?.copyWith(
               color: Colors.white,
-              fontSize: MediaQuery.of(context).size.width > 1200 ? 20 : 16,
+              fontSize:MediaQuery.of(context).size.width > 1200 ? 20 : 16,
             ),
         decoration: InputDecoration(
           hintText: hintText,
-          hintStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                color: Colors.white54,
-                fontSize: MediaQuery.of(context).size.width > 1200 ? 20 : 16,
-              ),
+          hintStyle: Theme.of(context)
+              .textTheme
+              .bodyMedium
+              ?.copyWith(color: Colors.white54),
           contentPadding:
               const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           prefix: Icon(

@@ -37,7 +37,7 @@ class _BuildSkillsWidgetState extends State<BuildSkillsWidget> {
                       child: Text(
                         entry.key,
                         style: TextStyle(
-                          fontWeight:MediaQuery.of(context).size.width > 1300 ?null: FontWeight.bold,
+                          // fontWeight: FontWeight.bold,
                           fontSize: MediaQuery.of(context).size.width > 1300
                               ? 20
                               : 15,
