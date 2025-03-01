@@ -48,9 +48,11 @@ class _ProjectGridWidgetState extends State<ProjectGridWidget> {
               onExit: (_) => setState(() => _hoveredIndex = null),
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 300),
-                transform:_hoveredIndex == index
-                    ? Matrix4.identity() // Apply both scaling and translation
-                    : Matrix4.identity(),  // No transformation
+                transform: _hoveredIndex == index
+                    ? (Matrix4.identity()
+                      ..scale(1.05, 1.05)
+                      ..translate(0.0, -10.0))
+                    : Matrix4.identity(), // No transformation
                 child: OpenContainer(
                   closedElevation: 5,
                   closedShape: RoundedRectangleBorder(
@@ -88,73 +90,90 @@ class _ProjectGridWidgetState extends State<ProjectGridWidget> {
                               borderRadius: BorderRadius.circular(12),
                             ),
                           ),
-                          Positioned(
-                            bottom: 20,
-                            left: 30,
-                            right: 30,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  project.title,
-                                  textAlign: TextAlign.center,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyLarge
-                                      ?.copyWith(
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                  ),
+                          if (_hoveredIndex == index)
+                            Positioned(
+                              bottom: 20,
+                              left: 30,
+                              right: 30,
+                              top: 20,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: ColorSchemes.primary.withOpacity(0.8),
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
-                                const SizedBox(height: 10),
-                                Text(
-                                  project.description,
-                                  textAlign: TextAlign.center,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyMedium
-                                      ?.copyWith(
-                                    color: Colors.white.withOpacity(0.9),
-                                    fontSize: 15,
-                                  ),
-                                ),
-                                const SizedBox(height: 12),
-                                ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: ColorSchemes.iconBackGround
-                                        .withOpacity(0.3),
-                                    shadowColor: Colors.transparent,
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 20,
-                                      vertical: 10,
-                                    ),
-                                    side: BorderSide(
-                                      color: Colors.white.withOpacity(0.8),
-                                      width: 1.8,
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(12),
-                                    ),
-                                  ),
-                                  child: Text(
-                                    S.of(context).openLink,
+                              ),
+                            ),
+                          if (_hoveredIndex == index)
+                            Positioned(
+                              bottom: 20,
+                              left: 30,
+                              right: 30,
+                              top: 20,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    project.title,
+                                    textAlign: TextAlign.center,
                                     style: Theme.of(context)
                                         .textTheme
                                         .bodyLarge
                                         ?.copyWith(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 16,
-                                    ),
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                        ),
                                   ),
-                                  onPressed: () => openLink(project.url),
-                                ),
-                              ],
+                                  const SizedBox(height: 10),
+                                  Text(
+                                    project.description,
+                                    textAlign: TextAlign.center,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyMedium
+                                        ?.copyWith(
+                                          color: Colors.white.withOpacity(0.9),
+                                          fontSize: 15,
+                                        ),
+                                  ),
+                                  const SizedBox(height: 12),
+                                  ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: ColorSchemes
+                                          .iconBackGround
+                                          .withOpacity(0.3),
+                                      shadowColor: Colors.transparent,
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 20,
+                                        vertical: 10,
+                                      ),
+                                      side: BorderSide(
+                                        color: Colors.white.withOpacity(0.8),
+                                        width: 1.8,
+                                      ),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                    ),
+                                    child: Text(
+                                      S.of(context).openLink,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge
+                                          ?.copyWith(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                    ),
+                                    onPressed: () => openLink(project.url),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
+
                         ],
                       ),
                     ),
@@ -178,10 +197,12 @@ class _ProjectGridWidgetState extends State<ProjectGridWidget> {
                             Text(
                               project.description,
                               textAlign: TextAlign.center,
-                              style:
-                              Theme.of(context).textTheme.bodyLarge?.copyWith(
-                                color: Colors.black87,
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge
+                                  ?.copyWith(
+                                    color: Colors.black87,
+                                  ),
                             ),
                             const SizedBox(height: 12),
                             ElevatedButton(
@@ -194,11 +215,13 @@ class _ProjectGridWidgetState extends State<ProjectGridWidget> {
                               ),
                               child: Text(
                                 S.of(context).openLink,
-                                style:
-                                Theme.of(context).textTheme.bodyLarge?.copyWith(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyLarge
+                                    ?.copyWith(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                               ),
                             ),
                           ],
@@ -225,9 +248,9 @@ class _ProjectGridWidgetState extends State<ProjectGridWidget> {
             child: Text(
               _expanded ? S.of(context).loadLess : S.of(context).loadMore,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
-              ),
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
           ),
         ),
@@ -235,7 +258,6 @@ class _ProjectGridWidgetState extends State<ProjectGridWidget> {
     );
   }
 }
-
 
 // import 'package:flutter/material.dart';
 // import 'package:my_portfolio/generated/l10n.dart';

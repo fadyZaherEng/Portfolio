@@ -90,73 +90,90 @@ class _ProjectGridWidgetState extends State<ProjectGridWidget> {
                               borderRadius: BorderRadius.circular(12),
                             ),
                           ),
-                          Positioned(
-                            bottom: 20,
-                            left: 30,
-                            right: 30,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Text(
-                                  project.title,
-                                  textAlign: TextAlign.center,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyLarge
-                                      ?.copyWith(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                        fontSize: 18,
-                                      ),
+                          if (_hoveredIndex == index)
+                            Positioned(
+                              bottom: 0,
+                              left: 0,
+                              right: 0,
+                              top: 0,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: ColorSchemes.primary.withOpacity(0.8),
+                                  borderRadius: BorderRadius.circular(12),
                                 ),
-                                const SizedBox(height: 10),
-                                Text(
-                                  project.description,
-                                  textAlign: TextAlign.center,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyMedium
-                                      ?.copyWith(
-                                        color: Colors.white.withOpacity(0.9),
-                                        fontSize: 15,
-                                      ),
-                                ),
-                                const SizedBox(height: 12),
-                                ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: ColorSchemes.iconBackGround
-                                        .withOpacity(0.3),
-                                    shadowColor: Colors.transparent,
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 20,
-                                      vertical: 10,
-                                    ),
-                                    side: BorderSide(
-                                      color: Colors.white.withOpacity(0.8),
-                                      width: 1.8,
-                                    ),
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(12),
-                                    ),
-                                  ),
-                                  child: Text(
-                                    S.of(context).openLink,
+                              ),
+                            ),
+                          if (_hoveredIndex == index)
+                            Positioned(
+                              bottom: 0,
+                              left: 0,
+                              right: 0,
+                              top: 0,
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    project.title,
+                                    textAlign: TextAlign.center,
                                     style: Theme.of(context)
                                         .textTheme
                                         .bodyLarge
                                         ?.copyWith(
-                                          color: Colors.white,
                                           fontWeight: FontWeight.bold,
-                                          fontSize: 16,
+                                          color: Colors.white,
+                                          fontSize: 18,
                                         ),
                                   ),
-                                  onPressed: () => openLink(project.url),
-                                ),
-                              ],
+                                  const SizedBox(height: 10),
+                                  Text(
+                                    project.description,
+                                    textAlign: TextAlign.center,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodyMedium
+                                        ?.copyWith(
+                                          color: Colors.white.withOpacity(0.9),
+                                          fontSize: 15,
+                                        ),
+                                  ),
+                                  const SizedBox(height: 12),
+                                  ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: ColorSchemes
+                                          .iconBackGround
+                                          .withOpacity(0.3),
+                                      shadowColor: Colors.transparent,
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 20,
+                                        vertical: 10,
+                                      ),
+                                      side: BorderSide(
+                                        color: Colors.white.withOpacity(0.8),
+                                        width: 1.8,
+                                      ),
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(12),
+                                      ),
+                                    ),
+                                    child: Text(
+                                      S.of(context).openLink,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .bodyLarge
+                                          ?.copyWith(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 16,
+                                          ),
+                                    ),
+                                    onPressed: () => openLink(project.url),
+                                  ),
+                                ],
+                              ),
                             ),
-                          ),
+
                         ],
                       ),
                     ),
