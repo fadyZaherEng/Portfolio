@@ -84,7 +84,7 @@ class _ProjectsWebWidgetsState extends State<ProjectsWebWidgets> {
           borderColor: borderColor,
           textColor: textColor,
           title: S.of(context).seeMoreProjects,
-          width: 250,
+          width: 400,
         ),
         const SizedBox(height: 30),
       ],

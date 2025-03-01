@@ -12,22 +12,20 @@ import 'package:my_portfolio/src/di/data_layer_injector.dart';
 import 'package:my_portfolio/src/domain/usecase/get_theme_use_case.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/custom_footer_social_icon_widget.dart';
 
-class SocialBannerWebWidget extends StatelessWidget {
+class SocialBannerWidget extends StatelessWidget {
   final String currentLocale;
 
-  const SocialBannerWebWidget({super.key, required this.currentLocale});
+  const SocialBannerWidget({super.key, required this.currentLocale});
 
   @override
   Widget build(BuildContext context) {
     final isDarkMode = GetThemeUseCase(injector())() == Constants.dark;
     final iconColor =
         isDarkMode ? ColorSchemes.white : ColorSchemes.iconBackGround;
-    final double spacing = MediaQuery.of(context).size.height * 0.012;
+    final double spacing = MediaQuery.of(context).size.height * 0.0009;
 
-    Widget buildSocialIcon({
-      required IconData icon,
-      required VoidCallback onPressed,
-    }) {
+    Widget buildSocialIcon(
+        {required IconData icon, required VoidCallback onPressed}) {
       return CustomFooterSocialIconWebWidget(
         social: IconButton(
           icon: FaIcon(icon, color: iconColor, size: 25),

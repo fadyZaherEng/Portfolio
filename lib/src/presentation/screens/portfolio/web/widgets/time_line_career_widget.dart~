@@ -32,6 +32,7 @@ class _TimelineCareerWebWidgetState extends State<TimelineCareerWebWidget>
       mainAxisAlignment: MainAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
+        SizedBox(width: MediaQuery.sizeOf(context).width * 0.13),
         _buildTimelineIndicator(),
         const SizedBox(width: 10),
         _buildTimelineDetails(context),
@@ -83,7 +84,7 @@ class _TimelineCareerWebWidgetState extends State<TimelineCareerWebWidget>
             AnimatedTextWebWidget(
               text: widget.event.title,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    fontSize: 17,
+                    fontSize: 19,
                     fontWeight: FontWeight.bold,
                     color: ColorSchemes.primaryWhite,
                     height: 2,

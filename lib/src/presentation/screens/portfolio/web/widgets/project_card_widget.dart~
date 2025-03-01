@@ -92,10 +92,10 @@ class _ProjectGridWidgetState extends State<ProjectGridWidget> {
                           ),
                           if (_hoveredIndex == index)
                             Positioned(
-                              bottom: 20,
-                              left: 30,
-                              right: 30,
-                              top: 20,
+                              bottom: 0,
+                              left: 0,
+                              right: 0,
+                              top: 0,
                               child: Container(
                                 decoration: BoxDecoration(
                                   color: ColorSchemes.primary.withOpacity(0.8),
@@ -105,10 +105,10 @@ class _ProjectGridWidgetState extends State<ProjectGridWidget> {
                             ),
                           if (_hoveredIndex == index)
                             Positioned(
-                              bottom: 20,
-                              left: 30,
-                              right: 30,
-                              top: 20,
+                              bottom: 0,
+                              left: 0,
+                              right: 0,
+                              top: 0,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.center,

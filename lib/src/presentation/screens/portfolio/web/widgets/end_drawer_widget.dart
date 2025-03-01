@@ -229,13 +229,13 @@ class EndDrawerWidget extends StatelessWidget {
             child: InkWell(
               onTap: onDrawerLogoTap,
               child: Container(
-                width: 100,
-                height: 100,
+                width: 120,
+                height: 120,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage(ImagePaths.fady),
+                    image: AssetImage(ImagePaths.fedo2),
                   ),
                 ),
               ),

@@ -197,7 +197,7 @@ class EndDrawerWidget extends StatelessWidget {
           style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                 color: ColorSchemes.white,
                 fontWeight: Constants.fontWeightBold,
-                fontSize: 14,
+                fontSize: 17,
               ),
         ),
       ),
@@ -229,13 +229,13 @@ class EndDrawerWidget extends StatelessWidget {
             child: InkWell(
               onTap: onDrawerLogoTap,
               child: Container(
-                width: 100,
-                height: 100,
+                width: 150,
+                height: 150,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage(ImagePaths.fady),
+                    image: AssetImage(ImagePaths.fedo2),
                   ),
                 ),
               ),
@@ -257,7 +257,8 @@ class EndDrawerWidget extends StatelessWidget {
               ),
             ),
           ),
-          Center(
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 100),
             child: Text(
               "${S.of(context).dashboard}     ",
               style: Theme.of(context).textTheme.titleLarge?.copyWith(

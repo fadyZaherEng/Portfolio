@@ -3,6 +3,7 @@ import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/domain/model/time_line.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/animated_text_Widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/bounce_and_scale_text_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/time_line_career_widget.dart';
 
@@ -23,14 +24,35 @@ class _MyChaptersCareerWebWidgetState extends State<MyChaptersCareerWebWidget>
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Column(
       children: [
-        _buildExperienceSection(context),
-        const SizedBox(width: 32),
-        _buildCareerTimeline(context),
-        SizedBox(width: MediaQuery.sizeOf(context).width * 0.13),
+        SizedBox(
+          width:MediaQuery.sizeOf(context).width * 0.7,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24),
+            child: AnimatedTextWebWidget(
+              text: S.of(context).experience,
+              textAlign: TextAlign.start,
+              style:
+              Theme.of(context).textTheme.titleMedium?.copyWith(
+                color: ColorSchemes.iconDarkWhite,
+                fontWeight: FontWeight.bold,
+                fontSize: 32,
+              ),
+            ),
+          ),
+        ),
+        const SizedBox(height: 32),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _buildExperienceSection(context),
+            const SizedBox(width: 32),
+            _buildCareerTimeline(context),
+            SizedBox(width: MediaQuery.sizeOf(context).width * 0.13),
+          ],
+        ),
       ],
     );
   }
@@ -148,7 +170,7 @@ class _MyChaptersCareerWebWidgetState extends State<MyChaptersCareerWebWidget>
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: SizedBox(
-          width: 400,
+          width: 600,
           child: ListView.builder(
             itemCount: events.length,
             shrinkWrap: true,

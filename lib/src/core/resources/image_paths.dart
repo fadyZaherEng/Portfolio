@@ -5,11 +5,11 @@ class ImagePaths {
   static const String arrowDown = "assets/images/ic_arrowdown.svg";
   static const String edit = "assets/images/ic_edit.svg";
   static const String facebook = "assets/images/ic_facebook.svg";
-   static const String instagram = "assets/images/ic_instagram.svg";
+  static const String instagram = "assets/images/ic_instagram.svg";
   static const String linkedin = "assets/images/ic_linkedin.svg";
   static const String mobile = "assets/images/ic_mobile.svg";
   static const String search = "assets/images/ic_Search.svg";
-   static const String whatsapp = "assets/images/ic_landing_whatsapp.svg";
+  static const String whatsapp = "assets/images/ic_landing_whatsapp.svg";
   static const String youtube = "assets/images/ic_youtube.svg";
   static const String delete = "assets/images/ic_delete.svg";
   static const String imagePlaceHolder =
@@ -77,6 +77,8 @@ class ImagePaths {
   static const String news = "assets/images/gif/lottie/88.jpg";
   static const String androidNote = "assets/images/gif/lottie/15.jpg";
   static const String androidWhatsApp = "assets/images/gif/lottie/16.jpg";
+  static const String fedo1 = "assets/images/fedo1.png";
+  static const String fedo2 = "assets/images/fedo2.png";
   static const String drawing = "assets/images/gif/lottie/17.jpg";
   static const String bot = "assets/images/gif/lottie/bot.json";
   static const String downArrow = "assets/images/gif/lottie/downArrow.json";

@@ -46,8 +46,8 @@ class _ScrollToTopButtonWidgetState extends State<ScrollToTopButtonWidget>
     return GestureDetector(
       onTap: widget.onTap,
       child: Container(
-        width: 32,
-        height: 32,
+        width: 48,
+        height: 48,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
@@ -78,7 +78,7 @@ class _ScrollToTopButtonWidgetState extends State<ScrollToTopButtonWidget>
                 child: const Icon(
                   Icons.arrow_upward_rounded,
                   color: Colors.white,
-                  size: 20,
+                  size: 32,
                 ),
               );
             },

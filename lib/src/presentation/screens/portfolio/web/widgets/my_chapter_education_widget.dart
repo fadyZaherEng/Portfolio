@@ -103,12 +103,12 @@ class _MyChapterEducationWebWidgetState
                     _buildBodyText(context, S.of(context).chaptersStory),
                     const SizedBox(height: 30),
                     SizedBox(
-                      width: double.infinity,
+                      width: MediaQuery.sizeOf(context).width * 0.68,
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 24),
                         child: AnimatedTextWebWidget(
                           text: S.of(context).education,
-                          textAlign: TextAlign.center,
+                          textAlign: TextAlign.start,
                           style:
                               Theme.of(context).textTheme.titleMedium?.copyWith(
                                     color: ColorSchemes.iconDarkWhite,

@@ -173,7 +173,6 @@ class _ProjectGridWidgetState extends State<ProjectGridWidget> {
                                 ],
                               ),
                             ),
-
                         ],
                       ),
                     ),

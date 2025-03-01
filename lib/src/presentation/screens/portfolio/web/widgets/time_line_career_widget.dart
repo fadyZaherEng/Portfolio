@@ -32,7 +32,7 @@ class _TimelineCareerWebWidgetState extends State<TimelineCareerWebWidget>
       mainAxisAlignment: MainAxisAlignment.start,
       mainAxisSize: MainAxisSize.min,
       children: [
-        _buildTimelineIndicator(),
+         _buildTimelineIndicator(),
         const SizedBox(width: 10),
         _buildTimelineDetails(context),
       ],

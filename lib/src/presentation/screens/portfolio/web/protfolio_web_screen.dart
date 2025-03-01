@@ -138,7 +138,7 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
                   _buildScrollIndicator(),
                   _buildScrollToTopButton(),
                   if(_currentIndex!=2&&_currentIndex!=5)
-                  SocialBannerWidget(currentLocale: currentLocale),
+                  SocialBannerWebWidget(currentLocale: currentLocale),
                 ],
               ),
             ),
