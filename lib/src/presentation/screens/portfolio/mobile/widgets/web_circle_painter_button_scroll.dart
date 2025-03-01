@@ -15,13 +15,13 @@ class CircularPainter extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     canvas.drawCircle(
-        size.center(Offset.zero), size.width / 3, paintBackground);
+        size.center(Offset.zero), size.width / 2.7, paintBackground);
 
     // Progress Border Circle
     Paint paintProgressBorder = Paint()
       ..color = ColorSchemes.primarySecondary// Progress border color
       ..style = PaintingStyle.stroke
-      ..strokeWidth = 6; // Border width
+      ..strokeWidth = 4; // Border width
 
     double borderSweepAngle = 2 * pi * percentage;
     canvas.drawArc(

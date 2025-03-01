@@ -145,7 +145,7 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
             },
             child: _buildInfoRow(
               Icons.location_on,
-              "Cairo, Egypt",
+              S.of(context).cairoEgypt,
               true,
             ),
           ),
@@ -162,9 +162,7 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
         children: [
           Icon(
             icon,
-            color: GetThemeUseCase(injector())() == Constants.dark
-                ? ColorSchemes.secondary
-                : ColorSchemes.white,
+            color: ColorSchemes.white,
             size: 20,
           ),
           const SizedBox(width: 5),
@@ -279,9 +277,9 @@ class _CustomSocialButtonWidgetState extends State<CustomSocialButtonWidget> {
               : Matrix4.identity(),
           child: widget.isGithub
               ? IconButton(
-                  icon: FaIcon(
+                  icon: const FaIcon(
                     FontAwesomeIcons.github,
-                    color: ColorSchemes.primarySecondaryWhite,
+                    color: ColorSchemes.white,
                     size: 22,
                   ),
                   onPressed: () => openLink('https://github.com/fadyZaherEng'),
@@ -290,7 +288,7 @@ class _CustomSocialButtonWidgetState extends State<CustomSocialButtonWidget> {
                   onTap: () => _openLink(widget.url),
                   child: SvgPicture.asset(
                     widget.icon,
-                    color: ColorSchemes.primarySecondaryWhite,
+                    color: ColorSchemes.white,
                     width: widget.isFacebook ? 18 : 28,
                     height: widget.isFacebook ? 18 : 28,
                     fit: BoxFit.scaleDown,

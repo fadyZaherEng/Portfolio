@@ -38,7 +38,7 @@ class _AboutMeSectionWidgetState extends State<AboutMeSectionWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        SizedBox(width: MediaQuery.sizeOf(context).width * 0.13),
+        SizedBox(width: MediaQuery.sizeOf(context).width * 0.1),
         const PortfolioImageWebWidget(),
         const SizedBox(width: 10),
         const Expanded(
@@ -119,8 +119,8 @@ class _AboutMeSectionWidgetState extends State<AboutMeSectionWidget> {
                         S.of(context).hireMe,
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
                               color: textColor,
-                              fontSize: 13,
-                              fontWeight: FontWeight.bold,
+                              fontSize: 19,
+                              fontWeight: FontWeight.normal,
                             ),
                       ),
                     ],
@@ -131,7 +131,7 @@ class _AboutMeSectionWidgetState extends State<AboutMeSectionWidget> {
           ],
         ),
         const SizedBox(width: 10),
-        SizedBox(width: MediaQuery.sizeOf(context).width * 0.13),
+        SizedBox(width: MediaQuery.sizeOf(context).width * 0.1),
       ],
     );
   }

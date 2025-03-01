@@ -7,8 +7,8 @@ import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/core/utils/launch_social_media.dart';
 import 'package:my_portfolio/src/core/utils/show_snack_bar.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/about_section_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/custom_resume_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/about_section_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/custom_resume_web_widget.dart';
 
 class HeaderProfileSectionWebWidget extends StatefulWidget {
   final void Function() onViewResumeTap;
@@ -50,7 +50,7 @@ class _HeaderProfileSectionWebWidgetState
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        AboutMeSectionWidget(
+        AboutMeSectionWebWidget(
           isDarkMode: widget.isDarkMode,
           onViewResumeTap: widget.onViewResumeTap,
         ),
@@ -58,8 +58,7 @@ class _HeaderProfileSectionWebWidgetState
         _buildWelcomeMessage(textTheme),
         const SizedBox(height: 10),
         _buildAnimatedIntro(textTheme),
-        const SizedBox(height: 10),
-      ],
+       ],
     );
   }
 
@@ -71,7 +70,7 @@ class _HeaderProfileSectionWebWidgetState
           '${S.of(context).welcomeMessage} ',
           style: textTheme.titleMedium?.copyWith(
             color: ColorSchemes.iconDarkWhite,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w600,
             fontSize: 22,
           ),
         ),
@@ -80,8 +79,8 @@ class _HeaderProfileSectionWebWidgetState
           autostart: Autostart.loop,
           controller: _controller,
           fit: BoxFit.cover,
-          height: 48,
-          width: 48,
+          height: 42,
+          width: 42,
           matchTextDirection: true,
           placeholder: (context) => const SizedBox.shrink(),
           image: const AssetImage(ImagePaths.hi),
@@ -111,7 +110,7 @@ class _HeaderProfileSectionWebWidgetState
               textAlign: TextAlign.center,
               textStyle: textTheme.titleLarge?.copyWith(
                 color: ColorSchemes.iconDarkWhite,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w600,
                 fontSize: 22,
               ),
               speed: const Duration(milliseconds: 100),
@@ -135,7 +134,7 @@ class _HeaderProfileSectionWebWidgetState
                 textAlign: TextAlign.center,
                 textStyle: textTheme.titleLarge?.copyWith(
                   color: ColorSchemes.iconDarkWhite,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w500,
                   fontSize: 19,
                 ),
                 speed: const Duration(milliseconds: 100),
@@ -156,7 +155,7 @@ class _HeaderProfileSectionWebWidgetState
                 textAlign: TextAlign.center,
                 textStyle: textTheme.titleLarge?.copyWith(
                   color: ColorSchemes.iconDarkWhite,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w500,
                   fontSize: 19,
                 ),
                 speed: const Duration(milliseconds: 100),

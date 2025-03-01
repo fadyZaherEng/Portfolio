@@ -131,7 +131,7 @@ class _WhatCanIDoSectionWebbWidgetState extends State<WhatCanIDoSectionWebbWidge
     _startAnimations();
     return Center(
       child: SizedBox(
-        width: MediaQuery.of(context).size.width * 0.7,
+        width: MediaQuery.of(context).size.width * 0.8,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -143,7 +143,7 @@ class _WhatCanIDoSectionWebbWidgetState extends State<WhatCanIDoSectionWebbWidge
                 S.of(context).WhatCanIDo,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   color: ColorSchemes.iconDarkWhite,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w600,
                   fontSize: 22,
                 ),
               ),
@@ -229,7 +229,7 @@ class _WhatCanIDoSectionWebbWidgetState extends State<WhatCanIDoSectionWebbWidge
                   number <= 0 ? "0" : "\u200E+$number",
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     color: ColorSchemes.primarySecondaryWhite,
-                    fontSize: 17,
+                    fontSize: 19,
                   ),
                 ),
               ],

@@ -1,0 +1,168 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gif/gif.dart';
+import 'package:my_portfolio/generated/l10n.dart';
+import 'package:my_portfolio/src/config/theme/color_schemes.dart';
+import 'package:my_portfolio/src/core/resources/image_paths.dart';
+import 'package:my_portfolio/src/core/utils/launch_social_media.dart';
+import 'package:my_portfolio/src/core/utils/show_snack_bar.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/about_section_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/custom_resume_web_widget.dart';
+
+class HeaderProfileSectionWebWidget extends StatefulWidget {
+  final void Function() onViewResumeTap;
+  final bool isDarkMode;
+
+  const HeaderProfileSectionWebWidget({
+    super.key,
+    required this.onViewResumeTap,
+    required this.isDarkMode,
+  });
+
+  @override
+  State<HeaderProfileSectionWebWidget> createState() =>
+      _HeaderProfileSectionWebWidgetState();
+}
+
+class _HeaderProfileSectionWebWidgetState
+    extends State<HeaderProfileSectionWebWidget> with TickerProviderStateMixin {
+  late final GifController _controller;
+  bool openAboutMe = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = GifController(vsync: this);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final textTheme = theme.textTheme;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        AboutMeSectionWebWidget(
+          isDarkMode: widget.isDarkMode,
+          onViewResumeTap: widget.onViewResumeTap,
+        ),
+        const SizedBox(height: 24),
+        _buildWelcomeMessage(textTheme),
+        const SizedBox(height: 10),
+        _buildAnimatedIntro(textTheme),
+       ],
+    );
+  }
+
+  Widget _buildWelcomeMessage(TextTheme textTheme) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          '${S.of(context).welcomeMessage} ',
+          style: textTheme.titleMedium?.copyWith(
+            color: ColorSchemes.iconDarkWhite,
+            fontWeight: FontWeight.w800,
+            fontSize: 22,
+          ),
+        ),
+        const SizedBox(width: 5),
+        Gif(
+          autostart: Autostart.loop,
+          controller: _controller,
+          fit: BoxFit.cover,
+          height: 42,
+          width: 42,
+          matchTextDirection: true,
+          placeholder: (context) => const SizedBox.shrink(),
+          image: const AssetImage(ImagePaths.hi),
+        ),
+      ],
+    );
+  }
+
+  final positionVisible = ValueNotifier<bool>(false);
+  final workVisible = ValueNotifier<bool>(false);
+
+  Widget _buildAnimatedIntro(TextTheme textTheme) {
+    return Column(
+      children: [
+        AnimatedTextKit(
+          repeatForever: false,
+          totalRepeatCount: 1,
+          stopPauseOnTap: false,
+          onFinished: () {
+            setState(() {
+              positionVisible.value = true;
+            });
+          },
+          animatedTexts: [
+            TypewriterAnimatedText(
+              S.of(context).imFady,
+              textAlign: TextAlign.center,
+              textStyle: textTheme.titleLarge?.copyWith(
+                color: ColorSchemes.iconDarkWhite,
+                fontWeight: FontWeight.w600,
+                fontSize: 22,
+              ),
+              speed: const Duration(milliseconds: 100),
+            ),
+          ],
+        ),
+        if (positionVisible.value) const SizedBox(height: 10),
+        if (positionVisible.value)
+          AnimatedTextKit(
+            repeatForever: false,
+            totalRepeatCount: 1,
+            stopPauseOnTap: false,
+            displayFullTextOnTap: true,
+            onFinished: () {
+              workVisible.value = true;
+              setState(() {});
+            },
+            animatedTexts: [
+              TypewriterAnimatedText(
+                S.of(context).atBridgeCOM,
+                textAlign: TextAlign.center,
+                textStyle: textTheme.titleLarge?.copyWith(
+                  color: ColorSchemes.iconDarkWhite,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 19,
+                ),
+                speed: const Duration(milliseconds: 100),
+              ),
+            ],
+          ),
+        if (workVisible.value) const SizedBox(height: 10),
+        if (workVisible.value)
+          AnimatedTextKit(
+            repeatForever: true,
+            stopPauseOnTap: false,
+            displayFullTextOnTap: true,
+            animatedTexts: [
+              TypewriterAnimatedText(
+                S
+                    .of(context)
+                    .aSoftwareEngineerAFlutterDeveloperAMobileSoftwareEngineerAAndroidDeveloperAIOSDeveloper,
+                textAlign: TextAlign.center,
+                textStyle: textTheme.titleLarge?.copyWith(
+                  color: ColorSchemes.iconDarkWhite,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 19,
+                ),
+                speed: const Duration(milliseconds: 100),
+              ),
+            ],
+          ),
+      ],
+    );
+  }
+}

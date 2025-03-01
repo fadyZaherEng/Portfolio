@@ -250,30 +250,30 @@ class S {
     );
   }
 
-  /// `ANDROID APP`
+  /// `Android App`
   String get androidApp {
     return Intl.message(
-      'ANDROID APP',
+      'Android App',
       name: 'androidApp',
       desc: '',
       args: [],
     );
   }
 
-  /// `IOS APP`
+  /// `Ios App`
   String get iosApp {
     return Intl.message(
-      'IOS APP',
+      'Ios App',
       name: 'iosApp',
       desc: '',
       args: [],
     );
   }
 
-  /// `WEB APP`
+  /// `Web App`
   String get webApp {
     return Intl.message(
-      'WEB APP',
+      'Web App',
       name: 'webApp',
       desc: '',
       args: [],
@@ -1542,10 +1542,10 @@ class S {
     );
   }
 
-  /// `CONTACT ME`
+  /// `Contact Me`
   String get contactMe {
     return Intl.message(
-      'CONTACT ME',
+      'Contact Me',
       name: 'contactMe',
       desc: '',
       args: [],
@@ -1662,20 +1662,20 @@ class S {
     );
   }
 
-  /// `RESUME`
+  /// `Resume`
   String get resume {
     return Intl.message(
-      'RESUME',
+      'Resume',
       name: 'resume',
       desc: '',
       args: [],
     );
   }
 
-  /// `DOWNLOAD CV`
+  /// `Download CV`
   String get downloadCv {
     return Intl.message(
-      'DOWNLOAD CV',
+      'Download CV',
       name: 'downloadCv',
       desc: '',
       args: [],
@@ -1909,6 +1909,16 @@ class S {
     return Intl.message(
       'Load Less',
       name: 'loadLess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cairo, Egypt`
+  String get cairoEgypt {
+    return Intl.message(
+      'Cairo, Egypt',
+      name: 'cairoEgypt',
       desc: '',
       args: [],
     );

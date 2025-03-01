@@ -1,0 +1,193 @@
+import 'package:flutter/material.dart';
+import 'package:my_portfolio/generated/l10n.dart';
+import 'package:my_portfolio/src/config/theme/color_schemes.dart';
+import 'package:my_portfolio/src/domain/model/time_line.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/animated_text_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/time_line_career_web_widget.dart';
+import 'package:visibility_detector/visibility_detector.dart';
+
+class MyChapterEducationWebWidget extends StatefulWidget {
+  const MyChapterEducationWebWidget({
+    super.key,
+  });
+
+  @override
+  State<MyChapterEducationWebWidget> createState() =>
+      _MyChapterEducationWebWidgetState();
+}
+
+class _MyChapterEducationWebWidgetState
+    extends State<MyChapterEducationWebWidget>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _fadeAnimation;
+  late Animation<Offset> _slideAnimation;
+  late Animation<double> _rotateAnimation;
+  bool _isAnimated = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 100),
+    )..forward();
+
+    _fadeAnimation = Tween<double>(begin: 0.8, end: 1).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.easeInOut,
+      ),
+    );
+
+    _slideAnimation = Tween<Offset>(
+      begin: const Offset(0, 0.5),
+      end: const Offset(0, 0),
+    ).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.easeOut,
+      ),
+    );
+
+    _rotateAnimation = Tween<double>(
+      begin: -0.02,
+      end: 0.02,
+    ).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.easeInOut,
+      ),
+    );
+  }
+
+  void _startAnimation() {
+    if (!_isAnimated) {
+      _controller.forward();
+      setState(() {
+        _isAnimated = true;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return VisibilityDetector(
+      key: UniqueKey(),
+      onVisibilityChanged: (visibilityInfo) {
+        if (visibilityInfo.visibleFraction > 0.2) {
+          _startAnimation();
+        }
+      },
+      child: FadeTransition(
+        opacity: _fadeAnimation,
+        child: SlideTransition(
+          position: _slideAnimation,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Column(
+                  children: [
+                    const SizedBox(height: 32),
+                    RotationTransition(
+                      turns: _rotateAnimation,
+                      child: _buildHeaderText(
+                        context,
+                        S.of(context).myChapter,
+                        false,
+                      ),
+                    ),
+                    const SizedBox(height: 32),
+                    _buildBodyText(context, S.of(context).chaptersStory),
+                    const SizedBox(height: 30),
+                    SizedBox(
+                      width: MediaQuery.sizeOf(context).width * 0.68,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 24),
+                        child: AnimatedTextWebWidget(
+                          text: S.of(context).education,
+                          textAlign: TextAlign.start,
+                          style:
+                              Theme.of(context).textTheme.titleMedium?.copyWith(
+                                    color: ColorSchemes.iconDarkWhite,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 32,
+                                  ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Center(child: _buildEducationTimeLine(context)),
+                    const SizedBox(height: 20),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildHeaderText(
+    BuildContext context,
+    String text,
+    bool isAnimation,
+  ) {
+    return Text(
+      text,
+      textAlign: TextAlign.center,
+      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+            color: ColorSchemes.iconDarkWhite,
+          ),
+    );
+  }
+
+  Widget _buildBodyText(BuildContext context, String text) {
+    return Center(
+      child: SizedBox(
+        width: MediaQuery.of(context).size.width * 0.7,
+        child: Text(
+          text,
+          textAlign: TextAlign.center,
+          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                fontSize: 17,
+                fontWeight: FontWeight.w600,
+                color: ColorSchemes.iconDarkWhite,
+                height: 2,
+                letterSpacing: -0.1,
+              ),
+        ),
+      ),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  Widget _buildEducationTimeLine(BuildContext context) {
+    return SizedBox(
+      width: MediaQuery.sizeOf(context).width * 0.7,
+      child: TimelineCareerWebWidget(
+        isEducation: true,
+        totalEvents: 1,
+        index: 0,
+        event: TimelineEvent(
+          title:
+              "${S.of(context).university}\n${S.of(context).universityDescription}\n${S.of(context).universityDegree}",
+          place: S.of(context).ainShamsUniversity,
+          date: "[May 2017:Aug 2021]",
+          color: ColorSchemes.primarySecondary,
+          url: "https://www.asu.edu.eg/",
+        ),
+      ),
+    );
+  }
+}

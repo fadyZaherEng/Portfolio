@@ -1,0 +1,43 @@
+import 'dart:math';
+import 'package:flutter/material.dart';
+import 'package:my_portfolio/src/config/theme/color_schemes.dart';
+
+class CircularPainterWebWidget extends CustomPainter {
+  final double percentage;
+
+  CircularPainterWebWidget({required this.percentage});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    // Background Circle
+    Paint paintBackground = Paint()
+      ..color = ColorSchemes.primaryWhite
+      ..style = PaintingStyle.fill;
+
+    canvas.drawCircle(
+        size.center(Offset.zero), size.width / 2.5, paintBackground);
+
+    // Progress Border Circle
+    Paint paintProgressBorder = Paint()
+      ..color = ColorSchemes.primarySecondary// Progress border color
+      ..style = PaintingStyle.stroke
+      ..strokeWidth = 4; // Border width
+
+    double borderSweepAngle = 2 * pi * percentage;
+    canvas.drawArc(
+      Rect.fromCenter(
+          center: size.center(Offset.zero),
+          width: size.width,
+          height: size.height),
+      -pi / 2,
+      borderSweepAngle,
+      false,
+      paintProgressBorder,
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return true;
+  }
+}

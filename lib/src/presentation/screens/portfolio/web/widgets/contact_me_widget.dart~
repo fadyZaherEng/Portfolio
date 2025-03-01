@@ -42,7 +42,6 @@ class ContactMeWidget extends StatelessWidget {
       children: [
         Center(
           child: Container(
-            height: 400,
             width: MediaQuery.of(context).size.width * 0.8,
             decoration: BoxDecoration(
               color: ColorSchemes.primary,
@@ -65,7 +64,7 @@ class ContactMeWidget extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          const SizedBox(height: 40),
+                          const SizedBox(height: 60),
                           Text(
                             S.of(context).letsCreateSomethingAmazing,
                             style: Theme.of(context)
@@ -73,7 +72,7 @@ class ContactMeWidget extends StatelessWidget {
                                 .titleLarge
                                 ?.copyWith(
                                   color: ColorSchemes.iconDarkWhite,
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.w500,
                                   fontSize: 25,
                                 ),
                           ),
@@ -83,7 +82,7 @@ class ContactMeWidget extends StatelessWidget {
                             style:
                                 Theme.of(context).textTheme.bodySmall?.copyWith(
                                       color: ColorSchemes.iconDarkWhite,
-                                      fontWeight: FontWeight.bold,
+                                      fontWeight: FontWeight.w500,
                                       fontSize: 18,
                                     ),
                           ),
@@ -112,7 +111,7 @@ class ContactMeWidget extends StatelessWidget {
                   const SizedBox(height: 16),
                   Center(
                     child: Wrap(
-                      spacing: 10,
+                      spacing: 15,
                       children: [
                         buildSocialIcon(
                           iconData: FontAwesomeIcons.github,
@@ -169,6 +168,7 @@ class ContactMeWidget extends StatelessWidget {
                     color: ColorSchemes.primarySecondary,
                     height: 2,
                     letterSpacing: -0.24,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 const SizedBox(width: 5),
@@ -181,6 +181,7 @@ class ContactMeWidget extends StatelessWidget {
                       color: ColorSchemes.iconDarkWhite,
                       height: 2,
                       letterSpacing: -0.24,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
@@ -192,6 +193,7 @@ class ContactMeWidget extends StatelessWidget {
                     color: ColorSchemes.primarySecondary,
                     height: 2,
                     letterSpacing: -0.24,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ],

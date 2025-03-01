@@ -119,8 +119,7 @@ class _HeaderProfileSectionWidgetState extends State<HeaderProfileSectionWidget>
                       ImagePaths.whatsapp,
                       width: 20,
                       height: 20,
-                      matchTextDirection: true,
-                      color: ColorSchemes.primarySecondary,
+                       color: ColorSchemes.primaryWhite,
                     ),
                   ),
                   Text(
@@ -169,7 +168,7 @@ class _HeaderProfileSectionWidgetState extends State<HeaderProfileSectionWidget>
                     padding: const EdgeInsets.symmetric(horizontal: 10),
                     child: Icon(
                       Icons.email_outlined,
-                      color: ColorSchemes.primarySecondary,
+                      color: ColorSchemes.primaryWhite,
                       size: 20,
                     ),
                   ),

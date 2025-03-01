@@ -177,7 +177,7 @@ class _AnimatedElevatedButtonState extends State<AnimatedElevatedButton> {
                         children: [
                           Icon(
                             widget.icon,
-                            color: ColorSchemes.primarySecondary,
+                            color: ColorSchemes.primaryWhite,
                             size: MediaQuery.of(context).size.width > 1200
                                 ? 17
                                 : 13,

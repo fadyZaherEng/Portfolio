@@ -1,0 +1,90 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:my_portfolio/generated/l10n.dart';
+import 'package:my_portfolio/src/config/theme/color_schemes.dart';
+import 'package:my_portfolio/src/core/resources/image_paths.dart';
+import 'package:my_portfolio/src/core/utils/constants.dart';
+import 'package:my_portfolio/src/di/data_layer_injector.dart';
+import 'package:my_portfolio/src/domain/usecase/get_theme_use_case.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/build_logo_web_widget.dart';
+
+class CustomAppBarWebWidget extends StatefulWidget implements PreferredSizeWidget {
+  final bool isBack;
+  final void Function()? onBackTap;
+  final void Function() onLogoTap;
+
+  final TabController? tabController;
+
+  const CustomAppBarWebWidget({
+    super.key,
+    this.isBack = false,
+    this.onBackTap,
+    required this.onLogoTap,
+     this.tabController,
+  });
+
+  @override
+  State<CustomAppBarWebWidget> createState() => _State();
+
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
+}
+
+class _State extends State<CustomAppBarWebWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      backgroundColor: ColorSchemes.appBarColor,
+      elevation: 0,
+      centerTitle: false,
+      title: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(0, 0, 10, 0),
+            child: InkWell(
+              onTap: widget.onLogoTap,
+              child: BuildLogoWebWidget(
+                width: 60,
+                height: 60,
+                imagePath: ImagePaths.newLogo2,
+                color: GetThemeUseCase(injector())() == Constants.dark
+                    ? ColorSchemes.secondary
+                    : ColorSchemes.iconBackGround,
+              ),
+            ),
+          ),
+          const Spacer(),
+          Text(
+            S.of(context).fadyTag,
+            style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                  color: GetThemeUseCase(injector())() == Constants.dark
+                      ? ColorSchemes.white
+                      : ColorSchemes.primary,
+                  fontSize:23,
+                ),
+          ),
+          const Spacer(),
+        ],
+      ),
+      actions: widget.isBack
+          ? [
+              IconButton(
+                icon: Container(
+                  margin: const EdgeInsetsDirectional.only(end: 5),
+                  child: SvgPicture.asset(
+                    ImagePaths.backArrow,
+                    matchTextDirection: true,
+                    width: 28,
+                    height: 28,
+                    color: GetThemeUseCase(injector())() == Constants.dark
+                        ? ColorSchemes.secondary
+                        : ColorSchemes.iconBackGround,
+                  ),
+                ),
+                onPressed: widget.onBackTap,
+              ),
+            ]
+          : [],
+    );
+  }
+}

@@ -10,19 +10,19 @@ import 'package:my_portfolio/src/core/utils/openLink.dart';
 import 'package:my_portfolio/src/di/data_layer_injector.dart';
 import 'package:my_portfolio/src/domain/usecase/get_theme_use_case.dart';
 import 'package:my_portfolio/src/presentation/blocs/portfolio/portfolio_bloc.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/can_i_do_section_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/contact_me_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/custom_app_bar_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/end_drawer_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/header_portfolio_section_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/my_chapter_education_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/my_chapters_career_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/project_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/scroll_to_top_button_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/skills_details_offer_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/social_banner_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/tab_bar_item_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/web_circle_painter_button_scroll.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/can_i_do_section_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/contact_me_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/custom_app_bar_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/end_drawer_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/header_portfolio_section_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/my_chapter_education_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/my_chapters_career_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/project_sections_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/scroll_to_top_button_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/skills_details_offer_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/social_banner_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/tab_bar_item_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/web_circle_painter_button_scroll_web_wedget.dart';
 import 'package:my_portfolio/src/presentation/screens/skills/skills_screen.dart';
 import 'package:my_portfolio/src/presentation/screens/touch_me/touch_me_screen.dart';
 import 'package:my_portfolio/src/presentation/screens/training/training_screen.dart';
@@ -120,7 +120,7 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
         backgroundColor:
             isDarkMode ? ColorSchemes.iconBackGround : ColorSchemes.white,
         endDrawer: _buildEndDrawer(context),
-        appBar: CustomAppBarWidget(onLogoTap: _restartApp),
+        appBar: CustomAppBarWebWidget(onLogoTap: _restartApp),
         body: Column(
           children: [
             _buildNavigationBar(
@@ -137,8 +137,8 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
                   _buildContent(),
                   _buildScrollIndicator(),
                   _buildScrollToTopButton(),
-                  if(_currentIndex!=2&&_currentIndex!=5)
-                  SocialBannerWebWidget(currentLocale: currentLocale),
+                  if (_currentIndex != 2 && _currentIndex != 5)
+                    SocialBannerWebWidget(currentLocale: currentLocale),
                 ],
               ),
             ),
@@ -158,11 +158,10 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
           VisibilityDetector(
             key: const Key("headerKeys"),
             onVisibilityChanged: (visibilityInfo) {
-              setState(() => visibilityInfo.visibleFraction > 0.65
-                  ? _currentIndex = 0
-                  : null);
               if (mounted) {
-                setState(() {});
+                setState(() => visibilityInfo.visibleFraction > 0.65
+                    ? _currentIndex = 0
+                    : null);
               }
             },
             child: HeaderProfileSectionWebWidget(
@@ -175,8 +174,8 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
           VisibilityDetector(
             key: const Key("whatCanIDoKeys"),
             onVisibilityChanged: (visibilityInfo) {
-              _isCanIDoVisible = visibilityInfo.visibleFraction > 0.65;
               if (mounted) {
+                _isCanIDoVisible = visibilityInfo.visibleFraction > 0.65;
                 setState(() {});
               }
             },
@@ -189,11 +188,10 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
           VisibilityDetector(
             key: const Key("skillsOfferKeys"),
             onVisibilityChanged: (visibilityInfo) {
-              setState(() => visibilityInfo.visibleFraction > 0.65
-                  ? _currentIndex = 1
-                  : null);
               if (mounted) {
-                setState(() {});
+                setState(() => visibilityInfo.visibleFraction > 0.65
+                    ? _currentIndex = 1
+                    : null);
               }
             },
             child: SkillsDetailsOfferWebWidget(key: _scrollKeys[1]),
@@ -201,11 +199,10 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
           VisibilityDetector(
             key: const Key("educationKeys"),
             onVisibilityChanged: (visibilityInfo) {
-              setState(() => visibilityInfo.visibleFraction > 0.65
-                  ? _currentIndex = 3
-                  : null);
               if (mounted) {
-                setState(() {});
+                setState(() => visibilityInfo.visibleFraction > 0.65
+                    ? _currentIndex = 3
+                    : null);
               }
             },
             child: MyChapterEducationWebWidget(key: _scrollKeys[3]),
@@ -213,11 +210,10 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
           VisibilityDetector(
             key: const Key("experienceKeys"),
             onVisibilityChanged: (visibilityInfo) {
-              setState(() => visibilityInfo.visibleFraction > 0.65
-                  ? _currentIndex = 4
-                  : null);
               if (mounted) {
-                setState(() {});
+                setState(() => visibilityInfo.visibleFraction > 0.65
+                    ? _currentIndex = 4
+                    : null);
               }
             },
             child: MyChaptersCareerWebWidget(key: _scrollKeys[4]),
@@ -226,26 +222,25 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
           VisibilityDetector(
             key: const Key("projectsKeys"),
             onVisibilityChanged: (visibilityInfo) {
-              setState(() => visibilityInfo.visibleFraction > 0.65
-                  ? _currentIndex = 2
-                  : null);
               if (mounted) {
-                setState(() {});
+                setState(() => visibilityInfo.visibleFraction > 0.65
+                    ? _currentIndex = 2
+                    : null);
               }
             },
-            child: ProjectsWebWidgets(key: _scrollKeys[2], isDarkMode: isDarkMode),
+            child: ProjectsSectionsWebWidgets(
+                key: _scrollKeys[2], isDarkMode: isDarkMode),
           ),
           VisibilityDetector(
             key: const Key("contactKeys"),
             onVisibilityChanged: (visibilityInfo) {
-              setState(() => visibilityInfo.visibleFraction > 0.65
-                  ? _currentIndex = 5
-                  : null);
               if (mounted) {
-                setState(() {});
+                setState(() => visibilityInfo.visibleFraction > 0.65
+                    ? _currentIndex = 5
+                    : null);
               }
             },
-            child: ContactMeWidget(key: _scrollKeys[5]),
+            child: ContactMeWebWidget(key: _scrollKeys[5]),
           ),
           const SizedBox(height: 15),
         ],
@@ -265,7 +260,7 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
         mainAxisAlignment: MainAxisAlignment.start,
         children: menuItems
             .map(
-              (item) => TabBarItemWidget(
+              (item) => TabBarItemWebWidget(
                 title: item["title"],
                 isSelected: _currentIndex == item["index"],
                 onTap: () => _onTap(item["index"],
@@ -286,10 +281,10 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
       builder: (_, value, __) {
         if (value > 0 && value < 0.95) {
           return Padding(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(8),
             child: CustomPaint(
-              size: const Size(30, 30),
-              painter: CircularPainter(percentage: value),
+              size: const Size(37, 37),
+              painter: CircularPainterWebWidget(percentage: value),
             ),
           );
         }
@@ -307,7 +302,7 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
             bottom: 20,
             right: currentLocale == "en" ? 20 : null,
             left: currentLocale == "ar" ? 20 : null,
-            child: ScrollToTopButtonWidget(onTap: () {
+            child: ScrollToTopButtonWebWidget(onTap: () {
               _scrollController.animateTo(
                 0,
                 duration: const Duration(milliseconds: 600),
@@ -338,7 +333,7 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
   }
 
   Widget _buildEndDrawer(BuildContext context) {
-    return EndDrawerWidget(
+    return EndDrawerWebWidget(
       isDarkMode: isDarkMode,
       isEnglish: currentLocale == "en",
       onDrawerGetInTouchTap: () {

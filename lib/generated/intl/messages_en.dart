@@ -39,7 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "ainShamsUniversity":
             MessageLookupByLibrary.simpleMessage("Ain Shams University"),
         "algorithms": MessageLookupByLibrary.simpleMessage("Algorithms"),
-        "androidApp": MessageLookupByLibrary.simpleMessage("ANDROID APP"),
+        "androidApp": MessageLookupByLibrary.simpleMessage("Android App"),
         "androidStudio": MessageLookupByLibrary.simpleMessage("Android Studio"),
         "apiIntegration":
             MessageLookupByLibrary.simpleMessage("API Integration"),
@@ -57,6 +57,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "bloc": MessageLookupByLibrary.simpleMessage("Bloc"),
         "cPlusPlus": MessageLookupByLibrary.simpleMessage("C Plus Plus"),
         "cSharp": MessageLookupByLibrary.simpleMessage("C Sharp"),
+        "cairoEgypt": MessageLookupByLibrary.simpleMessage("Cairo, Egypt"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "chaptersStory": MessageLookupByLibrary.simpleMessage(
             "I\'m Fady Zaher, a passionate Flutter Developer and Designer with a proven track record of creating beautiful, responsive, and interactive apps that focus on performance and user experience, bringing your ideas to life. With a strong background in design and a deep understanding of user experience, I am committed to delivering exceptional results that exceed expectations while staying up-to-date with the latest Flutter trends and technologies. I’m a Mid-Level Software Engineer, passionate about mobile development , looking for work as a Flutter Software Engineer to gain real experience and assist the organization in achieving its goals. If you\'re looking for a skilled Flutter Developer to take your app to the next level, let\'s collaborate and turn your vision into reality!"),
@@ -67,7 +68,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "cleanArchitectureTitle":
             MessageLookupByLibrary.simpleMessage("Clean Architecture"),
         "contact": MessageLookupByLibrary.simpleMessage("Contact"),
-        "contactMe": MessageLookupByLibrary.simpleMessage("CONTACT ME"),
+        "contactMe": MessageLookupByLibrary.simpleMessage("Contact Me"),
         "continuousIntegration":
             MessageLookupByLibrary.simpleMessage("Continuous Integration"),
         "continuousIntegrationDescription": MessageLookupByLibrary.simpleMessage(
@@ -99,7 +100,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Development Tools and Version Control"),
         "dio": MessageLookupByLibrary.simpleMessage("Dio"),
         "done": MessageLookupByLibrary.simpleMessage("Done"),
-        "downloadCv": MessageLookupByLibrary.simpleMessage("DOWNLOAD CV"),
+        "downloadCv": MessageLookupByLibrary.simpleMessage("Download CV"),
         "education": MessageLookupByLibrary.simpleMessage("Education"),
         "email": MessageLookupByLibrary.simpleMessage("Email"),
         "emailIsRequired":
@@ -162,7 +163,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "intellij": MessageLookupByLibrary.simpleMessage("IntelliJ IDEA"),
         "invalidEmail":
             MessageLookupByLibrary.simpleMessage("Invalid email address"),
-        "iosApp": MessageLookupByLibrary.simpleMessage("IOS APP"),
+        "iosApp": MessageLookupByLibrary.simpleMessage("Ios App"),
         "java": MessageLookupByLibrary.simpleMessage("Java"),
         "javascript": MessageLookupByLibrary.simpleMessage("JavaScript"),
         "jenkins": MessageLookupByLibrary.simpleMessage("Jenkins"),
@@ -243,7 +244,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Design responsive and user-friendly interfaces for a consistent user experience across different screen sizes and devices."),
         "responsiveUITitle":
             MessageLookupByLibrary.simpleMessage("Responsive UI"),
-        "resume": MessageLookupByLibrary.simpleMessage("RESUME"),
+        "resume": MessageLookupByLibrary.simpleMessage("Resume"),
         "retrofit": MessageLookupByLibrary.simpleMessage("Retrofit"),
         "riverpod": MessageLookupByLibrary.simpleMessage("Riverpod"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
@@ -293,7 +294,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "video": MessageLookupByLibrary.simpleMessage("Video"),
         "viewResume": MessageLookupByLibrary.simpleMessage("VIEW RESUME"),
         "visualStudio": MessageLookupByLibrary.simpleMessage("Visual Studio"),
-        "webApp": MessageLookupByLibrary.simpleMessage("WEB APP"),
+        "webApp": MessageLookupByLibrary.simpleMessage("Web App"),
         "webDevelopmentDescription": MessageLookupByLibrary.simpleMessage(
             "Proficient in HTML, CSS, JavaScript, and other web technologies for building dynamic and interactive web applications."),
         "webDevelopmentTitle":

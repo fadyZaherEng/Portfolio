@@ -59,6 +59,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "bloc": MessageLookupByLibrary.simpleMessage("بلوك"),
         "cPlusPlus": MessageLookupByLibrary.simpleMessage("سي بلس بلس"),
         "cSharp": MessageLookupByLibrary.simpleMessage("سي شارب"),
+        "cairoEgypt": MessageLookupByLibrary.simpleMessage("القاهرة، مصر"),
         "cancel": MessageLookupByLibrary.simpleMessage("الغاء"),
         "chaptersStory": MessageLookupByLibrary.simpleMessage(
             "أنا فادي زاهر، مطور ومصمم Flutter شغوف يتمتع بسجل حافل في إنشاء تطبيقات جميلة وتفاعلية ومستجيبة تركز على الأداء وتجربة المستخدم، وتحويل أفكارك إلى واقع. بفضل خلفيتي القوية في التصميم وفهمي العميق لتجربة المستخدم، ألتزم بتقديم نتائج استثنائية تفوق التوقعات مع مواكبة أحدث اتجاهات وتقنيات Flutter. أنا مهندس برمجيات متوسط المستوى شغوف بتطوير تطبيقات الهواتف المحمولة ، وأبحث عن فرصة عمل كمطور Flutter لاكتساب خبرة عملية حقيقية والمساهمة في تحقيق أهداف المنظمة. إذا كنت تبحث عن مطور Flutter ماهر لنقل تطبيقك إلى المستوى التالي، دعنا نتعاون ونحول رؤيتك إلى واقع!"),

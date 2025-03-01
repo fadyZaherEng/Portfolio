@@ -1,0 +1,230 @@
+import 'package:flutter/material.dart';
+import 'package:my_portfolio/src/config/theme/color_schemes.dart';
+
+class CustomResumeWebWidget extends StatefulWidget {
+  final void Function() onViewResumeTap;
+  final bool isDarkMode;
+  final Color borderColor;
+  final Color textColor;
+  final String title;
+  final double width;
+  final IconData? icon;
+
+  const CustomResumeWebWidget({
+    Key? key,
+    required this.onViewResumeTap,
+    required this.isDarkMode,
+    required this.borderColor,
+    required this.textColor,
+    required this.title,
+    required this.width,
+    this.icon,
+  }) : super(key: key);
+
+  @override
+  _CustomResumeWebWidgetState createState() => _CustomResumeWebWidgetState();
+}
+
+class _CustomResumeWebWidgetState extends State<CustomResumeWebWidget>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<double> _scaleAnimation;
+  late Animation<double> _fadeAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 250),
+      lowerBound: 0.9,
+      upperBound: 1.2,
+    );
+    _scaleAnimation = _controller.drive(Tween(begin: 0.9, end: 1.2));
+    _fadeAnimation = _controller.drive(Tween(begin: 0.7, end: 0.9));
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) {
+        setState(() {
+          _controller.forward();
+        });
+      },
+      onExit: (_) {
+        setState(() {
+          _controller.reverse();
+        });
+      },
+      child: FadeTransition(
+        opacity: _fadeAnimation,
+        child: ScaleTransition(
+          scale: _scaleAnimation,
+          child: AnimatedElevatedButton(
+            title: widget.title,
+            isDarkMode: widget.isDarkMode,
+            borderColor: widget.borderColor,
+            textColor: widget.textColor,
+            onViewResumeTap: widget.onViewResumeTap,
+            width: widget.width,
+            icon: widget.icon,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class AnimatedElevatedButton extends StatefulWidget {
+  final String title;
+  final bool isDarkMode;
+  final Color borderColor;
+  final Color textColor;
+  final VoidCallback onViewResumeTap;
+  final double width;
+  final IconData? icon;
+
+  const AnimatedElevatedButton({
+    Key? key,
+    required this.title,
+    required this.isDarkMode,
+    required this.borderColor,
+    required this.textColor,
+    required this.onViewResumeTap,
+    required this.width,
+    this.icon,
+  }) : super(key: key);
+
+  @override
+  _AnimatedElevatedButtonState createState() => _AnimatedElevatedButtonState();
+}
+
+class _AnimatedElevatedButtonState extends State<AnimatedElevatedButton> {
+  bool _isHovered = false;
+
+  void _onHover(bool hovering) {
+    setState(() {
+      _isHovered = hovering;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) => _onHover(true),
+      onExit: (_) => _onHover(false),
+      child: GestureDetector(
+        onTap: () {
+          widget.onViewResumeTap();
+        },
+        child: Stack(
+          children: [
+            AnimatedContainer(
+              width: widget.width,
+              height: 32,
+              duration: const Duration(milliseconds: 200),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(
+                  color: widget.borderColor,
+                  width: 2,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: _isHovered ? 15 : 5,
+                    spreadRadius: 2,
+                  ),
+                ],
+                gradient: _isHovered
+                    ? LinearGradient(
+                        colors: [
+                          widget.borderColor.withOpacity(0.6),
+                          ColorSchemes.iconBackGround,
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      )
+                    : null,
+                color: widget.isDarkMode ? Colors.transparent : Colors.white,
+              ),
+              child: Center(
+                child: widget.icon == null
+                    ? Text(
+                        widget.title,
+                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                              color: _isHovered
+                                  ? ColorSchemes.white
+                                  : widget.textColor,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                            ),
+                      )
+                    : SizedBox(
+                      child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              widget.icon,
+                              color: ColorSchemes.primaryWhite,
+                              size: 16,
+                            ),
+                            const SizedBox(width: 8),
+                            Text(
+                              widget.title,
+                              style:
+                                  Theme.of(context).textTheme.bodySmall?.copyWith(
+                                        color: _isHovered
+                                            ? ColorSchemes.white
+                                            : widget.textColor,
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                            ),
+                          ],
+                        ),
+                    ),
+              ),
+            ),
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 350),
+              curve: Curves.easeInOut,
+              width: _isHovered ? widget.width : 0,
+              height: _isHovered ? 32 : 32,
+              alignment: AlignmentDirectional.topStart,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: widget.borderColor, width: 2),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: _isHovered ? 15 : 5,
+                    spreadRadius: 2,
+                  ),
+                ],
+                gradient: _isHovered
+                    ? LinearGradient(
+                        colors: [
+                          widget.borderColor.withOpacity(0.6),
+                          ColorSchemes.iconBackGround,
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                      )
+                    : null,
+                color: ColorSchemes.secondary.withOpacity(0.5),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}

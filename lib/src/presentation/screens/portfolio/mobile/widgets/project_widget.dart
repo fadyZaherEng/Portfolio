@@ -87,7 +87,7 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
           borderColor: borderColor,
           textColor: textColor,
           title: S.of(context).seeMoreProjects,
-          width: 170,
+          width: 250,
         ),
         const SizedBox(height: 30),
       ],

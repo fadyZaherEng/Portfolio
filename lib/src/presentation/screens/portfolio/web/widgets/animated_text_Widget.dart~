@@ -27,8 +27,8 @@ class _AnimatedTextWebWidgetState extends State<AnimatedTextWebWidget>
       textAlign: widget.textAlign ?? TextAlign.start,
       style: widget.style ??
           Theme.of(context).textTheme.bodyLarge?.copyWith(
-                fontSize: 17,
-                fontWeight: FontWeight.bold,
+                fontSize: 19,
+                fontWeight: FontWeight.normal,
                 color: ColorSchemes.iconDarkWhite,
                 height: 2,
                 letterSpacing: -0.1,

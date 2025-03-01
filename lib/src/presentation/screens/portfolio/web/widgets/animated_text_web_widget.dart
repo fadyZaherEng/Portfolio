@@ -1,0 +1,38 @@
+import 'package:flutter/material.dart';
+import 'package:my_portfolio/src/config/theme/color_schemes.dart';
+import 'package:visibility_detector/visibility_detector.dart';
+
+class AnimatedTextWebWidget extends StatefulWidget {
+  final String text;
+  final TextStyle? style;
+  final TextAlign? textAlign;
+
+  const AnimatedTextWebWidget({
+    Key? key,
+    required this.text,
+    this.style,
+    this.textAlign,
+  }) : super(key: key);
+
+  @override
+  _AnimatedTextWebWidgetState createState() => _AnimatedTextWebWidgetState();
+}
+
+class _AnimatedTextWebWidgetState extends State<AnimatedTextWebWidget>
+    with SingleTickerProviderStateMixin {
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      widget.text,
+      textAlign: widget.textAlign ?? TextAlign.start,
+      style: widget.style ??
+          Theme.of(context).textTheme.bodyLarge?.copyWith(
+                fontSize: 19,
+                fontWeight: FontWeight.w600,
+                color: ColorSchemes.iconDarkWhite,
+                height: 2,
+                letterSpacing: -0.1,
+              ),
+    );
+  }
+}

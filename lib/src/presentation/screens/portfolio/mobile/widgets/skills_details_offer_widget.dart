@@ -4,7 +4,7 @@ import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/animated_coloum_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/animated_text_Widget.dart';
+ import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/animated_text_Widget.dart';
 
 class SkillsDetailsOfferWidget extends StatefulWidget {
   final double height;
