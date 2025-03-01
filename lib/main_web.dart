@@ -7,8 +7,8 @@ Future<void> main() async {
 }
 
 String cleanUrl(String url) {
-  url = url.replaceAll(RegExp(r'^https?:\/\/'), '');
-  url = url.replaceAll(RegExp(r'\/$'), '');
+  url = url.replaceAll(RegExp(r'^https?://'), '');
+  url = url.replaceAll(RegExp(r'/$'), '');
   return url;
 }
 
