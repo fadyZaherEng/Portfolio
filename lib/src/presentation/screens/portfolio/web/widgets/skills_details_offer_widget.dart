@@ -25,11 +25,13 @@ class _SkillsDetailsOfferWebWidgetState
   final List<int> offers = List.generate(16, (index) => index);
   int _dynamicLength = 8;
 
+  bool isHovered = false;
+  int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
     final isLargeScreen = width > 850;
-    double dividerHeight = _dynamicLength == offers.length ? 3.25 : 3.4;
 
     return Center(
       child: Column(
@@ -47,7 +49,7 @@ class _SkillsDetailsOfferWebWidgetState
           ),
           const SizedBox(height: 20),
           SizedBox(
-            height: widget.height * _dynamicLength / dividerHeight,
+            height: widget.height * _dynamicLength / 3.38,
             child: GridView.builder(
               padding: EdgeInsets.symmetric(horizontal: width * 0.07),
               controller: _controller,
@@ -59,10 +61,42 @@ class _SkillsDetailsOfferWebWidgetState
                 mainAxisSpacing: 10,
               ),
               itemCount: _dynamicLength,
-              itemBuilder: (context, index) => SizedBox(
-                height: 200,
-                child: _buildServiceCards(context)[index],
-              ),
+              itemBuilder: (context, index) {
+                Matrix4 getTransformMatrix(
+                    bool isHovered, int index, int currentIndex) {
+                  if (isHovered && index == currentIndex) {
+                    return Matrix4.translationValues(0, -50, 50);
+                  }
+                  return Matrix4.identity();
+                }
+
+                return MouseRegion(
+                  onEnter: (_) {
+                    setState(() {
+                      isHovered = true;
+                      currentIndex = index;
+                    });
+                  },
+                  onExit: (_) => setState(() => isHovered = false),
+                  child: TweenAnimationBuilder(
+                    duration: const Duration(milliseconds: 300),
+                    // Smooth transition effect
+                    tween: Matrix4Tween(
+                      begin: getTransformMatrix(isHovered, index, currentIndex),
+                      end: getTransformMatrix(isHovered, index, currentIndex),
+                    ),
+                    builder: (context, matrix, child) {
+                      return Transform(
+                        transform: matrix,
+                        child: SizedBox(
+                          height: 200,
+                          child: _buildServiceCards(context)[index],
+                        ),
+                      );
+                    },
+                  ),
+                );
+              },
             ),
           ),
           const SizedBox(height: 30),
@@ -343,16 +377,12 @@ class _SkillsDetailsOfferWebWidgetState
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12),
-          child: Wrap(
-            children: [
-              AnimatedColumnWebWidget(
-                logo: logo,
-                isSvg: isSvg,
-                title: title,
-                description: description,
-                skills: skills,
-              ),
-            ],
+          child: AnimatedColumnWebWidget(
+            logo: logo,
+            isSvg: isSvg,
+            title: title,
+            description: description,
+            skills: skills,
           ),
         ),
       ),

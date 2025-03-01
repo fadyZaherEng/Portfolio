@@ -130,6 +130,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Flutter Secure Storage"),
         "flutterTitle": MessageLookupByLibrary.simpleMessage(
             "Flutter Development for Android | iOS | Web"),
+        "followMe": MessageLookupByLibrary.simpleMessage("Follow Me"),
         "geolocationAndMapsIntegrationDescription":
             MessageLookupByLibrary.simpleMessage(
                 "Implement geolocation and maps integration for your app."),

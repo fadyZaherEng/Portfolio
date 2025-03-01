@@ -69,7 +69,7 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
   @override
   Widget build(BuildContext context) {
     return Container(
-      // margin: const EdgeInsets.only(top: 20),
+      margin: const EdgeInsets.only(top: 15),
       padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
       decoration: BoxDecoration(
         color: ColorSchemes.primary.withOpacity(0.7),
@@ -162,7 +162,7 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
           Icon(
             icon,
             color: GetThemeUseCase(injector())() == Constants.dark
-                ? ColorSchemes.secondary
+                ? ColorSchemes.secondary.withOpacity(0.7)
                 : ColorSchemes.white,
             size: 25,
           ),

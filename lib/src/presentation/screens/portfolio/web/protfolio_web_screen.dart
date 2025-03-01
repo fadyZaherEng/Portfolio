@@ -1,15 +1,10 @@
-import 'dart:math';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-import 'package:lottie/lottie.dart';
 import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/routes/routes_manager.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/base/widget/base_stateful_widget.dart';
-import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/core/utils/constants.dart';
 import 'package:my_portfolio/src/core/utils/openLink.dart';
 import 'package:my_portfolio/src/di/data_layer_injector.dart';
@@ -25,6 +20,8 @@ import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/my_c
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/project_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/scroll_to_top_button_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/skills_details_offer_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/social_banner_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/tab_bar_item_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/web_circle_painter_button_scroll.dart';
 import 'package:my_portfolio/src/presentation/screens/skills/skills_screen.dart';
 import 'package:my_portfolio/src/presentation/screens/touch_me/touch_me_screen.dart';
@@ -126,7 +123,12 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
         appBar: CustomAppBarWidget(onLogoTap: _restartApp),
         body: Column(
           children: [
-            _buildNavigationBar(menuItems, textColor, fontSize, indicatorColor),
+            _buildNavigationBar(
+              menuItems,
+              textColor,
+              fontSize,
+              indicatorColor,
+            ),
             const SizedBox(height: 32),
             Expanded(
               child: Stack(
@@ -135,6 +137,7 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
                   _buildContent(),
                   _buildScrollIndicator(),
                   _buildScrollToTopButton(),
+                  SocialBannerWidget(currentLocale: currentLocale),
                 ],
               ),
             ),
@@ -194,7 +197,7 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
         mainAxisAlignment: MainAxisAlignment.start,
         children: menuItems
             .map(
-              (item) => NavigationItemWidget(
+              (item) => TabBarItemWidget(
                 title: item["title"],
                 isSelected: _currentIndex == item["index"],
                 onTap: () => _onTap(item["index"],
@@ -284,9 +287,7 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
         html.window.location.reload();
       },
       onDrawerSkillsTap: () {
-        context.go(
-          Routes.skillsWeb,
-        );
+        context.go(Routes.skillsWeb);
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -295,9 +296,7 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
         );
       },
       onDrawerTrainingTap: () {
-        context.go(
-          Routes.trainingWeb,
-        );
+        context.go(Routes.trainingWeb);
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -312,56 +311,6 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
       changeLocale: (String locale) {
         _bloc.add(PortfolioChangeLanguageEvent(locale: locale));
       },
-    );
-  }
-}
-
-class NavigationItemWidget extends StatelessWidget {
-  final String title;
-  final bool isSelected;
-  final VoidCallback onTap;
-  final Color textColor;
-  final double fontSize;
-  final Color indicatorColor;
-
-  const NavigationItemWidget({
-    super.key,
-    required this.title,
-    required this.isSelected,
-    required this.onTap,
-    required this.textColor,
-    required this.fontSize,
-    required this.indicatorColor,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: InkWell(
-        onTap: onTap,
-        child: Column(
-          children: [
-            Text(
-              title,
-              style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: textColor,
-                    fontSize: fontSize,
-                  ),
-            ),
-            const SizedBox(height: 5),
-            if (isSelected)
-              Container(
-                height: 3,
-                width: 60,
-                decoration: BoxDecoration(
-                  color: indicatorColor,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-          ],
-        ),
-      ),
     );
   }
 }

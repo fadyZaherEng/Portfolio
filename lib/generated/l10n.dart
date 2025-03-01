@@ -1883,6 +1883,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Follow Me`
+  String get followMe {
+    return Intl.message(
+      'Follow Me',
+      name: 'followMe',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

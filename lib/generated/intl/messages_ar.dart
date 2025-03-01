@@ -134,6 +134,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("تخزين فلاتر الآمن"),
         "flutterTitle": MessageLookupByLibrary.simpleMessage(
             "تطوير Flutter لنظام Android | iOS | الويب"),
+        "followMe": MessageLookupByLibrary.simpleMessage("تابعني"),
         "geolocationAndMapsIntegrationDescription":
             MessageLookupByLibrary.simpleMessage(
                 "تنفيذ تكامل تحديد المواقع والخرائط في التطبيق."),

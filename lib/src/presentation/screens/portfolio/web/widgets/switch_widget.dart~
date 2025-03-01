@@ -75,8 +75,8 @@ class _IOSSwitchWithThumbImageWebWidgetState extends State<IOSSwitchWithThumbIma
                       ? (_animationController.value * 20)
                       : 4 + (_animationController.value * 26),
                   child: Container(
-                    width: 25,
-                    height: 25,
+                    width: 22,
+                    height: 22,
                     margin: const EdgeInsets.symmetric(horizontal: 4),
                     decoration: const BoxDecoration(
                       shape: BoxShape.circle,

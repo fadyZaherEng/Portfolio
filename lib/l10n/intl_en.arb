@@ -184,5 +184,6 @@
   "name":"Name",
   "email":"Email",
   "message":"Message",
-  "aSoftwareEngineerAFlutterDeveloperAMobileSoftwareEngineerAAndroidDeveloperAIOSDeveloper":"A Software Engineer, A Flutter Developer, A Mobile Software Engineer, A Android Developer, A IOS Developer"
+  "aSoftwareEngineerAFlutterDeveloperAMobileSoftwareEngineerAAndroidDeveloperAIOSDeveloper":"A Software Engineer, A Flutter Developer, A Mobile Software Engineer, A Android Developer, A IOS Developer",
+  "followMe":"Follow Me"
 }
