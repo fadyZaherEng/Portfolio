@@ -67,6 +67,7 @@ dependencies:
   universal_html:
   clipboard:
   mailto:
+  animations:
 
 
 dev_dependencies:

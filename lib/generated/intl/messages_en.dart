@@ -170,6 +170,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "letsCreateSomethingAmazing": MessageLookupByLibrary.simpleMessage(
             "Let\'s Create Something Amazing Together!"),
         "linkedin": MessageLookupByLibrary.simpleMessage("Linkedin"),
+        "loadLess": MessageLookupByLibrary.simpleMessage("Load Less"),
+        "loadMore": MessageLookupByLibrary.simpleMessage("Load More"),
         "localDataStorageAndOfflineSupportDescription":
             MessageLookupByLibrary.simpleMessage(
                 "Implement local data storage and provide offline support for your app."),
@@ -248,7 +250,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "securityTesting":
             MessageLookupByLibrary.simpleMessage("Security Testing"),
         "seeMoreProjects":
-            MessageLookupByLibrary.simpleMessage("SEE MORE PROJECTS"),
+            MessageLookupByLibrary.simpleMessage("See More Projects On GitHub"),
         "selectDate": MessageLookupByLibrary.simpleMessage("Select Date"),
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),

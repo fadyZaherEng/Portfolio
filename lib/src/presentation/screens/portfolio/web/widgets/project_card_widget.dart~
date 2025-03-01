@@ -48,11 +48,9 @@ class _ProjectGridWidgetState extends State<ProjectGridWidget> {
               onExit: (_) => setState(() => _hoveredIndex = null),
               child: AnimatedContainer(
                 duration: const Duration(milliseconds: 300),
-                transform: _hoveredIndex == index
-                    ? (Matrix4.identity()
-                      ..scale(1.05, 1.05)
-                      ..translate(0.0, -10.0))
-                    : Matrix4.identity(), // No transformation
+                transform:_hoveredIndex == index
+                    ? Matrix4.identity() // Apply both scaling and translation
+                    : Matrix4.identity(),  // No transformation
                 child: OpenContainer(
                   closedElevation: 5,
                   closedShape: RoundedRectangleBorder(
@@ -106,10 +104,10 @@ class _ProjectGridWidgetState extends State<ProjectGridWidget> {
                                       .textTheme
                                       .bodyLarge
                                       ?.copyWith(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                        fontSize: 18,
-                                      ),
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white,
+                                    fontSize: 18,
+                                  ),
                                 ),
                                 const SizedBox(height: 10),
                                 Text(
@@ -119,9 +117,9 @@ class _ProjectGridWidgetState extends State<ProjectGridWidget> {
                                       .textTheme
                                       .bodyMedium
                                       ?.copyWith(
-                                        color: Colors.white.withOpacity(0.9),
-                                        fontSize: 15,
-                                      ),
+                                    color: Colors.white.withOpacity(0.9),
+                                    fontSize: 15,
+                                  ),
                                 ),
                                 const SizedBox(height: 12),
                                 ElevatedButton(
@@ -147,10 +145,10 @@ class _ProjectGridWidgetState extends State<ProjectGridWidget> {
                                         .textTheme
                                         .bodyLarge
                                         ?.copyWith(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16,
-                                        ),
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                    ),
                                   ),
                                   onPressed: () => openLink(project.url),
                                 ),
@@ -180,12 +178,10 @@ class _ProjectGridWidgetState extends State<ProjectGridWidget> {
                             Text(
                               project.description,
                               textAlign: TextAlign.center,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyLarge
-                                  ?.copyWith(
-                                    color: Colors.black87,
-                                  ),
+                              style:
+                              Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                color: Colors.black87,
+                              ),
                             ),
                             const SizedBox(height: 12),
                             ElevatedButton(
@@ -198,13 +194,11 @@ class _ProjectGridWidgetState extends State<ProjectGridWidget> {
                               ),
                               child: Text(
                                 S.of(context).openLink,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodyLarge
-                                    ?.copyWith(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                style:
+                                Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                             ),
                           ],
@@ -231,9 +225,9 @@ class _ProjectGridWidgetState extends State<ProjectGridWidget> {
             child: Text(
               _expanded ? S.of(context).loadLess : S.of(context).loadMore,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
         ),
@@ -241,6 +235,7 @@ class _ProjectGridWidgetState extends State<ProjectGridWidget> {
     );
   }
 }
+
 
 // import 'package:flutter/material.dart';
 // import 'package:my_portfolio/generated/l10n.dart';

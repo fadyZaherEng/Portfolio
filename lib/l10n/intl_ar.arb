@@ -163,7 +163,7 @@
   "fadyTag": "<م.فادي زاهر/>",
   "resume": "السيرة الذاتية",
   "downloadCv": "تحميل السيرة الذاتية",
-  "seeMoreProjects": "اظهار المزيد من المشاريع",
+  "seeMoreProjects": "اظهار المزيد من المشاريع على GitHub",
   "atBridgeCOM": "في BridgeCOM",
   "copyEmail": "نسخ البريد الالكتروني",
   "hireMe": "وظفني",
@@ -183,5 +183,7 @@
   "email": "البريد الالكتروني",
   "message": "الرسالة",
   "aSoftwareEngineerAFlutterDeveloperAMobileSoftwareEngineerAAndroidDeveloperAIOSDeveloper": "مهندس برمجيات على Flutter، مهندس برمجيات موبايل، مهندس برمجيات Android، مهندس برمجيات iOS",
-  "followMe": "تابعني"
+  "followMe": "تابعني",
+  "loadMore": "تحميل المزيد",
+  "loadLess": "تحميل اقل"
 }

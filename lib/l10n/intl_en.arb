@@ -165,7 +165,7 @@
   "fadyTag": "<Eng.Fady Zaher/>",
   "resume": "RESUME",
   "downloadCv": "DOWNLOAD CV",
-  "seeMoreProjects": "SEE MORE PROJECTS",
+  "seeMoreProjects": "See More Projects On GitHub",
   "atBridgeCOM": "At BridgeCOM",
   "copyEmail": "Copy Email",
   "hireMe": "Hire Me",
@@ -185,5 +185,7 @@
   "email":"Email",
   "message":"Message",
   "aSoftwareEngineerAFlutterDeveloperAMobileSoftwareEngineerAAndroidDeveloperAIOSDeveloper":"A Software Engineer, A Flutter Developer, A Mobile Software Engineer, A Android Developer, A IOS Developer",
-  "followMe":"Follow Me"
+  "followMe":"Follow Me",
+  "loadMore":"Load More",
+  "loadLess":"Load Less"
 }

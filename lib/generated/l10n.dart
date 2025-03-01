@@ -1682,10 +1682,10 @@ class S {
     );
   }
 
-  /// `SEE MORE PROJECTS`
+  /// `See More Projects On GitHub`
   String get seeMoreProjects {
     return Intl.message(
-      'SEE MORE PROJECTS',
+      'See More Projects On GitHub',
       name: 'seeMoreProjects',
       desc: '',
       args: [],
@@ -1889,6 +1889,26 @@ class S {
     return Intl.message(
       'Follow Me',
       name: 'followMe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Load More`
+  String get loadMore {
+    return Intl.message(
+      'Load More',
+      name: 'loadMore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Load Less`
+  String get loadLess {
+    return Intl.message(
+      'Load Less',
+      name: 'loadLess',
       desc: '',
       args: [],
     );

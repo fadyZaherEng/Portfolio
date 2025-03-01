@@ -61,24 +61,42 @@ class _SkillsDetailsOfferWebWidgetState
                 mainAxisSpacing: 10,
               ),
               itemCount: _dynamicLength,
-              itemBuilder: (context, index) => MouseRegion(
-                onEnter: (_) {
-                  setState(() {
-                    isHovered = true;
-                    currentIndex = index;
-                });
-                },
-                onExit: (_) => setState(() => isHovered = false),
-                child: Transform(
-                  transform: isHovered&&index==currentIndex
-                      ? Matrix4.translationValues(0, -50, 50)
-                      : Matrix4.translationValues(0, 0, 0),
-                  child: SizedBox(
-                    height: 200,
-                    child: _buildServiceCards(context)[index],
+              itemBuilder: (context, index) {
+                Matrix4 getTransformMatrix(
+                    bool isHovered, int index, int currentIndex) {
+                  if (isHovered && index == currentIndex) {
+                    return Matrix4.translationValues(0, -50, 50);
+                  }
+                  return Matrix4.identity();
+                }
+
+                return MouseRegion(
+                  onEnter: (_) {
+                    setState(() {
+                      isHovered = true;
+                      currentIndex = index;
+                    });
+                  },
+                  onExit: (_) => setState(() => isHovered = false),
+                  child: TweenAnimationBuilder(
+                    duration: const Duration(milliseconds: 300),
+                    // Smooth transition effect
+                    tween: Matrix4Tween(
+                      begin: getTransformMatrix(isHovered, index, currentIndex),
+                      end: getTransformMatrix(isHovered, index, currentIndex),
+                    ),
+                    builder: (context, matrix, child) {
+                      return Transform(
+                        transform: matrix,
+                        child: SizedBox(
+                          height: 200,
+                          child: _buildServiceCards(context)[index],
+                        ),
+                      );
+                    },
                   ),
-                ),
-              ),
+                );
+              },
             ),
           ),
           const SizedBox(height: 30),

@@ -174,6 +174,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "letsCreateSomethingAmazing":
             MessageLookupByLibrary.simpleMessage("ابدا بانشاء شيء جميل"),
         "linkedin": MessageLookupByLibrary.simpleMessage("لينكدان"),
+        "loadLess": MessageLookupByLibrary.simpleMessage("تحميل اقل"),
+        "loadMore": MessageLookupByLibrary.simpleMessage("تحميل المزيد"),
         "localDataStorageAndOfflineSupportDescription":
             MessageLookupByLibrary.simpleMessage(
                 "تنفيذ تخزين البيانات محليًا وتوفير دعم للعمل دون اتصال في التطبيق."),
@@ -248,8 +250,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "search": MessageLookupByLibrary.simpleMessage("بحث"),
         "securityTesting":
             MessageLookupByLibrary.simpleMessage("اختبار الأمان"),
-        "seeMoreProjects":
-            MessageLookupByLibrary.simpleMessage("اظهار المزيد من المشاريع"),
+        "seeMoreProjects": MessageLookupByLibrary.simpleMessage(
+            "اظهار المزيد من المشاريع على GitHub"),
         "selectDate": MessageLookupByLibrary.simpleMessage("اختار التاريخ"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("أخنار اللغه"),
         "sendMessage": MessageLookupByLibrary.simpleMessage("ارسل رسالة"),

@@ -65,7 +65,9 @@ class _SkillsDetailsOfferWebWidgetState
                 Matrix4 getTransformMatrix(
                     bool isHovered, int index, int currentIndex) {
                   if (isHovered && index == currentIndex) {
-                    return Matrix4.translationValues(0, -50, 50);
+                    return (Matrix4.identity()
+                      ..scale(1.05, 1.05)
+                      ..translate(0.0, -10.0));
                   }
                   return Matrix4.identity();
                 }

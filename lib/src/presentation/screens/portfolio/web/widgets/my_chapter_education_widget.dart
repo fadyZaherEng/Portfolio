@@ -3,7 +3,6 @@ import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/domain/model/time_line.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/animated_text_Widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/bounce_and_scale_text_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/time_line_career_widget.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
@@ -109,22 +108,18 @@ class _MyChapterEducationWebWidgetState
                         padding: const EdgeInsets.symmetric(horizontal: 24),
                         child: AnimatedTextWebWidget(
                           text: S.of(context).education,
-                          textAlign: MediaQuery.of(context).size.width > 850
-                              ? TextAlign.center
-                              : TextAlign.start,
+                          textAlign: TextAlign.center,
                           style:
                               Theme.of(context).textTheme.titleMedium?.copyWith(
                                     color: ColorSchemes.iconDarkWhite,
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 26,
+                                    fontSize: 32,
                                   ),
                         ),
                       ),
                     ),
                     const SizedBox(height: 10),
-                    MediaQuery.of(context).size.width > 850
-                        ? Center(child: _buildEducationTimeLine(context))
-                        : _buildEducationTimeLine(context),
+                    Center(child: _buildEducationTimeLine(context)),
                     const SizedBox(height: 20),
                   ],
                 ),
@@ -141,31 +136,21 @@ class _MyChapterEducationWebWidgetState
     String text,
     bool isAnimation,
   ) {
-    return isAnimation
-        ? BouncingAndScalingTextWidget(
-            title: text,
-            textAlign: TextAlign.start,
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  color: ColorSchemes.iconDarkWhite,
-                ),
-          )
-        : Text(
-            text,
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  color: ColorSchemes.iconDarkWhite,
-                ),
-          );
+    return Text(
+      text,
+      textAlign: TextAlign.center,
+      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
+            color: ColorSchemes.iconDarkWhite,
+          ),
+    );
   }
 
   Widget _buildBodyText(BuildContext context, String text) {
     return Center(
       child: SizedBox(
-        width: MediaQuery.of(context).size.width * 0.6,
+        width: MediaQuery.of(context).size.width * 0.7,
         child: Text(
           text,
           textAlign: TextAlign.center,
@@ -189,8 +174,8 @@ class _MyChapterEducationWebWidgetState
 
   Widget _buildEducationTimeLine(BuildContext context) {
     return SizedBox(
-      width: 850,
-      child: TimelineCareerWidget(
+      width: MediaQuery.sizeOf(context).width * 0.7,
+      child: TimelineCareerWebWidget(
         isEducation: true,
         totalEvents: 1,
         index: 0,
