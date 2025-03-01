@@ -1,4 +1,4 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
@@ -42,12 +42,6 @@ class _MyChaptersCareerWebWidgetState extends State<MyChaptersCareerWebWidget>
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          SizedBox(
-            width: 200,
-            height: 40,
-            child: _buildTitleShaderMask(context),
-          ),
-          const SizedBox(height: 24),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -66,6 +60,12 @@ class _MyChaptersCareerWebWidgetState extends State<MyChaptersCareerWebWidget>
               ),
               const SizedBox(width: 15),
             ],
+          ),
+          const SizedBox(height: 24),
+          SizedBox(
+            width: 200,
+            height: 40,
+            child: _buildTitleShaderMask(context),
           ),
           const SizedBox(height: 200),
         ],
@@ -148,7 +148,7 @@ class _MyChaptersCareerWebWidgetState extends State<MyChaptersCareerWebWidget>
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: SizedBox(
-          width: 400 ,
+          width: 400,
           child: ListView.builder(
             itemCount: events.length,
             shrinkWrap: true,
