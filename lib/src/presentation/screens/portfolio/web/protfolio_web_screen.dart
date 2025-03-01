@@ -100,52 +100,54 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
     ];
 
     return BlocConsumer<PortfolioBloc, PortfolioState>(
-        listener: (context, state) {
-      if (state is PortfolioGetThemeState) {
-        isDarkMode = state.isDark;
-      } else if (state is PortfolioGetLanguageState) {
-        currentLocale = state.locale.languageCode;
-        _isCanIDoVisible = true;
-      } else if (state is PortfolioChangeThemeState) {
-        isDarkMode = state.theme == Constants.dark;
-        RestartWidget.restartApp(context);
-        html.window.location.reload();
-      } else if (state is PortfolioChangeLanguageState) {
-        currentLocale = state.locale.languageCode;
-        RestartWidget.restartApp(context);
-        html.window.location.reload();
-      }
-    }, builder: (context, state) {
-      return Scaffold(
-        backgroundColor:
-            isDarkMode ? ColorSchemes.iconBackGround : ColorSchemes.white,
-        endDrawer: _buildEndDrawer(context),
-        appBar: CustomAppBarWebWidget(onLogoTap: _restartApp),
-        body: Column(
-          children: [
-            _buildNavigationBar(
-              menuItems,
-              textColor,
-              fontSize,
-              indicatorColor,
-            ),
-            const SizedBox(height: 32),
-            Expanded(
-              child: Stack(
-                alignment: AlignmentDirectional.bottomEnd,
-                children: [
-                  _buildContent(),
-                  _buildScrollIndicator(),
-                  _buildScrollToTopButton(),
-                  if (_currentIndex != 2 && _currentIndex != 5)
-                    SocialBannerWebWidget(currentLocale: currentLocale),
-                ],
+      listener: (context, state) {
+        if (state is PortfolioGetThemeState) {
+          isDarkMode = state.isDark;
+        } else if (state is PortfolioGetLanguageState) {
+          currentLocale = state.locale.languageCode;
+          _isCanIDoVisible = true;
+        } else if (state is PortfolioChangeThemeState) {
+          isDarkMode = state.theme == Constants.dark;
+          RestartWidget.restartApp(context);
+          html.window.location.reload();
+        } else if (state is PortfolioChangeLanguageState) {
+          currentLocale = state.locale.languageCode;
+          RestartWidget.restartApp(context);
+          html.window.location.reload();
+        }
+      },
+      builder: (context, state) {
+        return Scaffold(
+          backgroundColor:
+              isDarkMode ? ColorSchemes.iconBackGround : ColorSchemes.white,
+          endDrawer: _buildEndDrawer(context),
+          appBar: CustomAppBarWebWidget(onLogoTap: _restartApp),
+          body: Column(
+            children: [
+              _buildNavigationBar(
+                menuItems,
+                textColor,
+                fontSize,
+                indicatorColor,
               ),
-            ),
-          ],
-        ),
-      );
-    });
+              const SizedBox(height: 32),
+              Expanded(
+                child: Stack(
+                  alignment: AlignmentDirectional.bottomEnd,
+                  children: [
+                    _buildContent(),
+                    _buildScrollIndicator(),
+                    _buildScrollToTopButton(),
+                    if (_currentIndex != 2 && _currentIndex != 5)
+                      SocialBannerWebWidget(currentLocale: currentLocale),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 
   Widget _buildContent() {

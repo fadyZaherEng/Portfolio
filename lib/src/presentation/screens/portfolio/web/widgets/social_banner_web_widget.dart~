@@ -22,7 +22,7 @@ class SocialBannerWebWidget extends StatelessWidget {
     final isDarkMode = GetThemeUseCase(injector())() == Constants.dark;
     final iconColor =
         isDarkMode ? ColorSchemes.white : ColorSchemes.iconBackGround;
-    final double spacing = MediaQuery.of(context).size.height * 0.012;
+    final double spacing = MediaQuery.of(context).size.height * 0.009;
 
     Widget buildSocialIcon({
       required IconData icon,
@@ -78,35 +78,68 @@ class SocialBannerWebWidget extends StatelessWidget {
         children: [
           Transform.rotate(
             angle: 90 * pi / 180,
-            child: Text(
-              currentLocale == "ar"
-                  ? "--< ${S.of(context).followMe}"
-                  : "${S.of(context).followMe} -->",
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontSize: 21,
-                    fontWeight: FontWeight.w600,
-                    color: ColorSchemes.iconDarkWhite,
+            child: currentLocale == "en"
+                ? Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Text(
+                        S.of(context).followMe,
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                              color: ColorSchemes.iconDarkWhite,
+                            ),
+                      ),
+                      const SizedBox(width: 6),
+                      Container(
+                        height: 3.5,
+                        width: 50,
+                        color: ColorSchemes.iconDarkWhite,
+                      ),
+                      const SizedBox(width: 6),
+                    ],
+                  )
+                : Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const SizedBox(width: 6),
+                      Container(
+                        height: 3.5,
+                        width: 50,
+                        color: ColorSchemes.iconDarkWhite,
+                      ),
+                      const SizedBox(width: 6),
+                      Text(
+                        S.of(context).followMe,
+                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                              color: ColorSchemes.iconDarkWhite,
+                            ),
+                      ),
+                    ],
                   ),
-            ),
           ),
           SizedBox(height: currentLocale == "en" ? 70 : 40),
-          ...socialLinks.map((social) => Padding(
-                padding: EdgeInsets.only(bottom: spacing),
-                child: buildSocialIcon(
-                  icon: social['icon'] as IconData,
-                  onPressed: () {
-                    try {
-                      if (social.containsKey('onPressed')) {
-                        (social['onPressed'] as VoidCallback)();
-                      } else {
-                        openLink(social['url'] as String);
-                      }
-                    } catch (e) {
-                      debugPrint("Error opening link: $e");
+          ...socialLinks.map(
+            (social) => Padding(
+              padding: EdgeInsets.only(bottom: spacing),
+              child: buildSocialIcon(
+                icon: social['icon'] as IconData,
+                onPressed: () {
+                  try {
+                    if (social.containsKey('onPressed')) {
+                      (social['onPressed'] as VoidCallback)();
+                    } else {
+                      openLink(social['url'] as String);
                     }
-                  },
-                ),
-              )),
+                  } catch (e) {
+                    debugPrint("Error opening link: $e");
+                  }
+                },
+              ),
+            ),
+          ),
         ],
       ),
     );
