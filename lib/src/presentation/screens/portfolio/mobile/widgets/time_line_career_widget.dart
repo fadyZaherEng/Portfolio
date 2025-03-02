@@ -105,8 +105,8 @@ class _TimelineCareerWidgetState extends State<TimelineCareerWidget>
                     child: AnimatedTextWidget(
                       text: widget.event.title,
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 15,
                         color: ColorSchemes.primaryWhite,
                       ),
                     ),
@@ -124,7 +124,7 @@ class _TimelineCareerWidgetState extends State<TimelineCareerWidget>
                       text: widget.event.date,
                       style: TextStyle(
                         color: Colors.grey[600],
-                        fontSize: 15,
+                        fontSize: 14,
                       ),
                     ),
                   ),

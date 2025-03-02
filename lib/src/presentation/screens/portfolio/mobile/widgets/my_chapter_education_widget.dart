@@ -120,7 +120,7 @@ class _MyChapterEducationWidgetState extends State<MyChapterEducationWidget>
                               Theme.of(context).textTheme.titleMedium?.copyWith(
                                     color: ColorSchemes.iconDarkWhite,
                                     fontWeight: FontWeight.bold,
-                                    fontSize: 26,
+                                    fontSize: 20,
                                   ),
                         ),
                       ),

@@ -49,7 +49,7 @@ class _ProjectsWidgetsState extends State<ProjectsWidgets> {
                   S.of(context).myProjects,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                        fontSize: 26,
+                        fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: ColorSchemes.iconDarkWhite,
                       ),

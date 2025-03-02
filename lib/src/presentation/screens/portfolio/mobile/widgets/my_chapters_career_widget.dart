@@ -143,7 +143,7 @@ class _MyChaptersCareerWidgetState extends State<MyChaptersCareerWidget>
                 ? TextAlign.center
                 : TextAlign.start,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontSize: 25,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: ColorSchemes.iconDarkWhite,
                 ),
