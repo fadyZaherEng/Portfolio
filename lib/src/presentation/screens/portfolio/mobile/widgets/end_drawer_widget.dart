@@ -299,7 +299,7 @@ class EndDrawerWidget extends StatelessWidget {
                   shape: BoxShape.circle,
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage(ImagePaths.fady),
+                    image: AssetImage(ImagePaths.fedo2),
                   ),
                 ),
               ),

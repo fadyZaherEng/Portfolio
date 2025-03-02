@@ -88,15 +88,17 @@ class _SkillsScreenState extends State<SkillsScreen> {
               },
             ),
             body: Padding(
-              padding: const EdgeInsets.all(16),
+              padding: EdgeInsets.all(
+                  MediaQuery.sizeOf(context).width > 1200 ? 16 : 10),
               child: Stack(
                 alignment: AlignmentDirectional.bottomEnd,
                 children: [
                   SingleChildScrollView(
                     controller: _scrollController,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 12,
+                      padding: EdgeInsets.symmetric(
+                        horizontal:
+                            MediaQuery.sizeOf(context).width > 1200 ? 16 : 5,
                         vertical: 16,
                       ),
                       child: Column(
@@ -141,9 +143,12 @@ class _SkillsScreenState extends State<SkillsScreen> {
                                                     1300
                                                 ? 30
                                                 : 27,
-                                    fontWeight:MediaQuery.of(context).size.width > 1300 ? FontWeight.normal : FontWeight.bold,
-
-                                    color: ColorSchemes.iconDarkWhite,
+                                        fontWeight:
+                                            MediaQuery.of(context).size.width >
+                                                    1300
+                                                ? FontWeight.normal
+                                                : FontWeight.bold,
+                                        color: ColorSchemes.iconDarkWhite,
                                       ),
                                 ),
                               ],

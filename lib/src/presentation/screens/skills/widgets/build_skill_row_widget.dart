@@ -37,10 +37,12 @@ class _BuildSkillsWidgetState extends State<BuildSkillsWidget> {
                       child: Text(
                         entry.key,
                         style: TextStyle(
-                          fontWeight:MediaQuery.of(context).size.width > 1300 ?null: FontWeight.bold,
+                          fontWeight: MediaQuery.of(context).size.width > 1300
+                              ? FontWeight.w500
+                              : FontWeight.bold,
                           fontSize: MediaQuery.of(context).size.width > 1300
                               ? 20
-                              : 15,
+                              : 14,
                           color: ColorSchemes.primaryWhite,
                         ),
                       ),
@@ -54,7 +56,7 @@ class _BuildSkillsWidgetState extends State<BuildSkillsWidget> {
                           return Stack(
                             children: [
                               Container(
-                                width: MediaQuery.sizeOf(context).width * 0.3,
+                                width: MediaQuery.sizeOf(context).width * 0.17,
                                 height: 8,
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(5),
@@ -63,7 +65,7 @@ class _BuildSkillsWidgetState extends State<BuildSkillsWidget> {
                               ),
                               Container(
                                 width: MediaQuery.sizeOf(context).width *
-                                    0.3 *
+                                    0.17 *
                                     value,
                                 height: 8,
                                 decoration: BoxDecoration(
