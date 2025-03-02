@@ -84,6 +84,7 @@ class _AboutMeContentWidgetState extends State<AboutMeContentWidget>
               S.of(context).aboutMeDescription,
               maxLines: 10,
               overflow: TextOverflow.ellipsis,
+              textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     color: ColorSchemes.white,
                     fontWeight: FontWeight.normal,

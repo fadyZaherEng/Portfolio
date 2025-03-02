@@ -63,11 +63,11 @@ class _HeaderProfileSectionWidgetState extends State<HeaderProfileSectionWidget>
             });
           },
         ),
-        const SizedBox(height: 20),
+        const SizedBox(height: 16),
         _buildWelcomeMessage(textTheme),
-        const SizedBox(height: 10),
+        const SizedBox(height: 8),
         _buildAnimatedIntro(textTheme),
-        const SizedBox(height: 20),
+        const SizedBox(height: 16),
         CustomResumeWidget(
           onViewResumeTap: widget.onViewResumeTap,
           isDarkMode: widget.isDarkMode,
@@ -77,7 +77,7 @@ class _HeaderProfileSectionWidgetState extends State<HeaderProfileSectionWidget>
           width: 170,
           icon: Icons.download_rounded,
         ),
-        const SizedBox(height: 24),
+        const SizedBox(height: 16),
         InkWell(
           onTap: () => launchWhatsApp(
             phoneNumber: "+201273826361",
@@ -135,7 +135,7 @@ class _HeaderProfileSectionWidgetState extends State<HeaderProfileSectionWidget>
             ),
           ),
         ),
-        const SizedBox(height: 16),
+        const SizedBox(height: 8),
         InkWell(
           onTap: () => Clipboard.setData(
             const ClipboardData(text: "fedo.zaher@gmail.com"),
@@ -185,8 +185,7 @@ class _HeaderProfileSectionWidgetState extends State<HeaderProfileSectionWidget>
             ),
           ),
         ),
-        const SizedBox(height: 16),
-      ],
+       ],
     );
   }
 

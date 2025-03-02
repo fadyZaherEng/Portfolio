@@ -67,17 +67,20 @@ class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
       );
     });
 
-    _slideAnimations = List.generate(3, (index) {
-      return Tween<Offset>(
-        begin: const Offset(0, 0.3),
-        end: Offset.zero,
-      ).animate(
-        CurvedAnimation(
-          parent: _controller,
-          curve: Interval(index * 0.2, 1.0, curve: Curves.easeOut),
-        ),
-      );
-    });
+    _slideAnimations = List.generate(
+      3,
+      (index) {
+        return Tween<Offset>(
+          begin: const Offset(0, 0.3),
+          end: Offset.zero,
+        ).animate(
+          CurvedAnimation(
+            parent: _controller,
+            curve: Interval(index * 0.2, 1.0, curve: Curves.easeOut),
+          ),
+        );
+      },
+    );
     // Initialize Number Animations
     _androidController = AnimationController(
       duration: Duration(seconds: getPercentage(15)),
@@ -133,7 +136,7 @@ class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
       crossAxisAlignment: CrossAxisAlignment.center,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const SizedBox(height: 20),
+        const SizedBox(height: 10),
         FadeTransition(
           opacity: _fadeAnimations[0],
           child: Text(

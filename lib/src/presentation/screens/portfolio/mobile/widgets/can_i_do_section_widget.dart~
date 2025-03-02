@@ -141,7 +141,6 @@ class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   color: ColorSchemes.iconDarkWhite,
                   fontWeight: FontWeight.bold,
-                  fontSize: 22,
                 ),
           ),
         ),
@@ -224,7 +223,6 @@ class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
                   number <= 0 ? "0" : "\u200E+$number",
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                         color: ColorSchemes.primarySecondaryWhite,
-                        fontSize: 17,
                       ),
                 ),
               ],
@@ -237,7 +235,6 @@ class _WhatCanIDoSectionWidgetState extends State<WhatCanIDoSectionWidget>
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                 color: ColorSchemes.iconDarkWhite,
-                fontSize: 20,
               ),
         ),
       ],
