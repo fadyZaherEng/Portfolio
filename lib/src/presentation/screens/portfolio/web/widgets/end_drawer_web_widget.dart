@@ -236,7 +236,7 @@ class EndDrawerWebWidget extends StatelessWidget {
                   shape: BoxShape.circle,
                   image: DecorationImage(
                     fit: BoxFit.cover,
-                    image: AssetImage(ImagePaths.fedo2),
+                    image: AssetImage(ImagePaths.fady),
                   ),
                 ),
               ),
@@ -261,7 +261,7 @@ class EndDrawerWebWidget extends StatelessWidget {
           Center(
             child: Text(
               "${S.of(context).dashboard}     ",
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     color: ColorSchemes.white,
                     fontWeight: FontWeight.bold,
                   ),
