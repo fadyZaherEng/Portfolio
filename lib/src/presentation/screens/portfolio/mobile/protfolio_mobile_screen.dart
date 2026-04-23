@@ -103,51 +103,65 @@ class _PortfolioScreenState extends BaseState<PortfolioMobileScreen> {
             child: Stack(
               alignment: AlignmentDirectional.bottomEnd,
             children: [
-              SingleChildScrollView(
+              CustomScrollView(
                 controller: _scrollController,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      HeaderProfileSectionWidget(
-                        onViewResumeTap: () async {
-                          _openResume();
-                        },
-                        isDarkMode: isDarkMode,
-                        key: _headerKey,
-                      ),
-                      const SizedBox(height: 10),
-                      VisibilityDetector(
-                        key: const Key("whatCanIDoKeys"),
-                        onVisibilityChanged: (visibilityInfo) {
-                          _isCanIDoVisible =
-                              visibilityInfo.visibleFraction > 0.65;
-                          if (mounted) {
-                            setState(() {});
-                          }
-                        },
-                        child: WhatCanIDoSectionWidget(
-                          key: _whatCanIDoKey,
-                          isVisible: _isCanIDoVisible,
+                cacheExtent: 1000,
+                slivers: [
+                  SliverPadding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    sliver: SliverList(
+                      delegate: SliverChildListDelegate([
+                        RepaintBoundary(
+                          child: HeaderProfileSectionWidget(
+                            onViewResumeTap: () async {
+                              _openResume();
+                            },
+                            isDarkMode: isDarkMode,
+                            key: _headerKey,
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 10),
-                      SkillsDetailsOfferWidget(key: _offerKey),
-                      MyChapterEducationWidget(key: _myEducationsKey),
-                      MyChaptersCareerWidget(key: _myChaptersKey),
-                      FlutterPackagesMobileWidget(isDarkMode: isDarkMode),
-                      const SizedBox(height: 10),
-                      ProjectsWidgets(
-                        key: _projectsKey,
-                        isDarkMode: isDarkMode,
-                      ),
-                      ContactMeWidget(key: _contactKey),
-                      const SizedBox(height: 15),
-                    ],
+                        const SizedBox(height: 10),
+                        RepaintBoundary(
+                          child: VisibilityDetector(
+                            key: const Key("whatCanIDoKeys"),
+                            onVisibilityChanged: (visibilityInfo) {
+                              _isCanIDoVisible =
+                                  visibilityInfo.visibleFraction > 0.65;
+                              if (mounted) {
+                                setState(() {});
+                              }
+                            },
+                            child: WhatCanIDoSectionWidget(
+                              key: _whatCanIDoKey,
+                              isVisible: _isCanIDoVisible,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 10),
+                        RepaintBoundary(
+                            child: SkillsDetailsOfferWidget(key: _offerKey)),
+                        RepaintBoundary(
+                            child:
+                                MyChapterEducationWidget(key: _myEducationsKey)),
+                        RepaintBoundary(
+                            child: MyChaptersCareerWidget(key: _myChaptersKey)),
+                        RepaintBoundary(
+                            child: FlutterPackagesMobileWidget(
+                                isDarkMode: isDarkMode)),
+                        const SizedBox(height: 10),
+                        RepaintBoundary(
+                          child: ProjectsWidgets(
+                            key: _projectsKey,
+                            isDarkMode: isDarkMode,
+                          ),
+                        ),
+                        RepaintBoundary(
+                            child: ContactMeWidget(key: _contactKey)),
+                        const SizedBox(height: 15),
+                      ]),
+                    ),
                   ),
-                ),
+                ],
               ),
               Visibility(
                 visible: _scrollPercentage > 0 && _scrollPercentage < 0.95,

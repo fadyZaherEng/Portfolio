@@ -156,103 +156,123 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
   }
 
   Widget _buildContent() {
-    return SingleChildScrollView(
+    return CustomScrollView(
       controller: _scrollController,
-      padding: const EdgeInsets.symmetric(horizontal: 12),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          VisibilityDetector(
-            key: const Key("headerKeys"),
-            onVisibilityChanged: (visibilityInfo) {
-              if (mounted) {
-                setState(() => visibilityInfo.visibleFraction > 0.65
-                    ? _currentIndex = 0
-                    : null);
-              }
-            },
-            child: HeaderProfileSectionWebWidget(
-              onViewResumeTap: _openResume,
-              isDarkMode: isDarkMode,
-              key: _scrollKeys[0],
-            ),
+      cacheExtent: 1000, // Pre-render a bit more for smoothness
+      slivers: [
+        SliverPadding(
+          padding: const EdgeInsets.symmetric(horizontal: 12),
+          sliver: SliverList(
+            delegate: SliverChildListDelegate([
+              RepaintBoundary(
+                child: VisibilityDetector(
+                  key: const Key("headerKeys"),
+                  onVisibilityChanged: (visibilityInfo) {
+                    if (mounted) {
+                      setState(() => visibilityInfo.visibleFraction > 0.65
+                          ? _currentIndex = 0
+                          : null);
+                    }
+                  },
+                  child: HeaderProfileSectionWebWidget(
+                    onViewResumeTap: _openResume,
+                    isDarkMode: isDarkMode,
+                    key: _scrollKeys[0],
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              RepaintBoundary(
+                child: VisibilityDetector(
+                  key: const Key("whatCanIDoKeys"),
+                  onVisibilityChanged: (visibilityInfo) {
+                    if (mounted) {
+                      _isCanIDoVisible = visibilityInfo.visibleFraction > 0.65;
+                      setState(() {});
+                    }
+                  },
+                  child: WhatCanIDoSectionWebbWidget(
+                    key: _whatCanIDoKey,
+                    isVisible: _isCanIDoVisible,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              RepaintBoundary(
+                child: VisibilityDetector(
+                  key: const Key("skillsOfferKeys"),
+                  onVisibilityChanged: (visibilityInfo) {
+                    if (mounted) {
+                      setState(() => visibilityInfo.visibleFraction > 0.65
+                          ? _currentIndex = 1
+                          : null);
+                    }
+                  },
+                  child: SkillsDetailsOfferWebWidget(key: _scrollKeys[1]),
+                ),
+              ),
+              RepaintBoundary(
+                child: VisibilityDetector(
+                  key: const Key("educationKeys"),
+                  onVisibilityChanged: (visibilityInfo) {
+                    if (mounted) {
+                      setState(() => visibilityInfo.visibleFraction > 0.65
+                          ? _currentIndex = 3
+                          : null);
+                    }
+                  },
+                  child: MyChapterEducationWebWidget(key: _scrollKeys[3]),
+                ),
+              ),
+              RepaintBoundary(
+                child: VisibilityDetector(
+                  key: const Key("experienceKeys"),
+                  onVisibilityChanged: (visibilityInfo) {
+                    if (mounted) {
+                      setState(() => visibilityInfo.visibleFraction > 0.65
+                          ? _currentIndex = 4
+                          : null);
+                    }
+                  },
+                  child: MyChaptersCareerWebWidget(key: _scrollKeys[4]),
+                ),
+              ),
+              RepaintBoundary(
+                child: FlutterPackagesWebWidget(isDarkMode: isDarkMode),
+              ),
+              const SizedBox(height: 32),
+              RepaintBoundary(
+                child: VisibilityDetector(
+                  key: const Key("projectsKeys"),
+                  onVisibilityChanged: (visibilityInfo) {
+                    if (mounted) {
+                      setState(() => visibilityInfo.visibleFraction > 0.65
+                          ? _currentIndex = 2
+                          : null);
+                    }
+                  },
+                  child: ProjectsSectionsWebWidgets(
+                      key: _scrollKeys[2], isDarkMode: isDarkMode),
+                ),
+              ),
+              RepaintBoundary(
+                child: VisibilityDetector(
+                  key: const Key("contactKeys"),
+                  onVisibilityChanged: (visibilityInfo) {
+                    if (mounted) {
+                      setState(() => visibilityInfo.visibleFraction > 0.65
+                          ? _currentIndex = 5
+                          : null);
+                    }
+                  },
+                  child: ContactMeWebWidget(key: _scrollKeys[5]),
+                ),
+              ),
+              const SizedBox(height: 15),
+            ]),
           ),
-          const SizedBox(height: 10),
-          VisibilityDetector(
-            key: const Key("whatCanIDoKeys"),
-            onVisibilityChanged: (visibilityInfo) {
-              if (mounted) {
-                _isCanIDoVisible = visibilityInfo.visibleFraction > 0.65;
-                setState(() {});
-              }
-            },
-            child: WhatCanIDoSectionWebbWidget(
-              key: _whatCanIDoKey,
-              isVisible: _isCanIDoVisible,
-            ),
-          ),
-          const SizedBox(height: 10),
-          VisibilityDetector(
-            key: const Key("skillsOfferKeys"),
-            onVisibilityChanged: (visibilityInfo) {
-              if (mounted) {
-                setState(() => visibilityInfo.visibleFraction > 0.65
-                    ? _currentIndex = 1
-                    : null);
-              }
-            },
-            child: SkillsDetailsOfferWebWidget(key: _scrollKeys[1]),
-          ),
-          VisibilityDetector(
-            key: const Key("educationKeys"),
-            onVisibilityChanged: (visibilityInfo) {
-              if (mounted) {
-                setState(() => visibilityInfo.visibleFraction > 0.65
-                    ? _currentIndex = 3
-                    : null);
-              }
-            },
-            child: MyChapterEducationWebWidget(key: _scrollKeys[3]),
-          ),
-          VisibilityDetector(
-            key: const Key("experienceKeys"),
-            onVisibilityChanged: (visibilityInfo) {
-              if (mounted) {
-                setState(() => visibilityInfo.visibleFraction > 0.65
-                    ? _currentIndex = 4
-                    : null);
-              }
-            },
-            child: MyChaptersCareerWebWidget(key: _scrollKeys[4]),
-          ),
-          FlutterPackagesWebWidget(isDarkMode: isDarkMode),
-          const SizedBox(height: 32),
-          VisibilityDetector(
-            key: const Key("projectsKeys"),
-            onVisibilityChanged: (visibilityInfo) {
-              if (mounted) {
-                setState(() => visibilityInfo.visibleFraction > 0.65
-                    ? _currentIndex = 2
-                    : null);
-              }
-            },
-            child: ProjectsSectionsWebWidgets(
-                key: _scrollKeys[2], isDarkMode: isDarkMode),
-          ),
-          VisibilityDetector(
-            key: const Key("contactKeys"),
-            onVisibilityChanged: (visibilityInfo) {
-              if (mounted) {
-                setState(() => visibilityInfo.visibleFraction > 0.65
-                    ? _currentIndex = 5
-                    : null);
-              }
-            },
-            child: ContactMeWebWidget(key: _scrollKeys[5]),
-          ),
-          const SizedBox(height: 15),
-        ],
-      ),
+        ),
+      ],
     );
   }
 

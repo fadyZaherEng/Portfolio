@@ -160,6 +160,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
         "html": MessageLookupByLibrary.simpleMessage("إتش تي إم إل"),
         "http": MessageLookupByLibrary.simpleMessage("إتش تي تي بي"),
+        "huaweiAndAppleSkills": MessageLookupByLibrary.simpleMessage(
+            "الرفع على متجر Google و App Gallery، تكامل الإشعارات لـ HMS Huawei، مطور Huawei والعمل على Xcode Mac."),
         "imFady": MessageLookupByLibrary.simpleMessage(
             "أنا فادي زاهر، مهندس برمجيات  "),
         "integrationTesting":
@@ -238,6 +240,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "pushNotificationsTitle":
             MessageLookupByLibrary.simpleMessage("الإشعارات الفورية"),
         "python": MessageLookupByLibrary.simpleMessage("بايثون"),
+        "qCutDescription": MessageLookupByLibrary.simpleMessage(
+            "تطوير تطبيق جوال متعدد الأنظمة يربط الحلاقين بالعملاء للحجز والجدولة وإدارة الخدمات. تم تنفيذ ميزات حجز المواعيد في الوقت الفعلي، واختيار الخدمة، وعرض الأسعار، ومراجعات العملاء. متكامل مع الإشعارات، والمصادقة الآمنة، وواجهة مستخدم متجاوبة لكل من الحلاق والعميل. بني باستخدام Flutter و Firebase و REST APIs."),
+        "qCutTitle":
+            MessageLookupByLibrary.simpleMessage("تطبيق Q Cut (فيديو) (كود)"),
         "responsive": MessageLookupByLibrary.simpleMessage("متجاوب"),
         "responsiveUIAndPerformance": MessageLookupByLibrary.simpleMessage(
             "واجهة مستخدم متجاوبة وأداء عالي"),
@@ -248,6 +254,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "resume": MessageLookupByLibrary.simpleMessage("السيرة الذاتية"),
         "retrofit": MessageLookupByLibrary.simpleMessage("ريتروفِت"),
         "riverpod": MessageLookupByLibrary.simpleMessage("ريفر بود"),
+        "safetyZoneConsumerDescription": MessageLookupByLibrary.simpleMessage(
+            "تطوير تطبيق جوال للعملاء لطلب خدمات طفايات الحريق، وتتبع الطلبات في الوقت الفعلي، وتلقي تحديثات فورية. متكامل مع الإشعارات، وتاريخ الخدمة، وتدفق حجز بديهي. بني باستخدام Flutter و Firebase و REST APIs."),
+        "safetyZoneConsumerTitle": MessageLookupByLibrary.simpleMessage(
+            "تطبيق Safety Zone (المستهلك) (فيديو) (كود)"),
+        "safetyZoneProviderDescription": MessageLookupByLibrary.simpleMessage(
+            "بناء تطبيق جوال لجانب المزود لإدارة طلبات خدمة طفايات الحريق، وتحديث حالات المهام، وتتبع تقدم العمل. تم تنفيذ ميزات التواصل في الوقت الفعلي، وتكليف المهام، وتاريخ الخدمة. تطوير باستخدام Flutter و Firebase و REST APIs."),
+        "safetyZoneProviderTitle": MessageLookupByLibrary.simpleMessage(
+            "تطبيق Safety Zone (المزود) (فيديو) (كود)"),
         "search": MessageLookupByLibrary.simpleMessage("بحث"),
         "securityTesting":
             MessageLookupByLibrary.simpleMessage("اختبار الأمان"),

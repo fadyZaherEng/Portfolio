@@ -65,10 +65,12 @@ class _PortfolioBubblesWidgetState extends State<PortfolioBubblesWidget>
               animation: _controller,
               builder: (context, child) {
                 _updateBubbles();
-                return CustomPaint(
-                  painter: BubblePainter(
-                    bubbles: _bubbles,
-                    color: bubbleColor,
+                return RepaintBoundary(
+                  child: CustomPaint(
+                    painter: BubblePainter(
+                      bubbles: _bubbles,
+                      color: bubbleColor,
+                    ),
                   ),
                 );
               },

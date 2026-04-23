@@ -156,6 +156,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "html": MessageLookupByLibrary.simpleMessage("HTML"),
         "http": MessageLookupByLibrary.simpleMessage("HTTP"),
+        "huaweiAndAppleSkills": MessageLookupByLibrary.simpleMessage(
+            "Upload on Google Store, App Gallary, Push Notifications For HMS Huawei Integration, Huawei Developer and Work on Xcode Mac."),
         "imFady": MessageLookupByLibrary.simpleMessage(
             "I\'m Fady Zaher, A Software Engineer"),
         "integrationTesting":
@@ -237,6 +239,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "pushNotificationsTitle":
             MessageLookupByLibrary.simpleMessage("Push Notifications"),
         "python": MessageLookupByLibrary.simpleMessage("Python"),
+        "qCutDescription": MessageLookupByLibrary.simpleMessage(
+            "Developed a cross-platform mobile application connecting barbers with clients for booking, scheduling, and service management. Implemented features for real-time appointment booking, service selection, pricing display, and client reviews. Integrated push notifications, secure authentication, and a responsive UI for both barber and customer roles. Built using Flutter, Firebase, and REST APIs."),
+        "qCutTitle":
+            MessageLookupByLibrary.simpleMessage("Q Cut App (Video) (Code)"),
         "responsive": MessageLookupByLibrary.simpleMessage("Responsive"),
         "responsiveUIAndPerformance": MessageLookupByLibrary.simpleMessage(
             "Responsive UI and Performance"),
@@ -247,6 +253,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "resume": MessageLookupByLibrary.simpleMessage("Resume"),
         "retrofit": MessageLookupByLibrary.simpleMessage("Retrofit"),
         "riverpod": MessageLookupByLibrary.simpleMessage("Riverpod"),
+        "safetyZoneConsumerDescription": MessageLookupByLibrary.simpleMessage(
+            "Developed a mobile application for clients to request fire extinguisher services, track requests in real-time, and receive instant updates. Integrated push notifications, service history, and an intuitive booking flow. Built using Flutter, Firebase, and REST APIs."),
+        "safetyZoneConsumerTitle": MessageLookupByLibrary.simpleMessage(
+            "Safety Zone App (Consumer) (Video) (Code)"),
+        "safetyZoneProviderDescription": MessageLookupByLibrary.simpleMessage(
+            "Built a provider-side mobile application for managing fire extinguisher service requests, updating job statuses, and tracking work progress. Implemented real-time communication, job assignment, and service history features. Developed using Flutter, Firebase, and REST APIs."),
+        "safetyZoneProviderTitle": MessageLookupByLibrary.simpleMessage(
+            "Safety Zone App (Provider) (Video)(Code)"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "securityTesting":
             MessageLookupByLibrary.simpleMessage("Security Testing"),

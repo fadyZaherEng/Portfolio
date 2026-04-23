@@ -77,8 +77,8 @@ class ImagePaths {
   static const String news = "assets/images/gif/lottie/88.jpg";
   static const String androidNote = "assets/images/gif/lottie/15.jpg";
   static const String androidWhatsApp = "assets/images/gif/lottie/16.jpg";
-  static const String fedo1 = "assets/images/fedo1.png";
-  static const String fedo2 = "assets/images/fedo2.png";
+  static const String fedo1 = "assets/images/fadyy.png";
+  static const String fedo2 = "assets/images/fadyy.png";
   static const String drawing = "assets/images/gif/lottie/17.jpg";
   static const String bot = "assets/images/gif/lottie/bot.json";
   static const String downArrow = "assets/images/gif/lottie/downArrow.json";

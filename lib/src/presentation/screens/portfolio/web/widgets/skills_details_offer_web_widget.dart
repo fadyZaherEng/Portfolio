@@ -146,6 +146,7 @@ class _SkillsDetailsOfferWebWidgetState
         title: S.of(context).flutterTitle,
         description: S.of(context).flutterDescription,
         skills: [
+          S.of(context).huaweiAndAppleSkills,
           S.of(context).flutter,
           S.of(context).dart,
           S.of(context).firebase,

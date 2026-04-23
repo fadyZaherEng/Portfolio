@@ -1352,6 +1352,16 @@ class S {
     );
   }
 
+  /// `Upload on Google Store, App Gallary, Push Notifications For HMS Huawei Integration, Huawei Developer and Work on Xcode Mac.`
+  String get huaweiAndAppleSkills {
+    return Intl.message(
+      'Upload on Google Store, App Gallary, Push Notifications For HMS Huawei Integration, Huawei Developer and Work on Xcode Mac.',
+      name: 'huaweiAndAppleSkills',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Flutter Developer`
   String get flutterDeveloper {
     return Intl.message(
@@ -1909,6 +1919,66 @@ class S {
     return Intl.message(
       'Load Less',
       name: 'loadLess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Q Cut App (Video) (Code)`
+  String get qCutTitle {
+    return Intl.message(
+      'Q Cut App (Video) (Code)',
+      name: 'qCutTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Developed a cross-platform mobile application connecting barbers with clients for booking, scheduling, and service management. Implemented features for real-time appointment booking, service selection, pricing display, and client reviews. Integrated push notifications, secure authentication, and a responsive UI for both barber and customer roles. Built using Flutter, Firebase, and REST APIs.`
+  String get qCutDescription {
+    return Intl.message(
+      'Developed a cross-platform mobile application connecting barbers with clients for booking, scheduling, and service management. Implemented features for real-time appointment booking, service selection, pricing display, and client reviews. Integrated push notifications, secure authentication, and a responsive UI for both barber and customer roles. Built using Flutter, Firebase, and REST APIs.',
+      name: 'qCutDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Safety Zone App (Provider) (Video)(Code)`
+  String get safetyZoneProviderTitle {
+    return Intl.message(
+      'Safety Zone App (Provider) (Video)(Code)',
+      name: 'safetyZoneProviderTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Built a provider-side mobile application for managing fire extinguisher service requests, updating job statuses, and tracking work progress. Implemented real-time communication, job assignment, and service history features. Developed using Flutter, Firebase, and REST APIs.`
+  String get safetyZoneProviderDescription {
+    return Intl.message(
+      'Built a provider-side mobile application for managing fire extinguisher service requests, updating job statuses, and tracking work progress. Implemented real-time communication, job assignment, and service history features. Developed using Flutter, Firebase, and REST APIs.',
+      name: 'safetyZoneProviderDescription',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Safety Zone App (Consumer) (Video) (Code)`
+  String get safetyZoneConsumerTitle {
+    return Intl.message(
+      'Safety Zone App (Consumer) (Video) (Code)',
+      name: 'safetyZoneConsumerTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Developed a mobile application for clients to request fire extinguisher services, track requests in real-time, and receive instant updates. Integrated push notifications, service history, and an intuitive booking flow. Built using Flutter, Firebase, and REST APIs.`
+  String get safetyZoneConsumerDescription {
+    return Intl.message(
+      'Developed a mobile application for clients to request fire extinguisher services, track requests in real-time, and receive instant updates. Integrated push notifications, service history, and an intuitive booking flow. Built using Flutter, Firebase, and REST APIs.',
+      name: 'safetyZoneConsumerDescription',
       desc: '',
       args: [],
     );
