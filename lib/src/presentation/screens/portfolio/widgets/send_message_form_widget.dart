@@ -105,7 +105,7 @@ class _SendMessageFormWidgetState extends State<SendMessageFormWidget> {
             Text(
               "Send me a message",
               style: TextStyle(
-                color: ColorSchemes.primary,
+                color: Colors.black,
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
@@ -213,10 +213,10 @@ class _SendMessageFormWidgetState extends State<SendMessageFormWidget> {
         controller: controller,
         maxLines: maxLines,
         validator: validator,
-        style: const TextStyle(color: Colors.black87),
+        style: const TextStyle(color: Colors.black),
         decoration: InputDecoration(
           hintText: hint,
-          hintStyle: TextStyle(color: Colors.grey.shade500),
+          hintStyle: TextStyle(color: Colors.grey.shade600),
           prefixIcon: maxLines > 1
               ? Column(
                   mainAxisAlignment: MainAxisAlignment.start,

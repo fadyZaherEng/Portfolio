@@ -31,7 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "مهندس برمجيات على Flutter، مهندس برمجيات موبايل، مهندس برمجيات Android، مهندس برمجيات iOS"),
         "aboutMe": MessageLookupByLibrary.simpleMessage("حولي"),
         "aboutMeDescription": MessageLookupByLibrary.simpleMessage(
-            " أنا مهندس برمجيات متوسط المستوى، شغوف بتطوير تطبيقات الهاتف المحمول مع  2 + سنوات من الخبرة، أبحث عن عمل كمهندس برمجيات Flutter لاكتساب خبرة حقيقية والمساهمة في تحقيق أهداف المؤسسة."),
+            " أنا مهندس برمجيات متوسط المستوى، شغوف بتطوير تطبيقات الهاتف المحمول مع  3 + سنوات من الخبرة، أبحث عن عمل كمهندس برمجيات Flutter لاكتساب خبرة حقيقية والمساهمة في تحقيق أهداف المؤسسة."),
         "adaptive": MessageLookupByLibrary.simpleMessage("تكيفي"),
         "adaptiveUI":
             MessageLookupByLibrary.simpleMessage("واجهة مستخدم تكيفية"),
@@ -205,7 +205,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "مهندس برمجيات هاتف محمول مستقل"),
         "mockito": MessageLookupByLibrary.simpleMessage("موكيتو"),
         "moreThanYearsExperienceAsA":
-            MessageLookupByLibrary.simpleMessage("مع خبرة 2 + سنة في"),
+            MessageLookupByLibrary.simpleMessage("مع خبرة 3 + سنة في"),
         "myChapter":
             MessageLookupByLibrary.simpleMessage("فصول من مسيرتي المهنية"),
         "myProjects": MessageLookupByLibrary.simpleMessage("مشاريعي"),

@@ -29,7 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "A Software Engineer, A Flutter Developer, A Mobile Software Engineer, A Android Developer, A IOS Developer"),
         "aboutMe": MessageLookupByLibrary.simpleMessage("About Me"),
         "aboutMeDescription": MessageLookupByLibrary.simpleMessage(
-            "I’m Mid Level Software Engineer, passionate about mobile development with ‎+ 2 Years of Experience, looking for work as Flutter Software Engineer to gain real experience and assist the organization to achieve their goals"),
+            "I’m Mid Level Software Engineer, passionate about mobile development with ‎+ 3 Years of Experience, looking for work as Flutter Software Engineer to gain real experience and assist the organization to achieve their goals"),
         "adaptive": MessageLookupByLibrary.simpleMessage("Adaptive"),
         "adaptiveUI": MessageLookupByLibrary.simpleMessage("Adaptive UI"),
         "additionalSkillsDescription": MessageLookupByLibrary.simpleMessage(
@@ -203,7 +203,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Freelancer Mobile Software Engineer"),
         "mockito": MessageLookupByLibrary.simpleMessage("Mockito"),
         "moreThanYearsExperienceAsA":
-            MessageLookupByLibrary.simpleMessage("‎‎+ 2 Years Experience As A"),
+            MessageLookupByLibrary.simpleMessage("‎‎+ 3 Years Experience As A"),
         "myChapter":
             MessageLookupByLibrary.simpleMessage("Chapters Of My Career"),
         "myProjects": MessageLookupByLibrary.simpleMessage("My Projects"),
