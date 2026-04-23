@@ -96,15 +96,10 @@ class _MyAppState extends State<MyApp> {
                       locale: state is InitialMainState
                           ? state.locale
                           : window.locale,
-
                       navigatorKey: navigatorKey,
-                      navigatorObservers: [
-                        routeObserver,
-                      ],
+                      navigatorObservers: [routeObserver],
                       onGenerateRoute: RoutesManager.getRoute,
                       initialRoute: Routes.splash,
-
-                      // Pass versionCode when navigating to the splash screen
                     ),
             ),
           );

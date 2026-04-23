@@ -113,6 +113,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "fadyZaher": MessageLookupByLibrary.simpleMessage("Fady Zaher"),
         "failedToLaunchWhatsApp":
             MessageLookupByLibrary.simpleMessage("Failed to launch WhatsApp"),
+        "failedToSendMessage": MessageLookupByLibrary.simpleMessage(
+            "Failed to send message. Please try again."),
         "feelFreeToContactMe": MessageLookupByLibrary.simpleMessage(
             "Feel free to reach out if you\'d like to discuss a project, a job opportunity, or simply want to connect."),
         "firebase": MessageLookupByLibrary.simpleMessage("Firebase"),
@@ -192,6 +194,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "message": MessageLookupByLibrary.simpleMessage("Message"),
         "messageIsRequired":
             MessageLookupByLibrary.simpleMessage("Message is required"),
+        "messageSentSuccessfully":
+            MessageLookupByLibrary.simpleMessage("Message sent successfully!"),
         "midLevelFlutterSoftwareEngineer": MessageLookupByLibrary.simpleMessage(
             "Mid Level Flutter Software Engineer"),
         "midLevelSoftwareEngineer":
