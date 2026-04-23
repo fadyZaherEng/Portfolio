@@ -181,32 +181,37 @@ class Constants {
         url:
             "https://drive.google.com/file/d/1t-gLVnSTQyXeGp8M5CQCbxFdbmfOGRlg/view?usp=drivesdk"),
   ];
-
   static ProjectList projectList = ProjectList.fromJson({
     "projects": [
       {
-        "title_en": "Q Cut App (Video) (Code)",
+        "title_en": "Q Cut App",
         "title_ar": "تطبيق Q Cut (فيديو) (كود)",
-        "description_en": "Developed a cross-platform mobile application connecting barbers with clients for booking, scheduling, and service management. Implemented features for real-time appointment booking, service selection, pricing display, and client reviews. Integrated push notifications, secure authentication, and a responsive UI for both barber and customer roles. Built using Flutter, Firebase, and REST APIs.",
-        "description_ar": "تطوير تطبيق جوال متعدد الأنظمة يربط الحلاقين بالعملاء للحجز والجدولة وإدارة الخدمات. تم تنفيذ ميزات حجز المواعيد في الوقت الفعلي، واختيار الخدمة، وعرض الأسعار، ومراجعات العملاء. متكامل مع الإشعارات، والمصادقة الآمنة، وواجهة مستخدم متجاوبة لكل من الحلاق والعميل. بني باستخدام Flutter و Firebase و REST APIs.",
-        "url": "https://github.com/fadyZaherEng",
-        "image": ImagePaths.imagePlaceHolder,
+        "description_en":
+            "Developed a cross-platform mobile application connecting barbers with clients for booking, scheduling, and service management. Implemented features for real-time appointment booking, service selection, pricing display, and client reviews. Integrated push notifications, secure authentication, and a responsive UI for both barber and customer roles. Built using Flutter, Firebase, and REST APIs.",
+        "description_ar":
+            "تطوير تطبيق جوال متعدد الأنظمة يربط الحلاقين بالعملاء للحجز والجدولة وإدارة الخدمات. تم تنفيذ ميزات حجز المواعيد في الوقت الفعلي، واختيار الخدمة، وعرض الأسعار، ومراجعات العملاء. متكامل مع الإشعارات، والمصادقة الآمنة، وواجهة مستخدم متجاوبة لكل من الحلاق والعميل. بني باستخدام Flutter و Firebase و REST APIs.",
+        "url": "https://www.youtube.com/shorts/FDtAiPll5iA",
+        "image": ImagePaths.qcut,
       },
       {
-        "title_en": "Safety Zone App (Provider) (Video)(Code)",
+        "title_en": "Safety Zone App (Provider)",
         "title_ar": "تطبيق Safety Zone (المزود) (فيديو) (كود)",
-        "description_en": "Built a provider-side mobile application for managing fire extinguisher service requests, updating job statuses, and tracking work progress. Implemented real-time communication, job assignment, and service history features. Developed using Flutter, Firebase, and REST APIs.",
-        "description_ar": "بناء تطبيق جوال لجانب المزود لإدارة طلبات خدمة طفايات الحريق، وتحديث حالات المهام، وتتبع تقدم العمل. تم تنفيذ ميزات التواصل في الوقت الفعلي، وتكليف المهام، وتاريخ الخدمة. تطوير باستخدام Flutter و Firebase و REST APIs.",
-        "url": "https://github.com/fadyZaherEng",
-        "image": ImagePaths.imagePlaceHolder,
+        "description_en":
+            "Built a provider-side mobile application for managing fire extinguisher service requests, updating job statuses, and tracking work progress. Implemented real-time communication, job assignment, and service history features. Developed using Flutter, Firebase, and REST APIs.",
+        "description_ar":
+            "بناء تطبيق جوال لجانب المزود لإدارة طلبات خدمة طفايات الحريق، وتحديث حالات المهام، وتتبع تقدم العمل. تم تنفيذ ميزات التواصل في الوقت الفعلي، وتكليف المهام، وتاريخ الخدمة. تطوير باستخدام Flutter و Firebase و REST APIs.",
+        "url": "https://www.youtube.com/watch?v=B7YdfSc6uN4",
+        "image": ImagePaths.provider,
       },
       {
-        "title_en": "Safety Zone App (Consumer) (Video) (Code)",
+        "title_en": "Safety Zone App (Consumer)",
         "title_ar": "تطبيق Safety Zone (المستهلك) (فيديو) (كود)",
-        "description_en": "Developed a mobile application for clients to request fire extinguisher services, track requests in real-time, and receive instant updates. Integrated push notifications, service history, and an intuitive booking flow. Built using Flutter, Firebase, and REST APIs.",
-        "description_ar": "تطوير تطبيق جوال للعملاء لطلب خدمات طفايات الحريق، وتتبع الطلبات في الوقت الفعلي، وتلقي تحديثات فورية. متكامل مع الإشعارات، وتاريخ الخدمة، وتدفق حجز بديهي. بني باستخدام Flutter و Firebase و REST APIs.",
-        "url": "https://github.com/fadyZaherEng",
-        "image": ImagePaths.imagePlaceHolder,
+        "description_en":
+            "Developed a mobile application for clients to request fire extinguisher services, track requests in real-time, and receive instant updates. Integrated push notifications, service history, and an intuitive booking flow. Built using Flutter, Firebase, and REST APIs.",
+        "description_ar":
+            "تطوير تطبيق جوال للعملاء لطلب خدمات طفايات الحريق، وتتبع الطلبات في الوقت الفعلي، وتلقي تحديثات فورية. متكامل مع الإشعارات، وتاريخ الخدمة، وتدفق حجز بديهي. بني باستخدام Flutter و Firebase و REST APIs.",
+        "url": "https://youtu.be/OL7rfYgvnD0?si=IXMumRdJHC5Z_02S",
+        "image": ImagePaths.consumer,
       },
       {
         "title_en": "BMI Calculator Flutter App",

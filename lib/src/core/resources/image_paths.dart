@@ -58,8 +58,11 @@ class ImagePaths {
   static const String versionControl =
       "assets/images/gif/icons/version_control.png";
   static const String webDev = "assets/images/gif/icons/web.png";
-  static const String notifications =
-      "assets/images/gif/icons/notification.png";
+  static const String notifications = "assets/images/gif/icons/notification.png";
+
+  static const String provider = "assets/images/provider.png";
+  static const String consumer = "assets/images/consumer.png";
+  static const String qcut = "assets/images/qcut.png";
 
   static const String bmi = "assets/images/gif/lottie/1.jpg";
   static const String learn = "assets/images/gif/lottie/2.jpg";
