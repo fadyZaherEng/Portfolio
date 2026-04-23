@@ -18,6 +18,7 @@ class Constants {
   static const String defaultPriority = "default";
   static const String light = "light";
   static const String dark = "dark";
+
   static List<Training> trainings = [
     Training(
         title: "Mobile Competition",

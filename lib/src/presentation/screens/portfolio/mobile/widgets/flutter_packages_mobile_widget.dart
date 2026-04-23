@@ -5,22 +5,22 @@ import 'package:my_portfolio/src/core/utils/openLink.dart';
 
 class FlutterPackagesMobileWidget extends StatelessWidget {
   final bool isDarkMode;
+
   const FlutterPackagesMobileWidget({super.key, required this.isDarkMode});
 
   @override
   Widget build(BuildContext context) {
-    final Color cardColor = isDarkMode 
-        ? ColorSchemes.primary.withOpacity(0.15) 
+    final Color cardColor = isDarkMode
+        ? ColorSchemes.primary.withOpacity(0.15)
         : ColorSchemes.primary.withOpacity(0.05);
-    final Color borderColor = isDarkMode 
-        ? ColorSchemes.primary.withOpacity(0.3) 
+    final Color borderColor = isDarkMode
+        ? ColorSchemes.primary.withOpacity(0.3)
         : ColorSchemes.primary.withOpacity(0.1);
 
-    final Color titleColor = isDarkMode 
-        ? ColorSchemes.secondary 
-        : ColorSchemes.primary;
-    final Color subtitleColor = isDarkMode 
-        ? Colors.white.withOpacity(0.7) 
+    final Color titleColor =
+        isDarkMode ? ColorSchemes.secondary : ColorSchemes.primary;
+    final Color subtitleColor = isDarkMode
+        ? Colors.white.withOpacity(0.7)
         : ColorSchemes.primary.withOpacity(0.6);
 
     return Padding(
@@ -49,7 +49,8 @@ class FlutterPackagesMobileWidget extends StatelessWidget {
           _buildPackageCard(
             title: "fzTrimmer",
             subtitle: "Video Trimming Utility",
-            description: "A highly flexible Flutter package for video trimming. Provides a sleek UI for selecting video segments with precision.",
+            description:
+                "A highly flexible Flutter package for video trimming. Provides a sleek UI for selecting video segments with precision.",
             icon: Icons.video_library_rounded,
             url: "https://pub.dev/packages/fz_trimmer",
             cardColor: cardColor,
@@ -61,7 +62,8 @@ class FlutterPackagesMobileWidget extends StatelessWidget {
           _buildPackageCard(
             title: "fzReactionsChat",
             subtitle: "Chat Reactions Interface",
-            description: "Visually appealing chat reaction system. Offers customizable emoji reactions with smooth animations.",
+            description:
+                "Visually appealing chat reaction system. Offers customizable emoji reactions with smooth animations.",
             icon: Icons.add_reaction_rounded,
             url: "https://pub.dev/packages/fz_reactions_chat",
             cardColor: cardColor,
@@ -73,7 +75,8 @@ class FlutterPackagesMobileWidget extends StatelessWidget {
           _buildPackageCard(
             title: "fz_google_oauth2",
             subtitle: "Google OAuth2 Handler",
-            description: "Full control over Google OAuth2 login without Web View. Gracefully handles token expiration.",
+            description:
+                "Full control over Google OAuth2 login without Web View. Gracefully handles token expiration.",
             icon: FontAwesomeIcons.google,
             url: "https://pub.dev/packages/fz_google_oauth2",
             cardColor: cardColor,
@@ -141,7 +144,9 @@ class FlutterPackagesMobileWidget extends StatelessWidget {
             description,
             style: TextStyle(
               fontSize: 14,
-              color: ColorSchemes.white.withOpacity(0.9),
+              color: isDarkMode
+                  ? ColorSchemes.white.withOpacity(0.9)
+                  : ColorSchemes.black,
               height: 1.4,
             ),
           ),
@@ -159,8 +164,11 @@ class FlutterPackagesMobileWidget extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(width: 4),
-                Icon(Icons.arrow_forward_rounded, 
-                  color: titleColor, size: 14),
+                Icon(
+                  Icons.arrow_forward_rounded,
+                  color: titleColor,
+                  size: 14,
+                ),
               ],
             ),
           ),

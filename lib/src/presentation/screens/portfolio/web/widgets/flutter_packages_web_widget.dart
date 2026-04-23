@@ -167,7 +167,8 @@ class FlutterPackagesWebWidget extends StatelessWidget {
                 description,
                 style: TextStyle(
                   fontSize: 15,
-                  color: ColorSchemes.white.withOpacity(0.9),
+                  color:isDarkMode? ColorSchemes.white.withOpacity(0.9):
+                    ColorSchemes.black,
                   height: 1.5,
                 ),
                 maxLines: 5,
