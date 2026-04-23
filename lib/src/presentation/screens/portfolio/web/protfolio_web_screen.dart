@@ -14,6 +14,7 @@ import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/can_
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/contact_me_web_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/custom_app_bar_web_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/end_drawer_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/flutter_packages_web_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/header_portfolio_section_web_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/my_chapter_education_web_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/my_chapters_career_web_widget.dart';
@@ -224,6 +225,7 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
             },
             child: MyChaptersCareerWebWidget(key: _scrollKeys[4]),
           ),
+          FlutterPackagesWebWidget(isDarkMode: isDarkMode),
           const SizedBox(height: 32),
           VisibilityDetector(
             key: const Key("projectsKeys"),

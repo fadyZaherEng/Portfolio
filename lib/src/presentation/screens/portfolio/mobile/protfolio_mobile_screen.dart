@@ -11,6 +11,7 @@ import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/c
 import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/contact_me_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/custom_app_bar_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/end_drawer_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/flutter_packages_mobile_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/header_portfolio_section_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/my_chapter_education_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/my_chapters_career_widget.dart';
@@ -136,6 +137,7 @@ class _PortfolioScreenState extends BaseState<PortfolioMobileScreen> {
                       SkillsDetailsOfferWidget(key: _offerKey),
                       MyChapterEducationWidget(key: _myEducationsKey),
                       MyChaptersCareerWidget(key: _myChaptersKey),
+                      FlutterPackagesMobileWidget(isDarkMode: isDarkMode),
                       const SizedBox(height: 10),
                       ProjectsWidgets(
                         key: _projectsKey,
