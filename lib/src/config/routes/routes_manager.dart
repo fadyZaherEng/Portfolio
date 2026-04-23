@@ -7,9 +7,12 @@ import 'package:my_portfolio/src/presentation/screens/skills/skills_screen.dart'
 import 'package:my_portfolio/src/presentation/screens/touch_me/touch_me_screen.dart';
 import 'package:my_portfolio/src/presentation/screens/training/training_screen.dart';
 
+import 'package:my_portfolio/src/presentation/screens/splash/splash_screen.dart';
+
 final GlobalKey<NavigatorState> webNavigatorKey = GlobalKey<NavigatorState>();
 
 class Routes {
+  static const String splash = "/splash";
   static const String portfolio = "/";
   static const String skillsWeb = "/mySkills";
   static const String trainingWeb = "/myTraining";
@@ -21,6 +24,8 @@ class RoutesManager {
   static Route<dynamic> getRoute(RouteSettings routeSettings) {
     print("Mobile routeSettings.name: ${routeSettings.name}");
     switch (routeSettings.name) {
+      case Routes.splash:
+        return _materialRoute(const SplashScreen());
       case Routes.portfolio:
         return _materialRoute(const PortfolioScreen());
       case Routes.trainingWeb:
@@ -52,11 +57,16 @@ class RoutesManager {
 
 //web router
 final GoRouter webRouter = GoRouter(
-  initialLocation: Routes.portfolio,
+  initialLocation: Routes.splash,
   debugLogDiagnostics: true,
   navigatorKey: webNavigatorKey,
   observers: [routeObserver],
   routes: [
+    GoRoute(
+      path: Routes.splash,
+      name: Routes.splash,
+      builder: (context, state) => const SplashScreen(),
+    ),
     GoRoute(
       path: Routes.portfolio,
       name: Routes.portfolio,

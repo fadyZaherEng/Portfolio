@@ -75,6 +75,8 @@ dev_dependencies:
 
   build_runner: ^2.4.6
 
+  flutter_native_splash: ^2.3.1
+
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
   # activated in the `analysis_options.yaml` file located at the root of your
@@ -153,3 +155,11 @@ flutter:
   # see https://flutter.dev/custom-fonts/#from-packages
 flutter_intl:
   enabled: true
+
+flutter_native_splash:
+  color: "#000028"
+  image: assets/images/fadyy.png
+  android_12:
+    image: assets/images/fadyy.png
+    color: "#000028"
+  web: true

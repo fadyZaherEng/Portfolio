@@ -102,7 +102,7 @@ class _MyAppState extends State<MyApp> {
                         routeObserver,
                       ],
                       onGenerateRoute: RoutesManager.getRoute,
-                      initialRoute: Routes.portfolio,
+                      initialRoute: Routes.splash,
 
                       // Pass versionCode when navigating to the splash screen
                     ),
