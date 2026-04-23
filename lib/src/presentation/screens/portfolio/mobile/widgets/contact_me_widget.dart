@@ -12,6 +12,8 @@ import 'package:my_portfolio/src/domain/usecase/get_theme_use_case.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/contact_me_hover_button_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/custom_footer_social_icon_widget.dart';
 
+import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/send_message_form_widget.dart';
+
 class ContactMeWidget extends StatelessWidget {
   const ContactMeWidget({super.key});
 
@@ -47,6 +49,8 @@ class ContactMeWidget extends StatelessWidget {
                         fontSize: 15,
                       ),
                 ),
+                const SizedBox(height: 30),
+                const SendMessageFormWidget(),
                 const SizedBox(height: 20),
                 const ContactMeHoverButtonWidget(),
                 const SizedBox(height: 30),

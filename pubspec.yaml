@@ -67,6 +67,7 @@ dependencies:
   universal_html:
   clipboard:
   mailto:
+  http: ^1.1.0
 
 
 dev_dependencies:

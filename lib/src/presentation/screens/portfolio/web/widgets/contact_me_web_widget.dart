@@ -4,8 +4,8 @@ import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/core/utils/openLink.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/contact_me_hover_button_web_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/custom_footer_social_icon_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/widgets/send_message_form_widget.dart';
 
 class ContactMeWebWidget extends StatelessWidget {
   const ContactMeWebWidget({super.key});
@@ -35,112 +35,100 @@ class ContactMeWebWidget extends StatelessWidget {
           child: Container(
             width: MediaQuery.of(context).size.width * 0.8,
             decoration: BoxDecoration(
-              color: ColorSchemes.primary,
-              borderRadius: BorderRadius.circular(10),
+              color: ColorSchemes.primary.withOpacity(0.05),
+              borderRadius: BorderRadius.circular(20),
+              border: Border.all(color: ColorSchemes.primary.withOpacity(0.1)),
             ),
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
+              padding: const EdgeInsets.all(40),
               child: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const SizedBox(height: 60),
-                          Text(
-                            S.of(context).letsCreateSomethingAmazing,
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge
-                                ?.copyWith(
-                                  color: ColorSchemes.white,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 25,
-                                ),
-                          ),
-                          const SizedBox(height: 20),
-                          Text(
-                            S.of(context).feelFreeToContactMe,
-                            style:
-                                Theme.of(context).textTheme.bodySmall?.copyWith(
-                                      color: ColorSchemes.white,
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 18,
-                                    ),
-                          ),
-                          const SizedBox(height: 40),
-                          const ContactMeHoverButtonWebWidget(),
-                        ],
-                      ),
-                      const Spacer(),
-                      ClipOval(
-                        child: Image.asset(
-                          ImagePaths.fedo2,
-                          width: 320,
-                          height: 320,
-                          fit: BoxFit.cover,
-                          // matchTextDirection: true,
+                      Expanded(
+                        flex: 1,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              S.of(context).letsCreateSomethingAmazing,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge
+                                  ?.copyWith(
+                                    color: ColorSchemes.primary,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 32,
+                                  ),
+                            ),
+                            const SizedBox(height: 20),
+                            Text(
+                              S.of(context).feelFreeToContactMe,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall
+                                  ?.copyWith(
+                                    color: ColorSchemes.primary.withOpacity(0.7),
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 18,
+                                  ),
+                            ),
+                            const SizedBox(height: 40),
+                            const Center(child: SendMessageFormWidget()),
+                          ],
                         ),
                       ),
-                      const Spacer(),
+                      const SizedBox(width: 40),
+                      Expanded(
+                        flex: 1,
+                        child: Center(
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image.asset(
+                              ImagePaths.fedo2,
+                              width: 400,
+                              height: 500,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
-                  const SizedBox(height: 30),
-                  Container(
-                    color: ColorSchemes.primarySecondaryWhite,
-                    height: 2,
-                    width: MediaQuery.of(context).size.width * 0.8,
+                  const SizedBox(height: 40),
+                  Divider(color: ColorSchemes.primary.withOpacity(0.2)),
+                  const SizedBox(height: 20),
+                  Wrap(
+                    spacing: 20,
+                    children: [
+                      buildSocialIcon(
+                        iconData: FontAwesomeIcons.github,
+                        url: 'https://github.com/fadyZaherEng',
+                        context: context,
+                      ),
+                      buildSocialIcon(
+                        iconData: FontAwesomeIcons.envelope,
+                        url: 'mailto:fedo.zaher@gmail.com',
+                        context: context,
+                      ),
+                      buildSocialIcon(
+                        iconData: FontAwesomeIcons.whatsapp,
+                        url: 'https://wa.me/+201273826361',
+                        context: context,
+                      ),
+                      buildSocialIcon(
+                        iconData: FontAwesomeIcons.linkedin,
+                        url: 'https://www.linkedin.com/in/fadyzaher',
+                        context: context,
+                      ),
+                      buildSocialIcon(
+                        iconData: FontAwesomeIcons.facebook,
+                        url: 'https://www.facebook.com/share/18gTWiitR2/',
+                        context: context,
+                      ),
+                    ],
                   ),
-                  const SizedBox(height: 16),
-                  Center(
-                    child: Wrap(
-                      spacing: 15,
-                      children: [
-                        buildSocialIcon(
-                          iconData: FontAwesomeIcons.github,
-                          url: 'https://github.com/fadyZaherEng',
-                          context: context,
-                        ),
-                        buildSocialIcon(
-                          iconData: FontAwesomeIcons.envelope,
-                          url: 'mailto:fedo.zaher@gmail.com',
-                          context: context,
-                        ),
-                        buildSocialIcon(
-                          iconData: FontAwesomeIcons.whatsapp,
-                          url: 'https://wa.me/+201273826361',
-                          context: context,
-                        ),
-                        buildSocialIcon(
-                          iconData: FontAwesomeIcons.linkedin,
-                          url:
-                              'https://www.linkedin.com/in/fadyzaher?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-                          context: context,
-                        ),
-                        buildSocialIcon(
-                          iconData: FontAwesomeIcons.facebook,
-                          url: 'https://www.facebook.com/share/18gTWiitR2/',
-                          context: context,
-                        ),
-                        buildSocialIcon(
-                          iconData: FontAwesomeIcons.youtube,
-                          url:
-                              'https://youtube.com/@fadyzaher2980?si=oTlLh6L2KhSK-tLG',
-                          context: context,
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 16),
                 ],
               ),
             ),
