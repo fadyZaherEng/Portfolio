@@ -35,14 +35,12 @@ class _SplashScreenState extends State<SplashScreen> {
       if (kIsWeb) {
         context.go(Routes.portfolio);
       } else {
-        // استخدام Navigator.of(context) للتأكد من الوصول للملاح الصحيح
         Navigator.of(context).pushNamedAndRemoveUntil(
           Routes.portfolio,
           (route) => false,
         );
       }
     } catch (e) {
-      // Fallback في حالة حدوث أي خطأ في الـ Router
       if (mounted) {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (context) => const PortfolioScreen()),
@@ -105,9 +103,11 @@ class _SplashScreenState extends State<SplashScreen> {
                         child: Image.asset(
                           ImagePaths.fady,
                           fit: BoxFit.cover,
-                          errorBuilder: (context, error, stackTrace) => Container(
+                          errorBuilder: (context, error, stackTrace) =>
+                              Container(
                             color: Colors.grey.shade200,
-                            child: const Icon(Icons.person, size: 100, color: Colors.grey),
+                            child: const Icon(Icons.person,
+                                size: 100, color: Colors.grey),
                           ),
                         ),
                       ),
@@ -146,10 +146,8 @@ class _SplashScreenState extends State<SplashScreen> {
                         color: ColorSchemes.secondary,
                         borderRadius: BorderRadius.circular(10),
                       ),
-                    )
-                        .animate()
-                        .scaleX(
-                            delay: 1000.ms, duration: 600.ms, begin: 0, end: 1),
+                    ).animate().scaleX(
+                        delay: 1000.ms, duration: 600.ms, begin: 0, end: 1),
                   ],
                 ),
               ),
