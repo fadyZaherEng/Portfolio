@@ -21,6 +21,7 @@ import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/w
 import 'package:my_portfolio/src/presentation/screens/skills/skills_screen.dart';
 import 'package:my_portfolio/src/presentation/screens/touch_me/touch_me_screen.dart';
 import 'package:my_portfolio/src/presentation/screens/training/training_screen.dart';
+import 'package:my_portfolio/src/presentation/widgets/portfolio_bubbles_widget.dart';
 import 'package:my_portfolio/src/presentation/widgets/restart_widget.dart';
 import "package:universal_html/html.dart" as html;
 import 'package:visibility_detector/visibility_detector.dart';
@@ -86,8 +87,7 @@ class _PortfolioScreenState extends BaseState<PortfolioMobileScreen> {
       builder: (context, state) {
         return Scaffold(
           resizeToAvoidBottomInset: false,
-          backgroundColor:
-              isDarkMode ? ColorSchemes.iconBackGround : ColorSchemes.white,
+          backgroundColor: Colors.transparent,
           endDrawer: _buildEndDrawer(context),
           appBar: CustomAppBarWidget(
             onLogoTap: () {
@@ -95,8 +95,12 @@ class _PortfolioScreenState extends BaseState<PortfolioMobileScreen> {
               html.window.location.reload();
             },
           ),
-          body: Stack(
-            alignment: AlignmentDirectional.bottomEnd,
+          body: PortfolioBubblesWidget(
+            isDarkMode: isDarkMode,
+            backgroundColor:
+                isDarkMode ? ColorSchemes.iconBackGround : ColorSchemes.white,
+            child: Stack(
+              alignment: AlignmentDirectional.bottomEnd,
             children: [
               SingleChildScrollView(
                 controller: _scrollController,
@@ -172,8 +176,9 @@ class _PortfolioScreenState extends BaseState<PortfolioMobileScreen> {
               ),
             ],
           ),
-        );
-      },
+        ),
+      );
+    },
     );
   }
 

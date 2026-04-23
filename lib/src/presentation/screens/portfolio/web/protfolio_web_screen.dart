@@ -26,6 +26,7 @@ import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/web_
 import 'package:my_portfolio/src/presentation/screens/skills/skills_screen.dart';
 import 'package:my_portfolio/src/presentation/screens/touch_me/touch_me_screen.dart';
 import 'package:my_portfolio/src/presentation/screens/training/training_screen.dart';
+import 'package:my_portfolio/src/presentation/widgets/portfolio_bubbles_widget.dart';
 import 'package:my_portfolio/src/presentation/widgets/restart_widget.dart';
 import "package:universal_html/html.dart" as html;
 import 'package:visibility_detector/visibility_detector.dart';
@@ -118,32 +119,35 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
       },
       builder: (context, state) {
         return Scaffold(
-          backgroundColor:
-              isDarkMode ? ColorSchemes.iconBackGround : ColorSchemes.white,
+          backgroundColor: Colors.transparent,
           endDrawer: _buildEndDrawer(context),
           appBar: CustomAppBarWebWidget(onLogoTap: _restartApp),
-          body: Column(
-            children: [
-              _buildNavigationBar(
-                menuItems,
-                textColor,
-                fontSize,
-                indicatorColor,
-              ),
-              const SizedBox(height: 32),
-              Expanded(
-                child: Stack(
-                  alignment: AlignmentDirectional.bottomEnd,
-                  children: [
-                    _buildContent(),
-                    _buildScrollIndicator(),
-                    _buildScrollToTopButton(),
-                    if (_currentIndex != 2 && _currentIndex != 5)
-                      SocialBannerWebWidget(currentLocale: currentLocale),
-                  ],
+          body: PortfolioBubblesWidget(
+            isDarkMode: isDarkMode,
+            backgroundColor: isDarkMode ? ColorSchemes.iconBackGround : ColorSchemes.white,
+            child: Column(
+              children: [
+                _buildNavigationBar(
+                  menuItems,
+                  textColor,
+                  fontSize,
+                  indicatorColor,
                 ),
-              ),
-            ],
+                const SizedBox(height: 32),
+                Expanded(
+                  child: Stack(
+                    alignment: AlignmentDirectional.bottomEnd,
+                    children: [
+                      _buildContent(),
+                      _buildScrollIndicator(),
+                      _buildScrollToTopButton(),
+                      if (_currentIndex != 2 && _currentIndex != 5)
+                        SocialBannerWebWidget(currentLocale: currentLocale),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
         );
       },
