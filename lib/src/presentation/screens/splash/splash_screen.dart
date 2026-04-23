@@ -105,6 +105,10 @@ class _SplashScreenState extends State<SplashScreen> {
                         child: Image.asset(
                           ImagePaths.fady,
                           fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) => Container(
+                            color: Colors.grey.shade200,
+                            child: const Icon(Icons.person, size: 100, color: Colors.grey),
+                          ),
                         ),
                       ),
                     )

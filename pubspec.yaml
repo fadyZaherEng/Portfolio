@@ -93,11 +93,13 @@ flutter_intl:
   enabled: true
 
 flutter_native_splash:
-  #check theme: dark
-  #check theme: light
   color: "#000028"
   image: assets/images/fadyy.png
   android_12:
     image: assets/images/fadyy.png
     color: "#000028"
+    icon_background_color: "#000028"
   web: true
+  fullscreen: true
+  android_gravity: center
+  ios_content_mode: center
