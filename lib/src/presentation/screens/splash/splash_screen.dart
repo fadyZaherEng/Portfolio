@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_portfolio/src/config/routes/routes_manager.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
+import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/core/utils/constants.dart';
 import 'package:my_portfolio/src/di/data_layer_injector.dart';
 import 'package:my_portfolio/src/domain/usecase/get_theme_use_case.dart';
@@ -48,6 +49,12 @@ class _SplashScreenState extends State<SplashScreen> {
         );
       }
     }
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    precacheImage(const AssetImage(ImagePaths.fady), context);
   }
 
   @override
@@ -96,7 +103,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       ),
                       child: ClipOval(
                         child: Image.asset(
-                          "assets/images/fadyy.png",
+                          ImagePaths.fady,
                           fit: BoxFit.cover,
                         ),
                       ),
@@ -105,7 +112,7 @@ class _SplashScreenState extends State<SplashScreen> {
                         .scale(
                           duration: 1000.ms,
                           curve: Curves.fastOutSlowIn,
-                          begin: const Offset(0, 0),
+                          begin: const Offset(0.3, 0.3),
                           end: const Offset(1, 1),
                         )
                         .fadeIn(duration: 1000.ms)

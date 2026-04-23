@@ -211,9 +211,7 @@ class _PortfolioScreenState extends BaseState<PortfolioMobileScreen> {
 
   void _openResume() async {
     await Future.delayed(const Duration(microseconds: 300));
-    openLink(
-      "https://drive.google.com/file/d/16UiIW2QpK9vzbG_gHXvgGTuWtzP5eWGD/view?usp=drivesdk",
-    );
+    openLink(Constants.cvUrl);
   }
 
   Widget _buildEndDrawer(BuildContext context) {

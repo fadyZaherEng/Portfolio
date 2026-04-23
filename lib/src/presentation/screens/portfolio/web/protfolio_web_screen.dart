@@ -352,8 +352,7 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
     );
   }
 
-  void _openResume() => openLink(
-      "https://drive.google.com/file/d/16UiIW2QpK9vzbG_gHXvgGTuWtzP5eWGD/view?usp=drivesdk");
+  void _openResume() => openLink(Constants.cvUrl);
 
   void _restartApp() {
     RestartWidget.restartApp(context);

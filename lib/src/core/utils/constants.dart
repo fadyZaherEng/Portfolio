@@ -18,6 +18,8 @@ class Constants {
   static const String defaultPriority = "default";
   static const String light = "light";
   static const String dark = "dark";
+  static const String cvUrl =
+      "https://drive.google.com/file/d/1ML68lR5oZTYrTlNDGoxMsd0t3QUr7SeO/view?usp=drivesdk";
 
   static List<Training> trainings = [
     Training(
@@ -398,6 +400,10 @@ class Constants {
     "UI / UX Design": 0.8,
     "Custom UI  ": 0.8,
     "Dynamic & Reusable Widgets": 0.85,
+    "Google Play Store & App Gallery Deployment": 0.85,
+    "Huawei Mobile Services (HMS) Integration": 0.85,
+    "Huawei Developer Console": 0.85,
+    "Xcode & macOS Development": 0.8,
   };
 }
 
