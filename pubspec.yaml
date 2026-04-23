@@ -163,4 +163,4 @@ flutter_native_splash:
   android_12:
     image: assets/images/fadyy.png
     color: "#000028"
-  web: true
+  web: true
