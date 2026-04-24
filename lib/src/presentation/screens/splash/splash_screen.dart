@@ -29,7 +29,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void _navigateToHome() async {
-    await Future.delayed(const Duration(milliseconds: 2500));
+    await Future.delayed(const Duration(milliseconds: 4500));
     if (!mounted) return;
 
     try {
@@ -217,7 +217,7 @@ class _SplashScreenState extends State<SplashScreen> {
                                       .moveY(
                                           begin: -10,
                                           end: 10,
-                                          duration: 2500.ms,
+                                          duration: 4000.ms,
                                           curve: Curves.easeInOut),
 
                                   const SizedBox(height: 50),
@@ -237,14 +237,14 @@ class _SplashScreenState extends State<SplashScreen> {
                                     ),
                                   )
                                       .animate()
-                                      .fadeIn(delay: 800.ms, duration: 1000.ms)
+                                        .fadeIn(delay: 400.ms, duration: 1000.ms)
                                       .slideY(
                                           begin: 0.2,
                                           end: 0,
                                           curve: Curves.easeOutCirc)
                                       .shimmer(
                                           delay: 2000.ms,
-                                          duration: 2000.ms,
+                                          duration: 4000.ms,
                                           color: Colors.white30),
 
                                   const SizedBox(height: 20),
@@ -263,8 +263,8 @@ class _SplashScreenState extends State<SplashScreen> {
                                       ),
                                     ),
                                   ).animate().scaleX(
-                                      delay: 1200.ms,
-                                      duration: 800.ms,
+                                        delay: 800.ms,
+                                        duration: 800.ms,
                                       curve: Curves.easeInOutBack),
                                 ],
                               ),
@@ -292,7 +292,7 @@ class _SplashScreenState extends State<SplashScreen> {
                                       color: Colors.white.withOpacity(0.05)),
                                 ),
                                 child: TweenAnimationBuilder<double>(
-                                  duration: 2500.ms,
+                                  duration: 4000.ms,
                                   tween: Tween(begin: 0.0, end: 1.0),
                                   builder: (context, value, _) {
                                     return Stack(
@@ -347,7 +347,7 @@ class _SplashScreenState extends State<SplashScreen> {
                                 ),
                               )
                                   .animate()
-                                  .fadeIn(delay: 1500.ms)
+                                    .fadeIn(delay: 1000.ms)
                                   .scale(begin: const Offset(0.8, 1)),
                               const SizedBox(height: 15),
                               Text(
@@ -363,7 +363,7 @@ class _SplashScreenState extends State<SplashScreen> {
                                 ),
                               )
                                   .animate()
-                                  .fadeIn(delay: 1800.ms)
+                                  .fadeIn(delay: 1400.ms)
                                   .shimmer(duration: 3.seconds),
                             ],
                           ),
