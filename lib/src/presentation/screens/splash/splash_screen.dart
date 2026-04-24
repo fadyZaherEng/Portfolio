@@ -207,10 +207,10 @@ class _SplashScreenState extends State<SplashScreen> {
                                   )
                                       .animate()
                                       .scale(
-                                          duration: 1200.ms,
-                                          curve: Curves.elasticOut,
-                                          begin: const Offset(0.5, 0.5))
-                                      .fadeIn(duration: 800.ms)
+                                          duration: 400.ms,
+                                          curve: Curves.easeOutBack,
+                                          begin: const Offset(0.9, 0.9))
+                                      .fadeIn(duration: 400.ms)
                                       .animate(
                                           onPlay: (c) =>
                                               c.repeat(reverse: true))
@@ -237,15 +237,11 @@ class _SplashScreenState extends State<SplashScreen> {
                                     ),
                                   )
                                       .animate()
-                                        .fadeIn(delay: 400.ms, duration: 1000.ms)
+                                        .fadeIn(duration: 400.ms)
                                       .slideY(
-                                          begin: 0.2,
+                                          begin: 0.05,
                                           end: 0,
-                                          curve: Curves.easeOutCirc)
-                                      .shimmer(
-                                          delay: 2000.ms,
-                                          duration: 4000.ms,
-                                          color: Colors.white30),
+                                          curve: Curves.easeOutQuad),
 
                                   const SizedBox(height: 20),
 
@@ -263,15 +259,14 @@ class _SplashScreenState extends State<SplashScreen> {
                                       ),
                                     ),
                                   ).animate().scaleX(
-                                        delay: 800.ms,
-                                        duration: 800.ms,
+                                        duration: 600.ms,
                                       curve: Curves.easeInOutBack),
                                 ],
                               ),
                             )
                                 .animate()
-                                .fadeIn(duration: 1200.ms)
-                                .slideY(begin: 0.1, end: 0),
+                                .fadeIn(duration: 800.ms)
+                                .slideY(begin: 0.05, end: 0),
                           ),
 
                           const SizedBox(height: 80),
@@ -347,8 +342,8 @@ class _SplashScreenState extends State<SplashScreen> {
                                 ),
                               )
                                   .animate()
-                                    .fadeIn(delay: 1000.ms)
-                                  .scale(begin: const Offset(0.8, 1)),
+                                    .fadeIn(duration: 400.ms)
+                                  .scale(begin: const Offset(0.95, 1)),
                               const SizedBox(height: 15),
                               Text(
                                 "SYSTEM ENGINE ACTIVATED",
@@ -363,8 +358,7 @@ class _SplashScreenState extends State<SplashScreen> {
                                 ),
                               )
                                   .animate()
-                                  .fadeIn(delay: 1400.ms)
-                                  .shimmer(duration: 3.seconds),
+                                  .fadeIn(duration: 400.ms),
                             ],
                           ),
                         ],
@@ -480,12 +474,11 @@ class _SparklePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final random = DateTime.now().millisecondsSinceEpoch ~/ 100;
     final paint = Paint()..color = Colors.white.withOpacity(0.3);
 
     for (int i = 0; i < 30; i++) {
-      final x = (i * 137.5 + progress * 100) % size.width;
-      final y = (i * 245.7 - progress * 50) % size.height;
+      final x = (i * 137.5 + progress * size.width) % size.width;
+      final y = (i * 245.7 - progress * size.height) % size.height;
       final radius = (i % 3 + 1).toDouble();
 
       canvas.drawCircle(Offset(x, y), radius, paint);
