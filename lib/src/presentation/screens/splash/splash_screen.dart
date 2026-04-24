@@ -67,18 +67,16 @@ class _SplashScreenState extends State<SplashScreen> {
           isDarkMode = state.theme == Constants.dark;
         }
 
-        final Color startColor = isDarkMode 
-            ? const Color(0xFF0F0C29) 
-            : ColorSchemes.white;
-        final Color midColor = isDarkMode 
-            ? const Color(0xFF302B63) 
-            : ColorSchemes.white.withOpacity(0.9);
-        final Color endColor = isDarkMode 
-            ? const Color(0xFF24243E) 
-            : ColorSchemes.white;
+        final Color startColor =
+            isDarkMode ? const Color(0xFF02001A) : const Color(0xFFF0F2F5);
+        final Color midColor =
+            isDarkMode ? const Color(0xFF050530) : const Color(0xFFE6E9EF);
+        final Color endColor =
+            isDarkMode ? const Color(0xFF020015) : const Color(0xFFFFFFFF);
 
         return Scaffold(
           body: Container(
+            clipBehavior: Clip.antiAlias,
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topLeft,
@@ -88,226 +86,289 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             child: Stack(
               children: [
-                // Decorative background blurs with drift animation
-                Positioned(
-                  top: -100,
-                  right: -100,
-                  child: Container(
-                    width: 400,
-                    height: 400,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: ColorSchemes.secondary.withOpacity(isDarkMode ? 0.12 : 0.04),
-                    ),
-                  )
-                  .animate()
-                  .fadeIn(duration: 2000.ms)
-                  .scale(begin: const Offset(0.5, 0.5), end: const Offset(1, 1))
-                  .animate(onPlay: (controller) => controller.repeat(reverse: true))
-                  .move(begin: const Offset(-20, -20), end: const Offset(20, 20), duration: 8.seconds, curve: Curves.easeInOut),
-                ),
-                Positioned(
-                  bottom: -150,
-                  left: -100,
-                  child: Container(
-                    width: 350,
-                    height: 350,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: ColorSchemes.primary.withOpacity(isDarkMode ? 0.15 : 0.04),
-                    ),
-                  )
-                  .animate()
-                  .fadeIn(duration: 2000.ms, delay: 500.ms)
-                  .scale(begin: const Offset(0.5, 0.5), end: const Offset(1, 1))
-                  .animate(onPlay: (controller) => controller.repeat(reverse: true))
-                  .move(begin: const Offset(30, 30), end: const Offset(-30, -30), duration: 10.seconds, curve: Curves.easeInOut),
-                ),
+                // 1. Mesh Background - Liquid Blurs
+                ..._buildMeshBackground(isDarkMode),
+
+                // 2. Interactive Sparkle Layer
+                const _SparkleLayer(),
 
                 PortfolioBubblesWidget(
                   isDarkMode: isDarkMode,
                   child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                         Container(
-                          padding: const EdgeInsets.all(40),
-                          margin: const EdgeInsets.symmetric(horizontal: 20),
-                          decoration: BoxDecoration(
-                            color: isDarkMode 
-                                ? Colors.white.withOpacity(0.04) 
-                                : Colors.black.withOpacity(0.02),
-                            borderRadius: BorderRadius.circular(40),
-                            border: Border.all(
-                              color: isDarkMode 
-                                  ? Colors.white.withOpacity(0.08) 
-                                  : Colors.black.withOpacity(0.04),
-                              width: 1.2,
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black.withOpacity(0.15),
-                                blurRadius: 40,
-                                offset: const Offset(0, 15),
-                              ),
-                            ],
-                          ),
-                          child: Column(
-                            children: [
-                              Container(
-                                width: 180,
-                                height: 180,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: ColorSchemes.secondary.withOpacity(0.4),
-                                    width: 3,
-                                  ),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: ColorSchemes.secondary.withOpacity(0.2),
-                                      blurRadius: 20,
-                                      spreadRadius: 5,
-                                    ),
-                                  ],
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          // 3. 3D Glassmorphic Card
+                          TweenAnimationBuilder<double>(
+                            duration: 2000.ms,
+                            curve: Curves.easeOutBack,
+                            tween: Tween(begin: 1.0, end: 0.0),
+                            builder: (context, value, child) {
+                              return Transform(
+                                transform: Matrix4.identity()
+                                  ..setEntry(3, 2, 0.001) // perspective
+                                  ..rotateX(value * 0.3)
+                                  ..rotateY(value * 0.2),
+                                alignment: Alignment.center,
+                                child: child,
+                              );
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.symmetric(
+                                  vertical: 60, horizontal: 40),
+                              margin:
+                                  const EdgeInsets.symmetric(horizontal: 24),
+                              decoration: BoxDecoration(
+                                color: isDarkMode
+                                    ? Colors.white.withOpacity(0.03)
+                                    : Colors.white.withOpacity(0.4),
+                                borderRadius: BorderRadius.circular(50),
+                                border: Border.all(
+                                  color: isDarkMode
+                                      ? Colors.white.withOpacity(0.1)
+                                      : Colors.white.withOpacity(0.6),
+                                  width: 1.5,
                                 ),
-                                child: ClipOval(
-                                  child: Image.asset(
-                                    ImagePaths.fady,
-                                    fit: BoxFit.cover,
-                                    errorBuilder: (context, error, stackTrace) =>
-                                        Container(
-                                      color: Colors.grey.shade200,
-                                      child: const Icon(
-                                        Icons.person,
-                                        size: 100,
-                                        color: Colors.grey,
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black
+                                        .withOpacity(isDarkMode ? 0.4 : 0.1),
+                                    blurRadius: 40,
+                                    spreadRadius: -10,
+                                    offset: const Offset(0, 20),
+                                  ),
+                                ],
+                              ),
+                              child: Column(
+                                children: [
+                                  // 4. Energy Ring + Avatar
+                                  Stack(
+                                    alignment: Alignment.center,
+                                    children: [
+                                      // Energy Ring
+                                      Container(
+                                        width: 210,
+                                        height: 210,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          gradient: SweepGradient(
+                                            colors: [
+                                              Colors.transparent,
+                                              ColorSchemes.secondary
+                                                  .withOpacity(0.5),
+                                              ColorSchemes.secondary,
+                                              Colors.transparent,
+                                            ],
+                                          ),
+                                        ),
+                                      )
+                                          .animate(onPlay: (c) => c.repeat())
+                                          .rotate(
+                                              duration: 3.seconds,
+                                              curve: Curves.linear),
+
+                                      // Inner Glow
+                                      Container(
+                                        width: 190,
+                                        height: 190,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: ColorSchemes.secondary
+                                                  .withOpacity(0.3),
+                                              blurRadius: 30,
+                                              spreadRadius: 10,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+
+                                      // The Image
+                                      Container(
+                                        width: 180,
+                                        height: 180,
+                                        decoration: const BoxDecoration(
+                                          shape: BoxShape.circle,
+                                        ),
+                                        child: ClipOval(
+                                          child: Image.asset(
+                                            ImagePaths.fady,
+                                            fit: BoxFit.cover,
+                                            errorBuilder:
+                                                (context, error, stackTrace) =>
+                                                    const Icon(Icons.person,
+                                                        size: 100),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                      .animate()
+                                      .scale(
+                                          duration: 1200.ms,
+                                          curve: Curves.elasticOut,
+                                          begin: const Offset(0.5, 0.5))
+                                      .fadeIn(duration: 800.ms)
+                                      .animate(
+                                          onPlay: (c) =>
+                                              c.repeat(reverse: true))
+                                      .moveY(
+                                          begin: -10,
+                                          end: 10,
+                                          duration: 2500.ms,
+                                          curve: Curves.easeInOut),
+
+                                  const SizedBox(height: 50),
+
+                                  // 5. Title with Character Spacing Animation
+                                  Text(
+                                    S.of(context).fadyZaherSoftwareEngineer,
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color: isDarkMode
+                                          ? Colors.white
+                                          : ColorSchemes.primary,
+                                      fontSize: 28,
+                                      fontWeight: FontWeight.w900,
+                                      letterSpacing: 2,
+                                      height: 1.2,
+                                    ),
+                                  )
+                                      .animate()
+                                      .fadeIn(delay: 800.ms, duration: 1000.ms)
+                                      .slideY(
+                                          begin: 0.2,
+                                          end: 0,
+                                          curve: Curves.easeOutCirc)
+                                      .shimmer(
+                                          delay: 2000.ms,
+                                          duration: 2000.ms,
+                                          color: Colors.white30),
+
+                                  const SizedBox(height: 20),
+
+                                  // Animated Divider with Gradient
+                                  Container(
+                                    width: 100,
+                                    height: 4,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(20),
+                                      gradient: LinearGradient(
+                                        colors: [
+                                          ColorSchemes.secondary,
+                                          ColorSchemes.primary,
+                                        ],
                                       ),
                                     ),
-                                  ),
-                                ),
-                              )
-                                  .animate()
-                                  .scale(
-                                    duration: 1500.ms,
-                                    curve: Curves.elasticOut,
-                                    begin: const Offset(0.0, 0.0),
-                                    end: const Offset(1, 1),
-                                  )
-                                  .rotate(begin: -0.1, end: 0, duration: 1500.ms, curve: Curves.elasticOut)
-                                  .fadeIn(duration: 800.ms)
-                                  .shimmer(
-                                    delay: 1500.ms,
-                                    duration: 1500.ms,
-                                    color: Colors.white24,
-                                  )
-                                  .animate(onPlay: (controller) => controller.repeat(reverse: true))
-                                  .moveY(begin: -8, end: 8, duration: 2500.ms, curve: Curves.easeInOut),
-                              
-                              const SizedBox(height: 40),
-                              
-                              Text(
-                                S.of(context).fadyZaherSoftwareEngineer,
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  color: isDarkMode ? Colors.white : ColorSchemes.primary,
-                                  fontSize: 26,
-                                  fontWeight: FontWeight.bold,
-                                  letterSpacing: 1.5,
-                                  shadows: [
-                                    Shadow(
-                                      color: Colors.black.withOpacity(0.3),
-                                      offset: const Offset(0, 3),
-                                      blurRadius: 6,
-                                    ),
-                                  ],
-                                ),
-                              )
-                                  .animate()
-                                  .fadeIn(delay: 1000.ms, duration: 1000.ms)
-                                  .slideY(begin: 0.2, end: 0, curve: Curves.easeOutCubic)
-                                  .blur(begin: const Offset(15, 15), end: const Offset(0, 0), duration: 1200.ms, delay: 1000.ms),
-                              
-                              const SizedBox(height: 15),
-                              
+                                  ).animate().scaleX(
+                                      delay: 1200.ms,
+                                      duration: 800.ms,
+                                      curve: Curves.easeInOutBack),
+                                ],
+                              ),
+                            )
+                                .animate()
+                                .fadeIn(duration: 1200.ms)
+                                .slideY(begin: 0.1, end: 0),
+                          ),
+
+                          const SizedBox(height: 80),
+
+                          // 6. High-End Progress Section
+                          Column(
+                            children: [
                               Container(
-                                width: 80,
-                                height: 4,
+                                width: 240,
+                                height: 8,
+                                padding: const EdgeInsets.all(2),
                                 decoration: BoxDecoration(
-                                  gradient: LinearGradient(
-                                    colors: [
-                                      ColorSchemes.secondary,
-                                      ColorSchemes.secondary.withOpacity(0.3),
-                                    ],
-                                  ),
                                   borderRadius: BorderRadius.circular(10),
+                                  color: isDarkMode
+                                      ? Colors.white10
+                                      : Colors.black12,
+                                  border: Border.all(
+                                      color: Colors.white.withOpacity(0.05)),
                                 ),
-                              ).animate().scaleX(
-                                    delay: 1800.ms,
-                                    duration: 800.ms,
-                                    begin: 0,
-                                    end: 1,
-                                    curve: Curves.easeInOutBack,
-                                  ),
+                                child: TweenAnimationBuilder<double>(
+                                  duration: 2500.ms,
+                                  tween: Tween(begin: 0.0, end: 1.0),
+                                  builder: (context, value, _) {
+                                    return Stack(
+                                      children: [
+                                        // Main Progress
+                                        Container(
+                                          width: 236 * value,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            gradient: LinearGradient(
+                                              colors: [
+                                                ColorSchemes.secondary
+                                                    .withOpacity(0.5),
+                                                ColorSchemes.secondary,
+                                              ],
+                                            ),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: ColorSchemes.secondary
+                                                    .withOpacity(0.5),
+                                                blurRadius: 10,
+                                                offset: const Offset(0, 0),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                        // "Flow" effect
+                                        Positioned(
+                                          left: (236 * value) - 20,
+                                          child: Container(
+                                            width: 20,
+                                            height: 4,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  Colors.white.withOpacity(0.8),
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.white
+                                                      .withOpacity(0.8),
+                                                  blurRadius: 10,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    );
+                                  },
+                                ),
+                              )
+                                  .animate()
+                                  .fadeIn(delay: 1500.ms)
+                                  .scale(begin: const Offset(0.8, 1)),
+                              const SizedBox(height: 15),
+                              Text(
+                                "SYSTEM ENGINE ACTIVATED",
+                                style: TextStyle(
+                                  color: (isDarkMode
+                                          ? Colors.white
+                                          : ColorSchemes.primary)
+                                      .withOpacity(0.4),
+                                  fontSize: 10,
+                                  letterSpacing: 5,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              )
+                                  .animate()
+                                  .fadeIn(delay: 1800.ms)
+                                  .shimmer(duration: 3.seconds),
                             ],
                           ),
-                        )
-                        .animate()
-                        .fadeIn(duration: 1200.ms, delay: 400.ms)
-                        .slideY(begin: 0.15, end: 0, duration: 1200.ms, curve: Curves.easeOutCubic),
-                        
-                        const SizedBox(height: 60),
-                        
-                        // Sleek Progress Indicator with Glow
-                        Animate(
-                          onPlay: (controller) => controller.repeat(reverse: true),
-                        ).custom(
-                          duration: 1500.ms,
-                          builder: (context, value, child) => Container(
-                            width: 200,
-                            decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                  color: ColorSchemes.secondary.withOpacity(0.2 * value),
-                                  blurRadius: 20 * value,
-                                  spreadRadius: 2 * value,
-                                ),
-                              ],
-                            ),
-                            child: Column(
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  child: TweenAnimationBuilder<double>(
-                                    duration: const Duration(milliseconds: 2500),
-                                    tween: Tween(begin: 0.0, end: 1.0),
-                                    builder: (context, value, child) {
-                                      return LinearProgressIndicator(
-                                        value: value,
-                                        minHeight: 5,
-                                        backgroundColor: isDarkMode 
-                                            ? Colors.white.withOpacity(0.08) 
-                                            : Colors.black.withOpacity(0.04),
-                                        valueColor: const AlwaysStoppedAnimation<Color>(ColorSchemes.secondary),
-                                      );
-                                    },
-                                  ),
-                                ),
-                                const SizedBox(height: 12),
-                                Text(
-                                  "INITIALIZING...",
-                                  style: TextStyle(
-                                    color: (isDarkMode ? Colors.white : ColorSchemes.primary).withOpacity(0.6),
-                                    fontSize: 10,
-                                    letterSpacing: 4,
-                                    fontWeight: FontWeight.w700,
-                                  ),
-                                ).animate().fadeIn(delay: 2000.ms).shimmer(duration: 2000.ms),
-                              ],
-                            ),
-                          ),
-                        ).animate().fadeIn(delay: 1500.ms),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -318,4 +379,119 @@ class _SplashScreenState extends State<SplashScreen> {
       },
     );
   }
+
+  List<Widget> _buildMeshBackground(bool isDarkMode) {
+    return [
+      _PositionedBlur(
+        color: const Color(0xFF6366F1).withOpacity(isDarkMode ? 0.2 : 0.1),
+        size: 500,
+        top: -150,
+        left: -150,
+        duration: 8.seconds,
+        offset: const Offset(50, 50),
+      ),
+      _PositionedBlur(
+        color: const Color(0xFFA855F7).withOpacity(isDarkMode ? 0.15 : 0.08),
+        size: 400,
+        bottom: -100,
+        right: -100,
+        duration: 10.seconds,
+        offset: const Offset(-60, -40),
+      ),
+      _PositionedBlur(
+        color: const Color(0xFFEC4899).withOpacity(isDarkMode ? 0.1 : 0.05),
+        size: 300,
+        top: 200,
+        right: -50,
+        duration: 12.seconds,
+        offset: const Offset(-40, 60),
+      ),
+    ];
+  }
+}
+
+class _PositionedBlur extends StatelessWidget {
+  final Color color;
+  final double size;
+  final double? top, left, right, bottom;
+  final Duration duration;
+  final Offset offset;
+
+  const _PositionedBlur({
+    required this.color,
+    required this.size,
+    this.top,
+    this.left,
+    this.right,
+    this.bottom,
+    required this.duration,
+    required this.offset,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      top: top,
+      left: left,
+      right: right,
+      bottom: bottom,
+      child: Container(
+        width: size,
+        height: size,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: color,
+        ),
+      )
+          .animate(onPlay: (c) => c.repeat(reverse: true))
+          .move(
+              begin: Offset.zero,
+              end: offset,
+              duration: duration,
+              curve: Curves.easeInOut)
+          .blur(begin: const Offset(80, 80), end: const Offset(100, 100)),
+    );
+  }
+}
+
+class _SparkleLayer extends StatelessWidget {
+  const _SparkleLayer();
+
+  @override
+  Widget build(BuildContext context) {
+    return Animate(
+      onPlay: (c) => c.repeat(),
+    ).custom(
+      duration: 10.seconds,
+      builder: (context, value, child) {
+        return CustomPaint(
+          size: Size.infinite,
+          painter: _SparklePainter(value),
+        );
+      },
+    );
+  }
+}
+
+class _SparklePainter extends CustomPainter {
+  final double progress;
+
+  _SparklePainter(this.progress);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final random = DateTime.now().millisecondsSinceEpoch ~/ 100;
+    final paint = Paint()..color = Colors.white.withOpacity(0.3);
+
+    for (int i = 0; i < 30; i++) {
+      final x = (i * 137.5 + progress * 100) % size.width;
+      final y = (i * 245.7 - progress * 50) % size.height;
+      final radius = (i % 3 + 1).toDouble();
+
+      canvas.drawCircle(Offset(x, y), radius, paint);
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
 }
