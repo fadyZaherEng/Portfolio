@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
+import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/routes/routes_manager.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
@@ -106,8 +107,11 @@ class _SplashScreenState extends State<SplashScreen> {
                           errorBuilder: (context, error, stackTrace) =>
                               Container(
                             color: Colors.grey.shade200,
-                            child: const Icon(Icons.person,
-                                size: 100, color: Colors.grey),
+                            child: const Icon(
+                              Icons.person,
+                              size: 100,
+                              color: Colors.grey,
+                            ),
                           ),
                         ),
                       ),
@@ -127,7 +131,7 @@ class _SplashScreenState extends State<SplashScreen> {
                         ),
                     const SizedBox(height: 30),
                     Text(
-                      "Fady Zaher",
+                      S.of(context).fadyZaherSoftwareEngineer,
                       style: TextStyle(
                         color: isDarkMode ? Colors.white : ColorSchemes.primary,
                         fontSize: 28,
@@ -147,7 +151,11 @@ class _SplashScreenState extends State<SplashScreen> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ).animate().scaleX(
-                        delay: 1000.ms, duration: 600.ms, begin: 0, end: 1),
+                          delay: 1000.ms,
+                          duration: 600.ms,
+                          begin: 0,
+                          end: 1,
+                        ),
                   ],
                 ),
               ),

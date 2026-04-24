@@ -196,5 +196,6 @@
   "safetyZoneConsumerDescription": "Developed a mobile application for clients to request fire extinguisher services, track requests in real-time, and receive instant updates. Integrated push notifications, service history, and an intuitive booking flow. Built using Flutter, Firebase, and REST APIs.",
   "cairoEgypt":"Cairo, Egypt",
   "messageSentSuccessfully": "Message sent successfully!",
-  "failedToSendMessage": "Failed to send message. Please try again."
+  "failedToSendMessage": "Failed to send message. Please try again.",
+  "fadyZaherSoftwareEngineer": "Fady Zaher | Software Engineer"
 }

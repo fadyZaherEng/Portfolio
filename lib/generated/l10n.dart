@@ -2013,6 +2013,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Fady Zaher | Software Engineer`
+  String get fadyZaherSoftwareEngineer {
+    return Intl.message(
+      'Fady Zaher | Software Engineer',
+      name: 'fadyZaherSoftwareEngineer',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -195,5 +195,6 @@
   "safetyZoneConsumerDescription": "تطوير تطبيق جوال للعملاء لطلب خدمات طفايات الحريق، وتتبع الطلبات في الوقت الفعلي، وتلقي تحديثات فورية. متكامل مع الإشعارات، وتاريخ الخدمة، وتدفق حجز بديهي. بني باستخدام Flutter و Firebase و REST APIs.",
   "cairoEgypt": "القاهرة، مصر",
   "messageSentSuccessfully": "تم إرسال الرسالة بنجاح!",
-  "failedToSendMessage": "فشل إرسال الرسالة. يرجى المحاولة مرة أخرى."
+  "failedToSendMessage": "فشل إرسال الرسالة. يرجى المحاولة مرة أخرى.",
+  "fadyZaherSoftwareEngineer": "فادي زاهر - مهندس برمجيات"
 }

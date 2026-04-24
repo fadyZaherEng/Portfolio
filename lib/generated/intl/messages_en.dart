@@ -111,6 +111,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
         "fadyTag": MessageLookupByLibrary.simpleMessage("<Eng.Fady Zaher/>"),
         "fadyZaher": MessageLookupByLibrary.simpleMessage("Fady Zaher"),
+        "fadyZaherSoftwareEngineer": MessageLookupByLibrary.simpleMessage(
+            "Fady Zaher | Software Engineer"),
         "failedToLaunchWhatsApp":
             MessageLookupByLibrary.simpleMessage("Failed to launch WhatsApp"),
         "failedToSendMessage": MessageLookupByLibrary.simpleMessage(
