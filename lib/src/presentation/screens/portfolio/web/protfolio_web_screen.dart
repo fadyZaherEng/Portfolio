@@ -17,6 +17,7 @@ import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/end_
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/header_portfolio_section_web_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/my_chapter_education_web_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/my_chapters_career_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/packages_section_web_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/project_sections_web_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/scroll_to_top_button_web_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/skills_details_offer_web_widget.dart';
@@ -233,6 +234,7 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
             child: ProjectsSectionsWebWidgets(
                 key: _scrollKeys[2], isDarkMode: isDarkMode),
           ),
+          PackagesSectionWebWidget(isDarkMode: isDarkMode),
           VisibilityDetector(
             key: const Key("contactKeys"),
             onVisibilityChanged: (visibilityInfo) {
@@ -327,7 +329,7 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
   }
 
   void _openResume() => openLink(
-      "https://drive.google.com/file/d/16UiIW2QpK9vzbG_gHXvgGTuWtzP5eWGD/view?usp=drivesdk");
+      "https://drive.google.com/file/d/15dZ4uoZDy4NWaZowB6krisrsaNhTnzcY/view?usp=drivesdk");
 
   void _restartApp() {
     RestartWidget.restartApp(context);

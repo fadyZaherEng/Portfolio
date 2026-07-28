@@ -1923,6 +1923,56 @@ class S {
       args: [],
     );
   }
+
+  /// `My Packages`
+  String get myPackages {
+    return Intl.message(
+      'My Packages',
+      name: 'myPackages',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Explore my open-source Flutter packages published on pub.dev, designed to simplify and accelerate mobile development.`
+  String get exploreMyPackages {
+    return Intl.message(
+      'Explore my open-source Flutter packages published on pub.dev, designed to simplify and accelerate mobile development.',
+      name: 'exploreMyPackages',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View on pub.dev`
+  String get viewOnPubDev {
+    return Intl.message(
+      'View on pub.dev',
+      name: 'viewOnPubDev',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `License`
+  String get license {
+    return Intl.message(
+      'License',
+      name: 'license',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Features`
+  String get features {
+    return Intl.message(
+      'Features',
+      name: 'features',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

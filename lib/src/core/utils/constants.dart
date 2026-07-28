@@ -182,6 +182,25 @@ class Constants {
             "https://drive.google.com/file/d/1t-gLVnSTQyXeGp8M5CQCbxFdbmfOGRlg/view?usp=drivesdk"),
   ];
 
+  static List<PackageModel> packages = [
+    PackageModel(
+      name: "fz_hms_push_kit",
+      descriptionEn:
+          "A Flutter package for Huawei Mobile Services (HMS) Push Kit that handles device token retrieval, foreground/background/tap notification handling, OAuth2 authentication with Huawei's server, and server-side notification sending via the HMS REST API.",
+      descriptionAr:
+          "حزمة Flutter لخدمات هواوي موبايل (HMS) Push Kit تتعامل مع استرداد رمز الجهاز، ومعالجة الإشعارات في المقدمة والخلفية والنقر، ومصادقة OAuth2 مع خادم هواوي، وإرسال الإشعارات من جانب الخادم عبر HMS REST API.",
+      pubDevUrl: "https://pub.dev/packages/fz_hms_push_kit",
+      version: "latest",
+      license: "MIT",
+      features: [
+        "Device token retrieval (with timeout & retry)",
+        "Foreground / background / tap notification handling",
+        "OAuth2 authentication with Huawei's server",
+        "Server-side notification sending via HMS REST API",
+      ],
+    ),
+  ];
+
   static ProjectList projectList = ProjectList.fromJson({
     "projects": [
       {
@@ -475,5 +494,25 @@ class Training {
     required this.duration,
     required this.year,
     required this.url,
+  });
+}
+
+class PackageModel {
+  final String name;
+  final String descriptionEn;
+  final String descriptionAr;
+  final String pubDevUrl;
+  final String version;
+  final String license;
+  final List<String> features;
+
+  PackageModel({
+    required this.name,
+    required this.descriptionEn,
+    required this.descriptionAr,
+    required this.pubDevUrl,
+    required this.version,
+    required this.license,
+    required this.features,
   });
 }

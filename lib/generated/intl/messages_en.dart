@@ -106,6 +106,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailIsRequired":
             MessageLookupByLibrary.simpleMessage("Email is required"),
         "experience": MessageLookupByLibrary.simpleMessage("Experience"),
+        "exploreMyPackages": MessageLookupByLibrary.simpleMessage(
+            "Explore my open-source Flutter packages published on pub.dev, designed to simplify and accelerate mobile development."),
         "exploreMyProjects": MessageLookupByLibrary.simpleMessage(
             "Explore My Projects that showcase my skills and expertise in Flutter development.where I have successfully delivered innovative and user-friendly apps that meet the highest standards of performance and user experience."),
         "facebook": MessageLookupByLibrary.simpleMessage("Facebook"),
@@ -113,6 +115,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "fadyZaher": MessageLookupByLibrary.simpleMessage("Fady Zaher"),
         "failedToLaunchWhatsApp":
             MessageLookupByLibrary.simpleMessage("Failed to launch WhatsApp"),
+        "features": MessageLookupByLibrary.simpleMessage("Features"),
         "feelFreeToContactMe": MessageLookupByLibrary.simpleMessage(
             "Feel free to reach out if you\'d like to discuss a project, a job opportunity, or simply want to connect."),
         "firebase": MessageLookupByLibrary.simpleMessage("Firebase"),
@@ -170,6 +173,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "kotlin": MessageLookupByLibrary.simpleMessage("Kotlin"),
         "letsCreateSomethingAmazing": MessageLookupByLibrary.simpleMessage(
             "Let\'s Create Something Amazing Together!"),
+        "license": MessageLookupByLibrary.simpleMessage("License"),
         "linkedin": MessageLookupByLibrary.simpleMessage("Linkedin"),
         "loadLess": MessageLookupByLibrary.simpleMessage("Load Less"),
         "loadMore": MessageLookupByLibrary.simpleMessage("Load More"),
@@ -206,6 +210,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("‎‎+ 2 Years Experience As A"),
         "myChapter":
             MessageLookupByLibrary.simpleMessage("Chapters Of My Career"),
+        "myPackages": MessageLookupByLibrary.simpleMessage("My Packages"),
         "myProjects": MessageLookupByLibrary.simpleMessage("My Projects"),
         "mySQL": MessageLookupByLibrary.simpleMessage("MySQL"),
         "name": MessageLookupByLibrary.simpleMessage("Name"),
@@ -292,6 +297,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "universityDescription": MessageLookupByLibrary.simpleMessage(
             "Graduation Project  Body Language and emotion recognition website (Django-python)"),
         "video": MessageLookupByLibrary.simpleMessage("Video"),
+        "viewOnPubDev": MessageLookupByLibrary.simpleMessage("View on pub.dev"),
         "viewResume": MessageLookupByLibrary.simpleMessage("VIEW RESUME"),
         "visualStudio": MessageLookupByLibrary.simpleMessage("Visual Studio"),
         "webApp": MessageLookupByLibrary.simpleMessage("Web App"),

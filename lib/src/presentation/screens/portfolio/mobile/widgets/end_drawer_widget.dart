@@ -348,7 +348,7 @@ class EndDrawerWidget extends StatelessWidget {
   void _openResume() async {
     await Future.delayed(const Duration(microseconds: 300));
     openLink(
-      "https://drive.google.com/file/d/16UiIW2QpK9vzbG_gHXvgGTuWtzP5eWGD/view?usp=drivesdk",
+      "https://drive.google.com/file/d/15dZ4uoZDy4NWaZowB6krisrsaNhTnzcY/view?usp=drivesdk",
     );
   }
 }

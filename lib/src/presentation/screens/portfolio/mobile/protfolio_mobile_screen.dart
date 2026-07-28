@@ -14,6 +14,7 @@ import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/e
 import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/header_portfolio_section_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/my_chapter_education_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/my_chapters_career_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/packages_section_mobile_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/project_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/scroll_to_top_button_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/skills_details_offer_widget.dart';
@@ -137,6 +138,7 @@ class _PortfolioScreenState extends BaseState<PortfolioMobileScreen> {
                         key: _projectsKey,
                         isDarkMode: isDarkMode,
                       ),
+                      PackagesSectionMobileWidget(isDarkMode: isDarkMode),
                       ContactMeWidget(key: _contactKey),
                       const SizedBox(height: 15),
                     ],
@@ -191,7 +193,7 @@ class _PortfolioScreenState extends BaseState<PortfolioMobileScreen> {
   void _openResume() async {
     await Future.delayed(const Duration(microseconds: 300));
     openLink(
-      "https://drive.google.com/file/d/16UiIW2QpK9vzbG_gHXvgGTuWtzP5eWGD/view?usp=drivesdk",
+      "https://drive.google.com/file/d/15dZ4uoZDy4NWaZowB6krisrsaNhTnzcY/view?usp=drivesdk",
     );
   }
 

@@ -110,6 +110,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "emailIsRequired":
             MessageLookupByLibrary.simpleMessage("البريد الالكتروني مطلوب"),
         "experience": MessageLookupByLibrary.simpleMessage("الخبرة"),
+        "exploreMyPackages": MessageLookupByLibrary.simpleMessage(
+            "استكشف حزمي البرمجية مفتوحة المصدر المنشورة على pub.dev، والمصممة لتبسيط وتسريع تطوير تطبيقات الهاتف."),
         "exploreMyProjects": MessageLookupByLibrary.simpleMessage(
             "استكشف مشاريعي التي تُبرز مهاراتي وخبرتي في تطوير Flutter، حيث قمت بتقديم تطبيقات مبتكرة وسهلة الاستخدام تلبي أعلى معايير الأداء وتجربة المستخدم."),
         "facebook": MessageLookupByLibrary.simpleMessage("فيسبوك"),
@@ -117,6 +119,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "fadyZaher": MessageLookupByLibrary.simpleMessage("فادي زاهر"),
         "failedToLaunchWhatsApp":
             MessageLookupByLibrary.simpleMessage("فشل في تشغيل WhatsApp"),
+        "features": MessageLookupByLibrary.simpleMessage("المميزات"),
         "feelFreeToContactMe": MessageLookupByLibrary.simpleMessage(
             "يمكنك معرفة المزيد عني والتواصل معي عبر الرابط التالي"),
         "firebase": MessageLookupByLibrary.simpleMessage("فايربيس"),
@@ -174,6 +177,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "kotlin": MessageLookupByLibrary.simpleMessage("كوتلن"),
         "letsCreateSomethingAmazing":
             MessageLookupByLibrary.simpleMessage("ابدا بانشاء شيء جميل"),
+        "license": MessageLookupByLibrary.simpleMessage("الرخصة"),
         "linkedin": MessageLookupByLibrary.simpleMessage("لينكدان"),
         "loadLess": MessageLookupByLibrary.simpleMessage("تحميل اقل"),
         "loadMore": MessageLookupByLibrary.simpleMessage("تحميل المزيد"),
@@ -208,6 +212,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("مع خبرة 2 + سنة في"),
         "myChapter":
             MessageLookupByLibrary.simpleMessage("فصول من مسيرتي المهنية"),
+        "myPackages": MessageLookupByLibrary.simpleMessage("حزمي البرمجية"),
         "myProjects": MessageLookupByLibrary.simpleMessage("مشاريعي"),
         "mySQL": MessageLookupByLibrary.simpleMessage("ماي إس كيو إل"),
         "name": MessageLookupByLibrary.simpleMessage("الاسم"),
@@ -291,6 +296,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "universityDescription": MessageLookupByLibrary.simpleMessage(
             "مشروع تخرجي لموقع تحديد اللغة الجسمية والتعلم من الاحساسات (Django-python)"),
         "video": MessageLookupByLibrary.simpleMessage("فيديو"),
+        "viewOnPubDev": MessageLookupByLibrary.simpleMessage("عرض على pub.dev"),
         "viewResume":
             MessageLookupByLibrary.simpleMessage("عرض السيرة الذاتية"),
         "visualStudio": MessageLookupByLibrary.simpleMessage("فيجوال ستوديو"),

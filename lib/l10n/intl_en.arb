@@ -187,5 +187,10 @@
   "followMe":"Follow Me",
   "loadMore":"Load More",
   "loadLess":"Load Less",
-  "cairoEgypt":"Cairo, Egypt"
+  "cairoEgypt":"Cairo, Egypt",
+  "myPackages": "My Packages",
+  "exploreMyPackages": "Explore my open-source Flutter packages published on pub.dev, designed to simplify and accelerate mobile development.",
+  "viewOnPubDev": "View on pub.dev",
+  "license": "License",
+  "features": "Features"
 }
