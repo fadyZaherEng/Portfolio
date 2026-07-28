@@ -81,8 +81,6 @@ class _AboutMeContentWebWidgetState extends State<AboutMeContentWebWidget>
           _buildAnimatedItem(
             Text(
               S.of(context).aboutMeDescription,
-              maxLines: 10,
-              overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     color: ColorSchemes.white,
                     fontWeight: FontWeight.normal,

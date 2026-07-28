@@ -184,6 +184,38 @@ class Constants {
 
   static List<PackageModel> packages = [
     PackageModel(
+      name: "fzTrimmer",
+      descriptionEn:
+          "A highly flexible Flutter package for video trimming. Provides a sleek, customizable UI for users to select video segments with frame-accurate precision. Optimized for performance and easy integration into any Flutter video project.",
+      descriptionAr:
+          "حزمة Flutter مرنة للغاية لقص الفيديو. توفر واجهة مستخدم أنيقة وقابلة للتخصيص لتحديد مقاطع الفيديو بدقة إطار. محسّنة للأداء وسهلة الدمج في أي مشروع فيديو Flutter.",
+      pubDevUrl: "https://pub.dev/packages/fz_trimmer",
+      version: "latest",
+      license: "MIT",
+      features: [
+        "Sleek, customizable video trimming UI",
+        "Frame-accurate segment selection",
+        "Optimized for high performance",
+        "Easy integration into any Flutter project",
+      ],
+    ),
+    PackageModel(
+      name: "fz_google_oauth2",
+      descriptionEn:
+          "A Flutter package that brings full control over Google OAuth2 login — without relying on WebView. Handles token refresh seamlessly so users are never forced to log out and back in manually when tokens expire.",
+      descriptionAr:
+          "حزمة Flutter توفر تحكمًا كاملاً في تسجيل الدخول عبر Google OAuth2 — بدون الاعتماد على WebView. تتعامل مع تحديث الرموز بسلاسة حتى لا يضطر المستخدمون لتسجيل الخروج والدخول يدويًا عند انتهاء صلاحية الرموز.",
+      pubDevUrl: "https://pub.dev/packages/fz_google_oauth2",
+      version: "latest",
+      license: "MIT",
+      features: [
+        "Full Google OAuth2 login without WebView",
+        "Automatic token refresh handling",
+        "No forced logout on token expiry",
+        "Seamless authentication flow",
+      ],
+    ),
+    PackageModel(
       name: "fz_hms_push_kit",
       descriptionEn:
           "A Flutter package for Huawei Mobile Services (HMS) Push Kit that handles device token retrieval, foreground/background/tap notification handling, OAuth2 authentication with Huawei's server, and server-side notification sending via the HMS REST API.",
@@ -197,6 +229,22 @@ class Constants {
         "Foreground / background / tap notification handling",
         "OAuth2 authentication with Huawei's server",
         "Server-side notification sending via HMS REST API",
+      ],
+    ),
+    PackageModel(
+      name: "fzReactionsChat",
+      descriptionEn:
+          "A dynamic and visually appealing chat reaction system inspired by popular messaging apps. Offers customizable emoji-based reactions with smooth animations and intuitive UX, enhancing user engagement in chat interfaces.",
+      descriptionAr:
+          "نظام تفاعلات محادثة ديناميكي وجذاب بصريًا مستوحى من تطبيقات المراسلة الشهيرة. يوفر تفاعلات إيموجي قابلة للتخصيص مع رسوم متحركة سلسة وتجربة مستخدم بديهية، مما يعزز تفاعل المستخدم في واجهات المحادثة.",
+      pubDevUrl: "https://pub.dev/packages/fz_reactions_chat",
+      version: "latest",
+      license: "MIT",
+      features: [
+        "Customizable emoji-based reactions",
+        "Smooth animations & intuitive UX",
+        "Inspired by popular messaging apps",
+        "Enhanced user engagement in chat interfaces",
       ],
     ),
   ];
