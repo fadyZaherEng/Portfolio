@@ -1342,21 +1342,31 @@ class S {
     );
   }
 
-  /// `‎‎+ 2 Years Experience As A`
+  /// `‎‎+ 3 Years Experience As A`
   String get moreThanYearsExperienceAsA {
     return Intl.message(
-      '‎‎+ 2 Years Experience As A',
+      '‎‎+ 3 Years Experience As A',
       name: 'moreThanYearsExperienceAsA',
       desc: '',
       args: [],
     );
   }
 
-  /// `Flutter Developer`
+  /// `Senior Flutter Software Engineer`
   String get flutterDeveloper {
     return Intl.message(
-      'Flutter Developer',
+      'Senior Flutter Software Engineer',
       name: 'flutterDeveloper',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Senior Software Engineer`
+  String get seniorSoftwareEngineer {
+    return Intl.message(
+      'Senior Software Engineer',
+      name: 'seniorSoftwareEngineer',
       desc: '',
       args: [],
     );
@@ -1462,10 +1472,10 @@ class S {
     );
   }
 
-  /// `I’m Mid Level Software Engineer, passionate about mobile development with ‎+ 2 Years of Experience, looking for work as Flutter Software Engineer to gain real experience and assist the organization to achieve their goals`
+  /// `Results-driven Flutter Software Engineer with 3+ years of hands-on experience crafting high-performance, scalable mobile applications for Android & iOS — from concept to Play Store & App Store deployment. Backed by a solid foundation in Native Android development (Java), bringing a deep understanding of the Android ecosystem, platform-specific optimizations, and native integrations. Proven ability to deliver clean architecture, seamless UI/UX, and robust state management solutions using BLoC and GetIt, alongside seamless RESTful API integration, Firebase services, and real-time features. Passionate about writing clean, maintainable code that delivers exceptional user experiences. Seeking a challenging role where I can drive impactful products, contribute technical expertise, and grow within a forward-thinking, innovative team.`
   String get aboutMeDescription {
     return Intl.message(
-      'I’m Mid Level Software Engineer, passionate about mobile development with ‎+ 2 Years of Experience, looking for work as Flutter Software Engineer to gain real experience and assist the organization to achieve their goals',
+      'Results-driven Flutter Software Engineer with 3+ years of hands-on experience crafting high-performance, scalable mobile applications for Android & iOS — from concept to Play Store & App Store deployment. Backed by a solid foundation in Native Android development (Java), bringing a deep understanding of the Android ecosystem, platform-specific optimizations, and native integrations. Proven ability to deliver clean architecture, seamless UI/UX, and robust state management solutions using BLoC and GetIt, alongside seamless RESTful API integration, Firebase services, and real-time features. Passionate about writing clean, maintainable code that delivers exceptional user experiences. Seeking a challenging role where I can drive impactful products, contribute technical expertise, and grow within a forward-thinking, innovative team.',
       name: 'aboutMeDescription',
       desc: '',
       args: [],

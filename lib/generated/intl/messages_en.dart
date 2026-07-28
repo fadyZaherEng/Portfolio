@@ -29,7 +29,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "A Software Engineer, A Flutter Developer, A Mobile Software Engineer, A Android Developer, A IOS Developer"),
         "aboutMe": MessageLookupByLibrary.simpleMessage("About Me"),
         "aboutMeDescription": MessageLookupByLibrary.simpleMessage(
-            "I’m Mid Level Software Engineer, passionate about mobile development with ‎+ 2 Years of Experience, looking for work as Flutter Software Engineer to gain real experience and assist the organization to achieve their goals"),
+            "Results-driven Flutter Software Engineer with 3+ years of hands-on experience crafting high-performance, scalable mobile applications for Android & iOS — from concept to Play Store & App Store deployment. Backed by a solid foundation in Native Android development (Java), bringing a deep understanding of the Android ecosystem, platform-specific optimizations, and native integrations. Proven ability to deliver clean architecture, seamless UI/UX, and robust state management solutions using BLoC and GetIt, alongside seamless RESTful API integration, Firebase services, and real-time features. Passionate about writing clean, maintainable code that delivers exceptional user experiences. Seeking a challenging role where I can drive impactful products, contribute technical expertise, and grow within a forward-thinking, innovative team."),
         "adaptive": MessageLookupByLibrary.simpleMessage("Adaptive"),
         "adaptiveUI": MessageLookupByLibrary.simpleMessage("Adaptive UI"),
         "additionalSkillsDescription": MessageLookupByLibrary.simpleMessage(
@@ -124,8 +124,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "flutter": MessageLookupByLibrary.simpleMessage("Flutter"),
         "flutterDescription": MessageLookupByLibrary.simpleMessage(
             "Passionate about building responsive, scalable cross-platform apps."),
-        "flutterDeveloper":
-            MessageLookupByLibrary.simpleMessage("Flutter Developer"),
+        "flutterDeveloper": MessageLookupByLibrary.simpleMessage(
+            "Senior Flutter Software Engineer"),
         "flutterLocalNotificationsPlugin": MessageLookupByLibrary.simpleMessage(
             "Flutter Local Notifications Plugin"),
         "flutterNotification":
@@ -207,7 +207,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Freelancer Mobile Software Engineer"),
         "mockito": MessageLookupByLibrary.simpleMessage("Mockito"),
         "moreThanYearsExperienceAsA":
-            MessageLookupByLibrary.simpleMessage("‎‎+ 2 Years Experience As A"),
+            MessageLookupByLibrary.simpleMessage("‎‎+ 3 Years Experience As A"),
         "myChapter":
             MessageLookupByLibrary.simpleMessage("Chapters Of My Career"),
         "myPackages": MessageLookupByLibrary.simpleMessage("My Packages"),
@@ -261,6 +261,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectLanguage":
             MessageLookupByLibrary.simpleMessage("Select Language"),
         "sendMessage": MessageLookupByLibrary.simpleMessage("Send Message"),
+        "seniorSoftwareEngineer":
+            MessageLookupByLibrary.simpleMessage("Senior Software Engineer"),
         "sharedPreferences":
             MessageLookupByLibrary.simpleMessage("Shared Preferences"),
         "skills": MessageLookupByLibrary.simpleMessage("Skills"),

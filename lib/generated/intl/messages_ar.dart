@@ -31,7 +31,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "مهندس برمجيات على Flutter، مهندس برمجيات موبايل، مهندس برمجيات Android، مهندس برمجيات iOS"),
         "aboutMe": MessageLookupByLibrary.simpleMessage("حولي"),
         "aboutMeDescription": MessageLookupByLibrary.simpleMessage(
-            " أنا مهندس برمجيات متوسط المستوى، شغوف بتطوير تطبيقات الهاتف المحمول مع  2 + سنوات من الخبرة، أبحث عن عمل كمهندس برمجيات Flutter لاكتساب خبرة حقيقية والمساهمة في تحقيق أهداف المؤسسة."),
+            "مهندس برمجيات Flutter طموح يمتلك أكثر من 3 سنوات من الخبرة العملية في تطوير تطبيقات موبايل عالية الأداء وقابلة للتوسع لنظامي Android و iOS — من الفكرة إلى النشر على Play Store و App Store. مدعوم بأساس متين في تطوير Android الأصلي (Java)، مما يمنحه فهمًا عميقًا لنظام Android البيئي والتحسينات الخاصة بالمنصة والتكاملات الأصلية. قدرة مثبتة على تقديم هندسة نظيفة وتجربة مستخدم سلسة وحلول إدارة حالة قوية باستخدام BLoC و GetIt، إلى جانب تكامل RESTful API وخدمات Firebase والميزات الفورية. شغوف بكتابة كود نظيف وقابل للصيانة يقدم تجارب مستخدم استثنائية. يبحث عن دور تحدي يمكنه من قيادة منتجات مؤثرة والمساهمة بخبرته التقنية والنمو ضمن فريق مبتكر ومتطلع للمستقبل."),
         "adaptive": MessageLookupByLibrary.simpleMessage("تكيفي"),
         "adaptiveUI":
             MessageLookupByLibrary.simpleMessage("واجهة مستخدم تكيفية"),
@@ -129,7 +129,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "flutterDescription": MessageLookupByLibrary.simpleMessage(
             "شغوف ببناء تطبيقات متجاوبة وقابلة للتوسع عبر الأنظمة الأساسية."),
         "flutterDeveloper":
-            MessageLookupByLibrary.simpleMessage("مطور Flutter"),
+            MessageLookupByLibrary.simpleMessage("مهندس برمجيات Flutter أول"),
         "flutterLocalNotificationsPlugin": MessageLookupByLibrary.simpleMessage(
             "إضافة الإشعارات المحلية لفلاتر"),
         "flutterNotification":
@@ -209,7 +209,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "مهندس برمجيات هاتف محمول مستقل"),
         "mockito": MessageLookupByLibrary.simpleMessage("موكيتو"),
         "moreThanYearsExperienceAsA":
-            MessageLookupByLibrary.simpleMessage("مع خبرة 2 + سنة في"),
+            MessageLookupByLibrary.simpleMessage("مع خبرة 3 + سنوات في"),
         "myChapter":
             MessageLookupByLibrary.simpleMessage("فصول من مسيرتي المهنية"),
         "myPackages": MessageLookupByLibrary.simpleMessage("حزمي البرمجية"),
@@ -261,6 +261,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectDate": MessageLookupByLibrary.simpleMessage("اختار التاريخ"),
         "selectLanguage": MessageLookupByLibrary.simpleMessage("أخنار اللغه"),
         "sendMessage": MessageLookupByLibrary.simpleMessage("ارسل رسالة"),
+        "seniorSoftwareEngineer":
+            MessageLookupByLibrary.simpleMessage("مهندس برمجيات أول"),
         "sharedPreferences":
             MessageLookupByLibrary.simpleMessage("التفضيلات المشتركة"),
         "skills": MessageLookupByLibrary.simpleMessage("المهارات"),

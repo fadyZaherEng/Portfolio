@@ -129,9 +129,16 @@ class _MyChaptersCareerWebWidgetState extends State<MyChaptersCareerWebWidget>
   Widget _buildCareerTimeline(BuildContext context) {
     final List<TimelineEvent> events = [
       TimelineEvent(
+        title: S.of(context).seniorSoftwareEngineer,
+        place: "Bridge COM",
+        date: "[Aug 2026: PRESENT]",
+        color: Colors.teal,
+        url: "https://www.linkedin.com/company/bridgecom-ae/",
+      ),
+      TimelineEvent(
         title: S.of(context).midLevelSoftwareEngineer,
         place: "Bridge COM",
-        date: "[Oct 2024: PRESENT]",
+        date: "[Oct 2024: Aug 2026]",
         color: Colors.green,
         url: "https://www.linkedin.com/company/bridgecom-ae/",
       ),
