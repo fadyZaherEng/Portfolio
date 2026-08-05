@@ -12,6 +12,9 @@ class ColorSchemes {
   static const Color lightAccentSoft     = Color(0xFFFDE68A); // soft amber chip
   static const Color lightBackground     = Color(0xFFFAFAFF); // barely-lavender white
   static const Color lightSurface        = Color(0xFFFFFFFF); // pure white cards
+  // Glassmorphism overlay colors
+  static const Color lightSurfaceGlass   = Color.fromRGBO(255, 255, 255, 0.2); // subtle white glass
+  static const Color newDarkSurfaceGlass = Color.fromRGBO(17, 24, 39, 0.4); // semi‑transparent dark surface
   static const Color lightOnPrimary      = Color(0xFFFFFFFF); // white on violet
   static const Color lightOnBackground   = Color(0xFF1E1B4B); // deep indigo text
   static const Color lightOnSurface      = Color(0xFF3B3467); // muted indigo text
