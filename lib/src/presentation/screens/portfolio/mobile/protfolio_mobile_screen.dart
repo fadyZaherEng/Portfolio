@@ -6,6 +6,8 @@ import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/base/widget/base_stateful_widget.dart';
 import 'package:my_portfolio/src/core/utils/constants.dart';
 import 'package:my_portfolio/src/core/utils/openLink.dart';
+import 'package:my_portfolio/src/di/data_layer_injector.dart';
+import 'package:my_portfolio/src/domain/usecase/get_theme_use_case.dart';
 import 'package:my_portfolio/src/presentation/blocs/portfolio/portfolio_bloc.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/can_i_do_section_widget.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/contact_me_widget.dart';
@@ -75,7 +77,7 @@ class _PortfolioScreenState extends BaseState<PortfolioMobileScreen> {
           currentLocale = state.locale.languageCode;
           _isCanIDoVisible = true;
         } else if (state is PortfolioChangeThemeState) {
-          isDarkMode = state.theme == Constants.dark;
+          isDarkMode = state.theme == Constants.dark || state.theme == Constants.newDark;
           RestartWidget.restartApp(context);
           html.window.location.reload();
         } else if (state is PortfolioChangeLanguageState) {
@@ -199,7 +201,7 @@ class _PortfolioScreenState extends BaseState<PortfolioMobileScreen> {
 
   Widget _buildEndDrawer(BuildContext context) {
     return EndDrawerWidget(
-      isDarkMode: isDarkMode,
+      currentTheme: GetThemeUseCase(injector())(),
       isEnglish: currentLocale == "en",
       onDrawerGetInTouchTap: () {
          context.go(Routes.touchMe);
@@ -268,8 +270,7 @@ class _PortfolioScreenState extends BaseState<PortfolioMobileScreen> {
           ),
         );
       },
-      toggleTheme: (bool isDark) {
-        String theme = isDark ? Constants.dark : Constants.light;
+      changeTheme: (String theme) {
         _bloc.add(PortfolioChangeThemeEvent(theme: theme));
       },
       changeLocale: (String locale) {

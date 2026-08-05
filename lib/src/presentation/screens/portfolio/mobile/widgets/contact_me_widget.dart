@@ -57,7 +57,7 @@ class ContactMeWidget extends StatelessWidget {
                       social: IconButton(
                         icon: FaIcon(FontAwesomeIcons.github,
                             color:
-                                GetThemeUseCase(injector())() == Constants.dark
+                                (GetThemeUseCase(injector())() == Constants.dark || GetThemeUseCase(injector())() == Constants.newDark)
                                     ? ColorSchemes.primarySecondaryWhite
                                     : ColorSchemes.iconBackGround,
                             size: MediaQuery.sizeOf(context).width > 850
@@ -71,7 +71,7 @@ class ContactMeWidget extends StatelessWidget {
                       social: IconButton(
                         icon: FaIcon(FontAwesomeIcons.envelope,
                             color:
-                                GetThemeUseCase(injector())() == Constants.dark
+                                (GetThemeUseCase(injector())() == Constants.dark || GetThemeUseCase(injector())() == Constants.newDark)
                                     ? ColorSchemes.primarySecondaryWhite
                                     : ColorSchemes.iconBackGround,
                             size: MediaQuery.sizeOf(context).width > 850
@@ -84,7 +84,7 @@ class ContactMeWidget extends StatelessWidget {
                       social: IconButton(
                         icon: FaIcon(
                           FontAwesomeIcons.whatsapp,
-                          color: GetThemeUseCase(injector())() == Constants.dark
+                          color: (GetThemeUseCase(injector())() == Constants.dark || GetThemeUseCase(injector())() == Constants.newDark)
                               ? ColorSchemes.primarySecondaryWhite
                               : ColorSchemes.iconBackGround,
                           size:
@@ -106,7 +106,7 @@ class ContactMeWidget extends StatelessWidget {
                       social: IconButton(
                         icon: FaIcon(
                           FontAwesomeIcons.linkedin,
-                          color: GetThemeUseCase(injector())() == Constants.dark
+                          color: (GetThemeUseCase(injector())() == Constants.dark || GetThemeUseCase(injector())() == Constants.newDark)
                               ? ColorSchemes.primarySecondaryWhite
                               : ColorSchemes.iconBackGround,
                           size:
@@ -121,7 +121,7 @@ class ContactMeWidget extends StatelessWidget {
                       social: IconButton(
                         icon: FaIcon(
                           FontAwesomeIcons.facebook,
-                          color: GetThemeUseCase(injector())() == Constants.dark
+                          color: (GetThemeUseCase(injector())() == Constants.dark || GetThemeUseCase(injector())() == Constants.newDark)
                               ? ColorSchemes.primarySecondaryWhite
                               : ColorSchemes.iconBackGround,
                           size:
@@ -135,7 +135,7 @@ class ContactMeWidget extends StatelessWidget {
                       social: IconButton(
                         icon: FaIcon(
                           FontAwesomeIcons.youtube,
-                          color: GetThemeUseCase(injector())() == Constants.dark
+                          color: (GetThemeUseCase(injector())() == Constants.dark || GetThemeUseCase(injector())() == Constants.newDark)
                               ? ColorSchemes.primarySecondaryWhite
                               : ColorSchemes.iconBackGround,
                           size:

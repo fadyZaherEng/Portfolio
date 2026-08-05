@@ -44,7 +44,7 @@ class _State extends State<CustomAppBarWidget> {
                 width: 50,
                 height: 50,
                 imagePath: ImagePaths.newLogo2,
-                color: GetThemeUseCase(injector())() == Constants.dark
+                color: (GetThemeUseCase(injector())() == Constants.dark || GetThemeUseCase(injector())() == Constants.newDark)
                     ? ColorSchemes.secondary
                     : ColorSchemes.iconBackGround,
               ),
@@ -54,12 +54,12 @@ class _State extends State<CustomAppBarWidget> {
           Text(
             S.of(context).fadyTag,
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: GetThemeUseCase(injector())() == Constants.dark
+                  color: (GetThemeUseCase(injector())() == Constants.dark || GetThemeUseCase(injector())() == Constants.newDark)
                       ? ColorSchemes.white
                       : ColorSchemes.primary,
                   fontSize: MediaQuery.of(context).size.width > 1300
                       ? 25
-                      : GetThemeUseCase(injector())() == Constants.dark
+                      : (GetThemeUseCase(injector())() == Constants.dark || GetThemeUseCase(injector())() == Constants.newDark)
                           ? 16
                           : 18,
                 ),
@@ -78,7 +78,7 @@ class _State extends State<CustomAppBarWidget> {
                     matchTextDirection: true,
                     width: MediaQuery.of(context).size.width > 1300 ? 38 : 24,
                     height: MediaQuery.of(context).size.width > 1300 ? 38 : 24,
-                    color: GetThemeUseCase(injector())() == Constants.dark
+                    color: (GetThemeUseCase(injector())() == Constants.dark || GetThemeUseCase(injector())() == Constants.newDark)
                         ? ColorSchemes.secondary
                         : ColorSchemes.iconBackGround,
                   ),

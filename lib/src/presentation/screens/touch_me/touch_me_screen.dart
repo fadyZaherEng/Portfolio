@@ -43,7 +43,7 @@ class _TouchMeScreenState extends State<TouchMeScreen> {
     _messageController
         .addListener(() => _validateMessage(_messageController.text));
 
-    isDarkMode = GetThemeUseCase(injector())() == Constants.dark;
+    isDarkMode = GetThemeUseCase(injector())() == Constants.dark || GetThemeUseCase(injector())() == Constants.newDark;
   }
 
   /// Validates the name field

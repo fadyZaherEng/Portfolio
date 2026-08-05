@@ -73,7 +73,7 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
       _scrollPercentage.value = _scrollController.position.pixels /
           _scrollController.position.maxScrollExtent;
     });
-    isDarkMode = isDarkMode = GetThemeUseCase(injector())() == Constants.dark;
+    isDarkMode = GetThemeUseCase(injector())() == Constants.dark || GetThemeUseCase(injector())() == Constants.newDark;
   }
 
   void _onTap(int index, {String? route, Widget? screen}) {
@@ -108,7 +108,7 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
           currentLocale = state.locale.languageCode;
           _isCanIDoVisible = true;
         } else if (state is PortfolioChangeThemeState) {
-          isDarkMode = state.theme == Constants.dark;
+          isDarkMode = state.theme == Constants.dark || state.theme == Constants.newDark;
           RestartWidget.restartApp(context);
           html.window.location.reload();
         } else if (state is PortfolioChangeLanguageState) {
@@ -338,7 +338,7 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
 
   Widget _buildEndDrawer(BuildContext context) {
     return EndDrawerWebWidget(
-      isDarkMode: isDarkMode,
+      currentTheme: GetThemeUseCase(injector())(),
       isEnglish: currentLocale == "en",
       onDrawerGetInTouchTap: () {
         context.go(Routes.touchMe);
@@ -371,8 +371,7 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
           ),
         );
       },
-      toggleTheme: (bool isDark) {
-        String theme = isDark ? Constants.dark : Constants.light;
+      changeTheme: (String theme) {
         _bloc.add(PortfolioChangeThemeEvent(theme: theme));
       },
       changeLocale: (String locale) {

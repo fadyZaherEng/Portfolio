@@ -169,5 +169,6 @@ class FullCirclePainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
+  bool shouldRepaint(covariant FullCirclePainter oldDelegate) =>
+      oldDelegate.color != color;
 }

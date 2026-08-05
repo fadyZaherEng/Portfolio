@@ -11,6 +11,6 @@ class GetThemeUseCase {
 
   String call() {
     return sharedPreferences.getString(SharedPreferenceKeys.theme) ??
-        Constants.dark;
+        Constants.newDark;
   }
 }

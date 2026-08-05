@@ -47,7 +47,7 @@ class _State extends State<CustomAppBarWebWidget> {
                 width: 60,
                 height: 60,
                 imagePath: ImagePaths.newLogo2,
-                color: GetThemeUseCase(injector())() == Constants.dark
+                color: (GetThemeUseCase(injector())() == Constants.dark || GetThemeUseCase(injector())() == Constants.newDark)
                     ? ColorSchemes.secondary
                     : ColorSchemes.iconBackGround,
               ),
@@ -57,7 +57,7 @@ class _State extends State<CustomAppBarWebWidget> {
           Text(
             S.of(context).fadyTag,
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                  color: GetThemeUseCase(injector())() == Constants.dark
+                  color: (GetThemeUseCase(injector())() == Constants.dark || GetThemeUseCase(injector())() == Constants.newDark)
                       ? ColorSchemes.white
                       : ColorSchemes.primary,
                   fontSize:23,
@@ -76,7 +76,7 @@ class _State extends State<CustomAppBarWebWidget> {
                     matchTextDirection: true,
                     width: 28,
                     height: 28,
-                    color: GetThemeUseCase(injector())() == Constants.dark
+                    color: (GetThemeUseCase(injector())() == Constants.dark || GetThemeUseCase(injector())() == Constants.newDark)
                         ? ColorSchemes.secondary
                         : ColorSchemes.iconBackGround,
                   ),

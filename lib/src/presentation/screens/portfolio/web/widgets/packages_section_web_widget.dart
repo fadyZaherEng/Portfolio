@@ -80,6 +80,11 @@ class _PackagesSectionWebWidgetState extends State<PackagesSectionWebWidget> {
                         ? (Matrix4.identity()..translate(0.0, -8.0))
                         : Matrix4.identity(),
                     decoration: BoxDecoration(
+                      color: isHovered
+                          ? null
+                          : (widget.isDarkMode
+                              ? ColorSchemes.primaryOffer
+                              : Colors.white),
                       borderRadius: BorderRadius.circular(20),
                       gradient: LinearGradient(
                         colors: isHovered
@@ -89,13 +94,11 @@ class _PackagesSectionWebWidgetState extends State<PackagesSectionWebWidget> {
                               ]
                             : [
                                 (widget.isDarkMode
-                                        ? Colors.white.withOpacity(0.07)
-                                        : Colors.grey.shade100)
-                                    .withOpacity(isHovered ? 0 : 1),
+                                    ? ColorSchemes.primaryOffer
+                                    : Colors.grey.shade100),
                                 (widget.isDarkMode
-                                        ? Colors.white.withOpacity(0.03)
-                                        : Colors.white)
-                                    .withOpacity(isHovered ? 0 : 1),
+                                    ? ColorSchemes.primaryOffer
+                                    : Colors.white),
                               ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -104,7 +107,7 @@ class _PackagesSectionWebWidgetState extends State<PackagesSectionWebWidget> {
                         color: isHovered
                             ? ColorSchemes.primary.withOpacity(0.6)
                             : (widget.isDarkMode
-                                ? Colors.white.withOpacity(0.12)
+                                ? Colors.white.withOpacity(0.15)
                                 : Colors.grey.shade300),
                         width: 1.5,
                       ),
@@ -360,14 +363,14 @@ class _PackagesSectionWebWidgetState extends State<PackagesSectionWebWidget> {
         color: isHovered
             ? Colors.white.withOpacity(0.15)
             : (isDarkMode
-                ? Colors.white.withOpacity(0.08)
+                ? Colors.white.withOpacity(0.1)
                 : Colors.grey.shade100),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
           color: isHovered
               ? Colors.white.withOpacity(0.3)
               : (isDarkMode
-                  ? Colors.white.withOpacity(0.15)
+                  ? Colors.white.withOpacity(0.2)
                   : Colors.grey.shade300),
         ),
       ),
@@ -379,7 +382,7 @@ class _PackagesSectionWebWidgetState extends State<PackagesSectionWebWidget> {
             size: 13,
             color: isHovered
                 ? Colors.white.withOpacity(0.85)
-                : ColorSchemes.primary,
+                : (isDarkMode ? ColorSchemes.primarySecondary : ColorSchemes.primary),
           ),
           const SizedBox(width: 6),
           Text(
@@ -387,8 +390,8 @@ class _PackagesSectionWebWidgetState extends State<PackagesSectionWebWidget> {
             style: TextStyle(
               fontSize: 12,
               color: isHovered
-                  ? Colors.white.withOpacity(0.9)
-                  : (isDarkMode ? Colors.white70 : Colors.black87),
+                  ? Colors.white
+                  : (isDarkMode ? Colors.white : Colors.black87),
               fontWeight: FontWeight.w500,
             ),
           ),

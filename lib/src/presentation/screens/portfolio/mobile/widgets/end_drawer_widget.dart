@@ -7,13 +7,13 @@ import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/core/utils/constants.dart';
 import 'package:my_portfolio/src/core/utils/openLink.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/custom_resume_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/mobile/widgets/switch_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/theme_selector_web_widget.dart';
 import 'package:skeletons/skeletons.dart';
 
 class EndDrawerWidget extends StatelessWidget {
-  final bool isDarkMode;
+  final String currentTheme;
   final bool isEnglish;
-  final void Function(bool isDark) toggleTheme;
+  final void Function(String theme) changeTheme;
   final void Function(String) changeLocale;
   final void Function() onDrawerHomeTap;
   final void Function() onDrawerAboutTap;
@@ -30,8 +30,8 @@ class EndDrawerWidget extends StatelessWidget {
 
   const EndDrawerWidget({
     super.key,
-    required this.isDarkMode,
-    required this.toggleTheme,
+    required this.currentTheme,
+    required this.changeTheme,
     required this.changeLocale,
     required this.onDrawerHomeTap,
     required this.onDrawerAboutTap,
@@ -50,6 +50,7 @@ class EndDrawerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final bool isDarkMode = currentTheme == Constants.dark || currentTheme == Constants.newDark;
     final Color textColor =
         isDarkMode ? ColorSchemes.white : ColorSchemes.iconBackGround;
     final Color borderColor = isDarkMode
@@ -177,12 +178,12 @@ class EndDrawerWidget extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             _buildDivider(),
-            const SizedBox(height: 4),
-            IOSSwitchWithThumbImage(
-              isDarkMode: isDarkMode,
-              toggleTheme: (value) => toggleTheme(value),
+            const SizedBox(height: 12),
+            ThemeSelectorWebWidget(
+              currentTheme: currentTheme,
+              changeTheme: changeTheme,
             ),
-            const SizedBox(height: 4),
+            const SizedBox(height: 12),
             _buildDivider(),
             const SizedBox(height: 10),
             Padding(

@@ -4,16 +4,17 @@ import 'package:my_portfolio/generated/l10n.dart';
 import 'package:my_portfolio/src/config/theme/color_schemes.dart';
 import 'package:my_portfolio/src/core/resources/image_paths.dart';
 import 'package:my_portfolio/src/core/utils/openLink.dart';
+import 'package:my_portfolio/src/core/utils/constants.dart';
 import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/custom_resume_web_widget.dart';
-import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/switch_web_widget.dart';
+import 'package:my_portfolio/src/presentation/screens/portfolio/web/widgets/theme_selector_web_widget.dart';
 import 'package:skeletons/skeletons.dart';
 
 class EndDrawerWebWidget extends StatelessWidget {
-  final bool isDarkMode;
+  final String currentTheme;
   final bool isEnglish;
-  final void Function(bool isDark) toggleTheme;
   final void Function(String) changeLocale;
   final void Function() onDrawerLogoTap;
+  final void Function(String) changeTheme;
 
   final void Function() onDrawerSkillsTap;
   final void Function() onDrawerTrainingTap;
@@ -21,8 +22,8 @@ class EndDrawerWebWidget extends StatelessWidget {
 
   const EndDrawerWebWidget({
     super.key,
-    required this.isDarkMode,
-    required this.toggleTheme,
+    required this.currentTheme,
+    required this.changeTheme,
     required this.changeLocale,
     required this.onDrawerLogoTap,
     required this.isEnglish,
@@ -33,11 +34,9 @@ class EndDrawerWebWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color textColor =
-        isDarkMode ? ColorSchemes.white : ColorSchemes.iconBackGround;
-    final Color borderColor = isDarkMode
-        ? ColorSchemes.primarySecondaryWhite
-        : ColorSchemes.iconBackGround;
+    final bool isDark = currentTheme == Constants.dark || currentTheme == Constants.newDark;
+    final Color textColor = isDark ? ColorSchemes.white : ColorSchemes.iconBackGround;
+    final Color borderColor = isDark ? ColorSchemes.primarySecondaryWhite : ColorSchemes.iconBackGround;
     return Drawer(
       semanticLabel: S.of(context).dashboard,
       backgroundColor: ColorSchemes.iconBackGround.withOpacity(0.7),
@@ -104,7 +103,7 @@ class EndDrawerWebWidget extends StatelessWidget {
             const SizedBox(height: 16),
             CustomResumeWebWidget(
               onViewResumeTap: _openResume,
-              isDarkMode: isDarkMode,
+              isDarkMode: isDark,
               borderColor: borderColor,
               textColor: textColor,
               title: S.of(context).resume,
@@ -113,9 +112,9 @@ class EndDrawerWebWidget extends StatelessWidget {
             const SizedBox(height: 16),
             _buildDivider(),
             const SizedBox(height: 16),
-            IOSSwitchWithThumbImageWebWidget(
-              isDarkMode: isDarkMode,
-              toggleTheme: (value) => toggleTheme(value),
+            ThemeSelectorWebWidget(
+              currentTheme: currentTheme,
+              changeTheme: changeTheme,
             ),
             const SizedBox(height: 16),
             _buildDivider(),

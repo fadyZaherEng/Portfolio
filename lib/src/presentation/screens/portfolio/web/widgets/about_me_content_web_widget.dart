@@ -172,7 +172,7 @@ class _AboutMeContentWebWidgetState extends State<AboutMeContentWebWidget>
                     decoration:
                         isLink ? TextDecoration.underline : TextDecoration.none,
                     decorationColor:
-                        GetThemeUseCase(injector())() == Constants.dark
+                        (GetThemeUseCase(injector())() == Constants.dark || GetThemeUseCase(injector())() == Constants.newDark)
                             ? ColorSchemes.white
                             : ColorSchemes.black,
                     decorationThickness: 2,

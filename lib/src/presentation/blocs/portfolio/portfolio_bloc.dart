@@ -45,7 +45,11 @@ class PortfolioBloc extends Bloc<PortfolioEvent, PortfolioState> {
 
   FutureOr<void> _onPortfolioGetThemeEvent(
       PortfolioGetThemeEvent event, Emitter<PortfolioState> emit) {
-    emit(PortfolioGetThemeState(isDark: _getThemeUseCase() == Constants.dark));
+    final theme = _getThemeUseCase();
+    emit(PortfolioGetThemeState(
+      isDark: theme == Constants.dark || theme == Constants.newDark,
+      theme: theme,
+    ));
   }
 
   FutureOr<void> _onPortfolioGetLanguageEvent(

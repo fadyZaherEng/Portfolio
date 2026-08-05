@@ -127,19 +127,20 @@ class _PackageMobileCardState extends State<_PackageMobileCard>
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18),
+          color: isDark ? ColorSchemes.primaryOffer : Colors.white,
           gradient: LinearGradient(
             colors: [
               isDark
-                  ? Colors.white.withOpacity(0.07)
+                  ? ColorSchemes.primaryOffer
                   : Colors.grey.shade50,
-              isDark ? Colors.white.withOpacity(0.03) : Colors.white,
+              isDark ? ColorSchemes.primaryOffer : Colors.white,
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
           ),
           border: Border.all(
             color: isDark
-                ? Colors.white.withOpacity(0.12)
+                ? Colors.white.withOpacity(0.15)
                 : Colors.grey.shade200,
           ),
           boxShadow: [

@@ -56,7 +56,7 @@ class _SkillsScreenState extends State<SkillsScreen> {
         } else if (state is PortfolioGetLanguageState) {
           currentLocale = state.locale.languageCode;
         } else if (state is PortfolioChangeThemeState) {
-          isDarkMode = state.theme == Constants.dark;
+          isDarkMode = state.theme == Constants.dark || state.theme == Constants.newDark;
           RestartWidget.restartApp(context);
           html.window.location.reload();
         } else if (state is PortfolioChangeLanguageState) {

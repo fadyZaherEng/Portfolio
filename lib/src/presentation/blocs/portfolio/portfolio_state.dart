@@ -24,6 +24,7 @@ final class PortfolioGetLanguageState extends PortfolioState {
 
 final class PortfolioGetThemeState extends PortfolioState {
   final bool isDark;
+  final String theme;
 
-  PortfolioGetThemeState({required this.isDark});
+  PortfolioGetThemeState({required this.isDark, required this.theme});
 }

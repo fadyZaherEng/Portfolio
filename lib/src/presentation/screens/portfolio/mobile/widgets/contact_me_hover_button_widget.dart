@@ -65,7 +65,7 @@ class _ContactMeHoverButtonWidgetState
           child: Text(
             S.of(context).contactMe,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: GetThemeUseCase(injector())() == Constants.dark
+                  color: (GetThemeUseCase(injector())() == Constants.dark || GetThemeUseCase(injector())() == Constants.newDark)
                       ? ColorSchemes.iconDarkWhite
                       : ColorSchemes.white,
                   fontWeight: FontWeight.bold,

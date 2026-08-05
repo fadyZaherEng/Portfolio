@@ -66,12 +66,13 @@ class _MyAppState extends State<MyApp> {
                       ],
                       debugShowCheckedModeBanner: false,
                       title: "Fady Zaher",
-                      theme: state is InitialMainState &&
-                              state.theme == Constants.dark
-                          ? AppTheme(state.locale.languageCode).dark
-                          : state is InitialMainState
-                              ? AppTheme(state.locale.languageCode).light
-                              : AppTheme(window.locale.languageCode).dark,
+                      theme: state is InitialMainState
+                          ? (state.theme == Constants.dark
+                              ? AppTheme(state.locale.languageCode).dark
+                              : state.theme == Constants.newDark
+                                  ? AppTheme(state.locale.languageCode).newDark
+                                  : AppTheme(state.locale.languageCode).light)
+                          : AppTheme(window.locale.languageCode).newDark,
                       locale: state is InitialMainState
                           ? state.locale
                           : window.locale,
@@ -87,12 +88,13 @@ class _MyAppState extends State<MyApp> {
                       ],
                       debugShowCheckedModeBanner: false,
                       title: "Fady Zaher",
-                      theme: state is InitialMainState &&
-                              state.theme == Constants.dark
-                          ? AppTheme(state.locale.languageCode).dark
-                          : state is InitialMainState
-                              ? AppTheme(state.locale.languageCode).light
-                              : AppTheme(window.locale.languageCode).dark,
+                      theme: state is InitialMainState
+                          ? (state.theme == Constants.dark
+                              ? AppTheme(state.locale.languageCode).dark
+                              : state.theme == Constants.newDark
+                                  ? AppTheme(state.locale.languageCode).newDark
+                                  : AppTheme(state.locale.languageCode).light)
+                          : AppTheme(window.locale.languageCode).newDark,
                       locale: state is InitialMainState
                           ? state.locale
                           : window.locale,

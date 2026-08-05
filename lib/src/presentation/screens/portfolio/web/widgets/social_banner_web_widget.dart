@@ -19,7 +19,7 @@ class SocialBannerWebWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDarkMode = GetThemeUseCase(injector())() == Constants.dark;
+    final isDarkMode = GetThemeUseCase(injector())() == Constants.dark || GetThemeUseCase(injector())() == Constants.newDark;
     final iconColor =
         isDarkMode ? ColorSchemes.white : ColorSchemes.iconBackGround;
     final double spacing = MediaQuery.of(context).size.height * 0.009;

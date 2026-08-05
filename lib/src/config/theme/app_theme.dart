@@ -230,6 +230,98 @@ class AppTheme {
     );
   }
 
+  ThemeData get newDark {
+    return ThemeData(
+      useMaterial3: false,
+      fontFamily: getFontFamily(),
+      tooltipTheme: TooltipThemeData(
+        decoration: BoxDecoration(
+          color: ColorSchemes.newDarkPrimaryVariant,
+          borderRadius: BorderRadius.circular(8),
+        ),
+        textStyle: getTextStyle(
+          fontSize: 12,
+          fontFamily: getFontFamily(),
+          fontWeight: Constants.fontWeightRegular,
+          color: ColorSchemes.newDarkAccent,
+        ),
+      ),
+      scaffoldBackgroundColor: ColorSchemes.newDarkBackground,
+      iconTheme: IconThemeData(color: ColorSchemes.newDarkAccent),
+      appBarTheme: AppBarTheme(
+        centerTitle: false,
+        actionsIconTheme: IconThemeData(
+          color: ColorSchemes.newDarkAccent,
+        ),
+        backgroundColor: ColorSchemes.newDarkBackground,
+        elevation: 0,
+        titleTextStyle: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+          color: ColorSchemes.newDarkAccent,
+        ),
+        systemOverlayStyle: SystemUiOverlayStyle(
+          statusBarColor: ColorSchemes.newDarkBackground,
+          statusBarIconBrightness: Brightness.light,
+        ),
+        iconTheme: IconThemeData(
+          color: ColorSchemes.newDarkAccent,
+        ),
+      ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+        elevation: 0.0,
+        type: BottomNavigationBarType.fixed,
+        selectedItemColor: ColorSchemes.newDarkAccent,
+        backgroundColor: ColorSchemes.newDarkSurface,
+        unselectedItemColor: ColorSchemes.newDarkOnBackground,
+      ),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: ColorSchemes.newDarkAccent,
+        foregroundColor: ColorSchemes.newDarkBackground,
+      ),
+      textTheme: TextTheme(
+        titleLarge: getTextStyle(
+          fontSize: 18,
+          fontFamily: getFontFamily(),
+          fontWeight: Constants.fontWeightSemiBold,
+          color: ColorSchemes.newDarkOnPrimary,
+        ),
+        bodyLarge: getTextStyle(
+          fontSize: 16,
+          fontFamily: getFontFamily(),
+          fontWeight: Constants.fontWeightSemiBold,
+          color: ColorSchemes.newDarkOnPrimary,
+        ),
+        bodyMedium: getTextStyle(
+          fontSize: 13,
+          fontFamily: getFontFamily(),
+          fontWeight: Constants.fontWeightMedium,
+          color: ColorSchemes.newDarkOnPrimary,
+        ),
+        bodySmall: getTextStyle(
+          fontSize: 13,
+          fontFamily: getFontFamily(),
+          fontWeight: Constants.fontWeightRegular,
+          textDecoration: TextDecoration.none,
+          color: ColorSchemes.newDarkOnSurface,
+        ),
+        labelLarge: getTextStyle(
+          fontSize: 12,
+          fontFamily: getFontFamily(),
+          fontWeight: Constants.fontWeightRegular,
+          color: ColorSchemes.newDarkOnBackground,
+        ),
+      ),
+      cardTheme: CardTheme(color: ColorSchemes.newDarkSurface),
+      hintColor: ColorSchemes.newDarkOnBackground,
+      brightness: Brightness.dark,
+      primaryColor: ColorSchemes.newDarkAccent,
+      drawerTheme: DrawerThemeData(
+        backgroundColor: ColorSchemes.newDarkBackground,
+      ),
+    );
+  }
+
   String getFontFamily() => language == "en"
       ? Constants.englishFontFamily
       : Constants.arabicFontFamily;
