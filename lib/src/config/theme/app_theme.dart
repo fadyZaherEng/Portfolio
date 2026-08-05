@@ -12,10 +12,10 @@ class AppTheme {
     return ThemeData(
       useMaterial3: false,
       fontFamily: getFontFamily(),
-      iconTheme: IconThemeData(color: ColorSchemes.iconBackGround),
+      iconTheme: IconThemeData(color: ColorSchemes.lightPrimaryVariant),
       tooltipTheme: TooltipThemeData(
         decoration: BoxDecoration(
-          color: ColorSchemes.iconBackGround,
+          color: ColorSchemes.lightPrimaryVariant,
           borderRadius: BorderRadius.circular(8),
         ),
         textStyle: getTextStyle(
@@ -27,18 +27,18 @@ class AppTheme {
       ),
       appBarTheme: AppBarTheme(
         centerTitle: false,
-        color: ColorSchemes.white,
+        color: ColorSchemes.lightSurface,
         elevation: 0,
         shadowColor: Colors.transparent,
         actionsIconTheme: IconThemeData(
-          color: ColorSchemes.iconBackGround,
+          color: ColorSchemes.lightPrimaryVariant,
         ),
         iconTheme: IconThemeData(
-          color: ColorSchemes.iconBackGround,
+          color: ColorSchemes.lightPrimaryVariant,
         ),
         systemOverlayStyle: SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
-          systemNavigationBarColor: ColorSchemes.primary,
+          systemNavigationBarColor: ColorSchemes.lightPrimary,
           statusBarIconBrightness: Brightness.dark,
           statusBarBrightness: Brightness.light,
         ),
@@ -48,42 +48,36 @@ class AppTheme {
         hintStyle: TextStyle(
             fontSize: 14,
             fontFamily: getFontFamily(),
-            color: ColorSchemes.gray,
+            color: ColorSchemes.lightOnSurface,
             letterSpacing: 0.26,
             fontWeight: FontWeight.normal),
         labelStyle: TextStyle(
             fontSize: 14,
-            fontFamily: getFontFamily(), //todo handle font family
-            color: ColorSchemes.gray,
+            fontFamily: getFontFamily(),
+            color: ColorSchemes.lightOnSurface,
             fontWeight: FontWeight.normal),
         errorStyle: TextStyle(
             fontSize: 12,
-            fontFamily: getFontFamily(), //todo handle font family
+            fontFamily: getFontFamily(),
             color: ColorSchemes.redError,
             fontWeight: FontWeight.normal),
-        enabledBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: ColorSchemes.gray, width: 1),
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
-          ),
+        enabledBorder: OutlineInputBorder(
+          borderSide:
+              BorderSide(color: ColorSchemes.lightPrimary, width: 1),
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
         ),
-        focusedBorder: const OutlineInputBorder(
-          borderSide: BorderSide(color: ColorSchemes.gray, width: 1),
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
-          ),
+        focusedBorder: OutlineInputBorder(
+          borderSide:
+              BorderSide(color: ColorSchemes.lightPrimaryVariant, width: 1.5),
+          borderRadius: const BorderRadius.all(Radius.circular(10)),
         ),
         errorBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: ColorSchemes.redError, width: 1),
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         focusedErrorBorder: const OutlineInputBorder(
           borderSide: BorderSide(color: ColorSchemes.redError, width: 1),
-          borderRadius: BorderRadius.all(
-            Radius.circular(10),
-          ),
+          borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
         alignLabelWithHint: true,
       ),
@@ -92,52 +86,54 @@ class AppTheme {
           fontSize: 18,
           fontFamily: getFontFamily(),
           fontWeight: Constants.fontWeightSemiBold,
-          color: ColorSchemes.primary,
+          color: ColorSchemes.lightOnBackground,
         ),
         bodyLarge: getTextStyle(
           fontSize: 16,
           fontFamily: getFontFamily(),
           fontWeight: Constants.fontWeightSemiBold,
-          color: ColorSchemes.primary,
+          color: ColorSchemes.lightOnBackground,
         ),
         bodyMedium: getTextStyle(
           fontSize: 13,
           fontFamily: getFontFamily(),
           fontWeight: Constants.fontWeightMedium,
-          color: ColorSchemes.primary,
+          color: ColorSchemes.lightOnBackground,
         ),
         bodySmall: getTextStyle(
           fontSize: 13,
           fontFamily: getFontFamily(),
           fontWeight: Constants.fontWeightRegular,
           textDecoration: TextDecoration.none,
-          color: ColorSchemes.primary,
+          color: ColorSchemes.lightOnSurface,
         ),
         labelLarge: getTextStyle(
           fontSize: 12,
           fontFamily: getFontFamily(),
           fontWeight: Constants.fontWeightRegular,
-          color: ColorSchemes.primary,
-        ), //Regular
+          color: ColorSchemes.lightOnSurface,
+        ),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: ColorSchemes.white,
+        backgroundColor: ColorSchemes.lightSurface,
         elevation: 0,
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: ColorSchemes.primary,
-        unselectedItemColor: Colors.white,
+        selectedItemColor: ColorSchemes.lightPrimary,
+        unselectedItemColor: ColorSchemes.lightOnSurface,
         selectedIconTheme: IconThemeData(
-          color: ColorSchemes.primary,
+          color: ColorSchemes.lightPrimary,
           size: 24,
         ),
-        unselectedIconTheme: const IconThemeData(
-          color: ColorSchemes.gray,
+        unselectedIconTheme: IconThemeData(
+          color: ColorSchemes.lightOnSurface,
           size: 24,
         ),
       ),
-      scaffoldBackgroundColor: ColorSchemes.white,
-      primaryColor: ColorSchemes.primary,
-      splashColor: Colors.transparent,
+      scaffoldBackgroundColor: ColorSchemes.lightBackground,
+      primaryColor: ColorSchemes.lightPrimary,
+      cardTheme: const CardTheme(color: ColorSchemes.lightSurface),
+      splashColor: ColorSchemes.lightAccent.withOpacity(0.12),
+      highlightColor: ColorSchemes.lightPrimary.withOpacity(0.08),
     );
   }
 

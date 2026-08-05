@@ -28,6 +28,7 @@ import 'package:my_portfolio/src/presentation/screens/skills/skills_screen.dart'
 import 'package:my_portfolio/src/presentation/screens/touch_me/touch_me_screen.dart';
 import 'package:my_portfolio/src/presentation/screens/training/training_screen.dart';
 import 'package:my_portfolio/src/presentation/widgets/restart_widget.dart';
+import 'package:my_portfolio/src/presentation/widgets/animated_bubbles_widget.dart';
 import "package:universal_html/html.dart" as html;
 import 'package:visibility_detector/visibility_detector.dart';
 
@@ -136,6 +137,9 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
                 child: Stack(
                   alignment: AlignmentDirectional.bottomEnd,
                   children: [
+                    const Positioned.fill(
+                      child: AnimatedBubblesWidget(),
+                    ),
                     _buildContent(),
                     _buildScrollIndicator(),
                     _buildScrollToTopButton(),
