@@ -73,7 +73,7 @@ class _Bubble {
   factory _Bubble.random(Random r, int seed) {
     return _Bubble(
       xFraction: r.nextDouble(),
-      size: 4 + r.nextDouble() * 12, // smaller bubbles (4‑16px)
+      size: 2 + r.nextDouble() * 6, // even smaller bubbles (2‑8px)
       speed: 0.4 + r.nextDouble() * 0.6,
       phase: r.nextDouble(),
       wobble: 0.02 + r.nextDouble() * 0.04,
