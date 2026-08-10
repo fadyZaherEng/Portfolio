@@ -47,6 +47,7 @@ class _PortfolioImageWidgetState extends State<PortfolioImageWidget>
 
   @override
   Widget build(BuildContext context) {
+    final double widgetSize = MediaQuery.sizeOf(context).width > 850 ? 250 : 200;
     return AnimatedBuilder(
       animation: _controller,
       builder: (context, child) {
@@ -56,11 +57,10 @@ class _PortfolioImageWidgetState extends State<PortfolioImageWidget>
             scale: _scaleAnimation.value,
             child: SlideTransition(
               position: _slideAnimation,
-              child: Container(
-                height: MediaQuery.sizeOf(context).width > 850 ? 250 : 200,
-                width: MediaQuery.sizeOf(context).width > 850 ? 250 : 200,
-                alignment: AlignmentDirectional.topEnd,
-                child: _buildImageWidget(context),
+              child: SizedBox(
+                height: widgetSize,
+                width: widgetSize,
+                child: _buildImageWidget(context, widgetSize),
               ),
             ),
           ),
@@ -69,39 +69,65 @@ class _PortfolioImageWidgetState extends State<PortfolioImageWidget>
     );
   }
 
-  Widget _buildImageWidget(BuildContext context) {
+  Widget _buildImageWidget(BuildContext context, double size) {
     return Center(
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Positioned(
-            top: 15,
-            child: CustomPaint(
-              painter: FullCirclePainter(ColorSchemes.primarySecondary),
-              size: const Size(150, 150),
+          // Background pulsing glow aura
+          PulsingCircleWidget(size: size * 0.95),
+
+          // Glowing Outer Border Container
+          Container(
+            width: size * 0.88,
+            height: size * 0.88,
+            padding: const EdgeInsets.all(4),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                colors: [
+                  ColorSchemes.primary,
+                  ColorSchemes.primarySecondary,
+                  Colors.cyanAccent,
+                  ColorSchemes.primary,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: ColorSchemes.primary.withOpacity(0.45),
+                  blurRadius: 20,
+                  spreadRadius: 3,
+                ),
+                BoxShadow(
+                  color: Colors.cyanAccent.withOpacity(0.2),
+                  blurRadius: 10,
+                  spreadRadius: 1,
+                ),
+              ],
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: ColorSchemes.iconBackGround,
+              ),
+              child: ClipOval(
+                child: Image.asset(
+                  ImagePaths.fadySplash,
+                  fit: BoxFit.cover,
+                  alignment: const Alignment(0, -0.65), // Perfect face framing
+                  errorBuilder: (context, error, stackTrace) {
+                    return Image.asset(
+                      ImagePaths.fady,
+                      fit: BoxFit.cover,
+                      alignment: const Alignment(0, -0.65),
+                    );
+                  },
+                ),
+              ),
             ),
           ),
-          // Positioned(
-          //   bottom: 2,
-          //   child: CustomPaint(
-          //     painter: FullCirclePainter(
-          //         ColorSchemes.primarySecondary.withOpacity(0.4)),
-          //     size: const Size(150, 150),
-          //   ),
-          // ),
-          const Positioned(
-            bottom: 2,
-            child: PulsingCircleWidget(),
-          ),
-          ClipOval(
-            child: Image.asset(
-              ImagePaths.fady, // استبدلها بصورتك
-              width: 200,
-              height: 200,
-              fit: BoxFit.cover,
-            ),
-          ),
-          // الدائرة السفلية (تكون خلف الصورة)
         ],
       ),
     );
@@ -109,7 +135,8 @@ class _PortfolioImageWidgetState extends State<PortfolioImageWidget>
 }
 
 class PulsingCircleWidget extends StatefulWidget {
-  const PulsingCircleWidget({Key? key}) : super(key: key);
+  final double size;
+  const PulsingCircleWidget({Key? key, required this.size}) : super(key: key);
 
   @override
   _PulsingCircleWidgetState createState() => _PulsingCircleWidgetState();
@@ -127,9 +154,9 @@ class _PulsingCircleWidgetState extends State<PulsingCircleWidget>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
-    )..repeat(reverse: true); // ✅ جعل الأنيميشن ينبض ذهابًا وإيابًا
+    )..repeat(reverse: true);
 
-    _scaleAnimation = Tween<double>(begin: 0.9, end: 1).animate(
+    _scaleAnimation = Tween<double>(begin: 0.95, end: 1.05).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
     );
   }
@@ -147,35 +174,19 @@ class _PulsingCircleWidgetState extends State<PulsingCircleWidget>
       builder: (context, child) {
         return Transform.scale(
           scale: _scaleAnimation.value,
-          child: CustomPaint(
-            painter: FullCirclePainter(
-              ColorSchemes.primarySecondary.withOpacity(0.4),
+          child: Container(
+            width: widget.size,
+            height: widget.size,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: ColorSchemes.primarySecondary.withOpacity(0.35),
+                width: 2,
+              ),
             ),
-            size: const Size(150, 150),
           ),
         );
       },
     );
   }
-}
-
-// رسم الدائرة الكاملة
-class FullCirclePainter extends CustomPainter {
-  final Color color;
-
-  FullCirclePainter(this.color);
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 15; // زيادة سمك الدائرة
-
-    canvas.drawCircle(Offset(size.width / 2, size.height / 2), 90, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant FullCirclePainter oldDelegate) =>
-      oldDelegate.color != color;
 }

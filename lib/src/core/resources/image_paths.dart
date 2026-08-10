@@ -16,6 +16,7 @@ class ImagePaths {
       "assets/images/ic_image_place_holder.png";
 
   static const String fady = "assets/images/new_logo_5.png";
+  static const String fadySplash = "assets/images/fady_splash.jpg";
 
   static const String logoBg = "assets/images/logo.png";
   static const String fadyLogo1 = "assets/images/fady_logo.png";

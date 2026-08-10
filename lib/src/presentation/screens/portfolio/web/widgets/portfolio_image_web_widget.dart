@@ -6,7 +6,8 @@ class PortfolioImageWebWidget extends StatefulWidget {
   const PortfolioImageWebWidget({Key? key}) : super(key: key);
 
   @override
-  _PortfolioImageWebWidgetState createState() => _PortfolioImageWebWidgetState();
+  _PortfolioImageWebWidgetState createState() =>
+      _PortfolioImageWebWidgetState();
 }
 
 class _PortfolioImageWebWidgetState extends State<PortfolioImageWebWidget>
@@ -56,10 +57,9 @@ class _PortfolioImageWebWidgetState extends State<PortfolioImageWebWidget>
             scale: _scaleAnimation.value,
             child: SlideTransition(
               position: _slideAnimation,
-              child: Container(
+              child: SizedBox(
                 height: 350,
                 width: 350,
-                alignment: AlignmentDirectional.topEnd,
                 child: _buildImageWidget(context),
               ),
             ),
@@ -74,27 +74,64 @@ class _PortfolioImageWebWidgetState extends State<PortfolioImageWebWidget>
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Positioned(
-            top: 15,
-            child: CustomPaint(
-              painter: FullCirclePainter(ColorSchemes.primarySecondary),
-              size: const Size(300, 300),
-            ),
-          ),
+          // Background pulsing glow aura
+          const PulsingCircleWidget(),
 
-          const Positioned(
-            bottom: 2,
-            child: PulsingCircleWidget(),
-          ),
-          ClipOval(
-            child: Image.asset(
-              ImagePaths.fady, // استبدلها بصورتك
-              width: 350,
-              height: 350,
-              fit: BoxFit.cover,
+          // Glowing Outer Border Container
+          Container(
+            width: 310,
+            height: 310,
+            padding: const EdgeInsets.all(5),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              gradient: LinearGradient(
+                colors: [
+                  ColorSchemes.primary,
+                  ColorSchemes.primarySecondary,
+                  Colors.cyanAccent,
+                  ColorSchemes.primary,
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: ColorSchemes.primary.withOpacity(0.45),
+                  blurRadius: 25,
+                  spreadRadius: 4,
+                ),
+                BoxShadow(
+                  color: Colors.cyanAccent.withOpacity(0.25),
+                  blurRadius: 15,
+                  spreadRadius: 2,
+                ),
+              ],
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: ColorSchemes.iconBackGround,
+              ),
+              child: ClipOval(
+                child: Image.asset(
+                  ImagePaths.fadySplash,
+                  width: 300,
+                  height: 300,
+                  fit: BoxFit.cover,
+                  alignment: const Alignment(0, -0.65), // Perfect face framing
+                  errorBuilder: (context, error, stackTrace) {
+                    return Image.asset(
+                      ImagePaths.fady,
+                      width: 300,
+                      height: 300,
+                      fit: BoxFit.cover,
+                      alignment: const Alignment(0, -0.65),
+                    );
+                  },
+                ),
+              ),
             ),
           ),
-          // الدائرة السفلية (تكون خلف الصورة)
         ],
       ),
     );
@@ -120,9 +157,9 @@ class _PulsingCircleWidgetState extends State<PulsingCircleWidget>
     _controller = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 2),
-    )..repeat(reverse: true); // ✅ جعل الأنيميشن ينبض ذهابًا وإيابًا
+    )..repeat(reverse: true);
 
-    _scaleAnimation = Tween<double>(begin: 0.9, end: 1).animate(
+    _scaleAnimation = Tween<double>(begin: 0.95, end: 1.05).animate(
       CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
     );
   }
@@ -140,35 +177,19 @@ class _PulsingCircleWidgetState extends State<PulsingCircleWidget>
       builder: (context, child) {
         return Transform.scale(
           scale: _scaleAnimation.value,
-          child: CustomPaint(
-            painter: FullCirclePainter(
-              ColorSchemes.primarySecondary.withOpacity(0.4),
+          child: Container(
+            width: 330,
+            height: 330,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(
+                color: ColorSchemes.primarySecondary.withOpacity(0.35),
+                width: 2,
+              ),
             ),
-            size: const Size(300, 300),
           ),
         );
       },
     );
   }
-}
-
-// رسم الدائرة الكاملة
-class FullCirclePainter extends CustomPainter {
-  final Color color;
-
-  FullCirclePainter(this.color);
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    final paint = Paint()
-      ..color = color
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 15; // زيادة سمك الدائرة
-
-    canvas.drawCircle(Offset(size.width / 2, size.height / 2), 130, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant FullCirclePainter oldDelegate) =>
-      oldDelegate.color != color;
 }

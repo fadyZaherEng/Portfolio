@@ -344,18 +344,13 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
     return EndDrawerWebWidget(
       currentTheme: GetThemeUseCase(injector())(),
       isEnglish: currentLocale == "en",
-      onDrawerGetInTouchTap: () {
-        context.go(Routes.touchMe);
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => const TouchMeScreen(),
-          ),
-        );
-      },
       onDrawerLogoTap: () {
         RestartWidget.restartApp(context);
         html.window.location.reload();
+      },
+      onDrawerHomeTap: () {
+        Navigator.pop(context);
+        _onTap(0);
       },
       onDrawerSkillsTap: () {
         context.go(Routes.skillsWeb);
@@ -365,6 +360,39 @@ class _PortfolioWebScreenState extends BaseState<PortfolioWebScreen>
             builder: (context) => const SkillsScreen(),
           ),
         );
+      },
+      onDrawerSkillsOfferTap: () {
+        Navigator.pop(context);
+        _onTap(1);
+      },
+      onDrawerMyProjectsTap: () {
+        Navigator.pop(context);
+        _onTap(2);
+      },
+      onDrawerExperienceTap: () {
+        Navigator.pop(context);
+        _onTap(4);
+      },
+      onDrawerEducationTap: () {
+        Navigator.pop(context);
+        _onTap(3);
+      },
+      onDrawerPortfolioTap: () {
+        Navigator.pop(context);
+        _onTap(2);
+      },
+      onDrawerGetInTouchTap: () {
+        context.go(Routes.touchMe);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const TouchMeScreen(),
+          ),
+        );
+      },
+      onDrawerContactTap: () {
+        Navigator.pop(context);
+        _onTap(5);
       },
       onDrawerTrainingTap: () {
         context.go(Routes.trainingWeb);

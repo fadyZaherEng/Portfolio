@@ -16,9 +16,16 @@ class EndDrawerWebWidget extends StatelessWidget {
   final void Function() onDrawerLogoTap;
   final void Function(String) changeTheme;
 
+  final void Function() onDrawerHomeTap;
   final void Function() onDrawerSkillsTap;
-  final void Function() onDrawerTrainingTap;
+  final void Function() onDrawerSkillsOfferTap;
+  final void Function() onDrawerMyProjectsTap;
+  final void Function() onDrawerExperienceTap;
+  final void Function() onDrawerEducationTap;
+  final void Function() onDrawerPortfolioTap;
   final void Function() onDrawerGetInTouchTap;
+  final void Function() onDrawerContactTap;
+  final void Function() onDrawerTrainingTap;
 
   const EndDrawerWebWidget({
     super.key,
@@ -27,9 +34,16 @@ class EndDrawerWebWidget extends StatelessWidget {
     required this.changeLocale,
     required this.onDrawerLogoTap,
     required this.isEnglish,
+    required this.onDrawerHomeTap,
     required this.onDrawerSkillsTap,
-    required this.onDrawerTrainingTap,
+    required this.onDrawerSkillsOfferTap,
+    required this.onDrawerMyProjectsTap,
+    required this.onDrawerExperienceTap,
+    required this.onDrawerEducationTap,
+    required this.onDrawerPortfolioTap,
     required this.onDrawerGetInTouchTap,
+    required this.onDrawerContactTap,
+    required this.onDrawerTrainingTap,
   });
 
   @override
@@ -77,6 +91,13 @@ class EndDrawerWebWidget extends StatelessWidget {
             Column(
               children: [
                 _buildMenuItem(
+                  icon: Icons.home,
+                  label: S.of(context).home,
+                  onTap: onDrawerHomeTap,
+                  context: context,
+                ),
+                const SizedBox(height: 16),
+                _buildMenuItem(
                   icon: Icons.lightbulb,
                   label: S.of(context).skills,
                   onTap: onDrawerSkillsTap,
@@ -84,9 +105,51 @@ class EndDrawerWebWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 _buildMenuItem(
+                  icon: Icons.local_offer,
+                  label: S.of(context).skillsOffer,
+                  onTap: onDrawerSkillsOfferTap,
+                  context: context,
+                ),
+                const SizedBox(height: 16),
+                _buildMenuItem(
+                  icon: Icons.workspaces_outline,
+                  label: S.of(context).myProjects,
+                  onTap: onDrawerMyProjectsTap,
+                  context: context,
+                ),
+                const SizedBox(height: 16),
+                _buildMenuItem(
+                  icon: Icons.work,
+                  label: S.of(context).experience,
+                  onTap: onDrawerExperienceTap,
+                  context: context,
+                ),
+                const SizedBox(height: 16),
+                _buildMenuItem(
+                  icon: Icons.cast_for_education,
+                  label: S.of(context).education,
+                  onTap: onDrawerEducationTap,
+                  context: context,
+                ),
+                const SizedBox(height: 16),
+                _buildMenuItem(
+                  icon: Icons.pages,
+                  label: S.of(context).portfolio,
+                  onTap: onDrawerPortfolioTap,
+                  context: context,
+                ),
+                const SizedBox(height: 16),
+                _buildMenuItem(
                   icon: Icons.contact_mail,
                   label: S.of(context).getInTouch,
                   onTap: onDrawerGetInTouchTap,
+                  context: context,
+                ),
+                const SizedBox(height: 16),
+                _buildMenuItem(
+                  icon: Icons.contact_phone,
+                  label: S.of(context).contact,
+                  onTap: onDrawerContactTap,
                   context: context,
                 ),
                 const SizedBox(height: 16),

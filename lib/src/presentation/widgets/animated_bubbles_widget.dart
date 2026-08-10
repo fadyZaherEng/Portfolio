@@ -73,10 +73,10 @@ class _Bubble {
   factory _Bubble.random(Random r, int seed) {
     return _Bubble(
       xFraction: r.nextDouble(),
-      size: 2 + r.nextDouble() * 6, // even smaller bubbles (2‑8px)
-      speed: 0.4 + r.nextDouble() * 0.6,
+      size: 4 + r.nextDouble() * 8, // larger, softer bubbles (4‑12px)
+      speed: 0.2 + r.nextDouble() * 0.3, // gentle rise speed (0.2‑0.5)
       phase: r.nextDouble(),
-      wobble: 0.02 + r.nextDouble() * 0.04,
+      wobble: 0.005 + r.nextDouble() * 0.015, // subtle horizontal wobble
     );
   }
 }
@@ -136,27 +136,32 @@ class _BubblesPainter extends CustomPainter {
 
       // Outer glow ring
       final glowPaint = Paint()
-        ..color = baseColor.withOpacity(0.06 * opacity)
+        ..shader = RadialGradient(
+          colors: [
+            baseColor.withOpacity(0.15 * opacity),
+            Colors.transparent,
+          ],
+          stops: const [0.0, 1.0],
+        ).createShader(Rect.fromCircle(center: Offset(x, y), radius: b.size * 3))
         ..style = PaintingStyle.fill
-        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 10);
+        ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 12);
       canvas.drawCircle(Offset(x, y), b.size * 2, glowPaint);
 
-      // Bubble stroke (ring)
-      final strokePaint = Paint()
-        ..color = baseColor.withOpacity(0.25 * opacity)
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 1.2;
-      canvas.drawCircle(Offset(x, y), b.size, strokePaint);
-
-      // Inner subtle fill
-      final fillPaint = Paint()
-        ..color = baseColor.withOpacity(0.04 * opacity)
+      // Solid bubble body with gradient (closed shape)
+      final bubblePaint = Paint()
+        ..shader = RadialGradient(
+          colors: [
+            baseColor.withOpacity(0.6 * opacity),
+            baseColor.withOpacity(0.2 * opacity),
+          ],
+          stops: const [0.0, 1.0],
+        ).createShader(Rect.fromCircle(center: Offset(x, y), radius: b.size))
         ..style = PaintingStyle.fill;
-      canvas.drawCircle(Offset(x, y), b.size, fillPaint);
+      canvas.drawCircle(Offset(x, y), b.size, bubblePaint);
 
-      // Highlight glint (top-left of bubble)
+      // Highlight glint (top‑left of bubble)
       final glintPaint = Paint()
-        ..color = Colors.white.withOpacity(0.18 * opacity)
+        ..color = Colors.white.withOpacity(0.25 * opacity)
         ..style = PaintingStyle.fill;
       canvas.drawCircle(
         Offset(x - b.size * 0.28, y - b.size * 0.28),

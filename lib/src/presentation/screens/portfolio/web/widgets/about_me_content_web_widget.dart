@@ -151,20 +151,23 @@ class _AboutMeContentWebWidgetState extends State<AboutMeContentWebWidget>
     );
   }
 
-  Widget _buildInfoRow(IconData icon, String text, isLink) {
+  Widget _buildInfoRow(IconData icon, String text, bool isLink) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: Row(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Icon(
             icon,
-            color:  ColorSchemes.white,
+            color: ColorSchemes.white,
             size: 25,
           ),
-          const SizedBox(width: 5),
-          Expanded(
+          const SizedBox(width: 8),
+          Flexible(
             child: Text(
               text,
+              overflow: TextOverflow.ellipsis,
               style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     color: ColorSchemes.white,
                     fontWeight: FontWeight.normal,
