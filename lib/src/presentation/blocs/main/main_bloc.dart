@@ -20,7 +20,7 @@ class MainCubit extends Cubit<MainState> {
     this._setThemeUseCase,
     this._getThemeUseCase,
   ) : super(InitialMainState(
-          locale: Locale(window.locale.languageCode),
+          locale: const Locale('en'),
           theme: Constants.newDark,
         )) {
     getLanguageAndTheme();

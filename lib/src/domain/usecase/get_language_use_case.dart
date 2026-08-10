@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:my_portfolio/src/core/resources/shared_preferences_keys.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -9,7 +7,6 @@ class GetLanguageUseCase {
   GetLanguageUseCase(this.sharedPreferences);
 
   String call() {
-    return sharedPreferences.getString(SharedPreferenceKeys.language) ??
-        window.locale.languageCode;
+    return sharedPreferences.getString(SharedPreferenceKeys.language) ?? 'en';
   }
 }

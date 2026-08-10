@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ui';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -72,10 +71,10 @@ class _MyAppState extends State<MyApp> {
                               : state.theme == Constants.newDark
                                   ? AppTheme(state.locale.languageCode).newDark
                                   : AppTheme(state.locale.languageCode).light)
-                          : AppTheme(window.locale.languageCode).newDark,
+                          : AppTheme('en').newDark,
                       locale: state is InitialMainState
                           ? state.locale
-                          : window.locale,
+                          : const Locale('en'),
                     )
                   : MaterialApp(
                       themeMode: ThemeMode.light,
@@ -94,10 +93,10 @@ class _MyAppState extends State<MyApp> {
                               : state.theme == Constants.newDark
                                   ? AppTheme(state.locale.languageCode).newDark
                                   : AppTheme(state.locale.languageCode).light)
-                          : AppTheme(window.locale.languageCode).newDark,
+                          : AppTheme('en').newDark,
                       locale: state is InitialMainState
                           ? state.locale
-                          : window.locale,
+                          : const Locale('en'),
 
                       navigatorKey: navigatorKey,
                       navigatorObservers: [
@@ -105,8 +104,6 @@ class _MyAppState extends State<MyApp> {
                       ],
                       onGenerateRoute: RoutesManager.getRoute,
                       initialRoute: Routes.portfolio,
-
-                      // Pass versionCode when navigating to the splash screen
                     ),
             ),
           );
