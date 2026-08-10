@@ -30,10 +30,13 @@ class _MyChaptersCareerWebWidgetState extends State<MyChaptersCareerWebWidget>
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.sizeOf(context).width;
+    final bool isNarrow = screenWidth < 1200;
+
     return Column(
       children: [
         SizedBox(
-          width: MediaQuery.sizeOf(context).width * 0.7,
+          width: screenWidth * 0.85,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24),
             child: AnimatedTextWebWidget(
@@ -48,16 +51,27 @@ class _MyChaptersCareerWebWidgetState extends State<MyChaptersCareerWebWidget>
           ),
         ),
         const SizedBox(height: 32),
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(width: MediaQuery.sizeOf(context).width * 0.13),
-            _buildExperienceSection(context),
-            const SizedBox(width: 32),
-            _buildCareerTimeline(context),
-            SizedBox(width: MediaQuery.sizeOf(context).width * 0.13),
-          ],
+        Padding(
+          padding: EdgeInsets.symmetric(
+            horizontal: screenWidth > 1400 ? screenWidth * 0.05 : 16,
+          ),
+          child: isNarrow
+              ? Column(
+                  children: [
+                    _buildExperienceSection(context),
+                    const SizedBox(height: 32),
+                    _buildCareerTimeline(context),
+                  ],
+                )
+              : Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(child: _buildExperienceSection(context)),
+                    const SizedBox(width: 32),
+                    Expanded(child: _buildCareerTimeline(context)),
+                  ],
+                ),
         ),
       ],
     );
@@ -80,22 +94,23 @@ class _MyChaptersCareerWebWidgetState extends State<MyChaptersCareerWebWidget>
                 width: 22,
                 height: 22,
               ),
-              const SizedBox(width: 4),
-              _buildHeaderText(
-                context,
-                S.of(context).moreThanYearsExperienceAsA,
-                false,
+              const SizedBox(width: 8),
+              Expanded(
+                child: _buildHeaderText(
+                  context,
+                  S.of(context).moreThanYearsExperienceAsA,
+                  false,
+                ),
               ),
-              const SizedBox(width: 15),
             ],
           ),
           const SizedBox(height: 24),
           SizedBox(
-            width: 200,
+            width: 220,
             height: 40,
             child: _buildTitleShaderMask(context),
           ),
-          const SizedBox(height: 200),
+          const SizedBox(height: 40),
         ],
       ),
     );
@@ -103,7 +118,7 @@ class _MyChaptersCareerWebWidgetState extends State<MyChaptersCareerWebWidget>
 
   Widget _buildHeaderText(BuildContext context, String text, bool isAnimated) {
     TextStyle? textStyle = Theme.of(context).textTheme.titleLarge?.copyWith(
-          fontSize: 25,
+          fontSize: 24,
           fontWeight: FontWeight.bold,
           color: ColorSchemes.iconDarkWhite,
         );
@@ -183,7 +198,7 @@ class _MyChaptersCareerWebWidgetState extends State<MyChaptersCareerWebWidget>
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: SizedBox(
-          width: 600,
+          width: 550,
           child: ListView.builder(
             itemCount: events.length,
             shrinkWrap: true,

@@ -29,81 +29,129 @@ class ContactMeWebWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double screenWidth = MediaQuery.of(context).size.width;
+    final bool isNarrow = screenWidth < 1100;
+
     return Column(
       children: [
         Center(
           child: Container(
-            width: MediaQuery.of(context).size.width * 0.8,
+            width: screenWidth * 0.85,
             decoration: BoxDecoration(
               color: ColorSchemes.primary,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
+              padding: const EdgeInsets.all(32),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const SizedBox(height: 60),
-                          Text(
-                            S.of(context).letsCreateSomethingAmazing,
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge
-                                ?.copyWith(
-                                  color: ColorSchemes.white,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 25,
+                  isNarrow
+                      ? Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              S.of(context).letsCreateSomethingAmazing,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge
+                                  ?.copyWith(
+                                    color: ColorSchemes.white,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 24,
+                                  ),
+                            ),
+                            const SizedBox(height: 16),
+                            Text(
+                              S.of(context).feelFreeToContactMe,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall
+                                  ?.copyWith(
+                                    color: ColorSchemes.white,
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 16,
+                                  ),
+                            ),
+                            const SizedBox(height: 24),
+                            const ContactMeHoverButtonWebWidget(),
+                            const SizedBox(height: 24),
+                            Center(
+                              child: ClipOval(
+                                child: Image.asset(
+                                  ImagePaths.fedo2,
+                                  width: 220,
+                                  height: 220,
+                                  fit: BoxFit.cover,
                                 ),
-                          ),
-                          const SizedBox(height: 20),
-                          Text(
-                            S.of(context).feelFreeToContactMe,
-                            style:
-                                Theme.of(context).textTheme.bodySmall?.copyWith(
-                                      color: ColorSchemes.white,
-                                      fontWeight: FontWeight.w500,
-                                      fontSize: 18,
-                                    ),
-                          ),
-                          const SizedBox(height: 40),
-                          const ContactMeHoverButtonWebWidget(),
-                        ],
-                      ),
-                      const Spacer(),
-                      ClipOval(
-                        child: Image.asset(
-                          ImagePaths.fedo2,
-                          width: 320,
-                          height: 320,
-                          fit: BoxFit.cover,
-                          // matchTextDirection: true,
+                              ),
+                            ),
+                          ],
+                        )
+                      : Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Text(
+                                    S.of(context).letsCreateSomethingAmazing,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleLarge
+                                        ?.copyWith(
+                                          color: ColorSchemes.white,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 25,
+                                        ),
+                                  ),
+                                  const SizedBox(height: 20),
+                                  Text(
+                                    S.of(context).feelFreeToContactMe,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall
+                                        ?.copyWith(
+                                          color: ColorSchemes.white,
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 18,
+                                        ),
+                                  ),
+                                  const SizedBox(height: 32),
+                                  const ContactMeHoverButtonWebWidget(),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(width: 32),
+                            Flexible(
+                              child: ClipOval(
+                                child: Image.asset(
+                                  ImagePaths.fedo2,
+                                  width: 260,
+                                  height: 260,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                      const Spacer(),
-                    ],
-                  ),
                   const SizedBox(height: 30),
                   Container(
                     color: ColorSchemes.primarySecondaryWhite,
                     height: 2,
-                    width: MediaQuery.of(context).size.width * 0.8,
+                    width: double.infinity,
                   ),
                   const SizedBox(height: 16),
                   Center(
                     child: Wrap(
                       spacing: 15,
+                      runSpacing: 10,
                       children: [
                         buildSocialIcon(
                           iconData: FontAwesomeIcons.github,
@@ -147,11 +195,12 @@ class ContactMeWebWidget extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 32),
-        Center(
+                Center(
           child: Padding(
-            padding: const EdgeInsetsDirectional.only(end: 20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Wrap(
+              alignment: WrapAlignment.center,
+              crossAxisAlignment: WrapCrossAlignment.center,
               children: [
                 Text(
                   S.of(context).developedBy,
