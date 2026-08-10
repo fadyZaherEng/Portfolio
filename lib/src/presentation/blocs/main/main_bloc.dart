@@ -27,8 +27,8 @@ class MainCubit extends Cubit<MainState> {
   }
 
   void getLanguageAndTheme() async {
-    final language = _getLanguageUseCase();
-    final theme = _getThemeUseCase();
+    const language = 'en';
+    const theme = Constants.newDark;
     await _setLanguageUseCase(language);
     await _setThemeUseCase(theme);
     emit(InitialMainState(locale: Locale(language), theme: theme));
